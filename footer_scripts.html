@@ -1,0 +1,429 @@
+<!-- Search Overlay Popup Modal -->
+    <div class="search-overlay" id="searchOverlay">
+      <div class="search-box">
+        <button class="search-close-btn" onclick="closeSearch()" aria-label="Close search">✕</button>
+        <div class="search-eyebrow">&mdash; SEARCH ASCI</div>
+        <h2 class="search-modal-title">What are you looking for?</h2>
+        <div class="search-row">
+          <input type="text" id="searchInput"
+            placeholder="Try &lsquo;influencer disclosure&rsquo; or &lsquo;complaint outcomes&rsquo;"
+            onkeydown="if(event.key==='Enter')siteSearch()" autofocus />
+          <button class="btn-search-submit" onclick="siteSearch()">Search</button>
+        </div>
+        <div class="search-suggestions">
+          <button class="search-pill" onclick="quickSearch('ASCI Code')">ASCI Code</button>
+          <button class="search-pill" onclick="quickSearch('Dark patterns')">Dark patterns</button>
+          <button class="search-pill" onclick="quickSearch('Influencers')">Influencers</button>
+          <button class="search-pill" onclick="quickSearch('Reports')">Reports</button>
+          <button class="search-pill" onclick="quickSearch('Complaint outcomes')">Complaint outcomes</button>
+        </div>
+        <div id="searchResult" class="search-result-box" style="display:none;"></div>
+      </div>
+    </div>
+
+    <script>
+// ASCI Interactive Scripts
+document.addEventListener('DOMContentLoaded', () => {
+  // Megamenu interaction for all top navigation dropdown items
+  const navItemsWithMenu = document.querySelectorAll('.nav-item-dropdown');
+  const allMegamenuPanels = document.querySelectorAll('.megamenu-panel');
+  let menuTimeout;
+
+  function closeAllMegamenus() {
+    navItemsWithMenu.forEach(i => i.classList.remove('open'));
+    allMegamenuPanels.forEach(p => p.classList.remove('active'));
+  }
+
+  navItemsWithMenu.forEach(item => {
+    const targetMenuId = item.getAttribute('data-menu');
+    const targetPanel = document.getElementById(targetMenuId);
+
+    function showCurrentMenu() {
+      clearTimeout(menuTimeout);
+      navItemsWithMenu.forEach(i => i.classList.remove('open'));
+      allMegamenuPanels.forEach(p => p.classList.remove('active'));
+      item.classList.add('open');
+      if (targetPanel) targetPanel.classList.add('active');
+    }
+
+    function hideCurrentMenu() {
+      menuTimeout = setTimeout(() => {
+        if (!targetPanel || !targetPanel.matches(':hover')) {
+          item.classList.remove('open');
+          if (targetPanel) targetPanel.classList.remove('active');
+        }
+      }, 150);
+    }
+
+    item.addEventListener('mouseenter', showCurrentMenu);
+    item.addEventListener('mouseleave', hideCurrentMenu);
+
+    if (targetPanel) {
+      targetPanel.addEventListener('mouseenter', () => clearTimeout(menuTimeout));
+      targetPanel.addEventListener('mouseleave', hideCurrentMenu);
+    }
+
+    const link = item.querySelector('.nav-link');
+    if (link) {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = item.classList.contains('open');
+        closeAllMegamenus();
+        if (!isOpen) {
+          showCurrentMenu();
+        }
+      });
+    }
+  });
+
+  // Close megamenu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-item-dropdown') && !e.target.closest('.megamenu-panel')) {
+      closeAllMegamenus();
+    }
+  });
+
+  // Events Tabs Toggle
+  const tabButtons = document.querySelectorAll('.events-tab-btn');
+  const upcomingEvents = document.getElementById('upcomingEventsList');
+  const pastEvents = document.getElementById('pastEventsList');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const target = btn.getAttribute('data-tab');
+      if (target === 'upcoming') {
+        if (upcomingEvents) upcomingEvents.style.display = 'flex';
+        if (pastEvents) pastEvents.style.display = 'none';
+      } else {
+        if (upcomingEvents) upcomingEvents.style.display = 'none';
+        if (pastEvents) pastEvents.style.display = 'flex';
+      }
+    });
+  });
+
+  // ================= 3D HERO CARD DECK SHUFFLE SLIDER =================
+  let activeIndex = 0;
+  let isAnimating = false;
+  let autoSlideTimer = null;
+
+  const deckCards = document.querySelectorAll('.deck-card');
+  const dots = document.querySelectorAll('.slider-dot');
+  const heroVisual = document.querySelector('.hero-visual');
+  const deckContainer = document.getElementById('deckContainer');
+
+  function updateDeckPositions(targetIndex, direction = 'next') {
+    if (isAnimating || targetIndex === activeIndex) return;
+    isAnimating = true;
+
+    const currentCard = document.querySelector(`.deck-card[data-index="${activeIndex}"]`);
+
+    // 1. Fade away top card smoothly
+    if (currentCard) {
+      currentCard.classList.add(direction === 'next' ? 'fade-away-left' : 'fade-away-right');
+    }
+
+    // 2. Update active dot indicator
+    activeIndex = targetIndex;
+    dots.forEach((d, i) => d.classList.toggle('active', i === activeIndex));
+
+    // 3. Re-assign card stack positions (pos-0 top main card, pos-1, pos-2, pos-3 back layers)
+    setTimeout(() => {
+      deckCards.forEach((card) => {
+        const cardIdx = parseInt(card.getAttribute('data-index'), 10);
+        const relPos = (cardIdx - activeIndex + 4) % 4;
+
+        if (card === currentCard) {
+          // Disable CSS transition on old top card so it silently snaps to back position without flying back
+          card.style.transition = 'none';
+          card.className = 'deck-card';
+          card.classList.add(`pos-${relPos}`);
+          // Force DOM reflow
+          void card.offsetWidth;
+          // Restore CSS transition after silent repositioning
+          setTimeout(() => {
+            card.style.transition = '';
+          }, 40);
+        } else {
+          card.className = 'deck-card';
+          card.classList.add(`pos-${relPos}`);
+        }
+      });
+
+      setTimeout(() => {
+        isAnimating = false;
+      }, 300);
+    }, 280);
+  }
+
+  // Dot click handlers
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      if (index === activeIndex) return;
+      const direction = index > activeIndex ? 'next' : 'prev';
+      resetAutoSlide();
+      updateDeckPositions(index, direction);
+    });
+  });
+
+  // Clicking directly on the card stack shuffles to next
+  deckCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const nextIndex = (activeIndex + 1) % 4;
+      resetAutoSlide();
+      updateDeckPositions(nextIndex, 'next');
+    });
+  });
+
+  // Touch Swipe support for mobile / trackpad
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (deckContainer) {
+    deckContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    deckContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+  }
+
+  function handleSwipe() {
+    const diffX = touchEndX - touchStartX;
+    if (Math.abs(diffX) > 40) {
+      if (diffX < 0) {
+        // Swipe left -> Next card
+        const nextIndex = (activeIndex + 1) % 4;
+        updateDeckPositions(nextIndex, 'next');
+      } else {
+        // Swipe right -> Prev card
+        const prevIndex = (activeIndex - 1 + 4) % 4;
+        updateDeckPositions(prevIndex, 'prev');
+      }
+      resetAutoSlide();
+    }
+  }
+
+  // Auto slide functionality
+  function startAutoSlide() {
+    stopAutoSlide();
+    autoSlideTimer = setInterval(() => {
+      const nextIndex = (activeIndex + 1) % 4;
+      updateDeckPositions(nextIndex, 'next');
+    }, 4200);
+  }
+
+  function stopAutoSlide() {
+    if (autoSlideTimer) clearInterval(autoSlideTimer);
+  }
+
+  function resetAutoSlide() {
+    startAutoSlide();
+  }
+
+  if (heroVisual) {
+    heroVisual.addEventListener('mouseenter', stopAutoSlide);
+    heroVisual.addEventListener('mouseleave', startAutoSlide);
+  }
+
+  // Start auto slide on page load
+  startAutoSlide();
+
+  // ================= RESPONSIBLE ADVERTISING 3D RIPPLE ANIMATION =================
+  const rippleCanvas = document.getElementById('ctaRippleCanvas');
+  if (rippleCanvas) {
+    const ctx = rippleCanvas.getContext('2d');
+    let offset = 0;
+    let time = 0;
+
+    function resizeCanvas() {
+      const rect = rippleCanvas.parentElement.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      rippleCanvas.width = rect.width * dpr;
+      rippleCanvas.height = rect.height * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function drawRipples() {
+      const rect = rippleCanvas.parentElement.getBoundingClientRect();
+      const width = rect.width;
+      const height = rect.height;
+
+      ctx.clearRect(0, 0, width, height);
+
+      // Center point on far-left (~14% from left edge, vertical middle)
+      const cx = width * 0.14;
+      const cy = height * 0.5;
+
+      // 1. Draw central dot
+      const centerDotWave = (Math.sin(-time * 1.5) + 1) / 2;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${(0.3 + centerDotWave * 0.2).toFixed(3)})`;
+      ctx.fill();
+
+      // 2. Draw concentric rings
+      const step = 15; // spacing between concentric rings
+      const speed = 0.25; // smooth speed of expansion
+      offset = (offset + speed) % step;
+      time += 0.022;
+
+      // Max radius to cover the full banner area
+      const maxRadius = Math.hypot(Math.max(cx, width - cx), Math.max(cy, height - cy)) + step;
+      const totalRings = Math.ceil(maxRadius / step);
+
+      for (let i = 0; i <= totalRings; i++) {
+        const r = i * step + offset;
+        if (r <= 4) continue;
+
+        // Base opacity calculation with prominent wave brightness
+        let opacity = 0.08;
+
+        // 3D depth wave propagating outwards
+        const wave = Math.sin(r * 0.015 - time * 1.5);
+        const waveNorm = (wave + 1) / 2; // 0 to 1
+        opacity += waveNorm * 0.20; // prominent wave visibility
+
+        // Outer edge fade-out
+        if (r > maxRadius - 100) {
+          opacity *= Math.max(0, (maxRadius - r) / 100);
+        }
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity.toFixed(3)})`;
+        ctx.lineWidth = 1.2 + waveNorm * 0.6; // clear, visible stroke width
+        ctx.stroke();
+      }
+
+      requestAnimationFrame(drawRipples);
+    }
+
+    requestAnimationFrame(drawRipples);
+  }
+});
+
+// ================= SEARCH POPUP MODAL LOGIC =================
+const searchIndex = [
+  { k: ['code', 'guideline', 'rule'], t: 'The ASCI Code & Guidelines', u: 'https://www.ascionline.in/the-asci-code/' },
+  { k: ['complaint', 'tara', 'problematic ad', 'track'], t: 'Consumer Complaint Portal (TARA)', u: 'https://tara.ascionline.in/auth/' },
+  { k: ['outcome', 'case', 'ruling'], t: 'Complaint Outcomes', u: 'https://www.ascionline.in/complaint-outcomes/' },
+  { k: ['advice', 'ad check', 'advertising advice', 'endorser due diligence'], t: 'ASCI Academy: Expert Help', u: '#academy-expert-help' },
+  { k: ['endorser', 'influencer', 'creator'], t: 'Endorser Due Diligence & Influencer Resources', u: 'https://www.ascionline.in/endorser-due-diligence/' },
+  { k: ['academy', 'course', 'training', 'workshop', 'masterclass'], t: 'ASCI Academy', u: 'https://www.ascionline.in/academy/' },
+  { k: ['report', 'white paper', 'research'], t: 'ASCI Academy: Reports & White Papers', u: '#academy-reports' },
+  { k: ['topic', 'media', 'video', 'webinar', 'podcast', 'dark patterns', 'data', 'ai'], t: 'Topics & Resources', u: '#topics-resources-hub' },
+  { k: ['event', 'webinar', 'bootcamp'], t: 'Events', u: 'https://www.ascionline.in/events/' },
+  { k: ['membership', 'member', 'partner'], t: 'Membership', u: 'https://www.ascionline.in/membership/' }
+];
+
+function openSearch() {
+  const overlay = document.getElementById('searchOverlay');
+  if (overlay) {
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      const input = document.getElementById('searchInput');
+      if (input) input.focus();
+    }, 100);
+  }
+}
+
+function closeSearch() {
+  const overlay = document.getElementById('searchOverlay');
+  if (overlay) {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+function quickSearch(q) {
+  const input = document.getElementById('searchInput');
+  if (input) {
+    input.value = q;
+    siteSearch();
+  }
+}
+
+function siteSearch() {
+  const input = document.getElementById('searchInput');
+  const box = document.getElementById('searchResult');
+  if (!input || !box) return;
+  const q = input.value.trim().toLowerCase();
+  const matches = searchIndex.filter(x => !q || x.t.toLowerCase().includes(q) || x.k.some(k => q.includes(k) || k.includes(q))).slice(0, 6);
+  box.style.display = 'block';
+  box.innerHTML = matches.length
+    ? matches.map(x => `<a href="${x.u}"><span>${x.t}</span><span>↗</span></a>`).join('')
+    : '<p style="color:#64748b;font-size:0.9rem;padding:12px 0;">No close match found. Try ASCI Code, complaints, influencer, training, reports or events.</p>';
+}
+
+// Close search overlay when clicking backdrop outside search box
+document.addEventListener('click', (e) => {
+  const overlay = document.getElementById('searchOverlay');
+  if (overlay && e.target === overlay) {
+    closeSearch();
+  }
+});
+
+// Close on Escape key press
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeSearch();
+    if (typeof toggleMobileNav === 'function') {
+      const navOverlay = document.getElementById('mobileNavOverlay');
+      if (navOverlay && navOverlay.classList.contains('active')) {
+        toggleMobileNav();
+      }
+    }
+  }
+});
+
+// Mobile Hamburger Navigation Drawer Toggle
+window.toggleMobileNav = function() {
+  const overlay = document.getElementById('mobileNavOverlay');
+  const btn = document.getElementById('mobileBurgerBtn');
+  if (!overlay) return;
+  const isOpen = overlay.classList.contains('active');
+  if (isOpen) {
+    overlay.classList.remove('active');
+    if (btn) btn.classList.remove('active');
+    document.body.style.overflow = '';
+  } else {
+    overlay.classList.add('active');
+    if (btn) btn.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+};
+
+// Mobile Accordion Toggle inside Navigation Drawer
+document.addEventListener('DOMContentLoaded', () => {
+  const accHeaders = document.querySelectorAll('.mobile-accordion-header');
+  accHeaders.forEach(header => {
+    header.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const parent = header.closest('.mobile-accordion-item');
+      const isAlreadyOpen = parent.classList.contains('active');
+      
+      // Close all other accordion items
+      document.querySelectorAll('.mobile-accordion-item').forEach(item => {
+        item.classList.remove('active');
+      });
+
+      // Toggle clicked item
+      if (!isAlreadyOpen) {
+        parent.classList.add('active');
+      }
+    });
+  });
+});
+
+</script>
+</body>
+
+</html>

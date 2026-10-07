@@ -3524,15 +3524,25 @@ button {
 
 /* ================= CONTROLS & FILTER SECTION ================= */
 .directory-controls-card {
-  margin-top: 20px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  position: sticky;
+  top: 132px;
+  z-index: 35;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid #cbd5e1;
   border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.03);
-  margin-top: -24px;
-  position: relative;
-  z-index: 5;
+  padding: 20px 24px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 991px) {
+  .directory-controls-card {
+    top: 72px;
+    padding: 16px;
+  }
 }
 
 .controls-top-row {
@@ -4206,7 +4216,7 @@ button {
               </ul>
               <ul class="megamenu-links-list">
                 <li class="megamenu-link-item">
-                  <a href="about-us.html#annual-reports">
+                  <a href="annual-reports.html">
                     <span>Annual reports</span>
                     <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <line x1="7" y1="17" x2="17" y2="7"></line>

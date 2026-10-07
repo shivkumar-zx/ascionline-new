@@ -3880,6 +3880,40 @@ button {
   padding: 28px;
 }
 
+.gov-summary-card-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: all 0.22s ease;
+  position: relative;
+}
+
+.gov-summary-card-link:hover {
+  transform: translateY(-4px);
+  border-color: #008779;
+  box-shadow: 0 12px 28px rgba(0, 135, 121, 0.1);
+}
+
+.gov-summary-card-link:hover .gov-card-title {
+  color: #008779;
+}
+
+.gov-card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #008779;
+  transition: gap 0.2s ease;
+}
+
+.gov-summary-card-link:hover .gov-card-action {
+  gap: 12px;
+}
+
 .gov-card-tag {
   font-size: 0.775rem;
   font-weight: 700;
@@ -4148,6 +4182,219 @@ button {
   background: #f1f5f9;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-careers-positions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+}
+
+.btn-careers-positions:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= CAREERS MODAL POPUP ================= */
+.careers-modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.careers-modal-backdrop.active {
+  display: flex;
+  opacity: 1;
+}
+
+.careers-modal-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 840px;
+  max-height: 88vh;
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalScaleIn {
+  from { transform: scale(0.94); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.careers-modal-header {
+  padding: 22px 28px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+}
+
+.careers-modal-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: #0f172a;
+  margin: 0;
+  font-weight: 700;
+}
+
+.careers-modal-close-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.18s ease;
+}
+
+.careers-modal-close-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fca5a5;
+  transform: rotate(90deg);
+}
+
+.careers-modal-body {
+  padding: 24px 28px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.position-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 20px;
+  background: #ffffff;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.position-card:hover {
+  border-color: #008779;
+  box-shadow: 0 8px 20px rgba(0, 135, 121, 0.08);
+}
+
+.position-top-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.position-title {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.position-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.position-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.position-tag.teal {
+  background: #e6f4f2;
+  color: #008779;
+}
+
+.position-tag.accent {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.position-desc {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.position-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.position-exp {
+  font-size: 0.8125rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.btn-position-apply {
+  background: #008779;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-position-apply:hover {
+  background: #054c3f;
+  transform: translateY(-1px);
+  color: #ffffff;
 }
 
 /* Newsletter Strip */
@@ -4444,7 +4691,7 @@ button {
               </ul>
               <ul class="megamenu-links-list">
                 <li class="megamenu-link-item">
-                  <a href="about-us.html#annual-reports">
+                  <a href="annual-reports.html">
                     <span>Annual reports</span>
                     <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -5803,29 +6050,47 @@ button {
       </p>
 
       <div class="governance-card-grid">
-        <div class="gov-summary-card">
-          <div class="gov-card-tag">Strategic Leadership</div>
-          <h3 class="gov-card-title">Board of Governors</h3>
-          <p class="gov-card-desc">
-            Composed of senior executives from advertisers, media networks, and advertising agencies who establish institutional policy, code updates, and financial governance.
-          </p>
-        </div>
+        <a href="people.html?panel=board#directory" class="gov-summary-card gov-summary-card-link">
+          <div>
+            <div class="gov-card-tag">Strategic Leadership</div>
+            <h3 class="gov-card-title">Board of Governors</h3>
+            <p class="gov-card-desc">
+              Composed of senior executives from advertisers, media networks, and advertising agencies who establish institutional policy, code updates, and financial governance.
+            </p>
+          </div>
+          <div class="gov-card-action">
+            <span>View Board Members</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </div>
+        </a>
 
-        <div class="gov-summary-card">
-          <div class="gov-card-tag">Independent Adjudication</div>
-          <h3 class="gov-card-title">Consumer Complaints Council (CCC)</h3>
-          <p class="gov-card-desc">
-            The decision-making heart of ASCI. By constitution, at least 50% of the CCC consists of eminent civil society members—doctors, lawyers, consumer activists, and educators.
-          </p>
-        </div>
+        <a href="people.html?panel=ccc#directory" class="gov-summary-card gov-summary-card-link">
+          <div>
+            <div class="gov-card-tag">Independent Adjudication</div>
+            <h3 class="gov-card-title">Consumer Complaints Council (CCC)</h3>
+            <p class="gov-card-desc">
+              The decision-making heart of ASCI. By constitution, at least 50% of the CCC consists of eminent civil society members—doctors, lawyers, consumer activists, and educators.
+            </p>
+          </div>
+          <div class="gov-card-action">
+            <span>View CCC Roster</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </div>
+        </a>
 
-        <div class="gov-summary-card">
-          <div class="gov-card-tag">Judicial Review</div>
-          <h3 class="gov-card-title">Independent Review Panel</h3>
-          <p class="gov-card-desc">
-            Presided over by retired High Court Judges to independently hear appeals and procedural reviews, guaranteeing natural justice for both complainants and advertisers.
-          </p>
-        </div>
+        <a href="people.html?panel=review-panel#directory" class="gov-summary-card gov-summary-card-link">
+          <div>
+            <div class="gov-card-tag">Judicial Review</div>
+            <h3 class="gov-card-title">Independent Review Panel</h3>
+            <p class="gov-card-desc">
+              Presided over by retired High Court Judges to independently hear appeals and procedural reviews, guaranteeing natural justice for both complainants and advertisers.
+            </p>
+          </div>
+          <div class="gov-card-action">
+            <span>View Review Panel</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </div>
+        </a>
       </div>
 
       <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
@@ -5885,28 +6150,7 @@ button {
     </div>
   </section>
 
-  <!-- 5. Transparency & Newsletter -->
-  <section class="about-section" style="border-bottom: none;" id="annual-reports">
-    <div class="container">
-      <div class="resource-banner-card">
-        <div class="resource-banner-content">
-          <h3>Annual Complaints &amp; Trend Reports</h3>
-          <p>
-            ASCI publishes annual and half-yearly transparency reports tracking advertising compliance rates, digital violation trends, and consumer grievance outcomes across sectors.
-          </p>
-        </div>
-        <div>
-          <a href="annual-reports.html" class="btn-banner-action">
-            <span>Download Annual Reports</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- 6. Awards & Recognition Section -->
   <section class="about-section" id="awards">
@@ -6014,13 +6258,22 @@ button {
           </div>
         </div>
         <div class="careers-action-side">
-          <a href="mailto:careers@ascionline.in" class="btn-careers-apply">
-            <span>Apply &amp; Send CV</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
+          <div style="display: flex; flex-direction: column; gap: 12px; width: 100%; min-width: 210px;">
+            <button type="button" class="btn-careers-positions" onclick="openCareersModal()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+              <span>View Open Positions</span>
+            </button>
+            <a href="mailto:careers@ascionline.in?subject=Application%20for%20Career%20at%20ASCI" class="btn-careers-apply" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+              <span>Apply &amp; Send CV</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
           <span style="font-size: 0.8125rem; color: rgba(255,255,255,0.75); display: block; margin-top: 10px; text-align: center;">
             careers@ascionline.in
           </span>
@@ -6595,11 +6848,140 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
 </script>
-</body>
 
-</html>
+  <!-- Interactive Careers Modal Popup -->
+  <div class="careers-modal-backdrop" id="careersModal" onclick="closeCareersModalOnBackdrop(event)">
+    <div class="careers-modal-card" role="dialog" aria-labelledby="careersModalTitle" aria-modal="true">
+      <div class="careers-modal-header">
+        <div>
+          <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: #008779; letter-spacing: 0.05em; margin-bottom: 4px;">Opportunities at ASCI</div>
+          <h3 class="careers-modal-title" id="careersModalTitle">Current Open Positions</h3>
+        </div>
+        <button class="careers-modal-close-btn" onclick="closeCareersModal()" aria-label="Close dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="careers-modal-body">
+        
+        <!-- Position 1 -->
+        <div class="position-card">
+          <div class="position-top-row">
+            <h4 class="position-title">Legal &amp; Regulatory Review Specialist</h4>
+            <div class="position-badges">
+              <span class="position-tag teal">Full-Time</span>
+              <span class="position-tag">Mumbai / Hybrid</span>
+              <span class="position-tag accent">Urgent Hiring</span>
+            </div>
+          </div>
+          <p class="position-desc">
+            Examine consumer grievances and advertiser responses against the ASCI Code, Consumer Protection Act 2019, and relevant sectoral statutes. Prepare objective case dossiers for Consumer Complaints Council (CCC) weekly adjudication hearings.
+          </p>
+          <div class="position-footer-row">
+            <span class="position-exp">Experience: 3–6 Years | Qualification: LLB / LLM with Media or Regulatory Law Background</span>
+            <a href="mailto:careers@ascionline.in?subject=Application:%20Legal%20%26%20Regulatory%20Review%20Specialist" class="btn-position-apply">
+              <span>Apply for this Role &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Position 2 -->
+        <div class="position-card">
+          <div class="position-top-row">
+            <h4 class="position-title">AI &amp; Digital Monitoring Analyst</h4>
+            <div class="position-badges">
+              <span class="position-tag teal">Full-Time</span>
+              <span class="position-tag">Remote / Hybrid</span>
+            </div>
+          </div>
+          <p class="position-desc">
+            Operate and refine ASCI's AI-assisted National Advertising Monitoring Service (NAMS). Scan over 3,000 digital platforms, creator channels, and app interfaces to flag undisclosed sponsored posts, dark patterns, and deceptive AI-generated claims.
+          </p>
+          <div class="position-footer-row">
+            <span class="position-exp">Experience: 2–5 Years | Qualification: B.Tech / BCA or Analytics / Data Science</span>
+            <a href="mailto:careers@ascionline.in?subject=Application:%20AI%20%26%20Digital%20Monitoring%20Analyst" class="btn-position-apply">
+              <span>Apply for this Role &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Position 3 -->
+        <div class="position-card">
+          <div class="position-top-row">
+            <h4 class="position-title">Consumer Grievance Redressal Coordinator</h4>
+            <div class="position-badges">
+              <span class="position-tag teal">Full-Time</span>
+              <span class="position-tag">Mumbai</span>
+            </div>
+          </div>
+          <p class="position-desc">
+            Manage end-to-end complaint lifecycles lodged through the TARA WhatsApp and web portal. Coordinate communications between complainants, brand legal teams, and civil society CCC members to ensure 14-day resolution turnarounds.
+          </p>
+          <div class="position-footer-row">
+            <span class="position-exp">Experience: 1–4 Years | Qualification: Graduate with excellent written English and consumer grievance experience</span>
+            <a href="mailto:careers@ascionline.in?subject=Application:%20Consumer%20Grievance%20Redressal%20Coordinator" class="btn-position-apply">
+              <span>Apply for this Role &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Position 4 -->
+        <div class="position-card">
+          <div class="position-top-row">
+            <h4 class="position-title">ASCI Academy Curriculum &amp; Training Lead</h4>
+            <div class="position-badges">
+              <span class="position-tag teal">Full-Time</span>
+              <span class="position-tag">Mumbai / Hybrid</span>
+            </div>
+          </div>
+          <p class="position-desc">
+            Lead the development of industry workshops and digital credentials on responsible advertising, greenwashing detection, influencer disclosure compliance, and ethical UX design for marketing agencies, universities, and creators.
+          </p>
+          <div class="position-footer-row">
+            <span class="position-exp">Experience: 4–8 Years | Qualification: Master's in Communications, Advertising, or Instructional Design</span>
+            <a href="mailto:careers@ascionline.in?subject=Application:%20ASCI%20Academy%20Curriculum%20Lead" class="btn-position-apply">
+              <span>Apply for this Role &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<script>
+// Careers Modal Controller
+window.openCareersModal = function() {
+  const modal = document.getElementById('careersModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+};
+
+window.closeCareersModal = function() {
+  const modal = document.getElementById('careersModal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+};
+
+window.closeCareersModalOnBackdrop = function(e) {
+  if (e.target.id === 'careersModal') {
+    closeCareersModal();
+  }
+};
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeCareersModal();
+  }
+});
+</script>
 
 </body>
 </html>

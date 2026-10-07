@@ -1,6 +1,7 @@
-with open('ASCI (3).html', 'r', encoding='utf-8') as f:
-    text = f.read()
+import glob
 
-start = text.find('id="codesMegaPanel"')
-end = text.find('id="academyMegaPanel"')
-print(text[start:start+2500])
+for f in glob.glob('*.html'):
+    with open(f, 'r', encoding='utf-8') as fp:
+        c = fp.read()
+    if '<div class="megamenu-panel" >' in c:
+        print(f"{f}: has '<div class=\"megamenu-panel\" >'")

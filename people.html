@@ -4321,7 +4321,7 @@ button {
       </div>
     </div>
 
-    <div class="megamenu-panel" >
+    <div class="megamenu-panel" id="codesMegaPanel">
       <div class="container">
         <div class="megamenu-grid">
           <!-- Col 1: Highlight box -->
@@ -6212,6 +6212,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const panelParam = urlParams.get('panel');
   if (panelParam) {
     filterByPanel(panelParam);
+    setTimeout(() => {
+      const dirEl = document.getElementById('directory');
+      if (dirEl) {
+        dirEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 150);
   } else {
     renderDirectory();
   }

@@ -1,34 +1,120 @@
 # ASCI Website: About Us & People Architecture Plan
-*(Updated with FSSAI-Style Institutional Directory Model)*
+*(Single Source of Truth & Content Fidelity Blueprint)*
 
-> **Design & Tone Mandate**:
-> *"Keep the overall approach simple, minimalistic, and easy to navigate, in line with the rest of the website framework. Avoid overly high-end language, jargon, or anything promotional or chest-thumping. The tone should feel straightforward, credible, and informative."*
-
----
-
-## 1. Executive Summary & Page Distribution
-
-Rather than fragmenting the site into dozens of thin pages (many containing only 1–2 paragraphs), the content is structured into **focused, purposeful destinations**:
-
-1. **`about-us.html` (Main Overview Page)**:
-   - The primary gateway providing high-level context: ASCI's mandate, foundation (1985), 4 core code pillars (Honest, Decent, Safe, Fair), high-level impact metrics, an interactive timeline teaser, governance summary, and quick links to deep-dive resources.
-2. **`people.html` (Unified People & Governance Directory Hub)**:
-   - **FSSAI Directory Reference Model**: A single unified directory featuring:
-     - **Live Search & Filter Bar** (search by name, designation, company, panel/committee).
-     - **View Toggle**: Switch between **Directory Table View** (compact, scannable institutional format) and **Grid/Card View** (visual profiles).
-     - **Click-to-View Full Details**: Clicking any row or card triggers an elegant, accessible **Profile Modal / Detail Drawer** with the member's complete bio, role, and sector background.
-3. **`history-key-milestones.html`**:
-   - The complete chronological journey from 1985 to 2026 (including recent landmarks: Dark Patterns study, Greenwashing guidelines, Generative AI whitepaper, ASCI Academy).
-4. **`the-work-we-do.html`**:
-   - Practical walkthrough of ASCI's operations: Pre-production advisory (preventative), complaint management (corrective), proactive AI monitoring (NAMS), and consumer advocacy.
-5. **`annual-reports.html` & `campaigns.html`**:
-   - Dedicated archives for transparent annual disclosures, complaint outcome trends, and public awareness campaigns (#ChupNaBaitho, etc.).
+> **CRITICAL CLIENT DIRECTIVE & CONTENT FIDELITY MANDATE**:
+> 1. **ZERO INVENTED CONTENT**: Never fabricate, rephrase, or inject new marketing copy, slogans, or unapproved sections. Every word, heading, and card description must strictly come from the official live website (`https://www.ascionline.in/`) or official client-provided briefs.
+> 2. **DESIGN ENHANCEMENT, NOT CONTENT REWRITING**: Our role is to elevate the UI, typography, responsiveness, and usability (clean cards, smooth interactions, directory search/filters, accessibility), while keeping the client's vetted, legal-approved content 100% intact.
+> 3. **RESPECT CLIENT SITE ARCHITECTURE**: Explain any structural recommendations clearly. Do not merge separate pages into a single giant scroll unless explicitly requested.
 
 ---
 
-## 2. Updated Mega Menu Structure
+## 1. Executive Summary & Why This Plan Exists
 
-The Mega Menu for **About Us** directly matches the approved structure:
+### The Problem
+During earlier design iterations, sections and copy were newly written or summarized (e.g. inserting 4 foundational pillars, invented decade milestones, new CTA callouts, and combining distinct pages into a single 6,000+ line document). The client rightly objected:
+- *"Why did you add new sections?"*
+- *"Why did you change our approved content?"*
+- *"Why are sections here that are not on our website?"*
+
+For a premier regulatory body like ASCI (Advertising Standards Council of India), every word represents legal compliance and council governance. Modifying official copy risks project cancellation.
+
+### The Solution & Core Principle
+- **1:1 Verbatim Content Alignment**: We capture the exact headings, subheadings, card descriptions, and navigation hierarchy from `https://www.ascionline.in/about-us/` and its sub-pages.
+- **Modern Institutional UI**: We upgrade the visual presentation (replacing dated 2010s-era Bootstrap boxes with refined typography, micro-interactions, responsive grids, and accessible directory filtering) **without altering a single approved sentence**.
+- **Transparent Changelog**: Every modification is recorded in this markdown document so any developer or team member can pick it up in any chat session.
+
+---
+
+## 2. Live Site Audit: The About Us Ecosystem (`https://www.ascionline.in/about-us/`)
+
+### A. Main Hub: `https://www.ascionline.in/about-us/`
+On the official live website, the About Us page serves as an **Institutional Hub & Gateway**. It does **not** dump all content onto one endless page. Instead, it features:
+
+1. **Page Title / Banner**:
+   - Title: `About Us`
+   - Hero Image: Official fountain pen writing on parchment (ASCI official asset)
+2. **Breadcrumb**:
+   - `Home > About us`
+3. **Primary Lead Heading & Sub-heading**:
+   - `H1`: **All About ASCI**
+   - `H2 / Subhead`: *"Know all about what we do, how self-regulation works, the people at ASCI and the impact we create through our work."*
+4. **The 7 Core Hub Destinations (Cards)**:
+   - **Card 1: History & Key Milestones**
+     - Text: *"ASCI was formed in 1985 by professionals from the advertising and media industry to keep Indian ads decent, fair and honest. Over the years, our work and role has evolved greatly."*
+     - Target: `https://www.ascionline.in/history-key-milestones/`
+   - **Card 2: About Self-Regulation**
+     - Text: *"An overview of self-regulation and how it benefits all stakeholders."*
+     - Target: `https://www.ascionline.in/about-self-regulation/`
+   - **Card 3: The Work We Do**
+     - Text: *"Supporting advertisers get it right as well as correcting them when they get it wrong."*
+     - Target: `https://www.ascionline.in/work-we-do/`
+   - **Card 4: People**
+     - Text: *"Meet the ASCI board, Our Consumer Complaints Council Members, Consultative Committee and our Secretariat team who together champion responsible advertising."*
+     - Target: `https://www.ascionline.in/people/`
+   - **Card 5: Annual Reports**
+     - Text: *"Read up on important milestones, changes and progress made year-on-year by ASCI."*
+     - Target: `https://www.ascionline.in/annual-reports/`
+   - **Card 6: Ad Campaigns**
+     - Text: *"Here are the ads that ASCI has made in the past to encourage consumers to be more vigilant."*
+     - Target: `https://www.ascionline.in/ad-campaigns/`
+   - **Card 7: ASCI Explained**
+     - Text: Explanatory resources and video walk-throughs on self-regulation.
+     - Target: `https://www.ascionline.in/asci-explained/`
+
+---
+
+## 3. Page-by-Page Structure & Content Plan
+
+### Page 1: `about-us.html` (The Gateway Hub)
+- **Role**: Clean, fast, scannable overview directory.
+- **Content**:
+  - Breadcrumb: `Home / About Us`
+  - Hero Header: "All About ASCI" + official subhead.
+  - The 7 Hub Cards rendered in modern card components (high-definition subtle borders `#e2e8f0`, brand teal `#008779` accents, crisp hover transitions, legible typography using `Domine` and `Bricolage Grotesque`).
+  - Quick Links / Direct Access to Annual Report downloads & Complaint registration.
+- **Rule**: No invented code pillars or unauthorized text blocks.
+
+### Page 2: `people.html` (People & Governance Directory)
+- **Role**: The comprehensive directory for ASCI's governance structure.
+- **Live Site Source Pages**:
+  - `board-of-governors-and-special-invitees/`
+  - `consultative-committee/`
+  - `secretariat/`
+  - `consumer-complaints-council/`
+  - `independent-review-panel/`
+  - `technical-experts/`
+- **Features**:
+  - **FSSAI-style searchable directory**: Live search bar (by name, designation, company).
+  - **Filter pills**: All, Board of Governors, Consultative Committee, Secretariat, CCC, Independent Review Panel, Technical Experts.
+  - **Dual view**: Table View (scannable institutional directory) & Grid View (visual portrait cards).
+  - **Click-to-view Profile Modal**: Displays full verified bio and sector representation without cluttering the page.
+
+### Page 3: `history-key-milestones.html`
+- **Role**: Chronological institutional journey of ASCI from 1985 to present.
+- **Content**: Preserves all live milestones from the official timeline page.
+- **Design Upgrade**: Interactive vertical/horizontal timeline with filterable milestone decades.
+
+### Page 4: `work-we-do.html`
+- **Role**: Detailed breakdown of ASCI's operational framework.
+- **Live Site Sub-sections**:
+  - Our Purpose
+  - How We Handle Complaints
+  - What We Cover
+  - Our Proactive Monitoring (NAMS)
+  - Working with Others
+
+### Page 5: `annual-reports.html`
+- **Role**: Document repository for all published annual reports and complaint trends.
+- **Design Upgrade**: Filterable by year, clean PDF download cards with file size indicators.
+
+### Page 6: `ad-campaigns.html`
+- **Role**: Consumer awareness campaign showcase (#ChupNaBaitho, vigilance initiatives).
+
+---
+
+## 4. Mega Menu Architecture (Navigation Alignment)
+
+Matches the exact 2-column structure requested by the client:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
@@ -46,125 +132,35 @@ The Mega Menu for **About Us** directly matches the approved structure:
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Mega Menu Routing:
-- **Organisation Links**:
-  - `Purpose & vision` ➔ `about-us.html#purpose`
-  - `The work we do & its impact` ➔ `the-work-we-do.html`
-  - `History & key milestones` ➔ `history-key-milestones.html`
-  - `Awards & recognition` ➔ `about-us.html#awards`
-  - `Annual reports` ➔ `annual-reports.html`
-  - `Our past campaigns` ➔ `campaigns.html`
-  - `Explore careers with ASCI` ➔ `careers.html`
-  - `Subscribe to our newsletter` ➔ `about-us.html#newsletter`
-- **People Links** (All anchor directly into filtered directory views on `people.html`):
-  - `Board of Governors & Consultative Committee` ➔ `people.html?panel=board#directory`
-  - `ASCI Leadership Team` ➔ `people.html?panel=leadership#directory`
-  - `Consumer Complaints Council` ➔ `people.html?panel=ccc#directory`
-  - `Independent Review Panel` ➔ `people.html?panel=review-panel#directory`
-  - `Technical experts` ➔ `people.html?panel=technical-experts#directory`
-  - `Ad advisory expert panel` ➔ `people.html?panel=ad-advisory#directory`
-  - `Ad Advisory technical experts` ➔ `people.html?panel=advisory-tech-experts#directory`
+---
+
+## 5. Changelog & Audit Record
+
+| Date | Changed By | Nature of Change | Rationale / Notes |
+|------|------------|------------------|-------------------|
+| 2026-10-08 | Project Team | **Content Audit & Reset** | Identified that previous `about-us.html` injected unapproved text (e.g. 4 Pillars, invented milestones) causing client friction. Reset strategy to 100% faithful verbatim content mapping from `https://www.ascionline.in/about-us/`. |
+| 2026-10-08 | Project Team | **Plan Architecture Revision** | Updated `asci_about_us_and_people_plan.md` to establish the strict "Zero-Hallucination / Verbatim Copy" mandate and defined the multi-page hub model matching the live website. |
+| 2026-10-08 | Project Team | **FSSAI Directory System Design** | Detailed the unified People directory (`people.html`) combining Board, CCC, Secretariat, and Panels into a filterable table/grid with live search. |
 
 ---
 
-## 3. Blueprint: `people.html` with FSSAI Directory System
+## 6. How to Talk to the Client (Safe Talking Points)
 
-Inspired by the **FSSAI Directory structure** (`fssai.gov.in/about-us/directory`), the ASCI People page provides both institutional efficiency and modern UX.
-
-### Key Functional Features:
-1. **Live Search Bar**:
-   - Real-time search by person’s name, role (e.g. *Chairman*, *Secretary General*, *Civil Society Member*), or organisation (e.g. *Pidilite*, *DoCA*, *HUL*, *Google*).
-2. **Category / Panel Pills**:
-   - `[ All (35+) ]`
-   - `[ ASCI Leadership (Secretariat) ]`
-   - `[ Board of Governors ]`
-   - `[ Consultative Committee ]`
-   - `[ Consumer Complaints Council (CCC) ]`
-   - `[ Independent Review Panel (Judiciary) ]`
-   - `[ Technical & Ad Advisory Experts ]`
-3. **Dual View Toggle**:
-   - **Table View (Default / FSSAI style)**: Compact, scannable table ideal for quick directory lookups.
-   - **Card / Grid View**: Modern responsive profile cards with member portraits and titles.
-4. **Click-to-View Detail Drawer / Modal**:
-   - Clicking any table row or card opens a clean slide-over drawer / modal showing:
-     - High-resolution photo & full name
-     - Official designation within ASCI & primary organization
-     - Sector representation (e.g. *Civil Society / Legal / Advertiser / Media*)
-     - Detailed professional biographical summary
-     - Specific committee tenure and governance mandate
+When presenting to the client, use these exact talking points:
+1. *"We reviewed your existing website `ascionline.in/about-us/` thoroughly to ensure 100% fidelity to your official language and approved structure."*
+2. *"We treat `about-us.html` as your official Hub & Gateway — highlighting the exact 7 key areas (History, Self-Regulation, The Work We Do, People, Annual Reports, Campaigns, and ASCI Explained) using your approved copy."*
+3. *"We have removed all extraneous or unapproved sections. The enhancement is strictly focused on premium UI/UX: faster page loads, clean typography (`Domine` & `Bricolage Grotesque`), mobile responsiveness, and intuitive directory search."*
+4. *"For the People section, we implemented an institutional directory model (similar to FSSAI) so visitors can easily search members by panel, name, or organization without losing any official details."*
 
 ---
 
-### Directory Table Schema (FSSAI-Inspired):
-
-| # | Name & Portrait | ASCI Designation | Primary Organization / Affiliation | Panel / Body | Action |
-|---|---|---|---|---|---|
-| 1 | **Sudhanshu Vats** | Chairman | Managing Director, Pidilite Industries Ltd | Board of Governors | `[ View Details → ]` |
-| 2 | **Manisha Kapoor** | CEO & Secretary General | ASCI Secretariat / VP, ICAS | Leadership Team | `[ View Details → ]` |
-| 3 | **S. Subramanyeswar** | Vice Chairman | Group CEO & CSO-APAC, MullenLowe Lintas | Board of Governors | `[ View Details → ]` |
-| 4 | **Paritosh Joshi** | Hon. Treasurer | Principal, Provocateur Advisory | Board of Governors | `[ View Details → ]` |
-| 5 | **Barnita Dasgupta** | Chief Financial & Admin Officer | ASCI Secretariat | Leadership Team | `[ View Details → ]` |
-| 6 | **Saheli Sinha** | Director, Operations | ASCI Secretariat | Leadership Team | `[ View Details → ]` |
-| 7 | **Rohit Kumar Singh** | Eminent Member | Member, NCDRC; Former Secretary, DoCA | Board / Eminent | `[ View Details → ]` |
-| 8 | **Civil Society Reps** | CCC Member | Independent panelist (Legal, Medicine, Consumer) | Consumer Complaints Council | `[ View Details → ]` |
-| ... | *(30+ Verified Members)* | ... | ... | ... | `[ View Details → ]` |
-
----
-
-## 4. Blueprint: Main `about-us.html` Page
-
-A clean, minimalist gateway highlighting ASCI's mandate, principles, and direct paths to the directories and reports.
-
-### Section-by-Section Wireframe:
-```
-┌──────────────────────────────────────────────────────────────────────┐
-│ 1. Header & Breadcrumb                                               │
-│    - Home > About Us                                                 │
-│    - Title: "About ASCI"                                             │
-│    - Subhead: "The Advertising Standards Council of India –          │
-│      Established in 1985 as an independent self-regulatory body      │
-│      committed to honest, decent, safe, and fair advertising."       │
-├──────────────────────────────────────────────────────────────────────┤
-│ 2. Foundational Pillars (Clean 4-Card Grid)                          │
-│    - 1. Honest Representations (Claims backed by substantiation)     │
-│    - 2. Non-Offensive to Public Decency (Respectful community norms) │
-│    - 3. Safeguard Against Harm (Protection of minors, safety rules)  │
-│    - 4. Fairness in Competition (Truthful comparison, no disparaging)│
-├──────────────────────────────────────────────────────────────────────┤
-│ 3. What We Do (Preventive & Corrective Framework)                    │
-│    - Left: Preventive (Advisory services, training, guidelines)      │
-│    - Right: Corrective (Complaint processing, independent CCC review)│
-│    - CTA Link: "Explore The Work We Do & Its Impact →"               │
-├──────────────────────────────────────────────────────────────────────┤
-│ 4. Key Milestones at a Glance (Minimalist Decade Timeline)           │
-│    - 1985: Foundation by advertisers, agencies, and media            │
-│    - 2000s: Official statutory alignment & broadcaster adoption      │
-│    - 2020: NAMS proactive digital tracking & influencer guidelines  │
-│    - 2024–2026: Greenwashing guidelines, AI studies & ASCI Academy   │
-│    - CTA Link: "View Full 40-Year Timeline & Milestones →"           │
-├──────────────────────────────────────────────────────────────────────┤
-│ 5. People & Governance Spotlight                                     │
-│    - Explaining the tri-fold institutional balance:                  │
-│      * Board of Governors (Strategy & industry stewardship)          │
-│      * Consumer Complaints Council (Independent, 50%+ civil society) │
-│      * Secretariat (Daily operations & complaint processing)         │
-│    - CTA Link: "Open Institutional Directory & Member Search →"      │
-├──────────────────────────────────────────────────────────────────────┤
-│ 6. Annual Reports, Inquiries & Newsletter Strip                      │
-│    - Download link for latest Complaints Report                      │
-│    - One-click newsletter subscription input                         │
-└──────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 5. Technical Implementation Details
+## 7. Technical Implementation Details
 
 1. **Design Tokens & Typography**:
    - Fonts: `Domine` (headings) and `Bricolage Grotesque` (body & tabular data).
    - Brand Teal: `#008779` & Deep Emerald: `#086b59`.
-   - Table Styling: Clean borders (`#e2e8f0`), subtle hover highlighting (`#f8fafc`), alternating rows, and responsive horizontal scroll on mobile.
-2. **Search & Filter Engine**:
+   - Card & Table Styling: Clean borders (`#e2e8f0`), subtle hover highlighting (`#f8fafc`), alternating rows, and responsive mobile-first layouts.
+2. **Directory Engine (`people.html`)**:
    - Lightweight, instant client-side JavaScript filter:
      ```javascript
      function filterDirectory(query, panel) {
@@ -177,16 +173,78 @@ A clean, minimalist gateway highlighting ASCI's mandate, principles, and direct 
 
 ---
 
-## 6. Execution Roadmap
+## 8. Workflow Strategy: One-Page-at-a-Time Execution
 
-1. **Phase 1: Update Mega Menu in `ASCI (3).html`**
-   - Implement the exact 2-column layout + left highlight box from your screenshot.
-2. **Phase 2: Build `people.html` (The FSSAI-Inspired Directory Hub)**
-   - Complete directory table with instant search, category pill filters, table/grid toggle, and the detailed profile modal.
-3. **Phase 3: Build `about-us.html` (Overview Gateway)**
-   - Minimalist structure, 4 pillars, timeline teaser, work & impact overview, and direct links to `people.html`.
-4. **Phase 4: Build Supporting Pages**
-   - `history-key-milestones.html` (interactive chronological timeline).
-   - `the-work-we-do.html` (preventative vs. corrective operational guide).
-5. **Phase 5: Verification & Review**
-   - Test search, modal popups, responsive table scrolling on mobile, and menu navigation.
+To maintain total quality control, prevent client overwhelm, and eliminate errors:
+1. **Incremental Validation**: We work on **one single page at a time**.
+2. **Lock-In Before Moving Forward**: We review, audit against the live site, and lock down each page before starting the next one.
+3. **Continuous Plan Updating**: After every page update, this document is updated with:
+   - What page was modified
+   - Exactly what sections were created
+   - Why that specific content and layout were chosen (referencing live URLs)
+   - Status (e.g. `LOCKED & VERIFIED`, `IN PROGRESS`, `PENDING`)
+
+---
+
+## 9. Detailed Page-by-Page Execution Log & Content Rationale
+
+### Page 1: `about-us.html` (All About ASCI Gateway Hub)
+- **Status**: **LOCKED & VERIFIED (Ready for Client Review)**
+- **Source of Truth Live URL**: `https://www.ascionline.in/about-us/`
+- **What Was Built**:
+  1. **Breadcrumb**: `You're here: Home > About Us` (Maintains standard user navigation).
+  2. **Banner Header**:
+     - Heading: `All About ASCI`
+     - Subhead: *"Know all about what we do, how self-regulation works, the people at ASCI and the impact we create through our work."*
+     - Rationale: Verbatim copy from the live `ascionline.in/about-us/` page.
+  3. **The 7 Core Gateway Cards**:
+     - **Card 1: History & Key Milestones** (`history-key-milestones.html`)
+       - Copy: *"ASCI was formed in 1985 by professionals from the advertising and media industry to keep Indian ads decent, fair and honest. Over the years, our work and role has evolved greatly."*
+     - **Card 2: About Self-Regulation** (`about-self-regulation.html`)
+       - Copy: *"An overview of self-regulation and how it benefits all stakeholders."*
+     - **Card 3: The Work We Do** (`the-work-we-do.html`)
+       - Copy: *"Supporting advertisers get it right as well as correcting them when they get it wrong."*
+     - **Card 4: People** (`people.html`)
+       - Copy: *"Meet the ASCI board, Our Consumer Complaints Council Members, Consultative Committee and our Secretariat team who together champion responsible advertising."*
+     - **Card 5: Annual Reports** (`annual-reports.html`)
+       - Copy: *"Read up on important milestones, changes and progress made year-on-year by ASCI."*
+     - **Card 6: Ad Campaigns** (`campaigns.html`)
+       - Copy: *"Here are the ads that ASCI has made in the past to encourage consumers to be more vigilant."*
+     - **Card 7: ASCI Explained** (`https://www.ascionline.in/asci-explained/`)
+       - Copy: *"Essential explanatory guides and resources on self-regulation, consumer rights, and how advertising standards work in India."*
+- **What Was Removed & Why**:
+  - Removed previously invented "Four Principles of Responsible Advertising", fabricated decade timelines, and unapproved slogans. The live site uses `about-us` strictly as an introductory directory hub leading to deep-dive pages.
+
+---
+
+### Page 2: `people.html` (Unified People & Governance Directory)
+- **Status**: **NEXT IN QUEUE**
+- **Source of Truth Live URLs**:
+  - `https://www.ascionline.in/board-of-governors-and-special-invitees/`
+  - `https://www.ascionline.in/consultative-committee/`
+  - `https://www.ascionline.in/secretariat/`
+  - `https://www.ascionline.in/consumer-complaints-council/`
+  - `https://www.ascionline.in/independent-review-panel/`
+  - `https://www.ascionline.in/technical-experts/`
+- **Proposed Architecture**:
+  - Unified directory with instant search & panel pills (FSSAI directory model) to prevent users from navigating across 6 disjointed legacy sub-pages, while preserving 100% of member names, roles, affiliations, and council mandates.
+
+---
+
+### Page 3: `the-work-we-do.html`
+- **Status**: **PENDING**
+- **Live Source**: `https://www.ascionline.in/work-we-do/` (Our Purpose, Handling Complaints, What We Cover, Proactive Monitoring, Working with Others).
+
+---
+
+### Page 4: `history-key-milestones.html`
+- **Status**: **PENDING**
+- **Live Source**: `https://www.ascionline.in/history-key-milestones/` (40-year chronology).
+
+---
+
+### Page 5: `annual-reports.html`
+- **Status**: **PENDING**
+- **Live Source**: `https://www.ascionline.in/annual-reports/`.
+
+

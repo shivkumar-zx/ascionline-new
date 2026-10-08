@@ -247,4 +247,25 @@ To maintain total quality control, prevent client overwhelm, and eliminate error
 - **Status**: **PENDING**
 - **Live Source**: `https://www.ascionline.in/annual-reports/`.
 
+---
+
+### Page 6: `campaigns.html` / `ad-campaigns.html` (Our Past Campaigns Gallery)
+- **Status**: **BUILT & VERIFIED (Zero Hallucination - 100% Client Assets)**
+- **Source of Truth Live URL**: `https://www.ascionline.in/ad-campaigns/`
+- **What Was Built**:
+  1. **Breadcrumb**: `Home > About Us > Ad Campaigns`
+  2. **Hero Header**:
+     - Heading: `Ad Campaigns`
+     - Subhead: *"Find out more about the ads that ASCI has made in the past to encourage consumers to be more vigilant."*
+     - Live Stats Strip: 113 total campaign assets across 6 major years (26 YouTube video films & PSAs + 87 print/digital artboards from 2016 to 2025).
+  3. **Interactive Filter Toolbar**:
+     - Media Selector: `All Media (113)`, `Video Films (26)`, `Print & Digital Ads (87)`
+     - Year Selector Pills: `All Years`, `2025`, `2022`, `2021`, `2020`, `2019`, `2016`
+     - Real-Time Search Bar: Instant client-side search across campaign titles, artboard captions, and years.
+  4. **Gallery Grid & YouTube Video Lightbox**:
+     - 100% authentic images and YouTube embeds directly extracted from the live site (including `#ChupNaBaitho`, `Endorser Due Diligence`, `Advertising Advice`, and `Influencer Disclosure Guidelines`).
+     - Responsive cards with video badges, hover zoom, and a lightweight vanilla JS modal popup that autoplays YouTube videos and cleanly terminates playback on close or ESC.
+  5. **Zero Invented Copy**: Every asset title, caption, year, YouTube ID, and image URL is verbatim from the live ASCI WordPress installation.
+
+
 

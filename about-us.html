@@ -4201,6 +4201,137 @@ button {
   }
 }
 
+/* ================= ANNUAL REPORTS PREVIEW SECTION ================= */
+.about-reports-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 991px) {
+  .about-reports-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .about-reports-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-report-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.22s ease;
+  position: relative;
+}
+
+.about-report-card:hover {
+  transform: translateY(-4px);
+  border-color: #008779;
+  box-shadow: 0 12px 28px rgba(0, 135, 121, 0.09);
+}
+
+.about-report-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 8px;
+}
+
+.about-report-title {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.about-report-card:hover .about-report-title {
+  color: #008779;
+}
+
+.about-report-desc {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.about-report-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.about-report-meta {
+  font-size: 0.8rem;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.report-badge {
+  font-size: 0.775rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.report-badge.milestone {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.report-badge.year {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.report-badge.gov {
+  background: #e6f4f2;
+  color: #008779;
+}
+
+.btn-report-download {
+  background: #f0fdfa;
+  color: #008779;
+  border: 1px solid rgba(0, 135, 121, 0.25);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.btn-report-download:hover {
+  background: #008779;
+  color: #ffffff !important;
+  border-color: #008779;
+  box-shadow: 0 4px 12px rgba(0, 135, 121, 0.2);
+}
+
 /* Lightbox Modal for Campaigns Preview */
 .media-modal-backdrop {
   position: fixed;
@@ -6004,7 +6135,7 @@ button {
             <a href="https://www.ascionline.in/about-us/">Careers &amp; Opportunities</a>
             <a href="https://www.ascionline.in/history-key-milestones/">History &amp; Key Milestones</a>
             <a href="https://www.ascionline.in/about-us/">Awards &amp; Recognition</a>
-            <a href="https://www.ascionline.in/annual-reports/">Annual Reports</a>
+            <a href="annual-reports.html">Annual Reports</a>
             <a href="https://www.ascionline.in/the-work-we-do/our-purpose/">Our Impact</a>
           </div>
         </div>
@@ -6549,6 +6680,118 @@ button {
           <p class="award-desc">
             Officially recognized under the Cable Television Networks Rules, with active co-regulatory partnerships alongside the Department of Consumer Affairs (DoCA), FSSAI, AYUSH, and Maha RERA.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Annual Reports & Transparency Section -->
+  <section class="about-section" id="annual-reports" style="background: #f8fafc;">
+    <div class="container">
+      <div class="campaigns-section-header">
+        <div class="campaigns-section-header-left">
+          <div class="section-eyebrow">Governance &amp; Transparency</div>
+          <h2 class="section-heading" style="margin-bottom: 10px;">Annual Reports &amp; Financials</h2>
+          <p class="section-intro-text" style="margin-bottom: 0;">
+            Review four decades of self-regulatory governance, audited statutory financials, Consumer Complaints Council (CCC) adjudication metrics, and industry compliance benchmarks.
+          </p>
+        </div>
+        <div class="campaigns-section-header-right">
+          <a href="annual-reports.html" class="btn-explore-campaigns">
+            <span>Explore All 40+ Reports</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="about-reports-grid">
+        <!-- Preview Card 1: 2025-26 -->
+        <div class="about-report-card">
+          <div>
+            <div class="about-report-top">
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                <span class="report-badge gov">Statutory Accounts</span>
+                <span class="report-badge milestone">40th Milestone</span>
+              </div>
+              <span class="report-badge year">2025–26</span>
+            </div>
+            <h3 class="about-report-title">ASCI Annual Report 2025–2026</h3>
+            <p class="about-report-desc">
+              The flagship 40-year milestone publication covering audited statutory financial accounts, CCC adjudication metrics, ASCI Academy impact, and AI monitoring expansions.
+            </p>
+          </div>
+          <div class="about-report-footer">
+            <span class="about-report-meta">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2026/09/Annual-Report-2025-26.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Preview Card 2: 2024-25 -->
+        <div class="about-report-card">
+          <div>
+            <div class="about-report-top">
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                <span class="report-badge gov">Statutory Accounts</span>
+                <span class="report-badge milestone" style="background: #e0f2fe; color: #0369a1; border-color: #bae6fd;">Digital Edition</span>
+              </div>
+              <span class="report-badge year">2024–25</span>
+            </div>
+            <h3 class="about-report-title">ASCI Annual Report 2024–2025</h3>
+            <p class="about-report-desc">
+              Comprehensive review of advertising self-regulation across 50+ sectors, influencer marketing compliance, dark pattern detections, and consumer dispute resolutions.
+            </p>
+          </div>
+          <div class="about-report-footer">
+            <span class="about-report-meta">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2025/08/ASCI-Annual-Report-Digital-2024-25.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Preview Card 3: 2023-24 -->
+        <div class="about-report-card">
+          <div>
+            <div class="about-report-top">
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                <span class="report-badge gov">Statutory Accounts</span>
+              </div>
+              <span class="report-badge year">2023–24</span>
+            </div>
+            <h3 class="about-report-title">ASCI Annual Report 2023–2024</h3>
+            <p class="about-report-desc">
+              Audited balance sheets, AGM disclosures, cross-regulatory government partnerships (DoCA, CCPA, FSSAI, AYUSH), and preventive advisory services.
+            </p>
+          </div>
+          <div class="about-report-footer">
+            <span class="about-report-meta">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2024/09/Annual-Report-2023-24.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -4927,6 +4927,17 @@ button {
   color: #008779;
 }
 
+
+.report-card-meta-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: #64748b;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 .report-card-desc {
   font-size: 0.9rem;
   color: #475569;
@@ -6452,45 +6463,48 @@ button {
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="text" id="reportSearchInput" placeholder="Search reports by year, title, category (e.g. 2025, AGM, Complaints, AI, Nasscom)..." oninput="handleReportSearch(this.value)">
+            <input type="text" id="reportSearchInput" placeholder="Search 40 official annual reports by year or edition (e.g. 2025-26, 1985, 40th, digital)..." oninput="handleReportSearch(this.value)">
           </div>
 
           <div class="report-counter" id="reportCounter">
-            Showing <strong id="visibleCount">18</strong> Publications
+            Showing <strong id="visibleCount">40</strong> Reports
           </div>
         </div>
 
         <!-- Filter Pills Bar -->
         <div class="filter-pills-wrap" id="reportFilterPills">
-          <button class="filter-pill active" data-category="all" onclick="filterByCategory('all')">All Publications (18)</button>
-          <button class="filter-pill" data-category="agm" onclick="filterByCategory('agm')">Annual Governance Reports (AGM)</button>
-          <button class="filter-pill" data-category="complaints" onclick="filterByCategory('complaints')">Complaints &amp; Compliance Trends</button>
-          <button class="filter-pill" data-category="research" onclick="filterByCategory('research')">Specialized Research &amp; Whitepapers</button>
+          <button class="filter-pill active" data-range="all" onclick="filterByRange('all')">All Reports (40)</button>
+          <button class="filter-pill" data-range="2020-2030" onclick="filterByRange('2020-2030')">2020 &ndash; Current (6)</button>
+          <button class="filter-pill" data-range="2010-2020" onclick="filterByRange('2010-2020')">2010 &ndash; 2020 (10)</button>
+          <button class="filter-pill" data-range="2000-2010" onclick="filterByRange('2000-2010')">2000 &ndash; 2010 (10)</button>
+          <button class="filter-pill" data-range="1990-2000" onclick="filterByRange('1990-2000')">1990 &ndash; 2000 (10)</button>
+          <button class="filter-pill" data-range="1985-1990" onclick="filterByRange('1985-1990')">1985 &ndash; 1990 (4)</button>
         </div>
       </div>
 
       <!-- Report Cards Grid -->
       <div class="reports-grid" id="reportsGrid">
 
-        <!-- Card 1 -->
-        <div class="report-card" data-category="agm" data-year="2025-26" data-title="ASCI Annual Report 2025–26 (40th Milestone Edition)" data-keywords="agm financial accounts 2025 2026 governance milestone">
+        <div class="report-card" data-range="2020-2030" data-year="2025-2026" data-title="Annual Report 2025-2026">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge gov">Governance (AGM)</span>
-                <span class="report-badge milestone">40th Milestone</span>
+                <span class="report-badge gov">Statutory Accounts</span> <span class="report-badge milestone">40th Milestone</span>
               </div>
-              <span class="report-badge year">2025–26</span>
+              <span class="report-badge year">2025-2026</span>
             </div>
-            <h3 class="report-card-title">ASCI Annual Report 2025–26 (40th Milestone Edition)</h3>
-            <p class="report-card-desc">
-              The flagship 40-year milestone review covering audited financial accounts, CCC adjudication metrics, ASCI Academy impact, and AI monitoring expansions.
-            </p>
+            <h3 class="report-card-title">Annual Report 2025-2026</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 64 Pages</span>
+              <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2026/09/Annual-Report-2025-26.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
@@ -6498,24 +6512,26 @@ button {
           </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="report-card" data-category="agm" data-year="2024-25" data-title="ASCI Annual Report 2024–25 (Digital Edition)" data-keywords="agm digital accounts 2024 2025 governance">
+        <div class="report-card" data-range="2020-2030" data-year="2024-2025" data-title="Annual Report 2024-2025">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge gov">Governance (AGM)</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2024–25</span>
+              <span class="report-badge year">2024-2025</span>
             </div>
-            <h3 class="report-card-title">ASCI Annual Report 2024–25 (Digital Edition)</h3>
-            <p class="report-card-desc">
-              Comprehensive institutional review focusing on digital ecosystem accountability, over 10,000 ads evaluated, and influencer guidelines enforcement.
-            </p>
+            <h3 class="report-card-title">Annual Report 2024-2025</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 56 Pages</span>
+              <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2025/08/ASCI-Annual-Report-Digital-2024-25.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
@@ -6523,24 +6539,26 @@ button {
           </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="report-card" data-category="agm" data-year="2023-24" data-title="38th Annual Complaints & AGM Report 2023–24" data-keywords="agm complaints report 2023 2024 financial accounts">
+        <div class="report-card" data-range="2020-2030" data-year="2023-2024" data-title="Annual Report 2023-2024">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge gov">Governance (AGM)</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2023–24</span>
+              <span class="report-badge year">2023-2024</span>
             </div>
-            <h3 class="report-card-title">38th Annual Complaints &amp; AGM Report 2023–24</h3>
-            <p class="report-card-desc">
-              Official AGM proceedings, audited balance sheets, Board elections, and cross-sector self-regulatory compliance metrics across broadcast and print.
-            </p>
+            <h3 class="report-card-title">Annual Report 2023-2024</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 48 Pages</span>
+              <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2024/09/agm-report-20-Aug-2024.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
@@ -6548,24 +6566,26 @@ button {
           </div>
         </div>
 
-        <!-- Card 4 -->
-        <div class="report-card" data-category="agm" data-year="2022-23" data-title="ASCI Annual Report 2022–23 (Web Ready)" data-keywords="agm 2022 2023 academy launch automated monitoring">
+        <div class="report-card" data-range="2020-2030" data-year="2022-2023" data-title="Annual Report 2022-2023">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge gov">Governance (AGM)</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2022–23</span>
+              <span class="report-badge year">2022-2023</span>
             </div>
-            <h3 class="report-card-title">ASCI Annual Report 2022–23: Expanding The Frontiers of Trust</h3>
-            <p class="report-card-desc">
-              Annual review documenting the inception of the ASCI Academy, AI-assisted monitoring tools deployment, and consumer redressal milestones.
-            </p>
+            <h3 class="report-card-title">Annual Report 2022-2023</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 52 Pages</span>
+              <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2023/09/ASCI-Annual-Report-2022-2023_Webready.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
@@ -6573,24 +6593,26 @@ button {
           </div>
         </div>
 
-        <!-- Card 5 -->
-        <div class="report-card" data-category="agm" data-year="2021-22" data-title="ASCI Annual Report 2021–22" data-keywords="agm 2021 2022 crypto gaming guidelines">
+        <div class="report-card" data-range="2020-2030" data-year="2021-2022" data-title="Annual Report 2021-2022">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge gov">Governance (AGM)</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2021–22</span>
+              <span class="report-badge year">2021-2022</span>
             </div>
-            <h3 class="report-card-title">ASCI Annual Report 2021–22: Navigating The Digital Shift</h3>
-            <p class="report-card-desc">
-              36th annual report highlighting post-pandemic advertising standards, Virtual Digital Assets (crypto) safeguards, and online real-money gaming codes.
-            </p>
+            <h3 class="report-card-title">Annual Report 2021-2022</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 44 Pages</span>
+              <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/11/Annual-Report-2021-2022.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
@@ -6598,24 +6620,26 @@ button {
           </div>
         </div>
 
-        <!-- Card 6 -->
-        <div class="report-card" data-category="agm" data-year="2020-21" data-title="35th Report & Accounts for the Year 2020–21" data-keywords="agm 2020 2021 accounts audited balance sheet covid">
+        <div class="report-card" data-range="2020-2030" data-year="2020-2021" data-title="Annual Report 2020 - 2021">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge gov">Governance (AGM)</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2020–21</span>
+              <span class="report-badge year">2020-2021</span>
             </div>
-            <h3 class="report-card-title">35th Report &amp; Accounts for the Year 2020–21</h3>
-            <p class="report-card-desc">
-              Statutory audited accounts, income statement, CCC case decisions, and advisory interventions during the peak of the COVID-19 pandemic.
-            </p>
+            <h3 class="report-card-title">Annual Report 2020 - 2021</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 40 Pages</span>
+              <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/35th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2020-2021.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
@@ -6623,306 +6647,923 @@ button {
           </div>
         </div>
 
-        <!-- Card 7 -->
-        <div class="report-card" data-category="agm" data-year="2019-20" data-title="34th Annual Report & Financial Accounts 2019–20" data-keywords="agm 2019 2020 archive accounts nams">
+        <div class="report-card" data-range="2010-2020" data-year="2019-2020" data-title="Annual Report 2019 - 2020">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge gov">Governance (AGM)</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2019–20</span>
+              <span class="report-badge year">2019-2020</span>
             </div>
-            <h3 class="report-card-title">34th Annual Report &amp; Financial Accounts 2019–20</h3>
-            <p class="report-card-desc">
-              Historical compliance dossier tracking proactive National Advertising Monitoring Service (NAMS) operations and consumer protection outcomes.
-            </p>
+            <h3 class="report-card-title">Annual Report 2019 - 2020</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 38 Pages</span>
+              <span>AGM Publication</span>
             </span>
-            <a href="https://www.ascionline.in/wp-content/uploads/2022/08/Annual-Report-2019-2020.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/34th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2019-2020.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
             </a>
           </div>
         </div>
 
-        <!-- Card 8 -->
-        <div class="report-card" data-category="agm" data-year="2018-19" data-title="33rd Annual Report & Accounts 2018–19" data-keywords="agm 2018 2019 archive accounts fmcg">
+        <div class="report-card" data-range="2010-2020" data-year="2018-2019" data-title="Annual Report 2018 - 2019">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge gov">Governance (AGM)</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2018–19</span>
+              <span class="report-badge year">2018-2019</span>
             </div>
-            <h3 class="report-card-title">33rd Annual Report &amp; Accounts 2018–19</h3>
-            <p class="report-card-desc">
-              Historic governance archive documenting self-regulation across FMCG, education, healthcare, and telecommunication broadcast advertising.
-            </p>
+            <h3 class="report-card-title">Annual Report 2018 - 2019</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 36 Pages</span>
+              <span>AGM Publication</span>
             </span>
-            <a href="https://www.ascionline.in/wp-content/uploads/2022/08/Annual-Report-2018-2019.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/33rd-Report-_-Accounts-for-2018-19.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
             </a>
           </div>
         </div>
 
-        <!-- Card 9: Complaints 2025-26 -->
-        <div class="report-card" data-category="complaints" data-year="2025-26" data-title="Annual Complaints & Violation Trends Report 2025–26" data-keywords="complaints violations 2025 2026 dark patterns ai finfluencer compliance">
+        <div class="report-card" data-range="2010-2020" data-year="2017-2018" data-title="Annual Report 2017 - 2018">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge complaints">Complaints Trend</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2025–26</span>
+              <span class="report-badge year">2017-2018</span>
             </div>
-            <h3 class="report-card-title">Annual Complaints &amp; Violation Trends Report 2025–26</h3>
-            <p class="report-card-desc">
-              Comprehensive annual breakdown of 12,400+ complaints evaluated by the CCC. Features sector-by-sector violation heatmaps, dark pattern prevalence, and 82% voluntary compliance.
-            </p>
+            <h3 class="report-card-title">Annual Report 2017 - 2018</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 32 Pages</span>
+              <span>AGM Publication</span>
             </span>
-            <a href="https://www.ascionline.in/wp-content/uploads/2026/05/annual-complaints-report-25-26-final.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/32nd-Annual-Reports-2017-18.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
             </a>
           </div>
         </div>
 
-        <!-- Card 10: Complaints Half-Yearly 2025-26 -->
-        <div class="report-card" data-category="complaints" data-year="2025-26" data-title="Half-Yearly Complaints & Digital Monitoring Report 2025–26" data-keywords="complaints half yearly 2025 2026 digital monitoring influencer">
+        <div class="report-card" data-range="2010-2020" data-year="2016-2017" data-title="Annual Report 2016 - 2017">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge complaints">Complaints Trend</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2025–26 (H1)</span>
+              <span class="report-badge year">2016-2017</span>
             </div>
-            <h3 class="report-card-title">Half-Yearly Complaints &amp; Digital Monitoring Report 2025–26</h3>
-            <p class="report-card-desc">
-              Mid-year transparency snapshot tracking surging influencer non-disclosure rates on short-video platforms, e-commerce quick-commerce countdown timers, and healthcare claim challenges.
-            </p>
+            <h3 class="report-card-title">Annual Report 2016 - 2017</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 24 Pages</span>
+              <span>AGM Publication</span>
             </span>
-            <a href="https://www.ascionline.in/wp-content/uploads/2025/11/ASCI-Half-Yearly-Complaints-Report-2025-26.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/31st-Annual-Report-2016-17.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
             </a>
           </div>
         </div>
 
-        <!-- Card 11: Digital ASCI Complaints 2024-25 -->
-        <div class="report-card" data-category="complaints" data-year="2024-25" data-title="Digital ASCI Annual Complaints & Violations Report 2024–25" data-keywords="complaints digital 2024 2025 social media monitoring nams">
+        <div class="report-card" data-range="2010-2020" data-year="2015-2016" data-title="Annual Report 2015 - 2016">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge complaints">Complaints Trend</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2024–25</span>
+              <span class="report-badge year">2015-2016</span>
             </div>
-            <h3 class="report-card-title">Digital ASCI Annual Complaints &amp; Violations Report 2024–25</h3>
-            <p class="report-card-desc">
-              Dedicated analysis of digital ecosystem ads. Highlights automated AI scanning across 3,000+ digital media outlets, Instagram, YouTube, and finfluencer advisory adherence.
-            </p>
+            <h3 class="report-card-title">Annual Report 2015 - 2016</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 28 Pages</span>
+              <span>AGM Publication</span>
             </span>
-            <a href="https://www.ascionline.in/wp-content/uploads/2025/05/Digital-ASCI-Annual-Complaints-Report-2024-2025.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/30th-Report-_-Accounts-of-2015-16.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
             </a>
           </div>
         </div>
 
-        <!-- Card 12: Complaints 2023-24 -->
-        <div class="report-card" data-category="complaints" data-year="2023-24" data-title="Annual Complaints Insights Report 2023–24" data-keywords="complaints insights 2023 2024 ccc redressal">
+        <div class="report-card" data-range="2010-2020" data-year="2014-2015" data-title="Annual Report 2014 - 2015">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge complaints">Complaints Trend</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2023–24</span>
+              <span class="report-badge year">2014-2015</span>
             </div>
-            <h3 class="report-card-title">Annual Complaints Insights Report 2023–24</h3>
-            <p class="report-card-desc">
-              Examination of 8,299 ads with 94% compliance across processed complaints. Comprehensive sector analysis across healthcare, personal care, education, and BFSI.
-            </p>
+            <h3 class="report-card-title">Annual Report 2014 - 2015</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 26 Pages</span>
+              <span>AGM Publication</span>
             </span>
-            <a href="https://www.ascionline.in/wp-content/uploads/2024/05/Annual-Complaints-Report-2023-24.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/29th-REPORT-_-ACCOUNTS-OF-THE-YEAR-2014-2015.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
             </a>
           </div>
         </div>
 
-        <!-- Card 13: Half-Yearly Complaints 2023-24 -->
-        <div class="report-card" data-category="complaints" data-year="2023-24" data-title="Half-Yearly Complaints & Adjudication Trends 2023–24" data-keywords="complaints half yearly 2023 2024 festive ads green claims">
+        <div class="report-card" data-range="2010-2020" data-year="2013-2014" data-title="Annual Report 2013-2014">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge complaints">Complaints Trend</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2023–24 (H1)</span>
+              <span class="report-badge year">2013-2014</span>
             </div>
-            <h3 class="report-card-title">Half-Yearly Complaints &amp; Adjudication Trends 2023–24</h3>
-            <p class="report-card-desc">
-              Interim compliance metrics evaluating festive advertising campaigns, environmental claims, and influencer disclosure guidelines adoption.
-            </p>
+            <h3 class="report-card-title">Annual Report 2013-2014</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 20 Pages</span>
+              <span>AGM Publication</span>
             </span>
-            <a href="https://www.ascionline.in/wp-content/uploads/2023/11/Half-Yearly-Complaints-Report-2023-24.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/28th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2013-2014.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
             </a>
           </div>
         </div>
 
-        <!-- Card 14: The AdLaw Compendium 2026 -->
-        <div class="report-card" data-category="research" data-year="2026" data-title="The AdLaw Compendium: Statutory Principles & Precedents" data-keywords="research whitepaper adlaw compendium law legal ccpa statute 2026">
+        <div class="report-card" data-range="2010-2020" data-year="2012-2013" data-title="Annual Report  2012 -2013">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge research">Research Compendium</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2026 Edition</span>
+              <span class="report-badge year">2012-2013</span>
             </div>
-            <h3 class="report-card-title">The AdLaw Compendium: Statutory Principles &amp; Precedents</h3>
-            <p class="report-card-desc">
-              Authoritative 200+ page legal compendium analyzing the intersection of the ASCI Code with 50+ central and state statutes, CCPA guidelines, and High Court rulings.
-            </p>
+            <h3 class="report-card-title">Annual Report  2012 -2013</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 210 Pages</span>
+              <span>AGM Publication</span>
             </span>
-            <a href="https://www.ascionline.in/wp-content/uploads/2026/03/The-AdLaw-Compendium.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/27th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2012-2013.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
             </a>
           </div>
         </div>
 
-        <!-- Card 15: Conscious Patterns Nasscom -->
-        <div class="report-card" data-category="research" data-year="2024" data-title="Conscious Patterns: Dark Patterns in Indian Apps (with Nasscom)" data-keywords="research whitepaper dark patterns nasscom ui ux design deceptive 2024">
+        <div class="report-card" data-range="2010-2020" data-year="2011-2012" data-title="Annual Report  2011 - 2012">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge research">Research Study</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2024</span>
+              <span class="report-badge year">2011-2012</span>
             </div>
-            <h3 class="report-card-title">Conscious Patterns: Dark Patterns in Indian Apps (ASCI &amp; Nasscom)</h3>
-            <p class="report-card-desc">
-              Groundbreaking empirical study analyzing 53 popular Indian mobile apps to document 13 recognized dark patterns including drip pricing, false urgency, and basket sneaking.
-            </p>
+            <h3 class="report-card-title">Annual Report  2011 - 2012</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 34 Pages</span>
+              <span>AGM Publication</span>
             </span>
-            <a href="https://www.ascionline.in/wp-content/uploads/2024/08/Consious-Patterns-Report-Summary.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/26th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2011-2012.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
             </a>
           </div>
         </div>
 
-        <!-- Card 16: GenAI Whitepaper Khaitan -->
-        <div class="report-card" data-category="research" data-year="2024" data-title="Generative AI in Advertising Whitepaper (with Khaitan & Co)" data-keywords="research whitepaper genai ai artificial intelligence khaitan legal 2024">
+        <div class="report-card" data-range="2010-2020" data-year="2010-2011" data-title="Annual Report  2010 - 2011">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge research">Policy Whitepaper</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2024</span>
+              <span class="report-badge year">2010-2011</span>
             </div>
-            <h3 class="report-card-title">Generative AI in Advertising: Innovation, IP &amp; Truthfulness</h3>
-            <p class="report-card-desc">
-              Collaborative industry whitepaper examining legal liability, synthetic media copyright ownership, deepfakes, and disclosure standards for AI-generated ads.
-            </p>
+            <h3 class="report-card-title">Annual Report  2010 - 2011</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 40 Pages</span>
+              <span>AGM Publication</span>
             </span>
-            <a href="https://www.ascionline.in/wp-content/uploads/2024/07/Kco-WhitePaper-GenAI-D11-DIGITAL_LowRes.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/25th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2010-2011.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
             </a>
           </div>
         </div>
 
-        <!-- Card 17: Cookies Whitepaper -->
-        <div class="report-card" data-category="research" data-year="2025" data-title="Navigating Cookies & Digital Tracking in the Era of DPDP Act" data-keywords="research whitepaper cookies tracking dpdp privacy data protection 2025">
+        <div class="report-card" data-range="2000-2010" data-year="2009-2010" data-title="Annual Reports 2009 - 2010">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge research">Technical Whitepaper</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2025</span>
+              <span class="report-badge year">2009-2010</span>
             </div>
-            <h3 class="report-card-title">Navigating Cookies &amp; Digital Tracking in the Era of DPDP Act</h3>
-            <p class="report-card-desc">
-              Technical guidance on consumer privacy, consent management, first-party data architectures, and transparent targeting following India's Digital Personal Data Protection Act.
-            </p>
+            <h3 class="report-card-title">Annual Reports 2009 - 2010</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 30 Pages</span>
+              <span>AGM Publication</span>
             </span>
-            <a href="https://www.ascionline.in/wp-content/uploads/2025/01/Navigating-Cookies-Digital-1.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/24th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2009-2010.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
             </a>
           </div>
         </div>
 
-        <!-- Card 18: Influencer Scorecard -->
-        <div class="report-card" data-category="research" data-year="2025" data-title="Top Influencer Compliance Scorecard 2025" data-keywords="research scorecard influencer compliance social media creators 2025">
+        <div class="report-card" data-range="2000-2010" data-year="2008-2009" data-title="Annual Report 2008 - 2009">
           <div>
             <div class="report-card-top">
               <div class="card-badge-group">
-                <span class="report-badge research">Compliance Scorecard</span>
+                <span class="report-badge gov">Statutory Accounts</span> 
               </div>
-              <span class="report-badge year">2025</span>
+              <span class="report-badge year">2008-2009</span>
             </div>
-            <h3 class="report-card-title">Top Influencer Compliance Scorecard 2025</h3>
-            <p class="report-card-desc">
-              Independent audit of commercial disclosures across 1,000+ leading digital creators, measuring adherence to hashtag placement, video overlay visibility, and affiliate links.
-            </p>
+            <h3 class="report-card-title">Annual Report 2008 - 2009</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
           </div>
           <div class="report-card-footer">
             <span class="report-card-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>PDF &bull; 24 Pages</span>
+              <span>AGM Publication</span>
             </span>
-            <a href="https://www.ascionline.in/wp-content/uploads/2025/02/Top-Influencer-Compliance-Scorecard-2025-1.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/23rd-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2008-2009.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
               <span>Download PDF &rarr;</span>
             </a>
           </div>
         </div>
 
+        <div class="report-card" data-range="2000-2010" data-year="2007-2008" data-title="Annual Report 2007 - 2008">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">2007-2008</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 2007 - 2008</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/22nd-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2007-2008.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="2000-2010" data-year="2006-2007" data-title="Annual Report 2006 - 2007">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">2006-2007</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 2006 - 2007</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/21st-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2006-2007.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="2000-2010" data-year="2005-2006" data-title="Annual Report 2005 - 2006">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">2005-2006</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 2005 - 2006</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/20th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2005-2006.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="2000-2010" data-year="2004-2005" data-title="Annual Report 2004 - 2005">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">2004-2005</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 2004 - 2005</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/19th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2004-2005.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="2000-2010" data-year="2003-2004" data-title="Annual Report 2003 -2004">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">2003-2004</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 2003 -2004</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/18th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2003-2004.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="2000-2010" data-year="2002-2003" data-title="Annual Report 2002 -2003">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">2002-2003</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 2002 -2003</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/17th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2002-2003.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="2000-2010" data-year="2001-2002" data-title="Annual Report 2001 - 2002">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">2001-2002</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 2001 - 2002</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/16th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2001-2002.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="2000-2010" data-year="2000-2001" data-title="Annual Report 2000-2001">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">2000-2001</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 2000-2001</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/15th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2000-2001.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="1990-2000" data-year="1999-2000" data-title="Annual Report 1999 - 2000">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">1999-2000</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 1999 - 2000</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/14th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1999-2000.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="1990-2000" data-year="1998-1999" data-title="Annual Report 1998 - 1999">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">1998-1999</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 1998 - 1999</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/13th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1998-1999.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="1990-2000" data-year="1997-1998" data-title="Annual Report 1997 - 1998">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">1997-1998</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 1997 - 1998</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/12th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1997-1998.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="1990-2000" data-year="1996-1997" data-title="Annual Report 1996 - 1997">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">1996-1997</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 1996 - 1997</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/11th-REPORT-_-ACCOUNTS-FOR-THE-YERA-1996-1997.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="1990-2000" data-year="1995-1996" data-title="Annual Report 1995 - 1996">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">1995-1996</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 1995 - 1996</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/10th-REPORT-_-ACCOUNTS-FOR-THE-YERA-1995-1996.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="1990-2000" data-year="1994-1995" data-title="Annual Report 1994 - 1995">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">1994-1995</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 1994 - 1995</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/9th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1994-1995.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="1990-2000" data-year="1993-1994" data-title="Annual Report 1993 - 1994">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">1993-1994</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 1993 - 1994</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/8th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1993-1994.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="1990-2000" data-year="1992-1993" data-title="Annual Report 1992 - 1993">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">1992-1993</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 1992 - 1993</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/7th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1992-1993.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="1990-2000" data-year="1991-1992" data-title="Annual Report 1991 - 1992">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">1991-1992</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 1991 - 1992</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/6th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1991-1992.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="1990-2000" data-year="1990-1991" data-title="Annual Report 1990 - 1991">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">1990-1991</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 1990 - 1991</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/5th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1990-1991.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="1985-1990" data-year="1989-1990" data-title="Annual Report 1989 - 1990">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">1989-1990</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 1989 - 1990</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/4th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1989-1990.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="1985-1990" data-year="1988-1989" data-title="Annual Report 1988 - 1989">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">1988-1989</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 1988 - 1989</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/3rd-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1988-1989.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="1985-1990" data-year="1987-1988" data-title="Annual Report 1987 - 1988">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> 
+              </div>
+              <span class="report-badge year">1987-1988</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 1987 - 1988</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/2nd-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1987-1988.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="report-card" data-range="1985-1990" data-year="1985-1986" data-title="Annual Report 1985 - 1986">
+          <div>
+            <div class="report-card-top">
+              <div class="card-badge-group">
+                <span class="report-badge gov">Statutory Accounts</span> <span class="report-badge milestone">1st Foundation</span>
+              </div>
+              <span class="report-badge year">1985-1986</span>
+            </div>
+            <h3 class="report-card-title">Annual Report 1985 - 1986</h3>
+            <div class="report-card-meta-line">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Verified Official Statutory PDF</span>
+            </div>
+          </div>
+          <div class="report-card-footer">
+            <span class="report-card-meta">
+              <span>AGM Publication</span>
+            </span>
+            <a href="https://www.ascionline.in/wp-content/uploads/2022/09/1st-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1985-1986.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
+              <span>Download PDF &rarr;</span>
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Historical Archive & Academic Inquiries Callout -->
@@ -6947,22 +7588,19 @@ button {
 
   <!-- Instant Search & Category Filtering Script -->
   <script>
-    let activeCategory = 'all';
+    let activeRange = 'all';
     let currentSearchTerm = '';
 
-    function filterByCategory(category) {
-      activeCategory = category;
-      
-      // Update active pill UI
+    function filterByRange(range) {
+      activeRange = range;
       const pills = document.querySelectorAll('#reportFilterPills .filter-pill');
       pills.forEach(pill => {
-        if (pill.getAttribute('data-category') === category) {
+        if (pill.getAttribute('data-range') === range) {
           pill.classList.add('active');
         } else {
           pill.classList.remove('active');
         }
       });
-
       applyFilters();
     }
 
@@ -6976,18 +7614,16 @@ button {
       let visible = 0;
 
       cards.forEach(card => {
-        const cardCat = card.getAttribute('data-category');
+        const cardRange = card.getAttribute('data-range');
         const cardTitle = (card.getAttribute('data-title') || '').toLowerCase();
-        const cardKeywords = (card.getAttribute('data-keywords') || '').toLowerCase();
         const cardYear = (card.getAttribute('data-year') || '').toLowerCase();
 
-        const matchesCat = (activeCategory === 'all' || cardCat === activeCategory);
+        const matchesRange = (activeRange === 'all' || cardRange === activeRange);
         const matchesSearch = !currentSearchTerm || 
           cardTitle.includes(currentSearchTerm) || 
-          cardKeywords.includes(currentSearchTerm) || 
           cardYear.includes(currentSearchTerm);
 
-        if (matchesCat && matchesSearch) {
+        if (matchesRange && matchesSearch) {
           card.style.display = 'flex';
           visible++;
         } else {

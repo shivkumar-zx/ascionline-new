@@ -271,7 +271,8 @@ To maintain total quality control, prevent client overwhelm, and eliminate error
      - Heading: `Our Past Campaigns`
      - Description: Verbatim copy from the live site: *"Find out more about the ads that ASCI has made in the past to encourage consumers to be more vigilant. Explore official video films, PSAs, and print campaigns from 2016 to 2025."*
      - 2x2 Stats Grid: Total Assets (113), Video Films (29), Print & Digital (84), Major Campaign Years (6).
-  4. **Single-Row Floating Sticky Controls Card (Frosted Glass `top: 155px`)**:
+  4. **Single-Row Overlapping Floating Controls Card (Frosted Glass `margin-top: -32px`, Sticky `top: 116px`)**:
+     - Overlaps the bottom boundary of the hero section to completely eliminate the awkward empty white gap between sections.
      - Unified single horizontal row featuring:
        - Instant Real-Time Search input with pill styling (`border-radius: 9999px`)
        - Media Type Selector: `All Media`, `Videos`, `Print`

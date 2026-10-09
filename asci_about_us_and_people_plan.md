@@ -216,12 +216,13 @@ To maintain total quality control, prevent client overwhelm, and eliminate error
        - Copy: *"Here are the ads that ASCI has made in the past to encourage consumers to be more vigilant."*
      - **Card 7: ASCI Explained** (`https://www.ascionline.in/asci-explained/`)
        - Copy: *"Essential explanatory guides and resources on self-regulation, consumer rights, and how advertising standards work in India."*
-  4. **Upgraded Preview Section (#campaigns)**:
+  4. **Upgraded Preview Section (#campaigns) & Lightbox Modal**:
      - Upgraded from plain text cards into an authentic preview gallery featuring real video thumbnails, play badges, and artwork:
        - Card 1: `#ChupNaBaitho` consumer awareness video film (`8WTwrza9Vrg`).
        - Card 2: `Spot the Dark Pattern` digital transparency artboard.
        - Card 3: `Endorser Due Diligence` creator compliance film (`8epiDSIwXxw`).
-     - Header CTA button: "Explore All 110+ Campaigns" linking directly to `campaigns.html`.
+     - In-place Lightbox Viewer: Clicking any card opens a high-definition modal lightbox popup allowing visitors to watch the video film or view the high-res poster directly without leaving the page. Includes Previous (<) / Next (>) arrows, keyboard navigation, and immediate audio/video cutoff upon closing.
+     - Aligned Header CTA: The "Explore All 110+ Campaigns" button uses `.campaigns-section-header` with centered vertical alignment on desktop and responsive left-alignment on mobile, eliminating awkward baseline drops.
 - **What Was Removed & Why**:
   - Removed previously invented "Four Principles of Responsible Advertising", fabricated decade timelines, and unapproved slogans. The live site uses `about-us` strictly as an introductory directory hub leading to deep-dive pages.
 

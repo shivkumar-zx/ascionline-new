@@ -149,17 +149,22 @@ def build():
     body {{
       font-family: var(--font-sans);
       color: var(--color-text-main);
-      background-color: var(--color-bg);
+      background-color: #f8fafc;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }}
 
+    .container {{
+      max-width: var(--container-max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }}
+
     a {{
-      text-decoration: none;
       color: inherit;
-      transition: var(--transition);
+      text-decoration: none;
     }}
 
     button {{
@@ -167,25 +172,33 @@ def build():
       cursor: pointer;
       border: none;
       background: none;
-      transition: var(--transition);
-    }}
-
-    .container {{
-      width: 100%;
-      max-width: var(--container-max-w);
-      margin: 0 auto;
-      padding: 0 24px;
     }}
 
     /* Top Notice Bar */
     .top-notice-bar {{
-      background-color: #0b0f14;
-      color: #e2e8f0;
+      background: #02261f;
+      color: #ffffff;
       font-size: 0.8125rem;
-      text-align: center;
-      padding: 8px 16px;
-      letter-spacing: 0.02em;
-      font-weight: 400;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      z-index: 101;
+    }}
+
+    .top-notice-flex {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }}
+
+    .top-notice-links {{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }}
+
+    .top-notice-links a:hover {{
+      color: #4ade80;
     }}
 
     /* Header & Navigation */
@@ -248,28 +261,39 @@ def build():
       box-shadow: 0 0 0 3px rgba(0, 135, 121, 0.12);
     }}
 
+    .header-search-icon {{
+      width: 17px;
+      height: 17px;
+      color: var(--color-text-muted);
+      margin-right: 10px;
+      flex-shrink: 0;
+    }}
+
     .search-input {{
-      flex: 1;
       border: none;
       outline: none;
+      background: transparent;
       font-size: 0.9375rem;
       color: var(--color-text-main);
-      background: transparent;
+      width: 100%;
       font-family: inherit;
     }}
 
-    .search-icon-btn {{
-      color: #57606a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-left: 8px;
+    .search-shortcut-badge {{
+      font-size: 0.6875rem;
+      background: #f1f5f9;
+      color: var(--color-text-muted);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 600;
+      border: 1px solid #e2e8f0;
+      white-space: nowrap;
     }}
 
     .header-actions {{
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       flex-shrink: 0;
     }}
 
@@ -277,54 +301,57 @@ def build():
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background-color: #0f172a;
-      color: #ffffff;
-      padding: 10px 20px;
+      background: #f8fafc;
+      color: #1e293b;
+      border: 1.2px solid #cbd5e1;
+      padding: 8px 18px;
       border-radius: var(--radius-pill);
-      font-size: 0.9375rem;
-      font-weight: 500;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }}
+
+    .btn-ad-check:hover {{
+      background: #f1f5f9;
+      border-color: #94a3b8;
     }}
 
     .btn-ad-check-icon {{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 20px;
-      height: 20px;
-      background: #10b981;
-      color: #ffffff;
-      border-radius: 50%;
-      font-size: 11px;
+      color: var(--color-asci-teal);
+      font-weight: 700;
     }}
 
-    .btn-raise-complaint-top {{
+    .btn-raise-complaint {{
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: transparent;
-      border: 1.2px solid #0f172a;
-      color: #0f172a;
-      padding: 10px 20px;
+      background: var(--color-asci-teal);
+      color: #ffffff;
+      padding: 9px 20px;
       border-radius: var(--radius-pill);
-      font-size: 0.9375rem;
-      font-weight: 500;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: 0 2px 6px rgba(0, 135, 121, 0.2);
     }}
 
-    .header-nav-row {{
-      background: #ffffff;
-      border-top: 1px solid #f1f5f9;
+    .btn-raise-complaint:hover {{
+      background: #007367;
+      transform: translateY(-1px);
     }}
 
-    .nav-menu-list {{
+    /* Navigation Bar */
+    .header-nav-bar {{
+      border-top: 1px solid #f0f2f5;
+    }}
+
+    .main-nav-list {{
       display: flex;
       align-items: center;
       gap: 32px;
       list-style: none;
-      margin: 0;
       padding: 0;
+      margin: 0;
     }}
 
     .nav-item {{
@@ -335,14 +362,15 @@ def build():
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 14px 0;
       font-size: 0.9375rem;
       font-weight: 500;
       color: #334155;
+      padding: 14px 0;
+      transition: var(--transition);
     }}
 
     .nav-link:hover,
-    .nav-item.nav-item-dropdown.open .nav-link {{
+    .nav-item.active .nav-link {{
       color: var(--color-asci-teal);
     }}
 
@@ -453,18 +481,18 @@ def build():
     }}
 
     .megamenu-link-item a {{
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
-      font-size: 0.9375rem;
-      color: #334155;
-      padding: 4px 0;
+      gap: 8px;
+      font-size: 0.925rem;
+      color: var(--color-text-muted);
+      transition: var(--transition);
+      line-height: 1.4;
     }}
 
     .megamenu-link-item a:hover {{
       color: var(--color-asci-teal);
-      transform: translateX(4px);
     }}
 
     .arrow-diag-icon {{
@@ -480,55 +508,58 @@ def build():
       transform: translate(2px, -2px);
     }}
 
-    /* ================= CAMPAIGNS HERO ================= */
-    .campaigns-hero {{
-      background: linear-gradient(135deg, #02261f 0%, #064e40 50%, #008779 100%);
-      color: #ffffff;
-      padding: 64px 0 54px;
-      position: relative;
-      overflow: hidden;
+    /* ================= CAMPAIGNS HERO (Matching people.html) ================= */
+    .directory-hero {{
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 48px 0 44px;
     }}
 
-    .campaigns-hero::before {{
-      content: "";
-      position: absolute;
-      top: -30%;
-      right: -10%;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }}
-
-    .campaigns-breadcrumb {{
+    .breadcrumb-nav {{
       display: flex;
       align-items: center;
       gap: 8px;
       font-size: 0.875rem;
-      color: rgba(255, 255, 255, 0.75);
-      margin-bottom: 24px;
+      color: #64748b;
+      margin-bottom: 18px;
     }}
 
-    .campaigns-breadcrumb a:hover {{
-      color: #ffffff;
+    .breadcrumb-nav a {{
+      color: var(--color-asci-teal);
+      text-decoration: none;
+      font-weight: 500;
+    }}
+
+    .breadcrumb-nav a:hover {{
       text-decoration: underline;
+    }}
+
+    .directory-hero-content-wrapper {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 36px;
+    }}
+
+    .directory-hero-left {{
+      flex: 1;
+      max-width: 720px;
     }}
 
     .campaigns-badge {{
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 6px 16px;
+      background: rgba(0, 135, 121, 0.08);
+      border: 1px solid rgba(0, 135, 121, 0.2);
+      color: var(--color-asci-teal);
+      padding: 5px 14px;
       border-radius: var(--radius-pill);
       font-size: 0.8125rem;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      margin-bottom: 20px;
-      backdrop-filter: blur(8px);
+      margin-bottom: 14px;
     }}
 
     .campaigns-badge-dot {{
@@ -538,68 +569,130 @@ def build():
       background: #10b981;
     }}
 
-    .campaigns-hero-title {{
+    .directory-page-title {{
       font-family: var(--font-serif);
-      font-size: clamp(2.25rem, 4vw, 3.4rem);
+      font-size: 2.35rem;
+      color: #0f172a;
       font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 12px;
     }}
 
-    .campaigns-hero-subhead {{
-      font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+    .directory-page-desc {{
+      font-size: 1.05rem;
+      color: #475569;
+      max-width: 680px;
       line-height: 1.6;
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 820px;
-      margin-bottom: 36px;
-      font-weight: 300;
+      margin-bottom: 0;
     }}
 
-    .campaigns-stats-strip {{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 28px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    .directory-hero-right {{
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 500px;
     }}
 
-    .stat-pill-item {{
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-    }}
-
-    .stat-pill-num {{
-      font-family: var(--font-serif);
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: #ffffff;
-    }}
-
-    .stat-pill-label {{
-      font-size: 0.875rem;
-      color: rgba(255, 255, 255, 0.8);
-      font-weight: 400;
-    }}
-
-    /* ================= FILTER TOOLBAR ================= */
-    .campaigns-toolbar-wrapper {{
+    .directory-stats-grid {{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      position: relative;
       background: #ffffff;
-      border-bottom: 1px solid #e2e8f0;
-      position: sticky;
-      top: 108px;
-      z-index: 40;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-      padding: 18px 0;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+      overflow: hidden;
     }}
 
-    .campaigns-toolbar-inner {{
+    .directory-stats-grid::before {{
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent 0%, #e2e8f0 15%, #e2e8f0 85%, transparent 100%);
+    }}
+
+    .directory-stats-grid::after {{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent 0%, #e2e8f0 15%, #e2e8f0 85%, transparent 100%);
+    }}
+
+    .stat-cell {{
+      padding: 24px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }}
+
+    .stat-number {{
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-asci-teal);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }}
+
+    .stat-label {{
+      font-size: 0.8125rem;
+      color: #64748b;
+      font-weight: 500;
+      line-height: 1.35;
+    }}
+
+    @media (max-width: 991px) {{
+      .directory-hero-content-wrapper {{
+        flex-direction: column;
+        align-items: flex-start;
+      }}
+      .directory-hero-right {{
+        max-width: 100%;
+      }}
+    }}
+
+    /* ================= STICKY CONTROLS SECTION (Matching people.html) ================= */
+    .campaigns-controls-wrapper {{
+      position: sticky;
+      top: 155px;
+      z-index: 45;
+      margin-top: -24px;
+      margin-bottom: 36px;
+      pointer-events: none;
+    }}
+
+    .campaigns-controls-card {{
+      pointer-events: auto;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid #cbd5e1;
+      border-radius: 16px;
+      padding: 16px 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
       flex-wrap: wrap;
+    }}
+
+    @media (max-width: 991px) {{
+      .campaigns-controls-wrapper {{
+        top: 72px;
+        margin-top: 16px;
+      }}
+      .campaigns-controls-card {{
+        padding: 14px 16px;
+      }}
     }}
 
     .filter-type-group {{
@@ -678,50 +771,45 @@ def build():
       border-color: var(--color-asci-teal);
     }}
 
-    .filter-search-box {{
-      position: relative;
-      min-width: 220px;
-    }}
-
-    .filter-search-input {{
-      width: 100%;
-      padding: 8px 14px 8px 36px;
-      font-size: 0.875rem;
-      border: 1px solid #cbd5e1;
+    .search-input-box {{
+      flex: 1;
+      min-width: 240px;
+      display: flex;
+      align-items: center;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
       border-radius: var(--radius-pill);
-      outline: none;
-      font-family: inherit;
+      padding: 8px 16px;
+      gap: 10px;
       transition: var(--transition);
     }}
 
-    .filter-search-input:focus {{
+    .search-input-box:focus-within {{
       border-color: var(--color-asci-teal);
+      background: #ffffff;
       box-shadow: 0 0 0 3px rgba(0, 135, 121, 0.12);
     }}
 
-    .filter-search-icon {{
-      position: absolute;
-      left: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 15px;
-      height: 15px;
-      stroke: #64748b;
-      pointer-events: none;
+    .search-input-box input {{
+      border: none;
+      background: transparent;
+      outline: none;
+      width: 100%;
+      font-size: 0.875rem;
+      font-family: inherit;
+      color: #0f172a;
     }}
 
-    /* ================= GALLERY SECTION ================= */
+    /* ================= CAMPAIGNS GALLERY ================= */
     .campaigns-gallery-section {{
-      padding: 48px 0 84px;
-      background: #f8fafc;
-      min-height: 60vh;
+      padding: 10px 0 80px;
     }}
 
     .gallery-header-meta {{
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }}
 
     .gallery-count-badge {{
@@ -737,33 +825,32 @@ def build():
 
     .gallery-grid {{
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 28px;
     }}
 
     .gallery-card {{
       background: #ffffff;
-      border: 1px solid #e2e8f0;
       border-radius: var(--radius-md);
       overflow: hidden;
+      border: 1px solid var(--color-card-border);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: var(--transition);
       display: flex;
       flex-direction: column;
-      transition: var(--transition);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
       cursor: pointer;
-      position: relative;
     }}
 
     .gallery-card:hover {{
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0, 135, 121, 0.12);
-      border-color: #cbd5e1;
+      transform: translateY(-5px);
+      border-color: var(--color-asci-teal);
+      box-shadow: 0 16px 32px rgba(0, 135, 121, 0.12);
     }}
 
     .gallery-thumb-wrap {{
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 16 / 9;
       background: #0f172a;
       overflow: hidden;
     }}
@@ -772,12 +859,12 @@ def build():
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
-      transition: transform 0.4s ease;
+      transition: transform 0.35s ease;
+      display: block;
     }}
 
     .gallery-card:hover .gallery-thumb-img {{
-      transform: scale(1.04);
+      transform: scale(1.05);
     }}
 
     .gallery-type-badge {{
@@ -786,12 +873,12 @@ def build():
       left: 12px;
       padding: 4px 10px;
       border-radius: var(--radius-pill);
-      font-size: 0.75rem;
+      font-size: 0.6875rem;
       font-weight: 700;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      backdrop-filter: blur(8px);
       z-index: 2;
+      backdrop-filter: blur(8px);
     }}
 
     .badge-video {{
@@ -800,7 +887,7 @@ def build():
     }}
 
     .badge-image {{
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(14, 116, 144, 0.9);
       color: #ffffff;
     }}
 
@@ -808,28 +895,29 @@ def build():
       position: absolute;
       top: 12px;
       right: 12px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.85);
+      color: #ffffff;
+      padding: 3px 9px;
+      border-radius: 6px;
       font-size: 0.75rem;
-      font-weight: 700;
-      background: rgba(255, 255, 255, 0.92);
-      color: #0f172a;
+      font-weight: 600;
       z-index: 2;
     }}
 
     .video-play-overlay {{
       position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.3);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      opacity: 0.85;
-      transition: opacity 0.2s ease, transform 0.2s ease;
+      background: rgba(0, 0, 0, 0.25);
+      transition: background 0.2s ease;
     }}
 
     .gallery-card:hover .video-play-overlay {{
-      opacity: 1;
       background: rgba(0, 0, 0, 0.45);
     }}
 
@@ -920,22 +1008,25 @@ def build():
       font-size: 0.9375rem;
     }}
 
-    /* ================= MODAL / LIGHTBOX ================= */
+    /* Lightbox Modal */
     .media-modal-backdrop {{
       display: none;
       position: fixed;
-      inset: 0;
-      background: rgba(5, 12, 20, 0.85);
-      backdrop-filter: blur(10px);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
       z-index: 1000;
       align-items: center;
       justify-content: center;
       padding: 24px;
-      animation: modalFadeIn 0.2s ease;
     }}
 
     .media-modal-backdrop.open {{
       display: flex;
+      animation: modalFadeIn 0.2s ease;
     }}
 
     @keyframes modalFadeIn {{
@@ -946,19 +1037,12 @@ def build():
     .media-modal-container {{
       background: #0f172a;
       border-radius: var(--radius-lg);
-      max-width: 940px;
+      max-width: 900px;
       width: 100%;
       overflow: hidden;
-      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       position: relative;
-      animation: modalSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      display: flex;
-      flex-direction: column;
-    }}
-
-    @keyframes modalSlideUp {{
-      from {{ opacity: 0; transform: translateY(20px) scale(0.96); }}
-      to {{ opacity: 1; transform: translateY(0) scale(1); }}
     }}
 
     .media-modal-header {{
@@ -966,15 +1050,14 @@ def build():
       align-items: center;
       justify-content: space-between;
       padding: 16px 24px;
-      background: #1e293b;
-      color: #ffffff;
+      background: rgba(255, 255, 255, 0.04);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      color: #ffffff;
     }}
 
     .media-modal-title {{
       font-size: 1.05rem;
       font-weight: 600;
-      color: #f8fafc;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -982,51 +1065,40 @@ def build():
     }}
 
     .media-modal-close-btn {{
-      color: #94a3b8;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.06);
-      transition: var(--transition);
-      flex-shrink: 0;
+      color: #ffffff;
+      font-size: 1.5rem;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
     }}
 
     .media-modal-close-btn:hover {{
-      color: #ffffff;
-      background: rgba(239, 68, 68, 0.8);
+      opacity: 1;
     }}
 
     .media-modal-player-wrap {{
-      position: relative;
       width: 100%;
       background: #000000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 360px;
-      max-height: 75vh;
+      aspect-ratio: 16 / 9;
+      position: relative;
     }}
 
     .media-modal-iframe {{
       width: 100%;
-      aspect-ratio: 16 / 9;
+      height: 100%;
       border: none;
-      display: block;
     }}
 
     .media-modal-img {{
-      max-width: 100%;
-      max-height: 75vh;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
-      display: block;
     }}
 
     .media-modal-footer {{
-      padding: 16px 24px;
-      background: #1e293b;
+      padding: 14px 24px;
+      background: rgba(255, 255, 255, 0.03);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1046,29 +1118,217 @@ def build():
       text-decoration: underline;
     }}
 
-    /* ================= RESPONSIVE ================= */
-    @media (max-width: 991px) {{
-      .campaigns-toolbar-wrapper {{
-        top: 76px;
-      }}
-      .campaigns-toolbar-inner {{
-        flex-direction: column;
-        align-items: stretch;
-      }}
-      .filter-type-group {{
-        justify-content: center;
-      }}
-      .filter-year-group {{
-        justify-content: flex-start;
-      }}
+    /* ================= HERO CALLOUT BANNER: RESPONSIBLE ADVERTISING ================= */
+    .cta-callout-section {{
+      position: relative;
+      background-color: #06392c;
+      background-image: radial-gradient(circle at 14% 50%, rgba(16, 185, 129, 0.15) 0%, transparent 65%);
+      color: #ffffff;
+      padding: 110px 0;
+      text-align: center;
+      overflow: hidden;
+      margin-top: 60px;
     }}
 
-    @media (max-width: 640px) {{
-      .campaigns-hero {{
-        padding: 44px 0 36px;
+    .cta-ripple-canvas {{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }}
+
+    .cta-callout-container {{
+      position: relative;
+      z-index: 2;
+    }}
+
+    .cta-callout-title {{
+      font-family: var(--font-serif);
+      font-size: 2.85rem;
+      line-height: 1.25;
+      font-weight: 400;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+    }}
+
+    .cta-callout-desc {{
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 720px;
+      margin: 0 auto 36px;
+      line-height: 1.55;
+      font-weight: 400;
+    }}
+
+    .btn-cta-membership {{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: var(--radius-pill);
+      padding: 11px 26px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.04);
+      transition: all 0.25s ease;
+      backdrop-filter: blur(4px);
+      text-decoration: none;
+    }}
+
+    .btn-cta-membership:hover {{
+      background: #ffffff;
+      color: #06392c;
+      border-color: #ffffff;
+    }}
+
+    /* ================= FOOTER STYLES ================= */
+    .site-footer {{
+      background: #ffffff;
+      padding: 70px 0 0px;
+      border-top: 1px solid #e2e8f0;
+    }}
+
+    .footer-top-grid {{
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 36px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid #f1f5f9;
+    }}
+
+    .footer-brand-col {{
+      padding-right: 32px;
+    }}
+
+    .footer-logo-img {{
+      height: 48px;
+      width: auto;
+      margin-bottom: 16px;
+      display: block;
+    }}
+
+    .footer-mission {{
+      font-size: 0.84rem;
+      color: #64748b;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }}
+
+    .footer-email-link {{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #0f172a;
+      margin-bottom: 24px;
+      text-decoration: none;
+    }}
+
+    .footer-socials-label {{
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }}
+
+    .footer-social-icons {{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }}
+
+    .social-icon-circle {{
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }}
+
+    .social-icon-circle:hover {{
+      transform: translateY(-3px);
+      opacity: 0.85;
+    }}
+
+    .footer-col-title {{
+      font-family: var(--font-sans);
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 20px;
+    }}
+
+    .footer-links-list {{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+    }}
+
+    .footer-links-list a {{
+      font-size: 0.92rem;
+      color: #4b5563;
+      font-weight: 500;
+      text-decoration: none;
+    }}
+
+    .footer-links-list a:hover {{
+      color: var(--color-asci-teal);
+    }}
+
+    .footer-bottom-bar {{
+      background: #000000;
+      color: #94a3b8;
+      font-size: 0.8125rem;
+      padding: 14px 0;
+    }}
+
+    .footer-bottom-flex {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }}
+
+    .footer-legal-links {{
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }}
+
+    .footer-legal-links a {{
+      color: inherit;
+      text-decoration: none;
+    }}
+
+    .footer-legal-links a:hover {{
+      color: #ffffff;
+    }}
+
+    @media (max-width: 991px) {{
+      .footer-top-grid {{
+        grid-template-columns: 1fr;
+        gap: 32px;
       }}
-      .campaigns-hero-title {{
-        font-size: 2rem;
+      .footer-bottom-flex {{
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }}
+      .cta-callout-title {{
+        font-size: 2.1rem;
       }}
       .gallery-grid {{
         grid-template-columns: 1fr;
@@ -1080,52 +1340,57 @@ def build():
 <body>
   {header_block}
 
-  <!-- Campaigns Hero Banner -->
-  <section class="campaigns-hero">
+  <!-- Directory Hero Section (Institutional Style Matching people.html) -->
+  <section class="directory-hero">
     <div class="container">
-      <div class="campaigns-breadcrumb">
+      <div class="breadcrumb-nav">
         <a href="index.html">Home</a>
         <span>/</span>
         <a href="about-us.html">About Us</a>
         <span>/</span>
-        <span style="color: #ffffff; font-weight: 500;">Our Past Campaigns</span>
+        <span>Our Past Campaigns</span>
       </div>
 
-      <div class="campaigns-badge">
-        <span class="campaigns-badge-dot"></span>
-        <span>Public Vigilance &amp; Consumer Voice</span>
-      </div>
+      <div class="directory-hero-content-wrapper">
+        <div class="directory-hero-left">
+          <div class="campaigns-badge">
+            <span class="campaigns-badge-dot"></span>
+            <span>Public Vigilance &amp; Consumer Voice</span>
+          </div>
+          <h1 class="directory-page-title">Our Past Campaigns</h1>
+          <p class="directory-page-desc">
+            Find out more about the ads that ASCI has made in the past to encourage consumers to be more vigilant. Explore official video films, PSAs, and print campaigns from 2016 to 2025.
+          </p>
+        </div>
 
-      <h1 class="campaigns-hero-title">Our Past Campaigns</h1>
-      <p class="campaigns-hero-subhead">
-        Find out more about the ads that ASCI has made in the past to encourage consumers to be more vigilant.
-      </p>
-
-      <div class="campaigns-stats-strip">
-        <div class="stat-pill-item">
-          <span class="stat-pill-num">{len(processed_items)}</span>
-          <span class="stat-pill-label">Total Campaign Assets</span>
-        </div>
-        <div class="stat-pill-item">
-          <span class="stat-pill-num">{total_videos}</span>
-          <span class="stat-pill-label">Video Films &amp; PSAs</span>
-        </div>
-        <div class="stat-pill-item">
-          <span class="stat-pill-num">{total_images}</span>
-          <span class="stat-pill-label">Print &amp; Digital Artboards</span>
-        </div>
-        <div class="stat-pill-item">
-          <span class="stat-pill-num">6</span>
-          <span class="stat-pill-label">Major Campaign Years (2016 – 2025)</span>
+        <div class="directory-hero-right">
+          <div class="directory-stats-grid">
+            <div class="stat-cell">
+              <div class="stat-number">{len(processed_items)}</div>
+              <div class="stat-label">Total Campaign Assets</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">{total_videos}</div>
+              <div class="stat-label">Video Films &amp; PSAs</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">{total_images}</div>
+              <div class="stat-label">Print &amp; Digital Artboards</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">6</div>
+              <div class="stat-label">Major Campaign Years (2016 – 2025)</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Filter & Category Toolbar -->
-  <section class="campaigns-toolbar-wrapper">
+  <!-- Interactive Sticky Filter Controls Card (Matching people.html) -->
+  <section class="campaigns-controls-wrapper">
     <div class="container">
-      <div class="campaigns-toolbar-inner">
+      <div class="campaigns-controls-card">
         <!-- Media Type Selector -->
         <div class="filter-type-group" id="mediaTypeTabs">
           <button class="filter-type-btn active" data-type="all" onclick="setMediaType('all', this)">
@@ -1151,13 +1416,13 @@ def build():
           <button class="filter-year-btn" data-year="2016" onclick="setYear('2016', this)">2016</button>
         </div>
 
-        <!-- Search Input -->
-        <div class="filter-search-box">
-          <svg class="filter-search-icon" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Live Instant Search -->
+        <div class="search-input-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="text" class="filter-search-input" id="campaignSearch" placeholder="Search campaigns..." oninput="handleSearch(this.value)" />
+          <input type="text" id="campaignSearch" placeholder="Search campaigns by title, topic, year..." oninput="handleSearch(this.value)" />
         </div>
       </div>
     </div>
@@ -1212,7 +1477,7 @@ def build():
 
   {footer_block}
 
-  <!-- Gallery & Lightbox Scripts -->
+  <!-- Gallery, Lightbox & 3D Ripple Scripts -->
   <script>
     const campaignItems = {items_json};
 
@@ -1275,8 +1540,8 @@ def build():
               <h3 class="gallery-card-title">${{item.title}}</h3>
               ${{item.caption ? `<p class="gallery-card-caption">${{item.caption}}</p>` : ''}}
               <div class="gallery-card-footer">
-                <span>${{isVideo ? 'Watch Video Film' : 'View Campaign Poster'}}</span>
-                <span>→</span>
+                <span>${{isVideo ? 'Watch Video Film' : 'View High-Res Poster'}}</span>
+                <span>&rarr;</span>
               </div>
             </div>
           </div>
@@ -1304,17 +1569,17 @@ def build():
     }}
 
     function openMediaModal(itemId) {{
-      const item = campaignItems.find(x => x.id === itemId);
+      const item = campaignItems.find(i => i.id === itemId);
       if (!item) return;
 
       const modal = document.getElementById('mediaModal');
-      const title = document.getElementById('modalTitle');
       const playerWrap = document.getElementById('modalPlayerContent');
-      const yearMeta = document.getElementById('modalMetaYear');
+      const titleEl = document.getElementById('modalTitle');
+      const yearEl = document.getElementById('modalMetaYear');
       const extLink = document.getElementById('modalExternalLink');
 
-      title.textContent = item.title;
-      yearMeta.textContent = `Campaign Year: ${{item.year}}`;
+      titleEl.textContent = item.title;
+      yearEl.textContent = `Campaign Year: ${{item.year}}`;
 
       if (item.type === 'video') {{
         playerWrap.innerHTML = `
@@ -1354,9 +1619,80 @@ def build():
       }}
     }});
 
-    // Initialize gallery on load
+    // ================= RESPONSIBLE ADVERTISING 3D RIPPLE ANIMATION =================
+    function initRippleCanvas() {{
+      const rippleCanvas = document.getElementById('ctaRippleCanvas');
+      if (!rippleCanvas) return;
+      const ctx = rippleCanvas.getContext('2d');
+      let offset = 0;
+      let time = 0;
+
+      function resizeCanvas() {{
+        const rect = rippleCanvas.parentElement.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+        rippleCanvas.width = rect.width * dpr;
+        rippleCanvas.height = rect.height * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }}
+
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      function drawRipples() {{
+        const rect = rippleCanvas.parentElement.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+
+        ctx.clearRect(0, 0, width, height);
+
+        const cx = width * 0.14;
+        const cy = height * 0.5;
+
+        // Draw central dot
+        const centerDotWave = (Math.sin(-time * 1.5) + 1) / 2;
+        ctx.beginPath();
+        ctx.arc(cx, cy, 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(255, 255, 255, " + (0.3 + centerDotWave * 0.2).toFixed(3) + ")";
+        ctx.fill();
+
+        const step = 15;
+        const speed = 0.25;
+        offset = (offset + speed) % step;
+        time += 0.022;
+
+        const maxRadius = Math.hypot(Math.max(cx, width - cx), Math.max(cy, height - cy)) + step;
+        const totalRings = Math.ceil(maxRadius / step);
+
+        for (let i = 0; i <= totalRings; i++) {{
+          const r = i * step + offset;
+          if (r <= 4) continue;
+
+          let opacity = 0.08;
+          const wave = Math.sin(r * 0.015 - time * 1.5);
+          const waveNorm = (wave + 1) / 2;
+          opacity += waveNorm * 0.20;
+
+          if (r > maxRadius - 100) {{
+            opacity *= Math.max(0, (maxRadius - r) / 100);
+          }}
+
+          ctx.beginPath();
+          ctx.arc(cx, cy, r, 0, Math.PI * 2);
+          ctx.strokeStyle = "rgba(255, 255, 255, " + opacity.toFixed(3) + ")";
+          ctx.lineWidth = 1.2 + waveNorm * 0.6;
+          ctx.stroke();
+        }}
+
+        requestAnimationFrame(drawRipples);
+      }}
+
+      requestAnimationFrame(drawRipples);
+    }}
+
+    // Initialize gallery and animations on load
     document.addEventListener('DOMContentLoaded', () => {{
       renderGallery();
+      initRippleCanvas();
     }});
   </script>
 </body>

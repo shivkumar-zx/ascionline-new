@@ -143,6 +143,7 @@ Matches the exact 2-column structure requested by the client:
 | 2026-10-08 | Project Team | **FSSAI Directory System Design** | Detailed the unified People directory (`people.html`) combining Board, CCC, Secretariat, and Panels into a filterable table/grid with live search. |
 
 | 2026-10-09 | Project Team | **Campaigns Title & Preview Upgrade** | Unified title to **"Our Past Campaigns"** across `campaigns.html`, `ad-campaigns.html`, and `about-us.html` (matching the mega menu item `<span\>Our past campaigns</span\>`). Upgraded the `#campaigns` section inside `about-us.html` from text-only cards to a mini preview gallery featuring authentic thumbnails, video badges, and direct links to `campaigns.html`. |
+| 2026-10-09 | Project Team | **Footer Fix, Banner Redesign & Sticky Bar** | Fixed broken footer & CTA callout section in `campaigns.html` by adding full CSS and 3D ripple canvas animation. Upgraded Hero Banner to match `people.html` (institutional `#f8fafc` background, left description, and right 2x2 stats grid). Implemented floating sticky controls card with frosted glass (`backdrop-filter: blur(16px)`), modern pill buttons, and real-time search. |
 
 ---
 

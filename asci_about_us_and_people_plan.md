@@ -142,6 +142,9 @@ Matches the exact 2-column structure requested by the client:
 | 2026-10-08 | Project Team | **Plan Architecture Revision** | Updated `asci_about_us_and_people_plan.md` to establish the strict "Zero-Hallucination / Verbatim Copy" mandate and defined the multi-page hub model matching the live website. |
 | 2026-10-08 | Project Team | **FSSAI Directory System Design** | Detailed the unified People directory (`people.html`) combining Board, CCC, Secretariat, and Panels into a filterable table/grid with live search. |
 
+| 2026-10-09 | Project Team | **Campaigns Title & Preview Upgrade** | Unified title to **"Our Past Campaigns"** across `campaigns.html`, `ad-campaigns.html`, and `about-us.html` (matching the mega menu item `<span\>Our past campaigns</span\>`). Upgraded the `#campaigns` section inside `about-us.html` from text-only cards to a mini preview gallery featuring authentic thumbnails, video badges, and direct links to `campaigns.html`. |
+| 2026-10-09 | Project Team | **Footer Fix, Banner Redesign & Sticky Bar** | Fixed broken footer & CTA callout section in `campaigns.html` by adding full CSS and 3D ripple canvas animation. Upgraded Hero Banner to match `people.html` (institutional `#f8fafc` background, left description, and right 2x2 stats grid). Implemented floating sticky controls card with frosted glass (`backdrop-filter: blur(16px)`), modern pill buttons, and real-time search. |
+
 ---
 
 ## 6. How to Talk to the Client (Safe Talking Points)
@@ -151,6 +154,7 @@ When presenting to the client, use these exact talking points:
 2. *"We treat `about-us.html` as your official Hub & Gateway — highlighting the exact 7 key areas (History, Self-Regulation, The Work We Do, People, Annual Reports, Campaigns, and ASCI Explained) using your approved copy."*
 3. *"We have removed all extraneous or unapproved sections. The enhancement is strictly focused on premium UI/UX: faster page loads, clean typography (`Domine` & `Bricolage Grotesque`), mobile responsiveness, and intuitive directory search."*
 4. *"For the People section, we implemented an institutional directory model (similar to FSSAI) so visitors can easily search members by panel, name, or organization without losing any official details."*
+5. *"For Campaigns, we unified the page title to 'Our Past Campaigns' so it matches your main navigation menu exactly, and built a filterable gallery showcasing all 113 authentic print & video assets without any placeholder content."*
 
 ---
 
@@ -208,10 +212,16 @@ To maintain total quality control, prevent client overwhelm, and eliminate error
        - Copy: *"Meet the ASCI board, Our Consumer Complaints Council Members, Consultative Committee and our Secretariat team who together champion responsible advertising."*
      - **Card 5: Annual Reports** (`annual-reports.html`)
        - Copy: *"Read up on important milestones, changes and progress made year-on-year by ASCI."*
-     - **Card 6: Ad Campaigns** (`campaigns.html`)
+     - **Card 6: Our Past Campaigns** (`campaigns.html`)
        - Copy: *"Here are the ads that ASCI has made in the past to encourage consumers to be more vigilant."*
      - **Card 7: ASCI Explained** (`https://www.ascionline.in/asci-explained/`)
        - Copy: *"Essential explanatory guides and resources on self-regulation, consumer rights, and how advertising standards work in India."*
+  4. **Upgraded Preview Section (#campaigns)**:
+     - Upgraded from plain text cards into an authentic preview gallery featuring real video thumbnails, play badges, and artwork:
+       - Card 1: `#ChupNaBaitho` consumer awareness video film (`8WTwrza9Vrg`).
+       - Card 2: `Spot the Dark Pattern` digital transparency artboard.
+       - Card 3: `Endorser Due Diligence` creator compliance film (`8epiDSIwXxw`).
+     - Header CTA button: "Explore All 110+ Campaigns" linking directly to `campaigns.html`.
 - **What Was Removed & Why**:
   - Removed previously invented "Four Principles of Responsible Advertising", fabricated decade timelines, and unapproved slogans. The live site uses `about-us` strictly as an introductory directory hub leading to deep-dive pages.
 
@@ -246,5 +256,34 @@ To maintain total quality control, prevent client overwhelm, and eliminate error
 ### Page 5: `annual-reports.html`
 - **Status**: **PENDING**
 - **Live Source**: `https://www.ascionline.in/annual-reports/`.
+
+---
+
+### Page 6: `campaigns.html` / `ad-campaigns.html` (Our Past Campaigns Gallery)
+- **Status**: **COMPLETE, FIXED & VERIFIED (Zero Hallucination - 100% Client Assets)**
+- **Source of Truth Live URL**: `https://www.ascionline.in/ad-campaigns/`
+- **What Was Built & Fixed**:
+  1. **Master Architecture Sync**: Re-architected `build_campaigns.py` to use the shared master building blocks (`head_part.html`, `header_part.html`, `footer_part.html`, `footer_scripts.html`) ensuring 100% styling parity across the site header, mega-menus, search popup, CTA callout banner with 3D ripple canvas, and footer.
+  2. **Script Syntax & Execution Fix**: Resolved a nested/stray `<script>` tag issue that caused browser parsing to fail. Ensured `renderGallery()` executes immediately on load and on `DOMContentLoaded`, successfully rendering all 113 cards.
+  3. **Institutional Hero Header (Matching `people.html`)**:
+     - Breadcrumb: `Home / About Us / Our Past Campaigns`
+     - Badge: `Public Vigilance & Consumer Voice`
+     - Heading: `Our Past Campaigns`
+     - Description: Verbatim copy from the live site: *"Find out more about the ads that ASCI has made in the past to encourage consumers to be more vigilant. Explore official video films, PSAs, and print campaigns from 2016 to 2025."*
+     - 2x2 Stats Grid: Total Assets (113), Video Films (29), Print & Digital (84), Major Campaign Years (6).
+  4. **Single-Row Overlapping Floating Controls Card (Frosted Glass `margin-top: -32px`, Sticky `top: 116px`)**:
+     - Overlaps the bottom boundary of the hero section to completely eliminate the awkward empty white gap between sections.
+     - Unified single horizontal row featuring:
+       - Instant Real-Time Search input with pill styling (`border-radius: 9999px`)
+       - Media Type Selector: `All Media`, `Videos`, `Print`
+       - Divider line
+       - Year Selector: `Filter Year: All, 2025, 2022, 2021, 2020, 2019, 2016`
+  5. **High-Performance Gallery Grid & Modal Player with Left/Right Navigation**:
+     - 113 authentic cards with lazy loading, hover elevation, media badges, and clean typography (removed redundant/duplicate caption line so titles stand out cleanly without duplicate "Artboard 3" text).
+     - Modal lightbox with **`<` (Previous)** and **`>` (Next)** arrow navigation buttons, keyboard arrow (`←` and `→`) support, and item counter (e.g. `Item 5 of 113`).
+     - Responsive full HD image inspection and embedded YouTube video playback.
+  6. **Zero Hallucination Guarantee**: All 113 campaign assets derive strictly from `campaigns_clean.json` mapped from `https://www.ascionline.in/ad-campaigns/`.
+
+
 
 

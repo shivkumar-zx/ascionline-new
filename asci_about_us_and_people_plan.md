@@ -254,9 +254,14 @@ To maintain total quality control, prevent client overwhelm, and eliminate error
 
 ---
 
-### Page 5: `annual-reports.html`
-- **Status**: **PENDING**
-- **Live Source**: `https://www.ascionline.in/annual-reports/`.
+### Page 5: `annual-reports.html` (Annual Reports & Transparency Publications)
+- **Status**: **COMPLETE & VERIFIED (Zero Hallucination - 100% Client Publications)**
+- **Source of Truth Live URL**: `https://www.ascionline.in/annual-reports/`
+- **What Was Built & Upgraded**:
+  1. **Unified Institutional Hero Banner**: Re-styled to match `people.html` and `campaigns.html` with breadcrumbs, glowing pill badge (`Transparency, Governance & Compliance Data`), Domine serif heading, and 4-stat crosshair grid (`40+ Years of Archives`, `12,400+ Ads Examined`, `82%+ Voluntary Compliance`, `100% Public Access PDFs`).
+  2. **Featured Landmark Milestone Card**: Prominently features the 40th Milestone Edition (FY 2025–26) with key adjudication highlights and official verified PDF download link.
+  3. **Comfortable Sticky Filter Controls**: Sticky top offset set to `155px` on desktop and `84px` on mobile, ensuring seamless scrolling without colliding with or crowding against the sticky header.
+  4. **Categorized Repository & Search**: Instant real-time search across AGM reports, Complaints Trends, and Research Whitepapers.
 
 ---
 
@@ -272,7 +277,7 @@ To maintain total quality control, prevent client overwhelm, and eliminate error
      - Heading: `Our Past Campaigns`
      - Description: Verbatim copy from the live site: *"Find out more about the ads that ASCI has made in the past to encourage consumers to be more vigilant. Explore official video films, PSAs, and print campaigns from 2016 to 2025."*
      - 2x2 Stats Grid: Total Assets (113), Video Films (29), Print & Digital (84), Major Campaign Years (6).
-  4. **Single-Row Overlapping Floating Controls Card (Frosted Glass `margin-top: -32px`, Sticky `top: 116px`)**:
+  4. **Single-Row Overlapping Floating Controls Card (Frosted Glass `margin-top: -32px`, Sticky `top: 155px` (desktop) / `top: 84px` (mobile))**:
      - Overlaps the bottom boundary of the hero section to completely eliminate the awkward empty white gap between sections.
      - Unified single horizontal row featuring:
        - Instant Real-Time Search input with pill styling (`border-radius: 9999px`)

@@ -4492,72 +4492,180 @@ button {
 }
 
 
-/* ================= ANNUAL REPORTS PAGE STYLES ================= */
-.reports-hero {
-  background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #008779 100%);
-  color: #ffffff;
-  padding: 56px 0 64px;
-  position: relative;
-  overflow: hidden;
+/* ================= ANNUAL REPORTS PAGE HERO (Matching people.html & campaigns.html) ================= */
+.directory-hero {
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 48px 0 40px;
 }
 
-.reports-hero::after {
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 18px;
+}
+
+.breadcrumb-nav a {
+  color: #008779;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumb-nav a:hover {
+  text-decoration: underline;
+}
+
+.directory-hero-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.directory-hero-left {
+  flex: 1;
+  max-width: 760px;
+}
+
+.reports-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 135, 121, 0.08);
+  color: #008779;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(0, 135, 121, 0.18);
+}
+
+.reports-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #008779;
+  box-shadow: 0 0 0 3px rgba(0, 135, 121, 0.2);
+}
+
+.directory-page-title {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  color: #0f172a;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.directory-page-desc {
+  font-size: 1.05rem;
+  color: #475569;
+  max-width: 820px;
+  line-height: 1.6;
+  margin-bottom: 0px;
+}
+
+.directory-hero-right {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 520px;
+}
+
+/* Crosshair Stats Grid with Gradient Dividers (Identical to people.html & campaigns.html) */
+.directory-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  position: relative;
+}
+
+.directory-stats-grid::before {
   content: '';
   position: absolute;
   top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent 0%, #e2e8f0 15%, #e2e8f0 85%, transparent 100%);
+}
+
+.directory-stats-grid::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
   right: 0;
-  width: 500px;
-  height: 100%;
-  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
-  pointer-events: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, #e2e8f0 15%, #e2e8f0 85%, transparent 100%);
 }
 
-.hero-tag-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 6px 16px;
-  border-radius: 9999px;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #a7f3d0;
-  margin-bottom: 16px;
-}
-
-.reports-page-title {
-  font-family: var(--font-serif);
-  font-size: 2.85rem;
-  font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: 16px;
-  color: #ffffff;
-  max-width: 860px;
-}
-
-.reports-page-desc {
-  font-size: 1.125rem;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.88);
-  max-width: 800px;
-  margin-bottom: 32px;
-}
-
-.reports-stats-row {
+.stat-cell {
+  padding: 32px 24px;
+  text-align: center;
   display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-number {
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #008779;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+@media (max-width: 991px) {
+  .directory-hero-content-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .directory-hero-right {
+    max-width: 100%;
+    margin-top: 24px;
+  }
+  .directory-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .directory-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .directory-stats-grid::before {
+    display: none;
+  }
+  .directory-stats-grid::after {
+    display: none;
+  }
+  .stat-cell {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 20px 16px;
+  }
+  .stat-cell:last-child {
+    border-bottom: none;
+  }
 }
 
 /* Featured Milestone Card */
 .featured-report-section {
-  padding: 40px 0 20px;
-  margin-top: -30px;
+  padding: 36px 0 20px;
   position: relative;
   z-index: 10;
 }
@@ -4736,7 +4844,7 @@ button {
 
 .reports-controls-card {
   position: sticky;
-  top: 132px;
+  top: 155px;
   z-index: 35;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(14px);
@@ -4750,7 +4858,7 @@ button {
 
 @media (max-width: 991px) {
   .reports-controls-card {
-    top: 72px;
+    top: 84px;
     padding: 16px;
   }
 }
@@ -6220,8 +6328,8 @@ button {
       </nav>
     </div>
   </div>
-  <!-- Reports Hero Section -->
-  <section class="reports-hero">
+  <!-- Reports Hero Section (Matching people.html & campaigns.html) -->
+  <section class="directory-hero">
     <div class="container">
       <div class="breadcrumb-nav">
         <a href="index.html">Home</a>
@@ -6231,32 +6339,38 @@ button {
         <span>Annual Reports &amp; Publications</span>
       </div>
 
-      <div class="hero-tag-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="12" y1="8" x2="12" y2="12"></line>
-          <line x1="12" y1="16" x2="12.01" y2="16"></line>
-        </svg>
-        <span>Transparency, Governance &amp; Compliance Data</span>
-      </div>
+      <div class="directory-hero-content-wrapper">
+        <div class="directory-hero-left">
+          <div class="reports-badge">
+            <span class="reports-badge-dot"></span>
+            <span>Transparency, Governance &amp; Compliance Data</span>
+          </div>
+          <h1 class="directory-page-title">Annual Reports &amp; Transparency Publications</h1>
+          <p class="directory-page-desc">
+            Since 1985, ASCI has published audited annual accounts, AGM proceedings, and comprehensive complaints trend analyses tracking Indian advertising self-regulation. Explore four decades of transparent adjudication metrics, proactive monitoring findings, and authoritative research compendiums below.
+          </p>
+        </div>
 
-      <h1 class="reports-page-title">Annual Reports &amp; Transparency Publications</h1>
-      <p class="reports-page-desc">
-        Since 1985, ASCI has published annual reports, audited financial accounts, and comprehensive complaints trend analyses tracking Indian advertising self-regulation. Explore four decades of transparent adjudication metrics, proactive monitoring findings, and authoritative research compendiums below.
-      </p>
-
-      <div class="reports-stats-row">
-        <div class="stat-chip">
-          <strong>40+ Years</strong> Of Published Governance Archives
-        </div>
-        <div class="stat-chip">
-          <strong>12,400+</strong> Ads Examined in FY 2025–26
-        </div>
-        <div class="stat-chip">
-          <strong>82%+</strong> Voluntary Advertiser Compliance
-        </div>
-        <div class="stat-chip">
-          <strong>100%</strong> Publicly Accessible PDF Repository
+        <div class="directory-hero-right">
+          <!-- Crosshair Stats Grid matching people.html and campaigns.html -->
+          <div class="directory-stats-grid">
+            <div class="stat-cell">
+              <div class="stat-number">40+</div>
+              <div class="stat-label">Years of Archives</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">12,400+</div>
+              <div class="stat-label">Ads Examined (FY 2025–26)</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">82%+</div>
+              <div class="stat-label">Voluntary Compliance</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Public Access PDFs</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

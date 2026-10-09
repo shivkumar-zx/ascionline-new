@@ -78,7 +78,7 @@ def build():
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Ad Campaigns – The Advertising Standards Council of India (ASCI)</title>
+  <title>Our Past Campaigns – The Advertising Standards Council of India (ASCI)</title>
   <meta
     content="Find out more about the ads that ASCI has made in the past to encourage consumers to be more vigilant. Explore video films and print campaigns from 2016 to 2025."
     name="description" />
@@ -1088,7 +1088,7 @@ def build():
         <span>/</span>
         <a href="about-us.html">About Us</a>
         <span>/</span>
-        <span style="color: #ffffff; font-weight: 500;">Ad Campaigns</span>
+        <span style="color: #ffffff; font-weight: 500;">Our Past Campaigns</span>
       </div>
 
       <div class="campaigns-badge">
@@ -1096,7 +1096,7 @@ def build():
         <span>Public Vigilance &amp; Consumer Voice</span>
       </div>
 
-      <h1 class="campaigns-hero-title">Ad Campaigns</h1>
+      <h1 class="campaigns-hero-title">Our Past Campaigns</h1>
       <p class="campaigns-hero-subhead">
         Find out more about the ads that ASCI has made in the past to encourage consumers to be more vigilant.
       </p>

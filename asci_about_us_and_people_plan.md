@@ -142,6 +142,8 @@ Matches the exact 2-column structure requested by the client:
 | 2026-10-08 | Project Team | **Plan Architecture Revision** | Updated `asci_about_us_and_people_plan.md` to establish the strict "Zero-Hallucination / Verbatim Copy" mandate and defined the multi-page hub model matching the live website. |
 | 2026-10-08 | Project Team | **FSSAI Directory System Design** | Detailed the unified People directory (`people.html`) combining Board, CCC, Secretariat, and Panels into a filterable table/grid with live search. |
 
+| 2026-10-09 | Project Team | **Campaigns Title & Preview Upgrade** | Unified title to **"Our Past Campaigns"** across `campaigns.html`, `ad-campaigns.html`, and `about-us.html` (matching the mega menu item `<span\>Our past campaigns</span\>`). Upgraded the `#campaigns` section inside `about-us.html` from text-only cards to a mini preview gallery featuring authentic thumbnails, video badges, and direct links to `campaigns.html`. |
+
 ---
 
 ## 6. How to Talk to the Client (Safe Talking Points)
@@ -151,6 +153,7 @@ When presenting to the client, use these exact talking points:
 2. *"We treat `about-us.html` as your official Hub & Gateway — highlighting the exact 7 key areas (History, Self-Regulation, The Work We Do, People, Annual Reports, Campaigns, and ASCI Explained) using your approved copy."*
 3. *"We have removed all extraneous or unapproved sections. The enhancement is strictly focused on premium UI/UX: faster page loads, clean typography (`Domine` & `Bricolage Grotesque`), mobile responsiveness, and intuitive directory search."*
 4. *"For the People section, we implemented an institutional directory model (similar to FSSAI) so visitors can easily search members by panel, name, or organization without losing any official details."*
+5. *"For Campaigns, we unified the page title to 'Our Past Campaigns' so it matches your main navigation menu exactly, and built a filterable gallery showcasing all 113 authentic print & video assets without any placeholder content."*
 
 ---
 
@@ -208,10 +211,16 @@ To maintain total quality control, prevent client overwhelm, and eliminate error
        - Copy: *"Meet the ASCI board, Our Consumer Complaints Council Members, Consultative Committee and our Secretariat team who together champion responsible advertising."*
      - **Card 5: Annual Reports** (`annual-reports.html`)
        - Copy: *"Read up on important milestones, changes and progress made year-on-year by ASCI."*
-     - **Card 6: Ad Campaigns** (`campaigns.html`)
+     - **Card 6: Our Past Campaigns** (`campaigns.html`)
        - Copy: *"Here are the ads that ASCI has made in the past to encourage consumers to be more vigilant."*
      - **Card 7: ASCI Explained** (`https://www.ascionline.in/asci-explained/`)
        - Copy: *"Essential explanatory guides and resources on self-regulation, consumer rights, and how advertising standards work in India."*
+  4. **Upgraded Preview Section (#campaigns)**:
+     - Upgraded from plain text cards into an authentic preview gallery featuring real video thumbnails, play badges, and artwork:
+       - Card 1: `#ChupNaBaitho` consumer awareness video film (`8WTwrza9Vrg`).
+       - Card 2: `Spot the Dark Pattern` digital transparency artboard.
+       - Card 3: `Endorser Due Diligence` creator compliance film (`8epiDSIwXxw`).
+     - Header CTA button: "Explore All 110+ Campaigns" linking directly to `campaigns.html`.
 - **What Was Removed & Why**:
   - Removed previously invented "Four Principles of Responsible Advertising", fabricated decade timelines, and unapproved slogans. The live site uses `about-us` strictly as an introductory directory hub leading to deep-dive pages.
 
@@ -253,9 +262,9 @@ To maintain total quality control, prevent client overwhelm, and eliminate error
 - **Status**: **BUILT & VERIFIED (Zero Hallucination - 100% Client Assets)**
 - **Source of Truth Live URL**: `https://www.ascionline.in/ad-campaigns/`
 - **What Was Built**:
-  1. **Breadcrumb**: `Home > About Us > Ad Campaigns`
+  1. **Breadcrumb**: `Home > About Us > Our Past Campaigns`
   2. **Hero Header**:
-     - Heading: `Ad Campaigns`
+     - Heading: `Our Past Campaigns` (Title unified with Mega Menu `<span\>Our past campaigns</span\>`)
      - Subhead: *"Find out more about the ads that ASCI has made in the past to encourage consumers to be more vigilant."*
      - Live Stats Strip: 113 total campaign assets across 6 major years (26 YouTube video films & PSAs + 87 print/digital artboards from 2016 to 2025).
   3. **Interactive Filter Toolbar**:

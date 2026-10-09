@@ -4045,8 +4045,7 @@ button {
   gap: 24px;
 }
 
-.award-card,
-.campaign-card {
+.award-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 16px;
@@ -4056,11 +4055,89 @@ button {
   flex-direction: column;
 }
 
-.award-card:hover,
-.campaign-card:hover {
+.award-card:hover {
   transform: translateY(-4px);
   border-color: #008779;
   box-shadow: 0 12px 24px rgba(0, 135, 121, 0.08);
+}
+
+.campaign-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.campaign-card:hover {
+  transform: translateY(-6px);
+  border-color: #008779;
+  box-shadow: 0 16px 32px rgba(0, 135, 121, 0.12);
+}
+
+.campaign-card-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0f172a;
+  overflow: hidden;
+}
+
+.campaign-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.campaign-card:hover .campaign-card-thumb img {
+  transform: scale(1.05);
+}
+
+.campaign-card-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 135, 121, 0.92);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.campaign-card:hover .campaign-card-play {
+  transform: translate(-50%, -50%) scale(1.12);
+  background: #008779;
+}
+
+.campaign-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.campaign-card-footer {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8125rem;
 }
 
 .award-badge-year {
@@ -6201,47 +6278,90 @@ button {
   <!-- 7. Our Past Campaigns Section -->
   <section class="about-section" id="campaigns">
     <div class="container">
-      <div class="section-eyebrow">Public Awareness &amp; Consumer Voice</div>
-      <h2 class="section-heading">Our Past Campaigns</h2>
-      <p class="section-intro-text">
-        ASCI regularly runs high-impact nationwide campaigns empowering citizens, youth, and digital influencers to recognize deceptive commercial communications and foster ethical practices.
-      </p>
-
-      <div class="campaigns-grid">
-        <div class="campaign-card">
-          <span class="campaign-tag">Consumer Awareness</span>
-          <h3 class="campaign-title">#ChupNaBaitho</h3>
-          <p class="campaign-desc">
-            A high-visibility public movement encouraging consumers across India to stand up against misleading advertisements and lodge instant complaints via digital and WhatsApp channels.
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 36px; flex-wrap: wrap; gap: 20px;">
+        <div>
+          <div class="section-eyebrow">Public Awareness &amp; Consumer Voice</div>
+          <h2 class="section-heading" style="margin-bottom: 10px;">Our Past Campaigns</h2>
+          <p class="section-intro-text" style="margin-bottom: 0; max-width: 680px;">
+            ASCI regularly produces nationwide multimedia campaigns empowering citizens, youth, and digital creators to recognize misleading advertisements and uphold truthful commercial communication.
           </p>
-          <span class="campaign-meta">Over 10M+ Consumer Impressions</span>
         </div>
-
-        <div class="campaign-card">
-          <span class="campaign-tag">Digital Transparency</span>
-          <h3 class="campaign-title">Spot the Dark Pattern (2026)</h3>
-          <p class="campaign-desc">
-            A creator-led initiative exposing sneaky subscription traps, false urgency countdown clocks, and covert user interface trickery across mobile applications and e-commerce platforms.
-          </p>
-          <span class="campaign-meta">In Partnership with Nasscom &amp; Creators</span>
-        </div>
-
-        <div class="campaign-card">
-          <span class="campaign-tag">Influencer Compliance</span>
-          <h3 class="campaign-title">#AdDisclosed</h3>
-          <p class="campaign-desc">
-            Driving mandatory commercial disclosures on social media feeds and the launch of the ASCI.Social creator verification portal, keeping influencer promotions truthful and transparent.
-          </p>
-          <span class="campaign-meta">Over 90% Digital Compliance Rate</span>
+        <div>
+          <a href="campaigns.html" class="btn-card-link" style="display: inline-flex; align-items: center; gap: 8px; background-color: var(--color-asci-teal); color: #ffffff; padding: 12px 24px; border-radius: var(--radius-pill); font-weight: 600; font-size: 0.875rem; text-decoration: none; box-shadow: 0 4px 12px rgba(0,135,121,0.2);">
+            <span>Explore All 110+ Campaigns</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
         </div>
       </div>
-      <div style="margin-top: 32px; text-align: center;">
-        <a href="campaigns.html" class="btn-card-link" style="display: inline-flex; align-items: center; gap: 8px; background-color: var(--color-asci-teal); color: #ffffff; padding: 12px 28px; border-radius: var(--radius-pill); font-weight: 600; font-size: 0.9375rem; text-decoration: none;">
-          <span>Explore All Video &amp; Print Campaigns</span>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
+
+      <div class="campaigns-grid">
+        <!-- Campaign Card 1: #ChupNaBaitho -->
+        <a href="campaigns.html" class="campaign-card">
+          <div class="campaign-card-thumb">
+            <img src="https://img.youtube.com/vi/8WTwrza9Vrg/hqdefault.jpg" alt="#ChupNaBaitho Consumer Awareness Campaign" loading="lazy" />
+            <div class="campaign-card-play" aria-label="Watch Video">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+            </div>
+          </div>
+          <div class="campaign-card-body">
+            <span class="campaign-tag">Video Campaign</span>
+            <h3 class="campaign-title">#ChupNaBaitho</h3>
+            <p class="campaign-desc">
+              A high-visibility public movement encouraging consumers across India to stand up against misleading advertisements and lodge complaints.
+            </p>
+            <div class="campaign-card-footer">
+              <span class="campaign-meta">Over 10M+ Impressions</span>
+              <span style="color: var(--color-asci-teal); font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+                Watch Film &rarr;
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Campaign Card 2: Spot the Dark Pattern -->
+        <a href="campaigns.html" class="campaign-card">
+          <div class="campaign-card-thumb">
+            <img src="https://www.ascionline.in/wp-content/uploads/2025/04/Influencers_01-1024x1024.jpg" alt="Influencer Guidelines &amp; Dark Patterns" loading="lazy" />
+          </div>
+          <div class="campaign-card-body">
+            <span class="campaign-tag">Digital Transparency</span>
+            <h3 class="campaign-title">Spot the Dark Pattern</h3>
+            <p class="campaign-desc">
+              A creator-led initiative exposing sneaky subscription traps, false urgency countdown clocks, and covert user interface trickery.
+            </p>
+            <div class="campaign-card-footer">
+              <span class="campaign-meta">National Awareness Drive</span>
+              <span style="color: var(--color-asci-teal); font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+                View Artwork &rarr;
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Campaign Card 3: Endorser Due Diligence -->
+        <a href="campaigns.html" class="campaign-card">
+          <div class="campaign-card-thumb">
+            <img src="https://img.youtube.com/vi/8epiDSIwXxw/hqdefault.jpg" alt="Endorser Due Diligence Film" loading="lazy" />
+            <div class="campaign-card-play" aria-label="Watch Video">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+            </div>
+          </div>
+          <div class="campaign-card-body">
+            <span class="campaign-tag">Influencer Compliance</span>
+            <h3 class="campaign-title">Endorser Due Diligence</h3>
+            <p class="campaign-desc">
+              Educating celebrities, brand endorsers, and creators on verifying product claims and upholding clear commercial disclosures.
+            </p>
+            <div class="campaign-card-footer">
+              <span class="campaign-meta">90%+ Creator Compliance</span>
+              <span style="color: var(--color-asci-teal); font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+                Watch Film &rarr;
+              </span>
+            </div>
+          </div>
         </a>
       </div>
     </div>

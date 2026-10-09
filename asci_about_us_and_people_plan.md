@@ -278,7 +278,7 @@ To maintain total quality control, prevent client overwhelm, and eliminate error
        - Divider line
        - Year Selector: `Filter Year: All, 2025, 2022, 2021, 2020, 2019, 2016`
   5. **High-Performance Gallery Grid & Modal Player with Left/Right Navigation**:
-     - 113 authentic cards with lazy loading, hover elevation, and media badges.
+     - 113 authentic cards with lazy loading, hover elevation, media badges, and clean typography (removed redundant/duplicate caption line so titles stand out cleanly without duplicate "Artboard 3" text).
      - Modal lightbox with **`<` (Previous)** and **`>` (Next)** arrow navigation buttons, keyboard arrow (`←` and `→`) support, and item counter (e.g. `Item 5 of 113`).
      - Responsive full HD image inspection and embedded YouTube video playback.
   6. **Zero Hallucination Guarantee**: All 113 campaign assets derive strictly from `campaigns_clean.json` mapped from `https://www.ascionline.in/ad-campaigns/`.

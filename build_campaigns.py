@@ -77,13 +77,13 @@ def build():
     total_images = sum(1 for x in processed_items if x['type'] == 'image')
     items_json = json.dumps(processed_items, ensure_ascii=False)
 
-    # 3. Dedicated Campaigns & Player CSS
+    # 3. Dedicated Campaigns & Player CSS (Matching people.html pixel-for-pixel)
     campaigns_css = """
-    /* ================= CAMPAIGNS HERO (Institutional Style Matching people.html) ================= */
+    /* ================= CAMPAIGNS HERO (Matching people.html) ================= */
     .directory-hero {
       background: #f8fafc;
       border-bottom: 1px solid #e2e8f0;
-      padding: 48px 0 44px;
+      padding: 48px 0 40px;
     }
 
     .breadcrumb-nav {
@@ -109,20 +109,20 @@ def build():
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 40px;
+      gap: 32px;
     }
 
     .directory-hero-left {
       flex: 1;
-      max-width: 680px;
+      max-width: 760px;
     }
 
     .campaigns-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(8, 107, 89, 0.08);
-      color: #086b59;
+      background: rgba(0, 135, 121, 0.08);
+      color: #008779;
       font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -130,101 +130,185 @@ def build():
       padding: 6px 14px;
       border-radius: 9999px;
       margin-bottom: 14px;
-      border: 1px solid rgba(8, 107, 89, 0.18);
+      border: 1px solid rgba(0, 135, 121, 0.18);
     }
 
     .campaigns-badge-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #086b59;
-      box-shadow: 0 0 0 3px rgba(8, 107, 89, 0.2);
+      background: #008779;
+      box-shadow: 0 0 0 3px rgba(0, 135, 121, 0.2);
     }
 
     .directory-page-title {
       font-family: var(--font-serif);
-      font-size: 2.75rem;
-      font-weight: 700;
+      font-size: 2.25rem;
       color: #0f172a;
-      line-height: 1.15;
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
     }
 
     .directory-page-desc {
-      font-size: 1.0625rem;
+      font-size: 1.05rem;
       color: #475569;
+      max-width: 820px;
       line-height: 1.6;
-      max-width: 620px;
+      margin-bottom: 0px;
     }
 
     .directory-hero-right {
       flex-shrink: 0;
       width: 100%;
-      max-width: 480px;
+      max-width: 520px;
     }
 
+    /* Crosshair Stats Grid with Gradient Dividers (Identical to people.html) */
     .directory-stats-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      position: relative;
+    }
+
+    .directory-stats-grid::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent 0%, #e2e8f0 15%, #e2e8f0 85%, transparent 100%);
+    }
+
+    .directory-stats-grid::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent 0%, #e2e8f0 15%, #e2e8f0 85%, transparent 100%);
     }
 
     .stat-cell {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 18px 20px;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .stat-cell:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
-      border-color: #cbd5e1;
+      padding: 32px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .stat-number {
-      font-family: var(--font-sans);
-      font-size: 1.85rem;
-      font-weight: 800;
-      color: #086b59;
+      font-family: var(--font-serif);
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: #008779;
       line-height: 1.1;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
     }
 
     .stat-label {
-      font-size: 0.8125rem;
+      font-size: 0.875rem;
       color: #64748b;
       font-weight: 500;
-      line-height: 1.35;
     }
 
-    /* ================= STICKY CONTROLS SECTION (Matching people.html) ================= */
-    .campaigns-controls-wrapper {
+    @media (max-width: 991px) {
+      .directory-hero-content-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .directory-hero-right {
+        max-width: 100%;
+      }
+
+      .directory-stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .directory-stats-grid::before,
+      .directory-stats-grid::after {
+        display: none;
+      }
+
+      .stat-cell {
+        border-bottom: 1px solid #e2e8f0;
+        padding: 20px 16px;
+      }
+
+      .stat-cell:last-child {
+        border-bottom: none;
+      }
+    }
+
+    /* ================= FLOATING STICKY CONTROLS SECTION (Matching people.html) ================= */
+    .directory-controls-card {
       position: sticky;
-      top: 0;
-      z-index: 95;
-      background: rgba(248, 250, 252, 0.92);
+      top: 155px;
+      z-index: 35;
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      padding: 16px 0;
-      border-bottom: 1px solid #e2e8f0;
+      border: 1px solid #cbd5e1;
+      border-radius: 16px;
+      padding: 20px 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      margin-top: 24px;
+      margin-bottom: 32px;
       transition: all 0.2s ease;
     }
 
-    .campaigns-controls-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 12px 20px;
-      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    @media (max-width: 991px) {
+      .directory-controls-card {
+        top: 72px;
+        padding: 16px;
+      }
+    }
+
+    .controls-top-row {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .search-input-box {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      align-items: center;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 9999px;
+      padding: 10px 18px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .search-input-box:focus-within {
+      border-color: #008779;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(0, 135, 121, 0.12);
+    }
+
+    .search-input-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 0.95rem;
+      color: #0f172a;
+      width: 100%;
+      margin-left: 10px;
+      font-family: inherit;
+    }
+
+    .search-input-box input::placeholder {
+      color: #94a3b8;
     }
 
     .filter-type-group {
@@ -233,10 +317,11 @@ def build():
       padding: 4px;
       border-radius: 12px;
       gap: 4px;
+      flex-wrap: wrap;
     }
 
     .filter-type-btn {
-      padding: 7px 16px;
+      padding: 8px 16px;
       border-radius: 9px;
       font-size: 0.84rem;
       font-weight: 600;
@@ -256,17 +341,36 @@ def build():
 
     .filter-type-btn.active {
       background: #ffffff;
-      color: #086b59;
+      color: #008779;
       box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
     }
 
     .filter-type-count {
-      background: rgba(8, 107, 89, 0.12);
-      color: #086b59;
+      background: rgba(0, 135, 121, 0.12);
+      color: #008779;
       font-size: 0.72rem;
       padding: 1px 7px;
       border-radius: 9999px;
       font-weight: 700;
+    }
+
+    .controls-bottom-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .filter-year-label {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: 4px;
     }
 
     .filter-year-group {
@@ -277,7 +381,7 @@ def build():
     }
 
     .filter-year-btn {
-      padding: 6px 13px;
+      padding: 6px 14px;
       border-radius: 9999px;
       font-size: 0.8125rem;
       font-weight: 600;
@@ -295,49 +399,15 @@ def build():
     }
 
     .filter-year-btn.active {
-      background: #086b59;
+      background: #008779;
       color: #ffffff;
-      border-color: #086b59;
-      box-shadow: 0 2px 8px rgba(8, 107, 89, 0.25);
-    }
-
-    .search-input-box {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 6px 14px;
-      flex: 1;
-      min-width: 240px;
-      max-width: 320px;
-      transition: all 0.2s ease;
-    }
-
-    .search-input-box:focus-within {
-      background: #ffffff;
-      border-color: #086b59;
-      box-shadow: 0 0 0 3px rgba(8, 107, 89, 0.12);
-    }
-
-    .search-input-box input {
-      border: none;
-      background: transparent;
-      outline: none;
-      font-family: inherit;
-      font-size: 0.84rem;
-      color: #0f172a;
-      width: 100%;
-    }
-
-    .search-input-box input::placeholder {
-      color: #94a3b8;
+      border-color: #008779;
+      box-shadow: 0 2px 8px rgba(0, 135, 121, 0.25);
     }
 
     /* ================= CAMPAIGNS GALLERY ================= */
-    .campaigns-gallery-section {
-      padding: 44px 0 80px;
+    .campaigns-main-section {
+      padding: 0 0 80px;
       background-color: #f8fafc;
       min-height: 500px;
     }
@@ -424,9 +494,9 @@ def build():
     }
 
     .badge-image {
-      background: rgba(8, 107, 89, 0.9);
+      background: rgba(0, 135, 121, 0.9);
       color: #ffffff;
-      box-shadow: 0 2px 6px rgba(8, 107, 89, 0.35);
+      box-shadow: 0 2px 6px rgba(0, 135, 121, 0.35);
     }
 
     .gallery-year-badge {
@@ -520,7 +590,7 @@ def build():
       justify-content: space-between;
       font-size: 0.8125rem;
       font-weight: 600;
-      color: #086b59;
+      color: #008779;
       padding-top: 10px;
       border-top: 1px solid #f1f5f9;
     }
@@ -555,13 +625,13 @@ def build():
       font-size: 0.92rem;
     }
 
-    /* Lightbox Modal */
+    /* ================= LIGHTBOX MODAL WITH LEFT & RIGHT NAVIGATION ================= */
     .media-modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(15, 23, 42, 0.88);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       z-index: 9999;
       display: flex;
       align-items: center;
@@ -579,39 +649,56 @@ def build():
 
     .media-modal-container {
       background: #0f172a;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 20px;
       width: 100%;
-      max-width: 920px;
+      max-width: 960px;
       overflow: hidden;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.6);
       display: flex;
       flex-direction: column;
       position: relative;
     }
 
     .media-modal-header {
-      padding: 16px 20px;
+      padding: 16px 22px;
       background: rgba(255, 255, 255, 0.04);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 16px;
+    }
+
+    .media-modal-header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      overflow: hidden;
     }
 
     .media-modal-title {
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: #f8fafc;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      padding-right: 16px;
+    }
+
+    .media-modal-counter {
+      background: rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      white-space: nowrap;
     }
 
     .media-modal-close-btn {
-      width: 32px;
-      height: 32px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
       color: #ffffff;
@@ -620,7 +707,7 @@ def build():
       justify-content: center;
       cursor: pointer;
       border: none;
-      font-size: 1rem;
+      font-size: 1.1rem;
       transition: background 0.15s ease;
       flex-shrink: 0;
     }
@@ -631,11 +718,13 @@ def build():
 
     .media-modal-player-wrap {
       width: 100%;
+      min-height: 380px;
       max-height: 72vh;
       display: flex;
       align-items: center;
       justify-content: center;
       background: #000000;
+      position: relative;
     }
 
     .media-modal-iframe {
@@ -652,8 +741,53 @@ def build():
       display: block;
     }
 
+    /* Modal Navigation Buttons (Left & Right) */
+    .modal-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 20;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .modal-nav-btn:hover {
+      background: rgba(0, 135, 121, 0.95);
+      border-color: #008779;
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-prev-btn {
+      left: 16px;
+    }
+
+    .modal-next-btn {
+      right: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .modal-nav-btn {
+        width: 38px;
+        height: 38px;
+      }
+      .modal-prev-btn { left: 8px; }
+      .modal-next-btn { right: 8px; }
+    }
+
     .media-modal-footer {
-      padding: 14px 20px;
+      padding: 14px 22px;
       background: rgba(255, 255, 255, 0.04);
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
@@ -661,6 +795,13 @@ def build():
       justify-content: space-between;
       color: #cbd5e1;
       font-size: 0.875rem;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .media-modal-footer-nav-hint {
+      font-size: 0.78rem;
+      color: #64748b;
     }
 
     .btn-external-link {
@@ -674,24 +815,6 @@ def build():
 
     .btn-external-link:hover {
       text-decoration: underline;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .directory-hero-content-wrapper {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .directory-hero-right {
-        max-width: 100%;
-      }
-      .campaigns-controls-card {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .search-input-box {
-        max-width: 100%;
-      }
     }
     """
 
@@ -729,6 +852,7 @@ def build():
         </div>
 
         <div class="directory-hero-right">
+          <!-- Crosshair Stats Grid matching people.html -->
           <div class="directory-stats-grid">
             <div class="stat-cell">
               <div class="stat-number">{len(processed_items)}</div>
@@ -744,7 +868,7 @@ def build():
             </div>
             <div class="stat-cell">
               <div class="stat-number">6</div>
-              <div class="stat-label">Major Campaign Years (2016 – 2025)</div>
+              <div class="stat-label">Major Campaign Years</div>
             </div>
           </div>
         </div>
@@ -752,56 +876,59 @@ def build():
     </div>
   </section>
 
-  <!-- Interactive Sticky Filter Controls Card (Matching people.html) -->
-  <section class="campaigns-controls-wrapper">
+  <!-- Main Section with Floating Controls Card (Matching people.html) -->
+  <section class="campaigns-main-section" id="campaigns">
     <div class="container">
-      <div class="campaigns-controls-card">
-        <!-- Media Type Selector -->
-        <div class="filter-type-group" id="mediaTypeTabs">
-          <button class="filter-type-btn active" data-type="all" onclick="setMediaType('all', this)">
-            <span>All Media</span>
-            <span class="filter-type-count">{len(processed_items)}</span>
-          </button>
-          <button class="filter-type-btn" data-type="video" onclick="setMediaType('video', this)">
-            <span>Video Films ({total_videos})</span>
-          </button>
-          <button class="filter-type-btn" data-type="image" onclick="setMediaType('image', this)">
-            <span>Print &amp; Digital Ads ({total_images})</span>
-          </button>
+      <!-- Floating Sticky Controls Card (top: 155px matching people.html) -->
+      <div class="directory-controls-card">
+        <div class="controls-top-row">
+          <!-- Live Instant Search with Pill styling -->
+          <div class="search-input-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="campaignSearch" placeholder="Search campaigns by title, topic, year..." oninput="handleSearch(this.value)" />
+          </div>
+
+          <!-- Media Type Selector -->
+          <div class="filter-type-group" id="mediaTypeTabs">
+            <button class="filter-type-btn active" data-type="all" onclick="setMediaType('all', this)">
+              <span>All Media</span>
+              <span class="filter-type-count">{len(processed_items)}</span>
+            </button>
+            <button class="filter-type-btn" data-type="video" onclick="setMediaType('video', this)">
+              <span>Video Films ({total_videos})</span>
+            </button>
+            <button class="filter-type-btn" data-type="image" onclick="setMediaType('image', this)">
+              <span>Print &amp; Digital Ads ({total_images})</span>
+            </button>
+          </div>
         </div>
 
-        <!-- Year Selector Pills -->
-        <div class="filter-year-group" id="yearPillGroup">
-          <button class="filter-year-btn active" data-year="all" onclick="setYear('all', this)">All Years</button>
-          <button class="filter-year-btn" data-year="2025" onclick="setYear('2025', this)">2025</button>
-          <button class="filter-year-btn" data-year="2022" onclick="setYear('2022', this)">2022</button>
-          <button class="filter-year-btn" data-year="2021" onclick="setYear('2021', this)">2021</button>
-          <button class="filter-year-btn" data-year="2020" onclick="setYear('2020', this)">2020</button>
-          <button class="filter-year-btn" data-year="2019" onclick="setYear('2019', this)">2019</button>
-          <button class="filter-year-btn" data-year="2016" onclick="setYear('2016', this)">2016</button>
-        </div>
-
-        <!-- Live Instant Search -->
-        <div class="search-input-box">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <input type="text" id="campaignSearch" placeholder="Search campaigns by title, topic, year..." oninput="handleSearch(this.value)" />
+        <!-- Year Selector Row -->
+        <div class="controls-bottom-row">
+          <span class="filter-year-label">Filter Year:</span>
+          <div class="filter-year-group" id="yearPillGroup">
+            <button class="filter-year-btn active" data-year="all" onclick="setYear('all', this)">All Years</button>
+            <button class="filter-year-btn" data-year="2025" onclick="setYear('2025', this)">2025</button>
+            <button class="filter-year-btn" data-year="2022" onclick="setYear('2022', this)">2022</button>
+            <button class="filter-year-btn" data-year="2021" onclick="setYear('2021', this)">2021</button>
+            <button class="filter-year-btn" data-year="2020" onclick="setYear('2020', this)">2020</button>
+            <button class="filter-year-btn" data-year="2019" onclick="setYear('2019', this)">2019</button>
+            <button class="filter-year-btn" data-year="2016" onclick="setYear('2016', this)">2016</button>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Campaigns Gallery Grid -->
-  <section class="campaigns-gallery-section">
-    <div class="container">
+      <!-- Gallery Meta -->
       <div class="gallery-header-meta">
         <div class="gallery-count-badge">
           Showing <strong id="visibleCount">{len(processed_items)}</strong> campaigns
         </div>
       </div>
 
+      <!-- Campaigns Gallery Grid -->
       <div class="gallery-grid" id="campaignsGrid">
         <!-- Rendered via JavaScript -->
       </div>
@@ -817,18 +944,36 @@ def build():
     </div>
   </section>
 
-  <!-- Media Player Lightbox Modal -->
+  <!-- Media Player Lightbox Modal with Left & Right Navigation Arrows -->
   <div class="media-modal-backdrop" id="mediaModal" onclick="closeModalOnBackdrop(event)">
     <div class="media-modal-container">
       <div class="media-modal-header">
-        <div class="media-modal-title" id="modalTitle">Campaign Media</div>
+        <div class="media-modal-header-left">
+          <div class="media-modal-title" id="modalTitle">Campaign Media</div>
+          <div class="media-modal-counter" id="modalCounter">1 of {len(processed_items)}</div>
+        </div>
         <button class="media-modal-close-btn" onclick="closeMediaModal()" aria-label="Close modal">✕</button>
       </div>
+
       <div class="media-modal-player-wrap" id="modalPlayerContent">
         <!-- Injected dynamically -->
       </div>
+
+      <!-- Previous & Next Navigation Arrows -->
+      <button class="modal-nav-btn modal-prev-btn" onclick="navigateModal(-1)" aria-label="Previous item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button class="modal-nav-btn modal-next-btn" onclick="navigateModal(1)" aria-label="Next item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
       <div class="media-modal-footer">
         <span id="modalMetaYear">Year: 2025</span>
+        <div class="media-modal-footer-nav-hint">Tip: Use &larr; &rarr; arrow keys to browse</div>
         <a href="#" target="_blank" rel="noopener noreferrer" class="btn-external-link" id="modalExternalLink">
           <span>Open Full Quality Asset</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -841,7 +986,7 @@ def build():
   </div>
 '''
 
-    # 6. JavaScript Logic
+    # 6. JavaScript Logic with Carousel Left/Right Navigation
     campaigns_scripts = f'''
   <script>
     const campaignItems = {items_json};
@@ -849,6 +994,8 @@ def build():
     let currentTypeFilter = 'all';
     let currentYearFilter = 'all';
     let currentSearchQuery = '';
+    let currentFilteredItems = [];
+    let currentModalIndex = 0;
 
     function renderGallery() {{
       const grid = document.getElementById('campaignsGrid');
@@ -856,7 +1003,7 @@ def build():
       const countLabel = document.getElementById('visibleCount');
       if (!grid || !emptyState || !countLabel) return;
 
-      const filtered = campaignItems.filter(item => {{
+      currentFilteredItems = campaignItems.filter(item => {{
         if (currentTypeFilter !== 'all' && item.type !== currentTypeFilter) return false;
         if (currentYearFilter !== 'all' && item.year !== currentYearFilter) return false;
         if (currentSearchQuery.trim() !== '') {{
@@ -869,9 +1016,9 @@ def build():
         return true;
       }});
 
-      countLabel.textContent = filtered.length;
+      countLabel.textContent = currentFilteredItems.length;
 
-      if (filtered.length === 0) {{
+      if (currentFilteredItems.length === 0) {{
         grid.style.display = 'none';
         emptyState.style.display = 'block';
         return;
@@ -880,7 +1027,7 @@ def build():
       grid.style.display = 'grid';
       emptyState.style.display = 'none';
 
-      grid.innerHTML = filtered.map(item => {{
+      grid.innerHTML = currentFilteredItems.map((item, idx) => {{
         const isVideo = item.type === 'video';
         const typeBadge = isVideo ? '<span class="gallery-type-badge badge-video">Video Film</span>' : '<span class="gallery-type-badge badge-image">Print / Artboard</span>';
         const playOverlay = isVideo ? `
@@ -892,7 +1039,7 @@ def build():
         ` : '';
 
         return `
-          <div class="gallery-card" onclick="openMediaModal('${{item.id}}')">
+          <div class="gallery-card" onclick="openMediaModalByIndex(${{idx}})">
             <div class="gallery-thumb-wrap">
               ${{typeBadge}}
               <span class="gallery-year-badge">${{item.year}}</span>
@@ -931,18 +1078,25 @@ def build():
       renderGallery();
     }}
 
-    function openMediaModal(itemId) {{
-      const item = campaignItems.find(i => i.id === itemId);
+    function openMediaModalByIndex(index) {{
+      if (!currentFilteredItems || currentFilteredItems.length === 0) return;
+      if (index < 0) index = currentFilteredItems.length - 1;
+      if (index >= currentFilteredItems.length) index = 0;
+      currentModalIndex = index;
+
+      const item = currentFilteredItems[currentModalIndex];
       if (!item) return;
 
       const modal = document.getElementById('mediaModal');
       const playerWrap = document.getElementById('modalPlayerContent');
       const titleEl = document.getElementById('modalTitle');
+      const counterEl = document.getElementById('modalCounter');
       const yearEl = document.getElementById('modalMetaYear');
       const extLink = document.getElementById('modalExternalLink');
 
       titleEl.textContent = item.title;
-      yearEl.textContent = 'Campaign Year: ' + item.year;
+      counterEl.textContent = `${{currentModalIndex + 1}} of ${{currentFilteredItems.length}}`;
+      yearEl.textContent = `Campaign Year: ${{item.year}}`;
 
       if (item.type === 'video') {{
         playerWrap.innerHTML = `
@@ -962,6 +1116,10 @@ def build():
       document.body.style.overflow = 'hidden';
     }}
 
+    function navigateModal(direction) {{
+      openMediaModalByIndex(currentModalIndex + direction);
+    }}
+
     function closeMediaModal() {{
       const modal = document.getElementById('mediaModal');
       const playerWrap = document.getElementById('modalPlayerContent');
@@ -977,12 +1135,19 @@ def build():
     }}
 
     document.addEventListener('keydown', (e) => {{
+      const modal = document.getElementById('mediaModal');
+      if (!modal || !modal.classList.contains('open')) return;
+
       if (e.key === 'Escape') {{
         closeMediaModal();
+      }} else if (e.key === 'ArrowLeft') {{
+        navigateModal(-1);
+      }} else if (e.key === 'ArrowRight') {{
+        navigateModal(1);
       }}
     }});
 
-    // Immediate execution
+    // Immediate gallery rendering on script evaluation
     renderGallery();
     document.addEventListener('DOMContentLoaded', renderGallery);
   </script>

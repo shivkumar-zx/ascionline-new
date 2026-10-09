@@ -271,13 +271,16 @@ To maintain total quality control, prevent client overwhelm, and eliminate error
      - Heading: `Our Past Campaigns`
      - Description: Verbatim copy from the live site: *"Find out more about the ads that ASCI has made in the past to encourage consumers to be more vigilant. Explore official video films, PSAs, and print campaigns from 2016 to 2025."*
      - 2x2 Stats Grid: Total Assets (113), Video Films (29), Print & Digital (84), Major Campaign Years (6).
-  4. **Floating Sticky Filter Bar (Frosted Glass)**:
-     - Media Selector: `All Media (113)`, `Video Films (29)`, `Print & Digital Ads (84)`
-     - Year Selector Pills: `All Years`, `2025`, `2022`, `2021`, `2020`, `2019`, `2016`
-     - Instant Real-Time Search: Filter campaigns dynamically by title, topic, caption, or year.
-  5. **High-Performance Gallery Grid & Modal Player**:
+  4. **Single-Row Floating Sticky Controls Card (Frosted Glass `top: 155px`)**:
+     - Unified single horizontal row featuring:
+       - Instant Real-Time Search input with pill styling (`border-radius: 9999px`)
+       - Media Type Selector: `All Media`, `Videos`, `Print`
+       - Divider line
+       - Year Selector: `Filter Year: All, 2025, 2022, 2021, 2020, 2019, 2016`
+  5. **High-Performance Gallery Grid & Modal Player with Left/Right Navigation**:
      - 113 authentic cards with lazy loading, hover elevation, and media badges.
-     - Modal lightbox for full HD image inspection and embedded responsive YouTube video playback.
+     - Modal lightbox with **`<` (Previous)** and **`>` (Next)** arrow navigation buttons, keyboard arrow (`←` and `→`) support, and item counter (e.g. `Item 5 of 113`).
+     - Responsive full HD image inspection and embedded YouTube video playback.
   6. **Zero Hallucination Guarantee**: All 113 campaign assets derive strictly from `campaigns_clean.json` mapped from `https://www.ascionline.in/ad-campaigns/`.
 
 

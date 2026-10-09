@@ -270,23 +270,24 @@ def build():
       }
     }
 
-    .controls-top-row {
+    .controls-single-row {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
+      flex-wrap: nowrap;
     }
 
     .search-input-box {
       flex: 1;
-      min-width: 280px;
+      min-width: 220px;
+      max-width: 280px;
       display: flex;
       align-items: center;
       background: #f8fafc;
       border: 1.5px solid #cbd5e1;
       border-radius: 9999px;
-      padding: 10px 18px;
+      padding: 9px 18px;
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -300,7 +301,7 @@ def build():
       border: none;
       background: transparent;
       outline: none;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: #0f172a;
       width: 100%;
       margin-left: 10px;
@@ -314,16 +315,16 @@ def build():
     .filter-type-group {
       display: inline-flex;
       background: #f1f5f9;
-      padding: 4px;
+      padding: 3px;
       border-radius: 12px;
-      gap: 4px;
-      flex-wrap: wrap;
+      gap: 3px;
+      flex-shrink: 0;
     }
 
     .filter-type-btn {
-      padding: 8px 16px;
+      padding: 7px 14px;
       border-radius: 9px;
-      font-size: 0.84rem;
+      font-size: 0.8125rem;
       font-weight: 600;
       color: #64748b;
       display: inline-flex;
@@ -333,6 +334,7 @@ def build():
       background: transparent;
       border: none;
       cursor: pointer;
+      white-space: nowrap;
     }
 
     .filter-type-btn:hover {
@@ -354,34 +356,31 @@ def build():
       font-weight: 700;
     }
 
-    .controls-bottom-row {
+    .controls-divider {
+      width: 1px;
+      height: 26px;
+      background: #e2e8f0;
+      flex-shrink: 0;
+    }
+
+    .filter-year-group {
       display: flex;
       align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-      padding-top: 14px;
-      border-top: 1px solid #f1f5f9;
+      gap: 5px;
+      flex-shrink: 0;
+      flex-wrap: nowrap;
     }
 
     .filter-year-label {
       font-size: 0.8125rem;
       font-weight: 700;
       color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
       margin-right: 4px;
-    }
-
-    .filter-year-group {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
+      white-space: nowrap;
     }
 
     .filter-year-btn {
-      padding: 6px 14px;
+      padding: 5px 12px;
       border-radius: 9999px;
       font-size: 0.8125rem;
       font-weight: 600;
@@ -390,6 +389,7 @@ def build():
       border: 1px solid #e2e8f0;
       cursor: pointer;
       transition: all 0.16s ease;
+      white-space: nowrap;
     }
 
     .filter-year-btn:hover {
@@ -403,6 +403,20 @@ def build():
       color: #ffffff;
       border-color: #008779;
       box-shadow: 0 2px 8px rgba(0, 135, 121, 0.25);
+    }
+
+    @media (max-width: 1200px) {
+      .controls-single-row {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .controls-divider {
+        display: none;
+      }
+      .search-input-box {
+        max-width: 100%;
+        min-width: 100%;
+      }
     }
 
     /* ================= CAMPAIGNS GALLERY ================= */
@@ -881,14 +895,14 @@ def build():
     <div class="container">
       <!-- Floating Sticky Controls Card (top: 155px matching people.html) -->
       <div class="directory-controls-card">
-        <div class="controls-top-row">
+        <div class="controls-single-row">
           <!-- Live Instant Search with Pill styling -->
           <div class="search-input-box">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="text" id="campaignSearch" placeholder="Search campaigns by title, topic, year..." oninput="handleSearch(this.value)" />
+            <input type="text" id="campaignSearch" placeholder="Search campaigns..." oninput="handleSearch(this.value)" />
           </div>
 
           <!-- Media Type Selector -->
@@ -901,16 +915,17 @@ def build():
               <span>Video Films ({total_videos})</span>
             </button>
             <button class="filter-type-btn" data-type="image" onclick="setMediaType('image', this)">
-              <span>Print &amp; Digital Ads ({total_images})</span>
+              <span>Print ({total_images})</span>
             </button>
           </div>
-        </div>
 
-        <!-- Year Selector Row -->
-        <div class="controls-bottom-row">
-          <span class="filter-year-label">Filter Year:</span>
+          <!-- Vertical Divider -->
+          <div class="controls-divider"></div>
+
+          <!-- Year Selector Row in Same Single Row -->
           <div class="filter-year-group" id="yearPillGroup">
-            <button class="filter-year-btn active" data-year="all" onclick="setYear('all', this)">All Years</button>
+            <span class="filter-year-label">Year:</span>
+            <button class="filter-year-btn active" data-year="all" onclick="setYear('all', this)">All</button>
             <button class="filter-year-btn" data-year="2025" onclick="setYear('2025', this)">2025</button>
             <button class="filter-year-btn" data-year="2022" onclick="setYear('2022', this)">2022</button>
             <button class="filter-year-btn" data-year="2021" onclick="setYear('2021', this)">2021</button>

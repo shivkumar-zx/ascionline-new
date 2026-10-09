@@ -579,7 +579,7 @@ def build():
       font-weight: 700;
       color: #0f172a;
       line-height: 1.35;
-      margin-bottom: 6px;
+      margin-bottom: 12px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
@@ -1063,7 +1063,6 @@ def build():
             </div>
             <div class="gallery-card-body">
               <h3 class="gallery-card-title">${{item.title}}</h3>
-              ${{item.caption ? `<p class="gallery-card-caption">${{item.caption}}</p>` : ''}}
               <div class="gallery-card-footer">
                 <span>${{isVideo ? 'Watch Video Film' : 'View High-Res Poster'}}</span>
                 <span>&rarr;</span>

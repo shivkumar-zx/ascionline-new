@@ -4854,6 +4854,9 @@ button {
   padding: 20px 24px;
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
   margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 @media (max-width: 991px) {
@@ -4863,15 +4866,139 @@ button {
   }
 }
 
-.report-counter {
-  font-size: 0.925rem;
+.controls-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.search-input-box {
+  flex: 1;
+  min-width: 260px;
+  max-width: 540px;
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 9999px;
+  padding: 9px 18px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.search-input-box:focus-within {
+  border-color: #008779;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 135, 121, 0.12);
+}
+
+.search-input-box svg {
+  flex-shrink: 0;
   color: #64748b;
+  transition: color 0.2s ease;
+}
+
+.search-input-box:focus-within svg {
+  color: #008779;
+}
+
+.search-input-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.92rem;
+  color: #0f172a;
+  width: 100%;
+  margin-left: 10px;
+  font-family: inherit;
+}
+
+.search-input-box input::placeholder {
+  color: #94a3b8;
+}
+
+.report-counter {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
   white-space: nowrap;
+  background: #f1f5f9;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .report-counter strong {
   color: #008779;
   font-weight: 700;
+}
+
+.filter-pills-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.filter-pill {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  color: #475569;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-pill:hover {
+  background: #ffffff;
+  border-color: #008779;
+  color: #008779;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 135, 121, 0.1);
+}
+
+.filter-pill.active {
+  background: #008779;
+  border-color: #008779;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 135, 121, 0.25);
+}
+
+@media (max-width: 768px) {
+  .controls-top-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .search-input-box {
+    max-width: 100%;
+  }
+
+  .report-counter {
+    align-self: flex-start;
+  }
+
+  .filter-pills-wrap {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 /* Reports Grid */
@@ -6507,7 +6634,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2026/09/Annual-Report-2025-26.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6534,7 +6666,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2025/08/ASCI-Annual-Report-Digital-2024-25.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6561,7 +6698,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2024/09/agm-report-20-Aug-2024.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6588,7 +6730,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2023/09/ASCI-Annual-Report-2022-2023_Webready.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6615,7 +6762,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/11/Annual-Report-2021-2022.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6642,7 +6794,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/35th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2020-2021.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6669,7 +6826,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/34th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2019-2020.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6696,7 +6858,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/33rd-Report-_-Accounts-for-2018-19.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6723,7 +6890,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/32nd-Annual-Reports-2017-18.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6750,7 +6922,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/31st-Annual-Report-2016-17.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6777,7 +6954,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/30th-Report-_-Accounts-of-2015-16.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6804,7 +6986,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/29th-REPORT-_-ACCOUNTS-OF-THE-YEAR-2014-2015.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6831,7 +7018,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/28th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2013-2014.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6858,7 +7050,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/27th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2012-2013.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6885,7 +7082,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/26th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2011-2012.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6912,7 +7114,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/25th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2010-2011.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6939,7 +7146,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/24th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2009-2010.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6966,7 +7178,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/23rd-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2008-2009.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -6993,7 +7210,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/22nd-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2007-2008.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7020,7 +7242,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/21st-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2006-2007.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7047,7 +7274,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/20th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2005-2006.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7074,7 +7306,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/19th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2004-2005.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7101,7 +7338,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/18th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2003-2004.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7128,7 +7370,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/17th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2002-2003.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7155,7 +7402,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/16th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2001-2002.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7182,7 +7434,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/15th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-2000-2001.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7209,7 +7466,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/14th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1999-2000.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7236,7 +7498,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/13th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1998-1999.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7263,7 +7530,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/12th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1997-1998.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7290,7 +7562,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/11th-REPORT-_-ACCOUNTS-FOR-THE-YERA-1996-1997.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7317,7 +7594,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/10th-REPORT-_-ACCOUNTS-FOR-THE-YERA-1995-1996.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7344,7 +7626,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/9th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1994-1995.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7371,7 +7658,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/8th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1993-1994.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7398,7 +7690,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/7th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1992-1993.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7425,7 +7722,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/6th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1991-1992.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7452,7 +7754,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/5th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1990-1991.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7479,7 +7786,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/4th-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1989-1990.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7506,7 +7818,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/3rd-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1988-1989.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7533,7 +7850,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/2nd-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1987-1988.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>
@@ -7560,7 +7882,12 @@ button {
               <span>AGM Publication</span>
             </span>
             <a href="https://www.ascionline.in/wp-content/uploads/2022/09/1st-REPORT-_-ACCOUNTS-FOR-THE-YEAR-1985-1986.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <span>Download PDF &rarr;</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download PDF</span>
             </a>
           </div>
         </div>

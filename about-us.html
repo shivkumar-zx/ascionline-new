@@ -4201,135 +4201,419 @@ button {
   }
 }
 
-/* ================= ANNUAL REPORTS PREVIEW SECTION ================= */
-.about-reports-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* ================= EXECUTIVE SHOWCASE: ANNUAL REPORTS PREVIEW ================= */
+.about-reports-executive-section {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 84px 0 90px;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-reports-executive-section::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: -80px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(0, 135, 121, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-reports-executive-section::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -60px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-reports-executive-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.exec-reports-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
   gap: 24px;
 }
 
-@media (max-width: 991px) {
-  .about-reports-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.exec-reports-header-left {
+  max-width: 680px;
 }
 
-@media (max-width: 640px) {
-  .about-reports-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.about-report-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 28px 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.22s ease;
-  position: relative;
-}
-
-.about-report-card:hover {
-  transform: translateY(-4px);
-  border-color: #008779;
-  box-shadow: 0 12px 28px rgba(0, 135, 121, 0.09);
-}
-
-.about-report-top {
-  display: flex;
+.exec-eyebrow {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
   gap: 8px;
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #5eead4;
+  background: rgba(0, 135, 121, 0.2);
+  border: 1px solid rgba(94, 234, 212, 0.3);
+  padding: 5px 14px;
+  border-radius: 9999px;
+  margin-bottom: 14px;
 }
 
-.about-report-title {
+.exec-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2dd4bf;
+  box-shadow: 0 0 8px #2dd4bf;
+}
+
+.exec-heading {
   font-family: var(--font-serif);
-  font-size: 1.18rem;
+  font-size: clamp(1.85rem, 3.2vw, 2.35rem);
   font-weight: 700;
-  color: #0f172a;
-  line-height: 1.35;
+  color: #ffffff;
+  line-height: 1.25;
   margin-bottom: 10px;
 }
 
-.about-report-card:hover .about-report-title {
-  color: #008779;
-}
-
-.about-report-desc {
-  font-size: 0.9rem;
-  color: #475569;
+.exec-intro-text {
+  font-size: 0.95rem;
+  color: #94a3b8;
   line-height: 1.6;
-  margin-bottom: 20px;
-  flex: 1;
+  margin-bottom: 0;
 }
 
-.about-report-footer {
-  display: flex;
+.btn-exec-all-reports {
+  display: inline-flex;
   align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff !important;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.22s ease;
+  white-space: nowrap;
+}
+
+.btn-exec-all-reports:hover {
+  background: #008779;
+  border-color: #008779;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 135, 121, 0.35);
+}
+
+.exec-reports-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+@media (max-width: 991px) {
+  .exec-reports-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .exec-reports-split {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Left Featured 40th Milestone Card */
+.exec-featured-card {
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.92), rgba(15, 23, 42, 0.98));
+  border: 1.5px solid rgba(0, 135, 121, 0.45);
+  border-radius: 22px;
+  padding: 36px 34px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 12px;
-  padding-top: 14px;
-  border-top: 1px dashed #e2e8f0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  position: relative;
+  transition: transform 0.22s ease, border-color 0.22s ease;
 }
 
-.about-report-meta {
-  font-size: 0.8rem;
-  color: #64748b;
+.exec-featured-card:hover {
+  border-color: #008779;
+  transform: translateY(-3px);
+}
+
+.exec-badge-group {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
 }
 
-.report-badge {
+.exec-badge-milestone {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
   font-size: 0.775rem;
   font-weight: 700;
   padding: 4px 12px;
   border-radius: 9999px;
-  text-transform: uppercase;
   letter-spacing: 0.03em;
 }
 
-.report-badge.milestone {
-  background: #fef3c7;
-  color: #92400e;
-  border: 1px solid #fde68a;
+.exec-badge-year {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  font-size: 0.775rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 9999px;
 }
 
-.report-badge.year {
-  background: #f1f5f9;
-  color: #0f172a;
+.exec-badge-statutory {
+  background: rgba(0, 135, 121, 0.25);
+  color: #5eead4;
+  font-size: 0.775rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 9999px;
 }
 
-.report-badge.gov {
-  background: #e6f4f2;
-  color: #008779;
+.exec-featured-title {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 12px;
 }
 
-.btn-report-download {
-  background: #f0fdfa;
-  color: #008779;
-  border: 1px solid rgba(0, 135, 121, 0.25);
+.exec-featured-desc {
+  font-size: 0.925rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.exec-feat-highlights {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding: 16px 18px;
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.exec-feat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 0.85rem;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.exec-feat-item svg {
+  flex-shrink: 0;
+  color: #2dd4bf;
+}
+
+.exec-featured-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-exec-download-main {
+  background: #008779;
+  color: #ffffff !important;
+  padding: 12px 24px;
+  border-radius: 9999px;
   font-weight: 600;
-  padding: 8px 16px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 135, 121, 0.35);
+  white-space: nowrap;
+}
+
+.btn-exec-download-main:hover {
+  background: #054c3f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 135, 121, 0.45);
+}
+
+.exec-file-meta {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Right Column: Archive Stack */
+.exec-archive-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.exec-dossier-item {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: all 0.2s ease;
+}
+
+.exec-dossier-item:hover {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: rgba(0, 135, 121, 0.4);
+  transform: translateX(3px);
+}
+
+.exec-dossier-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.exec-dossier-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.exec-dossier-year {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #5eead4;
+  background: rgba(0, 135, 121, 0.2);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.exec-dossier-badge {
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.exec-dossier-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.exec-dossier-subtitle {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-exec-download-sm {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #5eead4 !important;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 8px 14px;
   border-radius: 9999px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
   transition: all 0.18s ease;
   white-space: nowrap;
 }
 
-.btn-report-download:hover {
+.btn-exec-download-sm:hover {
+  background: #008779;
+  border-color: #008779;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0, 135, 121, 0.25);
+}
+
+.exec-archive-footer-card {
+  background: rgba(0, 135, 121, 0.1);
+  border: 1px dashed rgba(94, 234, 212, 0.35);
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.exec-archive-footer-text strong {
+  display: block;
+  font-size: 0.925rem;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+
+.exec-archive-footer-text span {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.btn-exec-archive-explore {
   background: #008779;
   color: #ffffff !important;
-  border-color: #008779;
-  box-shadow: 0 4px 12px rgba(0, 135, 121, 0.2);
+  font-size: 0.825rem;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-exec-archive-explore:hover {
+  background: #054c3f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 135, 121, 0.3);
 }
 
 /* Lightbox Modal for Campaigns Preview */
@@ -6685,19 +6969,24 @@ button {
     </div>
   </section>
 
-  <!-- 6. Annual Reports & Transparency Section -->
-  <section class="about-section" id="annual-reports" style="background: #f8fafc;">
+  <!-- 6. Annual Reports & Statutory Disclosures Executive Showcase -->
+  <section class="about-section about-reports-executive-section" id="annual-reports">
     <div class="container">
-      <div class="campaigns-section-header">
-        <div class="campaigns-section-header-left">
-          <div class="section-eyebrow">Governance &amp; Transparency</div>
-          <h2 class="section-heading" style="margin-bottom: 10px;">Annual Reports &amp; Financials</h2>
-          <p class="section-intro-text" style="margin-bottom: 0;">
-            Review four decades of self-regulatory governance, audited statutory financials, Consumer Complaints Council (CCC) adjudication metrics, and industry compliance benchmarks.
+      
+      <!-- Section Header -->
+      <div class="exec-reports-header">
+        <div class="exec-reports-header-left">
+          <div class="exec-eyebrow">
+            <span class="exec-eyebrow-dot"></span>
+            <span>Governance &amp; Statutory Transparency</span>
+          </div>
+          <h2 class="exec-heading">Annual Reports &amp; Statutory Accounts</h2>
+          <p class="exec-intro-text">
+            Review four decades of voluntary self-regulation, audited statutory balance sheets, and Consumer Complaints Council (CCC) adjudication metrics.
           </p>
         </div>
-        <div class="campaigns-section-header-right">
-          <a href="annual-reports.html" class="btn-explore-campaigns">
+        <div>
+          <a href="annual-reports.html" class="btn-exec-all-reports">
             <span>Explore All 40+ Reports</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -6707,108 +6996,141 @@ button {
         </div>
       </div>
 
-      <div class="about-reports-grid">
-        <!-- Preview Card 1: 2025-26 -->
-        <div class="about-report-card">
+      <!-- Split 2-Column Showcase -->
+      <div class="exec-reports-split">
+        
+        <!-- Left Column: Featured 40th Milestone Spotlight -->
+        <div class="exec-featured-card">
           <div>
-            <div class="about-report-top">
-              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-                <span class="report-badge gov">Statutory Accounts</span>
-                <span class="report-badge milestone">40th Milestone</span>
-              </div>
-              <span class="report-badge year">2025–26</span>
+            <div class="exec-badge-group">
+              <span class="exec-badge-milestone">&#9733; 40th Milestone Edition</span>
+              <span class="exec-badge-year">FY 2025–26</span>
+              <span class="exec-badge-statutory">Statutory Accounts</span>
             </div>
-            <h3 class="about-report-title">ASCI Annual Report 2025–2026</h3>
-            <p class="about-report-desc">
-              The flagship 40-year milestone publication covering audited statutory financial accounts, CCC adjudication metrics, ASCI Academy impact, and AI monitoring expansions.
+            <h3 class="exec-featured-title">ASCI Annual Report 2025–2026</h3>
+            <p class="exec-featured-desc">
+              The flagship 40-year milestone publication detailing ASCI's constitutional evolution, audited accounts, CCC adjudication milestones, expansion of the ASCI Academy, and AI-powered proactive digital monitoring.
             </p>
+
+            <div class="exec-feat-highlights">
+              <div class="exec-feat-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Audited Balance Sheet &amp; Statutory Filings</span>
+              </div>
+              <div class="exec-feat-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>12,400+ Total Ads Examined &amp; Adjudicated</span>
+              </div>
+              <div class="exec-feat-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>82%+ Voluntary Compliance Benchmark</span>
+              </div>
+            </div>
           </div>
-          <div class="about-report-footer">
-            <span class="about-report-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-              </svg>
-              <span>AGM Publication</span>
-            </span>
-            <a href="https://www.ascionline.in/wp-content/uploads/2026/09/Annual-Report-2025-26.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+
+          <div class="exec-featured-action-row">
+            <a href="https://www.ascionline.in/wp-content/uploads/2026/09/Annual-Report-2025-26.pdf" target="_blank" rel="noopener noreferrer" class="btn-exec-download-main">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="7 10 12 15 17 10"></polyline>
                 <line x1="12" y1="15" x2="12" y2="3"></line>
               </svg>
-              <span>Download PDF</span>
+              <span>Download 40th Annual Report</span>
             </a>
+            <span class="exec-file-meta">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5eead4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Official PDF &bull; 64 Pages</span>
+            </span>
           </div>
         </div>
 
-        <!-- Preview Card 2: 2024-25 -->
-        <div class="about-report-card">
-          <div>
-            <div class="about-report-top">
-              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-                <span class="report-badge gov">Statutory Accounts</span>
-                <span class="report-badge milestone" style="background: #e0f2fe; color: #0369a1; border-color: #bae6fd;">Digital Edition</span>
+        <!-- Right Column: Past Editions Stack -->
+        <div class="exec-archive-stack">
+          
+          <!-- Dossier Item 1: 2024-25 -->
+          <div class="exec-dossier-item">
+            <div class="exec-dossier-info">
+              <div class="exec-dossier-top">
+                <span class="exec-dossier-year">2024–25</span>
+                <span class="exec-dossier-badge">Digital Edition</span>
               </div>
-              <span class="report-badge year">2024–25</span>
+              <h4 class="exec-dossier-title">Annual Report 2024–2025</h4>
+              <p class="exec-dossier-subtitle">Influencer guidelines, dark patterns &amp; sector compliance metrics</p>
             </div>
-            <h3 class="about-report-title">ASCI Annual Report 2024–2025</h3>
-            <p class="about-report-desc">
-              Comprehensive review of advertising self-regulation across 50+ sectors, influencer marketing compliance, dark pattern detections, and consumer dispute resolutions.
-            </p>
-          </div>
-          <div class="about-report-footer">
-            <span class="about-report-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-              </svg>
-              <span>AGM Publication</span>
-            </span>
-            <a href="https://www.ascionline.in/wp-content/uploads/2025/08/ASCI-Annual-Report-Digital-2024-25.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <a href="https://www.ascionline.in/wp-content/uploads/2025/08/ASCI-Annual-Report-Digital-2024-25.pdf" target="_blank" rel="noopener noreferrer" class="btn-exec-download-sm">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="7 10 12 15 17 10"></polyline>
                 <line x1="12" y1="15" x2="12" y2="3"></line>
               </svg>
-              <span>Download PDF</span>
+              <span>PDF</span>
             </a>
           </div>
+
+          <!-- Dossier Item 2: 2023-24 -->
+          <div class="exec-dossier-item">
+            <div class="exec-dossier-info">
+              <div class="exec-dossier-top">
+                <span class="exec-dossier-year">2023–24</span>
+                <span class="exec-dossier-badge">Statutory Accounts</span>
+              </div>
+              <h4 class="exec-dossier-title">Annual Report 2023–2024</h4>
+              <p class="exec-dossier-subtitle">Audited balance sheet &amp; co-regulatory government partnerships</p>
+            </div>
+            <a href="https://www.ascionline.in/wp-content/uploads/2024/09/Annual-Report-2023-24.pdf" target="_blank" rel="noopener noreferrer" class="btn-exec-download-sm">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>PDF</span>
+            </a>
+          </div>
+
+          <!-- Dossier Item 3: 2022-23 -->
+          <div class="exec-dossier-item">
+            <div class="exec-dossier-info">
+              <div class="exec-dossier-top">
+                <span class="exec-dossier-year">2022–23</span>
+                <span class="exec-dossier-badge">Adjudication Review</span>
+              </div>
+              <h4 class="exec-dossier-title">Annual Report 2022–2023</h4>
+              <p class="exec-dossier-subtitle">Complaints Council findings &amp; proactive digital monitoring rollout</p>
+            </div>
+            <a href="https://www.ascionline.in/wp-content/uploads/2023/09/ASCI-Annual-Report-2022-2023_Webready.pdf" target="_blank" rel="noopener noreferrer" class="btn-exec-download-sm">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>PDF</span>
+            </a>
+          </div>
+
+          <!-- Bottom Archive Link Card -->
+          <div class="exec-archive-footer-card">
+            <div class="exec-archive-footer-text">
+              <strong>Looking for Historic Archives?</strong>
+              <span>Complete 40-year statutory records from 1985 to 2026.</span>
+            </div>
+            <a href="annual-reports.html" class="btn-exec-archive-explore">
+              <span>View All 40 &rarr;</span>
+            </a>
+          </div>
+
         </div>
 
-        <!-- Preview Card 3: 2023-24 -->
-        <div class="about-report-card">
-          <div>
-            <div class="about-report-top">
-              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-                <span class="report-badge gov">Statutory Accounts</span>
-              </div>
-              <span class="report-badge year">2023–24</span>
-            </div>
-            <h3 class="about-report-title">ASCI Annual Report 2023–2024</h3>
-            <p class="about-report-desc">
-              Audited balance sheets, AGM disclosures, cross-regulatory government partnerships (DoCA, CCPA, FSSAI, AYUSH), and preventive advisory services.
-            </p>
-          </div>
-          <div class="about-report-footer">
-            <span class="about-report-meta">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#008779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-              </svg>
-              <span>AGM Publication</span>
-            </span>
-            <a href="https://www.ascionline.in/wp-content/uploads/2024/09/Annual-Report-2023-24.pdf" target="_blank" rel="noopener noreferrer" class="btn-report-download">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              <span>Download PDF</span>
-            </a>
-          </div>
-        </div>
       </div>
+
     </div>
   </section>
 

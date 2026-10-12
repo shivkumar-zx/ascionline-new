@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>About Self-Regulation | The Advertising Standards Council of India (ASCI)</title>
+  <meta
+    content="Find out how advertising self-regulation works benefits everyone — for the advertising ecosystem, policymakers, and consumers."
+    name="description" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&amp;family=Domine:wght@400..700&amp;display=swap"
+    rel="stylesheet" />
+
+  <style>
+    @font-face {
+      font-family: 'Domine';
+      src: url('./Domine/Domine-VariableFont_wght.ttf') format('truetype-variations');
+      font-weight: 400 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Bricolage Grotesque';
+      src: url('./Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf') format('truetype-variations');
+      font-weight: 200 800;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-serif: 'Domine', Georgia, serif;
+      --font-sans: 'Bricolage Grotesque', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      --color-bg: #FFFFFF;
+      --color-text-main: #111827;
+      --color-text-muted: #555B66;
+      --color-text-light: #7A828F;
+
+      --color-asci-green: #086b59;
+      --color-asci-green-dark: #054c3f;
+      --color-asci-teal: #008779;
+      --color-asci-deep-green: #03362a;
+      --color-dark-bg: #032b22;
+      --color-dark-emerald: #053b2f;
+      --color-accent-blue: #026095;
+      --color-accent-orange: #f89e1b;
+      --color-accent-orange-dark: #e57200;
+      --color-accent-yellow: #f5a623;
+
+      --color-card-bg: #FFFFFF;
+      --color-card-border: #E8ECEF;
+      --color-card-hover-border: #cbd5e1;
+
+      --container-max-w: 1280px;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+      --transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text-main);
+      background-color: var(--color-bg);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      transition: var(--transition);
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* TOP NOTIFICATION BAR */
+    .top-notice-bar {
+      background-color: #0b0f14;
+      color: #e2e8f0;
+      font-size: 0.8125rem;
+      text-align: center;
+      padding: 8px 16px;
+      letter-spacing: 0.02em;
+      font-weight: 400;
+    }
+
+    /* HEADER & NAV */
+    .site-header {
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #f0f2f5;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+    }
+
+    .header-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 24px;
+    }
+
+    .mobile-burger-btn,
+    .mobile-search-btn {
+      display: none;
+    }
+
+    .header-logo-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .site-logo-img {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+
+    .header-search-bar {
+      flex: 1;
+      max-width: 520px;
+      margin: 0 20px;
+      position: relative;
+    }
+
+    .search-input-wrapper {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border: 1.2px solid #d0d7de;
+      border-radius: var(--radius-pill);
+      padding: 8px 18px;
+      transition: var(--transition);
+    }
+
+    .search-input-wrapper:focus-within {
+      border-color: var(--color-asci-teal);
+      box-shadow: 0 0 0 3px rgba(0, 135, 121, 0.12);
+    }
+
+    .search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 0.9375rem;
+      color: var(--color-text-main);
+      background: transparent;
+      font-family: inherit;
+    }
+
+    .search-icon-btn {
+      color: #57606a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 8px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .btn-ad-check {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn-ad-check-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      background: #10b981;
+      color: #ffffff;
+      border-radius: 50%;
+      font-size: 11px;
+    }
+
+    .btn-raise-complaint-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1.2px solid #0f172a;
+      color: #0f172a;
+      padding: 9px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    /* Green Hover Fill for Buttons */
+    .btn-ad-check::before,
+    .btn-raise-complaint-top::before,
+    .btn-megamenu-explore::before {
+      content: '' !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      background: #008779 !important;
+      z-index: -1 !important;
+      transform: scaleX(0) !important;
+      transform-origin: left center !important;
+      transition: transform 0.22s ease !important;
+      border-radius: inherit !important;
+    }
+
+    .btn-ad-check:hover::before,
+    .btn-raise-complaint-top:hover::before,
+    .btn-megamenu-explore:hover::before {
+      transform: scaleX(1) !important;
+    }
+
+    .btn-raise-complaint-top:hover {
+      color: #ffffff !important;
+      border-color: #008779 !important;
+    }
+
+    /* Sub Navigation Row With Multi-Color Bottom Accent Stripe */
+    .header-nav-row {
+      border-top: 1px solid #f1f5f9;
+      background: #ffffff;
+      position: relative;
+    }
+
+    .header-nav-row::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 3.5px;
+      background: linear-gradient(to right,
+          #008779 0%, #008779 26%,
+          #e11d48 26%, #e11d48 50%,
+          #f59e0b 50%, #f59e0b 72%,
+          #026095 72%, #026095 86%,
+          #38bdf8 86%, #38bdf8 100%);
+    }
+
+    .nav-menu-list {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 8px;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 14px 14px;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: #374151;
+      border-bottom: 2px solid transparent;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover,
+    .nav-item.active .nav-link {
+      color: var(--color-asci-teal);
+      border-bottom-color: var(--color-asci-teal);
+    }
+
+    .chevron-icon {
+      width: 12px;
+      height: 12px;
+      stroke: currentColor;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-item:hover .chevron-icon {
+      transform: rotate(180deg);
+    }
+
+    /* MEGAMENU PANELS */
+    .megamenu-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+      padding: 36px 0 44px;
+      z-index: 99;
+    }
+
+    .megamenu-panel.active {
+      display: block;
+    }
+
+    .about-mega-grid-3col {
+      display: grid;
+      grid-template-columns: 280px 1.5fr 1.5fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .megamenu-highlight-col {
+      border-right: 1px solid #e2e8f0;
+      padding-right: 32px;
+    }
+
+    .megamenu-highlight-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: #0f172a;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .megamenu-highlight-desc {
+      font-size: 0.875rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .btn-megamenu-explore {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1.2px solid #0f172a;
+      border-radius: var(--radius-pill);
+      padding: 9px 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #0f172a;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn-megamenu-explore:hover {
+      color: #ffffff;
+      border-color: #008779;
+    }
+
+    .megamenu-col-title {
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: #94a3b8;
+      margin-bottom: 18px;
+    }
+
+    .megamenu-2col-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 28px;
+      row-gap: 0;
+    }
+
+    .megamenu-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .megamenu-link-item a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.925rem;
+      color: #334155;
+      font-weight: 500;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .megamenu-link-item a:hover {
+      color: var(--color-asci-teal);
+      transform: translateX(3px);
+    }
+
+    .arrow-diag-icon {
+      width: 13px;
+      height: 13px;
+      stroke: #9ca3af;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .megamenu-link-item a:hover .arrow-diag-icon {
+      stroke: var(--color-asci-teal);
+    }
+
+    /* ================= WORK HERO THEME (Matching Screenshot 1) ================= */
+    .work-hero {
+      padding: 48px 0 0px;
+      background: #ffffff;
+    }
+
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-bottom: 18px;
+    }
+
+    .breadcrumb-nav a {
+      color: #008779;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .breadcrumb-nav a:hover {
+      text-decoration: underline;
+    }
+
+    .work-page-title {
+      font-family: var(--font-serif);
+      font-size: 2.35rem;
+      color: #0f172a;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+
+    .work-page-desc {
+      font-size: 1.05rem;
+      color: #475569;
+      max-width: 860px;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .page-content-wrap {
+      padding: 10px 0 80px;
+    }
+
+    .page-content-area {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .content-main-heading {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      color: var(--color-asci-green-dark);
+      margin-bottom: 24px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .content-lead-text {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+    }
+
+    .benefit-group {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .benefit-sub-heading {
+      font-size: 20px;
+      font-weight: 600;
+      color: #555b66;
+      margin-bottom: 10px;
+    }
+
+    .benefit-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .orange-chevron {
+      color: #f89e1b;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      flex-shrink: 0;
+      font-weight: 900;
+      user-select: none;
+    }
+
+    .benefit-text {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: #0b0f14;
+      color: #ffffff;
+      padding: 80px 0 40px;
+      border-top: 1px solid #1e293b;
+      margin-top: 80px;
+    }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-logo-img {
+      height: 48px;
+      width: auto;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .footer-mission {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .footer-email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: #e2e8f0;
+      margin-bottom: 24px;
+    }
+
+    .footer-email-link:hover {
+      color: var(--color-asci-teal);
+    }
+
+    .footer-socials-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #64748b;
+      margin-bottom: 12px;
+    }
+
+    .footer-social-icons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-icon-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #1e293b;
+      transition: var(--transition);
+    }
+
+    .social-icon-circle:hover {
+      background: var(--color-asci-teal);
+      transform: translateY(-2px);
+    }
+
+    .footer-col-title {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links-list a {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      transition: var(--transition);
+    }
+
+    .footer-links-list a:hover {
+      color: #ffffff;
+      padding-left: 4px;
+    }
+
+    .footer-bottom-row {
+      border-top: 1px solid #1e293b;
+      padding-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8125rem;
+      color: #64748b;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal-links a:hover {
+      color: #e2e8f0;
+    }
+
+    /* SEARCH OVERLAY MODAL */
+    .search-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 90px;
+    }
+
+    .search-overlay.open {
+      display: flex;
+    }
+
+    .search-box {
+      width: 100%;
+      max-width: 680px;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      padding: 36px 32px;
+      position: relative;
+    }
+
+    .search-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .search-modal-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      color: #0f172a;
+    }
+
+    .search-close-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #64748b;
+      transition: var(--transition);
+    }
+
+    .search-close-btn:hover {
+      background: #0f172a;
+      color: #ffffff;
+    }
+
+    .search-input-field {
+      width: 100%;
+      border: 1.5px solid #cbd5e1;
+      border-radius: var(--radius-pill);
+      padding: 14px 24px;
+      font-size: 1.05rem;
+      font-family: inherit;
+      outline: none;
+      margin-bottom: 20px;
+      transition: border-color 0.2s ease;
+    }
+
+    .search-input-field:focus {
+      border-color: var(--color-asci-teal);
+    }
+
+    /* MOBILE RESPONSIVE STYLES */
+    @media (max-width: 991px) {
+      .header-search-bar {
+        display: none;
+      }
+
+      .header-nav-row {
+        display: none;
+      }
+
+      .mobile-burger-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 38px;
+        height: 38px;
+        padding: 6px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .burger-bar {
+        height: 2px;
+        width: 100%;
+        background: #0f172a;
+        border-radius: 2px;
+      }
+
+      .mobile-search-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+        background: #f8fafc;
+        color: #0f172a;
+      }
+
+      .tabs-container {
+        border-radius: 24px;
+        padding: 4px;
+      }
+
+      .tab-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+      }
+
+      .footer-top-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .work-page-title {
+        font-size: 1.85rem;
+      }
+
+      .content-main-heading {
+        font-size: 22px;
+      }
+
+      .footer-top-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Notification Bar -->
+  <div class="top-notice-bar">
+    Official Operational Overview • The Advertising Standards Council of India (ASCI)
+  </div>
+
+  <!-- Site Sticky Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top-row">
+        <!-- Logo -->
+        <a href="about-us.html" class="header-logo-link" aria-label="ASCI Home">
+          <img src="https://www.ascionline.in/wp-content/themes/asci-global/assets/images/Logo-asci.png"
+            alt="ASCI - The Advertising Standards Council of India" class="site-logo-img" />
+        </a>
+
+        <!-- Desktop Search Bar -->
+        <div class="header-search-bar" onclick="openSearch()" style="cursor: pointer;">
+          <div class="search-input-wrapper">
+            <input type="text" class="search-input" placeholder="Search....." readonly />
+            <button class="search-icon-btn" aria-label="Open search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <a href="#" class="btn-ad-check">
+            <span class="btn-ad-check-icon">✓</span>
+            <span>Ad Check</span>
+          </a>
+          <a href="how-we-handle-complaints.html" class="btn-raise-complaint-top">
+            <span>Raise a Complaint</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+
+          <!-- Mobile Search Trigger -->
+          <button class="mobile-search-btn" aria-label="Search ASCI" onclick="openSearch()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <!-- Mobile Burger Trigger -->
+          <button class="mobile-burger-btn" id="mobileBurgerBtn" onclick="toggleMobileNav()" aria-label="Menu">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop Navigation Row with Multi-Color Stripe -->
+    <div class="header-nav-row">
+      <div class="container">
+        <nav>
+          <ul class="nav-menu-list">
+            <!-- 1. About Us (Active) -->
+            <li class="nav-item nav-item-dropdown active" data-menu="aboutMegaPanel">
+              <a href="about-us.html" class="nav-link">
+                About Us
+                <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+            </li>
+
+            <!-- 2. Codes & Cases -->
+            <li class="nav-item nav-item-dropdown" data-menu="codesMegaPanel">
+              <a href="#" class="nav-link">
+                Codes &amp; Cases
+                <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+            </li>
+
+            <!-- 3. ASCI Academy -->
+            <li class="nav-item nav-item-dropdown" data-menu="academyMegaPanel">
+              <a href="#" class="nav-link">
+                ASCI Academy
+                <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+            </li>
+
+            <!-- 4. Topics & Resources -->
+            <li class="nav-item nav-item-dropdown" data-menu="topicsMegaPanel">
+              <a href="#" class="nav-link">
+                Topics &amp; Resources
+                <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+            </li>
+
+            <!-- 5. Membership -->
+            <li class="nav-item nav-item-dropdown" data-menu="membershipMegaPanel">
+              <a href="#" class="nav-link">
+                Membership
+                <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+            </li>
+
+            <!-- 6. What's New -->
+            <li class="nav-item nav-item-dropdown" data-menu="newMegaPanel">
+              <a href="#" class="nav-link">
+                What's New
+                <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+            </li>
+
+            <!-- 7. Contact -->
+            <li class="nav-item">
+              <a href="#" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- MEGAMENU PANEL: About Us -->
+    <div class="megamenu-panel" id="aboutMegaPanel">
+      <div class="container">
+        <div class="about-mega-grid-3col">
+          <!-- Col 1: Overview -->
+          <div class="megamenu-highlight-col">
+            <h3 class="megamenu-highlight-title">Committed to Truth in Advertising</h3>
+            <p class="megamenu-highlight-desc">
+              Established in 1985, ASCI is a voluntary self-regulatory body safeguarding consumer trust and fostering
+              responsible advertising across India.
+            </p>
+            <a href="about-us.html" class="btn-megamenu-explore">
+              <span>Explore ASCI Overview</span>
+              <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Col 2: Organisation -->
+          <div class="megamenu-col">
+            <h4 class="megamenu-col-title">Organisation</h4>
+            <div class="megamenu-2col-list">
+              <ul class="megamenu-links-list">
+                <li class="megamenu-link-item">
+                  <a href="about-us.html#purpose">
+                    <span>Purpose &amp; vision</span>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </li>
+                <li class="megamenu-link-item">
+                  <a href="about-self-regulation.html" style="color: var(--color-asci-teal); font-weight: 700;">
+                    <span>About self-regulation</span>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" style="stroke: var(--color-asci-teal);">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </li>
+                <li class="megamenu-link-item">
+                  <a href="the-work-we-do.html">
+                    <span>The work we do &amp; its impact</span>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </li>
+                <li class="megamenu-link-item">
+                  <a href="history-key-milestones.html">
+                    <span>History &amp; key milestones</span>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+              <ul class="megamenu-links-list">
+                <li class="megamenu-link-item">
+                  <a href="about-us.html#awards">
+                    <span>Awards &amp; recognition</span>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </li>
+                <li class="megamenu-link-item">
+                  <a href="about-us.html#reports">
+                    <span>Annual reports</span>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </li>
+                <li class="megamenu-link-item">
+                  <a href="about-us.html#campaigns">
+                    <span>Our past campaigns</span>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Col 3: People -->
+          <div class="megamenu-col">
+            <h4 class="megamenu-col-title">People &amp; Governance</h4>
+            <div class="megamenu-2col-list">
+              <ul class="megamenu-links-list">
+                <li class="megamenu-link-item">
+                  <a href="about-us.html#people">
+                    <span>Board of Governors</span>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </li>
+                <li class="megamenu-link-item">
+                  <a href="about-us.html#people">
+                    <span>Consumer Complaints Council</span>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+              <ul class="megamenu-links-list">
+                <li class="megamenu-link-item">
+                  <a href="about-us.html#people">
+                    <span>Independent Review Panel</span>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </li>
+                <li class="megamenu-link-item">
+                  <a href="about-us.html#people">
+                    <span>Technical Experts</span>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section (Matching Theme of what-we-cover.html) -->
+  <section class="work-hero">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="about-us.html">Home</a>
+        <span>/</span>
+        <a href="about-us.html">About Us</a>
+        <span>/</span>
+        <span>About Self-Regulation</span>
+      </div>
+
+      <h1 class="work-page-title">Find out how advertising self-regulation works benefits everyone</h1>
+    </div>
+  </section>
+
+  <!-- Main Content Area (Only Data, No Tabs) -->
+  <main class="page-content-wrap">
+    <div class="container">
+      <div class="page-content-area">
+        <p class="content-lead-text">
+          Advertising Self-regulation means that the ad industry has willingly established a system to moderate all its
+          own ads and ensure that advertisers follow a set of standards while getting ads created.
+        </p>
+
+        <p class="content-lead-text">
+          This is done to ensure that advertisements continue to be honest, truthful, decent, safe and fair. Ads must be
+          planned and crafted in a manner that they are duly responsible towards safeguarding the interests of the
+          consumer as well as society.
+        </p>
+
+        <p class="content-lead-text">
+          ASCI was formed by the representatives of four pillars of the industry itself – the businesses who sponsor/
+          pay for the advertising, the ad agencies who conceptualise and give them a form, the media that carry these
+          ads and allied professions such as PR and market research that support the development of communication.
+        </p>
+
+        <p class="content-lead-text">
+          The advertising ecosystem agrees upon a set of standards that ads must adhere to and a system to make sure
+          that the ads that do not meet those standards are quickly corrected or removed.
+        </p>
+
+        <p class="content-lead-text">
+          Self-regulation benefits everyone – policymakers, consumers, the advertising ecosystem, and society as a
+          whole.
+        </p>
+
+        <!-- 3 Beneficiaries -->
+        <div class="benefit-group">
+          <!-- Item 1: Ecosystem -->
+          <div>
+            <h2 class="benefit-sub-heading">For the advertising ecosystem</h2>
+            <div class="benefit-row">
+              <span class="orange-chevron">&#10095;</span>
+              <p class="benefit-text">
+                According to estimates, about one-third or half of a business’s market capitalisation is represented by
+                its brand reputation. Thus, consumer trust is the key to corporate success. Advertising self-regulation,
+                through the promotion of responsible advertising, helps build consumer trust in brands which inspires
+                brand loyalty and that in turn leads to growth in sales and market share. Maximised returns on long term
+                investments in advertising benefit not only advertisers but also agencies and media, who will see a
+                higher demand for creative yet responsible advertising.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2: Policymakers -->
+          <div>
+            <h2 class="benefit-sub-heading">For policymakers</h2>
+            <div class="benefit-row">
+              <span class="orange-chevron">&#10095;</span>
+              <p class="benefit-text">
+                Self-regulatory advertising standards provide an additional layer of consumer protection that
+                complements the legal framework. Advertising self-regulatory bodies also help avoid problems before they
+                happen by providing advertising advice at the pre-production stage. advice. They keep track of key
+                concerns about advertising and take steps to address them when needed.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3: Consumers -->
+          <div>
+            <h2 class="benefit-sub-heading">For consumers</h2>
+            <div class="benefit-row">
+              <span class="orange-chevron">&#10095;</span>
+              <p class="benefit-text">
+                Self-regulation provides a cost-free, fast and efficient solution to express their views about
+                advertisements and raise their concerns to an impartial body.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Search Modal Overlay -->
+  <div class="search-overlay" id="searchOverlay" onclick="closeSearchOnBackdrop(event)">
+    <div class="search-box">
+      <div class="search-modal-header">
+        <h3 class="search-modal-title">Search ASCI</h3>
+        <button class="search-close-btn" onclick="closeSearch()" aria-label="Close search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <input type="text" id="searchInput" class="search-input-field" placeholder="Search....." autofocus />
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <img src="https://www.ascionline.in/wp-content/themes/asci-global/assets/images/Logo-asci.png"
+            alt="ASCI - The Advertising Standards Council of India" class="footer-logo-img" />
+          <p class="footer-mission">
+            Self-regulation to help ensure advertising in India is legal, decent, honest, truthful and fair.
+          </p>
+          <a href="mailto:contact@asciionline.in" class="footer-email-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>contact@asciionline.in</span>
+          </a>
+          <div class="footer-socials-label">Connect with ASCI</div>
+          <div class="footer-social-icons">
+            <a href="https://www.linkedin.com/company/the-advertising-standards-council-of-india"
+              class="social-icon-circle" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <span style="font-size: 14px; font-weight: bold;">in</span>
+            </a>
+            <a href="https://twitter.com/ascionline" class="social-icon-circle" aria-label="X / Twitter" target="_blank"
+              rel="noopener">
+              <span style="font-size: 14px; font-weight: bold;">𝕏</span>
+            </a>
+            <a href="https://www.facebook.com/ascionline" class="social-icon-circle" aria-label="Facebook"
+              target="_blank" rel="noopener">
+              <span style="font-size: 14px; font-weight: bold;">fb</span>
+            </a>
+            <a href="https://www.instagram.com/ascionline/" class="social-icon-circle" aria-label="Instagram"
+              target="_blank" rel="noopener">
+              <span style="font-size: 14px; font-weight: bold;">ig</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">About Us</h4>
+          <ul class="footer-links-list">
+            <li><a href="about-us.html#purpose">Purpose &amp; Vision</a></li>
+            <li><a href="about-self-regulation.html">About Self-Regulation</a></li>
+            <li><a href="the-work-we-do.html">The Work We Do</a></li>
+            <li><a href="history-key-milestones.html">History &amp; Milestones</a></li>
+            <li><a href="about-us.html#people">Leadership &amp; CCC</a></li>
+            <li><a href="about-us.html#reports">Annual Reports</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Codes &amp; Cases</h4>
+          <ul class="footer-links-list">
+            <li><a href="#">The ASCI Code</a></li>
+            <li><a href="#">Sector Guidelines</a></li>
+            <li><a href="#">Complaint Outcomes</a></li>
+            <li><a href="#">Advisories</a></li>
+            <li><a href="how-we-handle-complaints.html">How We Handle Complaints</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Services &amp; Academy</h4>
+          <ul class="footer-links-list">
+            <li><a href="#">Ad Check Pre-Clearance</a></li>
+            <li><a href="#">Endorser Due Diligence</a></li>
+            <li><a href="#">ASCI Academy Courses</a></li>
+            <li><a href="#">Research &amp; Whitepapers</a></li>
+            <li><a href="#">AdWise Program</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Get Involved</h4>
+          <ul class="footer-links-list">
+            <li><a href="how-we-handle-complaints.html">Raise a Complaint</a></li>
+            <li><a href="#">Become a Member</a></li>
+            <li><a href="#">Current Members</a></li>
+            <li><a href="#">Careers at ASCI</a></li>
+            <li><a href="#">Subscribe to Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>&copy; 2026 The Advertising Standards Council of India (ASCI). All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Disclaimer</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+
+
+    // Megamenu Hover Interaction
+    const navDropdowns = document.querySelectorAll('.nav-item-dropdown');
+    const megaPanels = document.querySelectorAll('.megamenu-panel');
+    let hideTimer = null;
+
+    navDropdowns.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        clearTimeout(hideTimer);
+        const panelId = item.getAttribute('data-menu');
+        megaPanels.forEach(p => p.classList.remove('active'));
+        const targetPanel = document.getElementById(panelId);
+        if (targetPanel) targetPanel.classList.add('active');
+      });
+
+      item.addEventListener('mouseleave', () => {
+        hideTimer = setTimeout(() => {
+          megaPanels.forEach(p => p.classList.remove('active'));
+        }, 200);
+      });
+    });
+
+    megaPanels.forEach(panel => {
+      panel.addEventListener('mouseenter', () => clearTimeout(hideTimer));
+      panel.addEventListener('mouseleave', () => {
+        hideTimer = setTimeout(() => {
+          panel.classList.remove('active');
+        }, 200);
+      });
+    });
+
+    // Search Modal
+    function openSearch() {
+      const modal = document.getElementById('searchOverlay');
+      if (modal) {
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeSearch() {
+      const modal = document.getElementById('searchOverlay');
+      if (modal) {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function closeSearchOnBackdrop(e) {
+      if (e.target.id === 'searchOverlay') closeSearch();
+    }
+
+    // Keyboard support
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeSearch();
+    });
+  </script>
+</body>
+
+</html>

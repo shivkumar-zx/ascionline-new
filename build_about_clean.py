@@ -120,6 +120,39 @@ about_css = """
   margin-bottom: 10px;
 }
 
+/* Purpose Section Theme Styling */
+#purpose {
+  background-color: #f89e1b;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  scroll-margin-top: 160px;
+}
+
+#purpose .section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 9999px;
+  padding: 6px 16px;
+  font-size: 0.775rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #0f172a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-bottom: 16px;
+}
+
+#purpose .section-heading {
+  color: #0f172a;
+}
+
+#purpose .section-intro-text {
+  color: #1e293b;
+  font-weight: 450;
+}
+
 .section-heading {
   font-family: var(--font-serif);
   font-size: 2rem;
@@ -429,88 +462,85 @@ about_body = """
     </div>
   </section>
 
-  <!-- 1. Purpose & 4 Foundational Pillars -->
+  <!-- 1. Purpose of Self-Regulation in Advertising -->
   <section class="about-section" id="purpose">
     <div class="container">
-      <div class="section-eyebrow">Our Purpose &amp; Code</div>
-      <h2 class="section-heading">Four Principles of Responsible Advertising</h2>
-      <p class="section-intro-text">
-        Formed with the joint support of all key sectors connected with advertising—advertisers, advertising agencies, media (broadcasters, digital platforms, press), and market researchers—the ASCI Code is structured upon four enduring principles:
+      <h2 class="section-heading">Purpose of Self-Regulation in Advertising</h2>
+      <p class="section-intro-text" style="margin-bottom: 16px;">
+        The Advertising Standards Council of India (ASCI), established in 1985, is committed to the cause of Self-Regulation in Advertising, ensuring the protection of the interests of consumers, while being fair to the advertising industry. ASCI was formed with the support of all four sectors connected with Advertising, viz. Advertisers, Advertising Agencies, Media (including Broadcasters and the Press) and others like PR Agencies, Market Research Companies etc.
       </p>
-
-      <div class="pillars-grid">
-        <div class="pillar-card">
-          <div class="pillar-number">01</div>
-          <h3 class="pillar-title">Truthful &amp; Honest</h3>
-          <p class="pillar-desc">
-            Advertisements must be truthful and capable of objective substantiation. Claims must not mislead consumers through ambiguity, omission, or exaggeration.
-          </p>
-        </div>
-
-        <div class="pillar-card">
-          <div class="pillar-number">02</div>
-          <h3 class="pillar-title">Non-Offensive to Decency</h3>
-          <p class="pillar-desc">
-            Commercial messages must respect prevailing standards of public decency and refrain from offensive, discriminatory, or derogatory depictions.
-          </p>
-        </div>
-
-        <div class="pillar-card">
-          <div class="pillar-number">03</div>
-          <h3 class="pillar-title">Safeguard Against Harm</h3>
-          <p class="pillar-desc">
-            Advertisements must not promote hazardous practices, encourage unsafe behavior, or exploit the natural credulity of vulnerable groups, particularly children.
-          </p>
-        </div>
-
-        <div class="pillar-card">
-          <div class="pillar-number">04</div>
-          <h3 class="pillar-title">Fair in Competition</h3>
-          <p class="pillar-desc">
-            Encouraging healthy commercial competition without unfair disparagement or attacks against competitors or other products in the market.
-          </p>
-        </div>
-      </div>
+      <p class="section-intro-text" style="margin-bottom: 0;">
+        By self-regulating advertisements to ensure that they are honest, decent, safe and fair, ASCI supports consumers and responsible advertisers. ASCI also supports the advertising industry through its pre-production advisory services that mitigate the risk of problematic ads being made and exposed to consumers.
+      </p>
     </div>
   </section>
 
-  <!-- 2. What We Do & Our Impact -->
+  <!-- 2. The Work We Do & Its Impact -->
   <section class="about-section" id="work">
     <div class="container">
-      <div class="section-eyebrow">Operational Framework</div>
-      <h2 class="section-heading">How ASCI Protects Consumers &amp; Guides Advertisers</h2>
+      <h2 class="section-heading">The Work We Do &amp; Its Impact</h2>
       <p class="section-intro-text">
-        ASCI operates on both ends of the creative lifecycle: supporting creators to get it right before release, and correcting misleading advertisements after they appear.
+        ASCI serves as the guardian of truthful, decent, and fair advertising in India across four core operational areas: handling complaints with an independent infrastructure, regulating advertising content across media, proactive digital monitoring, and institutional co-regulation.
       </p>
 
       <div class="work-split-grid">
-        <!-- Preventive -->
+        <!-- 1. How We Handle Complaints -->
         <div class="work-col-box">
-          <span class="work-box-badge preventive">Preventive Support</span>
-          <h3 class="work-box-title">Pre-Production Guidance &amp; Training</h3>
+          <span class="work-box-badge preventive">Grievance Redressal</span>
+          <h3 class="work-box-title">How We Handle Complaints</h3>
           <p class="work-box-desc">
-            Minimizing regulatory risk and protecting consumer trust before campaigns reach the public:
+            Impartial, transparent complaint resolution protecting consumers and ensuring industry accountability:
           </p>
           <ul class="work-bullet-list">
-            <li><strong>Advertising Advice:</strong> Confidential pre-release copy advice for brand teams.</li>
-            <li><strong>Endorser Due Diligence:</strong> Regulatory verification tools for celebrity and influencer partnerships.</li>
-            <li><strong>ASCI Academy:</strong> Sectoral courses on dark patterns, privacy, green claims, and ad literacy.</li>
-            <li><strong>Topic Guidelines:</strong> Clear boundaries for emerging categories including AI, influencer disclosures, and green claims.</li>
+            <li><strong>TARA Complaint Portal:</strong> Free, multilingual mechanism for consumers with confidential identity protection.</li>
+            <li><strong>Technical Experts Panel:</strong> 53+ domain specialists across 25+ sectors scrutinizing technical and lab reports.</li>
+            <li><strong>Consumer Complaints Council (CCC):</strong> 40-member council with 50%+ civil society representation issuing binding rulings.</li>
+            <li><strong>Independent Review Panel:</strong> Presided over by retired High Court judges to independently hear procedural reviews.</li>
           </ul>
         </div>
 
-        <!-- Corrective -->
+        <!-- 2. What We Cover -->
         <div class="work-col-box">
-          <span class="work-box-badge corrective">Corrective Enforcement</span>
-          <h3 class="work-box-title">Complaint Handling &amp; Active Monitoring</h3>
+          <span class="work-box-badge" style="background: #eff6ff; color: #1d4ed8; border: 1px solid rgba(29, 78, 216, 0.15);">Scope &amp; Remit</span>
+          <h3 class="work-box-title">What We Cover</h3>
           <p class="work-box-desc">
-            Ensuring speedy, fair redressal when advertisements violate standards:
+            Regulating commercial advertising content across TV, print, digital, radio, outdoor, and packaging:
           </p>
           <ul class="work-bullet-list">
-            <li><strong>TARA Complaint Portal:</strong> Free, multilingual mechanism for consumers to lodge complaints.</li>
-            <li><strong>Proactive Digital Monitoring (NAMS):</strong> Scanning over 3,000 digital platforms, websites, and TV broadcasts.</li>
-            <li><strong>Consumer Complaints Council (CCC):</strong> Independent deliberation with 50%+ civil society representation.</li>
-            <li><strong>Regulatory Coordination:</strong> Ongoing collaboration with the Department of Consumer Affairs (DoCA), MIB, and CCPA.</li>
+            <li><strong>Truthful &amp; Honest Claims:</strong> Prohibiting misleading claims, ambiguous statements, and unsubstantiated puffery.</li>
+            <li><strong>Decency &amp; Social Standards:</strong> Ensuring ads avoid vulgarity, offensive depictions, or harmful social stereotypes.</li>
+            <li><strong>Harm &amp; Safety Prevention:</strong> Preventing promotion of hazardous practices and exploitation of vulnerable minors.</li>
+            <li><strong>Fairness in Competition:</strong> Restricting unfair disparagement, plagiarism, and comparative attacks between competitors.</li>
+          </ul>
+        </div>
+
+        <!-- 3. Our Proactive Monitoring -->
+        <div class="work-col-box">
+          <span class="work-box-badge" style="background: #fff7ed; color: #c2410c; border: 1px solid rgba(234, 88, 12, 0.15);">Proactive Surveillance</span>
+          <h3 class="work-box-title">Our Proactive Monitoring</h3>
+          <p class="work-box-desc">
+            ASCI actively tracks advertisements through continuous multi-channel monitoring:
+          </p>
+          <ul class="work-bullet-list">
+            <li><strong>National Monitoring (NAMS):</strong> Continuous monitoring across national and regional print newspapers and TV channels since 2012.</li>
+            <li><strong>AI-Powered Digital Sweeps:</strong> Advanced algorithms scanning over 3,000 digital platforms, websites, and social apps.</li>
+            <li><strong>Suo Motu Cognizance:</strong> Rapid intervention initiated upon detecting potential Code violations without waiting for complaints.</li>
+            <li><strong>Level Playing Field:</strong> Eradicating unfair advantages and consumer harm across remote corners of the nation.</li>
+          </ul>
+        </div>
+
+        <!-- 4. Working with Others -->
+        <div class="work-col-box">
+          <span class="work-box-badge corrective">Co-Regulation &amp; Alliances</span>
+          <h3 class="work-box-title">Working with Others</h3>
+          <p class="work-box-desc">
+            Consulting and collaborating with central ministries, statutory regulators, and global networks:
+          </p>
+          <ul class="work-bullet-list">
+            <li><strong>Cable TV Networks Rules:</strong> ASCI Code formally appended under Rule 7, providing a statutory legal backstop.</li>
+            <li><strong>Government Ministries:</strong> Joint initiatives with DoCA, MIB, FSSAI, and Ministry of AYUSH on misleading advertising.</li>
+            <li><strong>Supreme Court Affirmation:</strong> 2017 Supreme Court judgment affirming ASCI's self-regulatory dispute mechanism.</li>
+            <li><strong>Global Ad Self-Regulation:</strong> Executive leadership in ICAS and active coordination with European alliance (EASA).</li>
           </ul>
         </div>
       </div>
@@ -524,7 +554,6 @@ about_body = """
   <!-- 3. People & Governance Overview -->
   <section class="about-section" id="people">
     <div class="container">
-      <div class="section-eyebrow">Governance &amp; Impartiality</div>
       <h2 class="section-heading">Tripartite Structure &amp; Civil Society Quorum</h2>
       <p class="section-intro-text">
         ASCI's credibility relies upon its strict separation of powers. Operational management, institutional policy, and case adjudication are maintained across distinct, independent bodies:
@@ -571,7 +600,6 @@ about_body = """
   <!-- 4. Milestones at a Glance -->
   <section class="about-section" id="milestones">
     <div class="container">
-      <div class="section-eyebrow">Four Decades of Evolution</div>
       <h2 class="section-heading">Key Milestones: 1985 to 2026</h2>
       <p class="section-intro-text">
         From a voluntary initiative among 43 industry pioneers to a nationally recognized self-regulatory authority regulating digital, print, broadcast, and AI-driven commercial content.

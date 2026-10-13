@@ -3702,6 +3702,9 @@
       top: calc(100% + 8px);
       left: 0;
       width: 100%;
+      max-height: 280px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
@@ -3714,6 +3717,26 @@
       visibility: hidden;
       transform: translateY(-10px);
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      scrollbar-width: thin;
+      scrollbar-color: #cbd5e1 transparent;
+    }
+
+    .custom-dropdown-options::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .custom-dropdown-options::-webkit-scrollbar-track {
+      background: transparent;
+      margin: 6px 0;
+    }
+
+    .custom-dropdown-options::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 6px;
+    }
+
+    .custom-dropdown-options::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
     }
 
     .custom-dropdown.active .custom-dropdown-options {
@@ -4461,7 +4484,7 @@
                   </a>
                 </li>
                 <li class="megamenu-link-item">
-                  <a href="about-us.html#campaigns">
+                  <a href="campaigns.html">
                     <span>Our past campaigns</span>
                     <svg class="arrow-diag-icon" fill="none" stroke-linecap="round" stroke-linejoin="round"
                       stroke-width="2" viewbox="0 0 24 24">
@@ -4493,7 +4516,7 @@
               </ul>
             </div>
           </div>
-          <!-- Col 3: People (2 Sub-Columns) -->
+                    <!-- Col 3: People (2 Sub-Columns) -->
           <div class="megamenu-col">
             <h4 class="megamenu-col-title">People</h4>
             <div class="megamenu-2col-list">
@@ -4501,9 +4524,9 @@
                 <li class="megamenu-link-item">
                   <a href="people.html?panel=board">
                     <span>Board of Governors &amp; Consultative Committee</span>
-                    <svg class="arrow-diag-icon" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2" viewbox="0 0 24 24">
-                      <line x1="7" x2="17" y1="17" y2="7"></line>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
                       <polyline points="7 7 17 7 17 17"></polyline>
                     </svg>
                   </a>
@@ -4511,9 +4534,9 @@
                 <li class="megamenu-link-item">
                   <a href="people.html?panel=leadership">
                     <span>ASCI Leadership Team</span>
-                    <svg class="arrow-diag-icon" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2" viewbox="0 0 24 24">
-                      <line x1="7" x2="17" y1="17" y2="7"></line>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
                       <polyline points="7 7 17 7 17 17"></polyline>
                     </svg>
                   </a>
@@ -4521,19 +4544,9 @@
                 <li class="megamenu-link-item">
                   <a href="people.html?panel=ccc">
                     <span>Consumer Complaints Council</span>
-                    <svg class="arrow-diag-icon" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2" viewbox="0 0 24 24">
-                      <line x1="7" x2="17" y1="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                  </a>
-                </li>
-                <li class="megamenu-link-item">
-                  <a href="people.html?panel=review-panel">
-                    <span>Independent Review Panel</span>
-                    <svg class="arrow-diag-icon" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2" viewbox="0 0 24 24">
-                      <line x1="7" x2="17" y1="17" y2="7"></line>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
                       <polyline points="7 7 17 7 17 17"></polyline>
                     </svg>
                   </a>
@@ -4541,11 +4554,21 @@
               </ul>
               <ul class="megamenu-links-list">
                 <li class="megamenu-link-item">
+                  <a href="people.html?panel=review-panel">
+                    <span>Independent Review Panel</span>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </li>
+                <li class="megamenu-link-item">
                   <a href="people.html?panel=technical-experts">
                     <span>Technical experts</span>
-                    <svg class="arrow-diag-icon" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2" viewbox="0 0 24 24">
-                      <line x1="7" x2="17" y1="17" y2="7"></line>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
                       <polyline points="7 7 17 7 17 17"></polyline>
                     </svg>
                   </a>
@@ -4553,19 +4576,9 @@
                 <li class="megamenu-link-item">
                   <a href="people.html?panel=ad-advisory">
                     <span>Ad advisory expert panel</span>
-                    <svg class="arrow-diag-icon" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2" viewbox="0 0 24 24">
-                      <line x1="7" x2="17" y1="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                  </a>
-                </li>
-                <li class="megamenu-link-item">
-                  <a href="people.html?panel=ad-advisory-tech">
-                    <span>Ad Advisory technical experts</span>
-                    <svg class="arrow-diag-icon" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2" viewbox="0 0 24 24">
-                      <line x1="7" x2="17" y1="17" y2="7"></line>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
                       <polyline points="7 7 17 7 17 17"></polyline>
                     </svg>
                   </a>
@@ -7976,6 +7989,7 @@
   }
 
   function filterByPanel(panelKey) {
+    if (panelKey === 'leadership') panelKey = 'secretariat';
     activePanel = panelKey;
 
     const options = document.querySelectorAll('.custom-dropdown-option');
@@ -8017,7 +8031,15 @@
   function toggleCustomDropdown(e) {
     if (e) e.stopPropagation();
     const dropdown = document.getElementById('customPanelDropdown');
-    if (dropdown) dropdown.classList.toggle('active');
+    if (dropdown) {
+      const isActive = dropdown.classList.toggle('active');
+      if (isActive) {
+        const selected = dropdown.querySelector('.custom-dropdown-option.selected');
+        if (selected) {
+          selected.scrollIntoView({ block: 'nearest' });
+        }
+      }
+    }
   }
 
   function selectPanelOption(panelKey, panelLabel) {

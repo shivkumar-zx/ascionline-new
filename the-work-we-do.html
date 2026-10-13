@@ -5703,7 +5703,7 @@ button {
 
 <!-- Tab Switching & Accordion Auto-close Script -->
 <script>
-function openTab(evt, tabId) {
+function openTab(evt, tabId, updateHistory = true) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tab-content");
   for (i = 0; i < tabcontent.length; i++) {
@@ -5738,10 +5738,30 @@ function openTab(evt, tabId) {
     'tab-proactive': '/the-work-we-do/our-proactive-monitoring.html',
     'tab-working': '/the-work-we-do/working-with-others.html'
   };
-  if (tabUrls[tabId] && window.history && window.history.pushState) {
-    window.history.pushState({}, '', tabUrls[tabId]);
+  if (updateHistory && tabUrls[tabId] && window.history && window.history.pushState) {
+    if (!window.location.pathname.endsWith(tabUrls[tabId])) {
+      window.history.pushState({ tabId: tabId }, '', tabUrls[tabId]);
+    }
   }
 }
+
+// Handle Browser Back / Forward navigation (smooth tab restoration)
+window.addEventListener('popstate', function (event) {
+  if (event.state && event.state.tabId) {
+    openTab(null, event.state.tabId, false);
+  } else {
+    const path = window.location.pathname;
+    if (path.includes('what-we-cover')) {
+      openTab(null, 'tab-what-we-cover', false);
+    } else if (path.includes('our-proactive-monitoring')) {
+      openTab(null, 'tab-proactive', false);
+    } else if (path.includes('working-with-others')) {
+      openTab(null, 'tab-working', false);
+    } else {
+      openTab(null, 'tab-how-we-handle', false);
+    }
+  }
+});
 
 // Mutual Exclusivity for FAQ Accordion: Opening one closes all others
 document.addEventListener("DOMContentLoaded", function() {

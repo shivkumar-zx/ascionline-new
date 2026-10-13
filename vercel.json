@@ -1,0 +1,13 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/the-work-we-do/index.html", "destination": "/index.html" },
+    { "source": "/the-work-we-do/ASCI (3).html", "destination": "/index.html" },
+    { "source": "/the-work-we-do/about-us.html", "destination": "/about-us.html" },
+    { "source": "/the-work-we-do/people.html", "destination": "/people.html" },
+    { "source": "/the-work-we-do/careers.html", "destination": "/careers.html" },
+    { "source": "/the-work-we-do/annual-reports.html", "destination": "/annual-reports.html" },
+    { "source": "/the-work-we-do/history-key-milestones.html", "destination": "/history-key-milestones.html" },
+    { "source": "/the-work-we-do/the-work-we-do.html", "destination": "/the-work-we-do.html" }
+  ]
+}

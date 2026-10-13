@@ -4804,7 +4804,7 @@ button {
 </section>
 <section class="tabs-section container" style="margin-top: 48px; margin-bottom: 70px; text-align: center;">
 <style>
-/* ================= PREMIUM WORK WE DO REDESIGN (EXACT CONTENT PRESERVED) ================= */
+/* ================= PREMIUM WORK WE DO REDESIGN ================= */
 .work-tabs-nav-wrapper {
   display: flex;
   justify-content: center;
@@ -4914,7 +4914,7 @@ button {
   color: #0b1221;
   font-weight: 700;
   line-height: 1.3;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .work-section-subtitle {
@@ -4931,7 +4931,7 @@ button {
   font-size: 1.0625rem;
   line-height: 1.75;
   color: #475569;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
 .work-body-p {
@@ -4954,7 +4954,7 @@ button {
   color: #008779;
 }
 
-/* Feature & Context Cards */
+/* Feature Grids */
 .work-grid-3col {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -4969,11 +4969,19 @@ button {
   margin-bottom: 28px;
 }
 
+/* 4-column layout for What We Cover cards */
+.work-grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
 .work-feature-card {
   background: #ffffff;
   border: 1.5px solid #e2e8f0;
   border-radius: 16px;
-  padding: 24px 22px;
+  padding: 24px 20px;
   transition: all 0.25s ease;
   display: flex;
   flex-direction: column;
@@ -4999,36 +5007,48 @@ button {
 }
 
 .work-feature-title {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #0b1221;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   line-height: 1.35;
 }
 
 .work-feature-desc {
-  font-size: 0.925rem;
-  line-height: 1.65;
-  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #64748b;
   margin-bottom: 0;
 }
 
-/* Procedure Step Ribbon Cards */
-.work-steps-flow {
+/* Left-Right Split Layout for Evaluation & Diagram */
+.eval-diagram-split-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 32px;
+}
+
+.eval-steps-col {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 32px;
+}
+
+.eval-diagram-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .work-step-ribbon {
   background: #ffffff;
   border: 1.5px solid #e2e8f0;
   border-radius: 14px;
-  padding: 20px 24px;
+  padding: 20px 22px;
   display: flex;
   align-items: flex-start;
-  gap: 18px;
+  gap: 16px;
   transition: all 0.25s ease;
 }
 
@@ -5049,7 +5069,7 @@ button {
 }
 
 .work-step-content {
-  font-size: 0.95rem;
+  font-size: 0.9375rem;
   line-height: 1.7;
   color: #334155;
   margin: 0;
@@ -5061,7 +5081,7 @@ button {
   border: 1.5px solid #cbd5e1;
   border-left: 5px solid #008779;
   border-radius: 14px;
-  padding: 22px 26px;
+  padding: 20px 24px;
   margin-bottom: 28px;
 }
 
@@ -5140,12 +5160,16 @@ button {
 .diagram-frame-wrapper {
   width: 100%;
   text-align: center;
-  margin-top: 36px;
-  padding: 24px;
+  padding: 20px;
   background: #ffffff;
   border: 1.5px solid #e2e8f0;
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .hwhc-desktop {
@@ -5263,10 +5287,17 @@ button {
   font-size: 1.1rem;
 }
 
-/* Mobile Breakpoints */
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .work-grid-4col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 991px) {
   .work-grid-3col,
   .work-grid-2col,
+  .eval-diagram-split-layout,
   .outside-remit-card-grid {
     grid-template-columns: 1fr;
   }
@@ -5279,6 +5310,9 @@ button {
   .work-tab-pill {
     padding: 8px 16px;
     font-size: 0.85rem;
+  }
+  .work-grid-4col {
+    grid-template-columns: 1fr;
   }
   .work-step-ribbon {
     flex-direction: column;
@@ -5320,13 +5354,11 @@ button {
     <h2 class="work-main-title">Details of how we handle ad complaints and our complaint infrastructure</h2>
     
     <p class="work-lead-text">The following describes the manner in which we handle general complaints.</p>
-
-    <!-- Specific Circumstances Notice Banner (Exact Original Text) -->
-    <div class="work-callout-card">
-      <p>
-        <strong>Procedure Documentation:</strong> Please note that there are different ways in which ASCI handles complaints that have specific circumstances attached to them. A detailed procedure document can be accessed <a href="https://www.ascionline.in/complaint-process/" target="_blank">here</a>.
-      </p>
-    </div>
+    
+    <!-- Simple Text (No Box) as requested -->
+    <p class="work-body-p" style="margin-top: -6px; margin-bottom: 24px;">
+      Please note that there are different ways in which ASCI handles complaints that have specific circumstances attached to them. A detailed procedure document can be accessed <a href="https://www.ascionline.in/complaint-process/" target="_blank">here</a>.
+    </p>
 
     <!-- 3 Core Channel & Remit Cards (Exact Original Text) -->
     <div class="work-grid-3col">
@@ -5373,42 +5405,49 @@ button {
       </p>
     </div>
 
-    <!-- Step Flow Ribbons for Adjudication (Exact Original Text) -->
+    <!-- 2-Column Split Layout: Left Content & Right Diagram as requested -->
     <h3 class="work-section-subtitle">Evaluation &amp; Council Recommendations Process</h3>
     
-    <div class="work-steps-flow">
+    <div class="eval-diagram-split-layout">
       
-      <div class="work-step-ribbon">
-        <span class="work-step-badge">CHECK 01</span>
-        <p class="work-step-content">
-          If the complaint is the kind that ASCI can provide a resolution for, we proceed to check if it is an advertisement that we have already processed in the past for the same or similar objections. If so, the complainant is provided details of our earlier recommendation. Else, we write to the advertiser asking them to respond within a specified time frame.
-        </p>
+      <!-- Left Column: Steps Flow -->
+      <div class="eval-steps-col">
+        
+        <div class="work-step-ribbon">
+          <span class="work-step-badge">CHECK 01</span>
+          <p class="work-step-content">
+            If the complaint is the kind that ASCI can provide a resolution for, we proceed to check if it is an advertisement that we have already processed in the past for the same or similar objections. If so, the complainant is provided details of our earlier recommendation. Else, we write to the advertiser asking them to respond within a specified time frame.
+          </p>
+        </div>
+
+        <div class="work-step-ribbon">
+          <span class="work-step-badge">CHECK 02</span>
+          <p class="work-step-content">
+            In some cases, the advertiser’s response may have technical data such as lab reports, market research data, clinical test data etc. Such data is scrutinised by <a href="people.html?panel=technical-experts">ASCI’s expert panel</a> before it is sent for deliberations to the <a href="people.html?panel=ccc">Consumer Complaints Council (CCC)</a>.
+          </p>
+        </div>
+
+        <div class="work-step-ribbon">
+          <span class="work-step-badge">CHECK 03</span>
+          <p class="work-step-content">
+            Once the CCC deliberates on a case and issues its recommendations, the same is sent to the complainant and the advertiser. If the advertisement has been found in contravention of the ASCI code, the advertiser will need to modify or withdraw the advertisement within a stipulated time. All of ASCI’s recommendations are a matter of public record and can be accessed <a href="https://www.ascionline.in/the-asci-code/" target="_blank">here</a>.
+          </p>
+        </div>
+
       </div>
 
-      <div class="work-step-ribbon">
-        <span class="work-step-badge">CHECK 02</span>
-        <p class="work-step-content">
-          In some cases, the advertiser’s response may have technical data such as lab reports, market research data, clinical test data etc. Such data is scrutinised by <a href="people.html?panel=technical-experts">ASCI’s expert panel</a> before it is sent for deliberations to the <a href="people.html?panel=ccc">Consumer Complaints Council (CCC)</a>.
-        </p>
+      <!-- Right Column: Diagram Frame -->
+      <div class="eval-diagram-col">
+        <div class="diagram-frame-wrapper">
+          <div class="hwhc-desktop">
+            <img alt="Illustration of a complaints infrastructure system with three components: Consumer Complaints Council (CCC) with 40 members, Independent Review Panel (IRP) with 4 retired high court judges, and Technical Experts with 53 experts across over 25 domains, represented with icons and text." src="assets/images/hwhc-desktop.png"/>
+          </div>
+          <div class="hwhc-mobile">
+            <img alt="Illustration of a complaints infrastructure system with three components: Consumer Complaints Council (CCC) with 40 members, Independent Review Panel (IRP) with 4 retired high court judges, and Technical Experts with 53 experts across over 25 domains, represented with icons and text." src="assets/images/hwhc-mobile.png"/>
+          </div>
+        </div>
       </div>
 
-      <div class="work-step-ribbon">
-        <span class="work-step-badge">CHECK 03</span>
-        <p class="work-step-content">
-          Once the CCC deliberates on a case and issues its recommendations, the same is sent to the complainant and the advertiser. If the advertisement has been found in contravention of the ASCI code, the advertiser will need to modify or withdraw the advertisement within a stipulated time. All of ASCI’s recommendations are a matter of public record and can be accessed <a href="https://www.ascionline.in/the-asci-code/" target="_blank">here</a>.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- Complaints Infrastructure Diagram Frame (Responsive) -->
-    <div class="diagram-frame-wrapper">
-      <div class="hwhc-desktop">
-        <img alt="Illustration of a complaints infrastructure system with three components: Consumer Complaints Council (CCC) with 40 members, Independent Review Panel (IRP) with 4 retired high court judges, and Technical Experts with 53 experts across over 25 domains, represented with icons and text." src="assets/images/hwhc-desktop.png"/>
-      </div>
-      <div class="hwhc-mobile">
-        <img alt="Illustration of a complaints infrastructure system with three components: Consumer Complaints Council (CCC) with 40 members, Independent Review Panel (IRP) with 4 retired high court judges, and Technical Experts with 53 experts across over 25 domains, represented with icons and text." src="assets/images/hwhc-mobile.png"/>
-      </div>
     </div>
 
   </div>
@@ -5424,14 +5463,15 @@ button {
     </div>
     <h2 class="work-main-title">What Advertisement Related Issues ASCI Can Resolve?</h2>
     
-    <p class="work-lead-text">Find out which types of advertising, media, and marketing materials are covered by our rules.</p>
+    <p class="work-lead-text" style="margin-bottom: 6px;">Find out which types of advertising, media, and marketing materials are covered by our rules.</p>
     
-    <p class="work-body-p">
+    <!-- Reduced top space as requested -->
+    <p class="work-body-p" style="margin-top: 0; margin-bottom: 22px;">
       ASCI regulates the CONTENT of advertisements and promotions across media. ASCI resolves issues in advertisements that relate to
     </p>
 
-    <!-- 4 Core Issues Resolved (Exact Original Text, Visual Grid) -->
-    <div class="work-grid-2col">
+    <!-- 4-Column Grid Layout for 4 Core Issues as requested -->
+    <div class="work-grid-4col">
       
       <div class="work-feature-card">
         <div class="work-feature-icon-box">
@@ -5522,15 +5562,13 @@ button {
     </div>
     <h2 class="work-main-title">We proactively monitor ads across different sectors and media.</h2>
     
-    <!-- Mission Card (Exact Original Text) -->
-    <div class="work-callout-card" style="border-left-color: #008779;">
-      <p style="font-size: 1.05rem; font-weight: 600; color: #0b1221;">
-        On a mission to take action against all advertisements that are not decent, honest or fair. ASCI does not just wait to receive complaints.
-      </p>
-      <p style="margin-bottom: 0;">
-        Our National Advertising Monitoring Services (NAMS), launched in 2012, keeps a close watch on ads published in national and regional newspapers, TV channels and also digital media.
-      </p>
-    </div>
+    <!-- Simple Text (No Box) as requested -->
+    <p class="work-lead-text" style="font-weight: 600; color: #0b1221; margin-bottom: 12px;">
+      On a mission to take action against all advertisements that are not decent, honest or fair. ASCI does not just wait to receive complaints.
+    </p>
+    <p class="work-body-p" style="margin-bottom: 28px;">
+      Our National Advertising Monitoring Services (NAMS), launched in 2012, keeps a close watch on ads published in national and regional newspapers, TV channels and also digital media.
+    </p>
 
     <!-- 2 Key Objectives Cards (Exact Original Text, Elevated Design) -->
     <h3 class="work-section-subtitle">By proactively monitoring advertisements, ASCI is able to</h3>
@@ -5582,20 +5620,18 @@ button {
     </div>
     <h2 class="work-main-title">How do We work with a variety of organizations and individuals?</h2>
     
-    <!-- Intro Narrative Cards (Exact Original Text) -->
-    <div class="work-callout-card" style="border-left-color: #008779;">
-      <p>
-        Our work involves making sure advertisements adhere to the Code laid down by ASCI. The ASCI Code is a constantly evolving set of rules and guidelines, in keeping with changes in the advertising landscape and society. This means we often have to deal with issues that are complex and where different stakeholders are involved.
-      </p>
-      <p style="margin-bottom: 0;">
-        We work and consult with a variety of organisations and individuals including advertisers, creative agencies, research companies, other industry bodies, consumer groups and voluntary consumer organisations, regulatory partners, media owners, online platforms, and independent domain experts.
-      </p>
-    </div>
+    <!-- Simple Text (No Box) as requested -->
+    <p class="work-body-p" style="margin-bottom: 14px;">
+      Our work involves making sure advertisements adhere to the Code laid down by ASCI. The ASCI Code is a constantly evolving set of rules and guidelines, in keeping with changes in the advertising landscape and society. This means we often have to deal with issues that are complex and where different stakeholders are involved.
+    </p>
+    <p class="work-body-p" style="margin-bottom: 28px;">
+      We work and consult with a variety of organisations and individuals including advertisers, creative agencies, research companies, other industry bodies, consumer groups and voluntary consumer organisations, regulatory partners, media owners, online platforms, and independent domain experts.
+    </p>
 
-    <!-- Interactive FAQ Accordion for Working with Others (Exact Original Text) -->
+    <!-- Interactive FAQ Accordion for Working with Others (Auto-close other items on open) -->
     <div class="custom-faq-accordion">
       
-      <details open="true">
+      <details name="work-faq-accordion" open="true">
         <summary>How we engage with our stakeholders</summary>
         <div>
           <ul class="dots-stakteholders">
@@ -5610,7 +5646,7 @@ button {
         </div>
       </details>
 
-      <details>
+      <details name="work-faq-accordion">
         <summary>Working with the Government</summary>
         <div>
           <ul class="arrow-govt">
@@ -5620,7 +5656,7 @@ button {
         </div>
       </details>
 
-      <details>
+      <details name="work-faq-accordion">
         <summary>ASCI Recognition</summary>
         <div>
           <ol class="asci-recognition" type="1">
@@ -5640,7 +5676,7 @@ button {
         </div>
       </details>
 
-      <details>
+      <details name="work-faq-accordion">
         <summary>ASCI as a key stakeholder</summary>
         <div>
           <ol class="asci-recognition" type="1">
@@ -5650,7 +5686,7 @@ button {
         </div>
       </details>
 
-      <details>
+      <details name="work-faq-accordion">
         <summary>Working Internationally</summary>
         <div>
           <p>ASCI is an important member of the International Council of Ad Self-Regulation (ICAS), since (May 2021), ASCI’s CEO currently serves as one of the four global vice-presidents on the executive committee of ICAS. Being a part of ICAS allows ASCI to access and contribute to the understanding of self-regulation challenges and solutions. Particularly in the digital age, where technology brings about and provides solutions for complex challenges, these conversations and partnerships are invaluable in strengthening self-regulation, and keeping abreast of the latest developments and trends.</p>
@@ -5664,7 +5700,7 @@ button {
 
 </section>
 
-<!-- Tab Switching Script -->
+<!-- Tab Switching & Accordion Auto-close Script -->
 <script>
 function openTab(evt, tabId) {
   var i, tabcontent, tablinks;
@@ -5705,6 +5741,22 @@ function openTab(evt, tabId) {
     window.history.pushState({}, '', tabUrls[tabId]);
   }
 }
+
+// Mutual Exclusivity for FAQ Accordion: Opening one closes all others
+document.addEventListener("DOMContentLoaded", function() {
+  const accordions = document.querySelectorAll('.custom-faq-accordion details');
+  accordions.forEach(function(detail) {
+    detail.addEventListener('toggle', function() {
+      if (this.open) {
+        accordions.forEach(function(other) {
+          if (other !== detail && other.open) {
+            other.removeAttribute('open');
+          }
+        });
+      }
+    });
+  });
+});
 </script>
 
 <!-- Content -->

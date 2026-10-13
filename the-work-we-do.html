@@ -5041,36 +5041,55 @@ button {
   flex-direction: column;
 }
 
-.work-step-ribbon {
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 20px 22px;
+/* Clean Evaluation Steps with Separators (No Box Design) */
+.eval-steps-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eval-step-item {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  transition: all 0.25s ease;
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1.5px solid #e2e8f0;
+  background: transparent;
 }
 
-.work-step-ribbon:hover {
-  border-color: #026095;
-  box-shadow: 0 6px 20px rgba(2, 96, 149, 0.06);
+.eval-step-item:first-child {
+  padding-top: 4px;
 }
 
-.work-step-badge {
-  font-size: 0.8125rem;
-  font-weight: 800;
-  color: #026095;
-  background: #eef6fc;
-  padding: 6px 12px;
-  border-radius: 8px;
-  white-space: nowrap;
+.eval-step-item:last-child {
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+
+.eval-step-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f0fdfa;
+  border: 1.5px solid #008779;
+  color: #008779;
+  font-size: 0.875rem;
+  font-weight: 700;
   flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 135, 121, 0.12);
+  margin-top: 2px;
 }
 
-.work-step-content {
-  font-size: 0.9375rem;
-  line-height: 1.7;
+.eval-step-body {
+  flex-grow: 1;
+}
+
+.eval-step-text {
+  font-size: 0.95rem;
+  line-height: 1.75;
   color: #334155;
   margin: 0;
 }
@@ -5314,10 +5333,6 @@ button {
   .work-grid-4col {
     grid-template-columns: 1fr;
   }
-  .work-step-ribbon {
-    flex-direction: column;
-    gap: 10px;
-  }
 }
 </style>
 
@@ -5408,25 +5423,31 @@ button {
       <!-- Left Column: Steps Flow -->
       <div class="eval-steps-col">
         
-        <div class="work-step-ribbon">
-          <span class="work-step-badge">CHECK 01</span>
-          <p class="work-step-content">
-            If the complaint is the kind that ASCI can provide a resolution for, we proceed to check if it is an advertisement that we have already processed in the past for the same or similar objections. If so, the complainant is provided details of our earlier recommendation. Else, we write to the advertiser asking them to respond within a specified time frame.
-          </p>
+        <div class="eval-step-item">
+          <span class="eval-step-circle">01</span>
+          <div class="eval-step-body">
+            <p class="eval-step-text">
+              If the complaint is the kind that ASCI can provide a resolution for, we proceed to check if it is an advertisement that we have already processed in the past for the same or similar objections. If so, the complainant is provided details of our earlier recommendation. Else, we write to the advertiser asking them to respond within a specified time frame.
+            </p>
+          </div>
         </div>
 
-        <div class="work-step-ribbon">
-          <span class="work-step-badge">CHECK 02</span>
-          <p class="work-step-content">
-            In some cases, the advertiser’s response may have technical data such as lab reports, market research data, clinical test data etc. Such data is scrutinised by <a href="people.html?panel=technical-experts">ASCI’s expert panel</a> before it is sent for deliberations to the <a href="people.html?panel=ccc">Consumer Complaints Council (CCC)</a>.
-          </p>
+        <div class="eval-step-item">
+          <span class="eval-step-circle">02</span>
+          <div class="eval-step-body">
+            <p class="eval-step-text">
+              In some cases, the advertiser’s response may have technical data such as lab reports, market research data, clinical test data etc. Such data is scrutinised by <a href="people.html?panel=technical-experts">ASCI’s expert panel</a> before it is sent for deliberations to the <a href="people.html?panel=ccc">Consumer Complaints Council (CCC)</a>.
+            </p>
+          </div>
         </div>
 
-        <div class="work-step-ribbon">
-          <span class="work-step-badge">CHECK 03</span>
-          <p class="work-step-content">
-            Once the CCC deliberates on a case and issues its recommendations, the same is sent to the complainant and the advertiser. If the advertisement has been found in contravention of the ASCI code, the advertiser will need to modify or withdraw the advertisement within a stipulated time. All of ASCI’s recommendations are a matter of public record and can be accessed <a href="https://www.ascionline.in/the-asci-code/" target="_blank">here</a>.
-          </p>
+        <div class="eval-step-item">
+          <span class="eval-step-circle">03</span>
+          <div class="eval-step-body">
+            <p class="eval-step-text">
+              Once the CCC deliberates on a case and issues its recommendations, the same is sent to the complainant and the advertiser. If the advertisement has been found in contravention of the ASCI code, the advertiser will need to modify or withdraw the advertisement within a stipulated time. All of ASCI’s recommendations are a matter of public record and can be accessed <a href="https://www.ascionline.in/the-asci-code/" target="_blank">here</a>.
+            </p>
+          </div>
         </div>
 
       </div>

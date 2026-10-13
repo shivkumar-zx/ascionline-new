@@ -4796,153 +4796,906 @@ button {
       </p>
 </div>
 </section>
-<section class="tabs-section container" style="margin-top: 60px; margin-bottom: 60px; text-align: center;">
+<section class="tabs-section container" style="margin-top: 48px; margin-bottom: 70px; text-align: center;">
 <style>
-/* Global Tab Content List Styling */
-.tab-content ul, .tab-content ol {
-    padding-left: 28px;
-    margin-bottom: 24px;
-    margin-top: 8px;
+/* ================= PREMIUM WORK WE DO REDESIGN ================= */
+.work-tabs-nav-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
 }
-.tab-content li {
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--color-text-muted);
-    margin-bottom: 12px;
-    padding-left: 4px;
+
+.work-tabs-bar {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 9999px;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  gap: 6px;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
-.tab-content ul li::marker {
-    color: var(--color-asci-green-dark);
-    font-size: 18px;
+
+.work-tab-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  color: #475569;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  font-family: inherit;
 }
-.tab-content ol li::marker {
-    color: var(--color-asci-green-dark);
-    font-weight: 600;
+
+.tab-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.work-tab-pill:hover {
+  background: #f8fafc;
+  color: #008779;
+  transform: translateY(-1px);
+}
+
+.work-tab-pill:hover .tab-pill-badge {
+  background: #e6f4f1;
+  color: #008779;
+}
+
+.work-tab-pill.active {
+  background: #008779;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 135, 121, 0.28);
+}
+
+.work-tab-pill.active .tab-pill-badge {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Main Card Wrapper per Tab */
+.work-tab-pane-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Eyebrows & Typography */
+.work-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #008779;
+  background: #f0fdfa;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  margin-bottom: 14px;
+}
+
+.work-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #008779;
+}
+
+.work-main-title {
+  font-family: 'Domine', serif;
+  font-size: 2.1rem;
+  color: #0b1221;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 18px;
+}
+
+.work-section-subtitle {
+  font-family: 'Domine', serif;
+  font-size: 1.4rem;
+  color: #0b1221;
+  font-weight: 700;
+  margin-top: 36px;
+  margin-bottom: 18px;
+  line-height: 1.35;
+}
+
+.work-lead-text {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: #475569;
+  margin-bottom: 14px;
+}
+
+.work-body-p {
+  font-size: 0.9625rem;
+  line-height: 1.75;
+  color: #334155;
+  margin-bottom: 16px;
+}
+
+/* Interactive Links */
+.work-tab-pane-wrap a {
+  color: #026095;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.work-tab-pane-wrap a:hover {
+  color: #008779;
+}
+
+/* Feature Grids */
+.work-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.work-grid-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+/* 4-column layout for What We Cover cards */
+.work-grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.work-feature-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px 20px;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-feature-card:hover {
+  border-color: #008779;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 135, 121, 0.08);
+}
+
+.work-feature-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #f0fdfa;
+  color: #008779;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+}
+
+.work-feature-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0b1221;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.work-feature-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #64748b;
+  margin-bottom: 0;
+}
+
+/* Left-Right Split Layout for Evaluation & Diagram */
+.eval-diagram-split-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 32px;
+}
+
+.eval-steps-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.eval-diagram-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Clean Evaluation Steps with Separators (No Box Design) */
+.eval-steps-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eval-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1.5px solid #e2e8f0;
+  background: transparent;
+}
+
+.eval-step-item:first-child {
+  padding-top: 4px;
+}
+
+.eval-step-item:last-child {
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+
+.eval-step-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f0fdfa;
+  border: 1.5px solid #008779;
+  color: #008779;
+  font-size: 0.875rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 135, 121, 0.12);
+  margin-top: 2px;
+}
+
+.eval-step-body {
+  flex-grow: 1;
+}
+
+.eval-step-text {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #334155;
+  margin: 0;
+}
+
+/* Notice / Callout Card */
+.work-callout-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1.5px solid #cbd5e1;
+  border-left: 5px solid #008779;
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+
+.work-callout-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #334155;
+  margin-bottom: 12px;
+}
+
+.work-callout-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Media Types Pills Strip */
+.media-pills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  margin-bottom: 28px;
+}
+
+.media-channel-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+/* Outside Remit Interactive Cards */
+.outside-remit-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+  margin-bottom: 28px;
+}
+
+.outside-remit-item {
+  background: #ffffff;
+  border: 1px solid #fed7aa;
+  background: #fffdfb;
+  border-radius: 12px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.925rem;
+  color: #475569;
+  line-height: 1.45;
+  transition: all 0.2s ease;
+}
+
+.outside-remit-item:hover {
+  border-color: #ea580c;
+  transform: translateX(2px);
+}
+
+.outside-bullet-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ea580c;
+  flex-shrink: 0;
+}
+
+/* Responsive Diagram Container */
+.diagram-frame-wrapper {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.hwhc-desktop {
+  display: block !important;
+}
+
+.hwhc-mobile {
+  display: none !important;
+}
+
+.hwhc-desktop img,
+.hwhc-mobile img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .hwhc-desktop {
+    display: none !important;
+  }
+  .hwhc-mobile {
+    display: block !important;
+  }
+}
+
+/* Accordion Details (Tab 4) */
+.custom-faq-accordion {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.custom-faq-accordion details {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px 24px;
+  transition: all 0.25s ease;
+}
+
+.custom-faq-accordion details[open] {
+  border-color: #008779;
+  box-shadow: 0 6px 18px rgba(0, 135, 121, 0.06);
+}
+
+.custom-faq-accordion details summary::-webkit-details-marker {
+  display: none;
+}
+
+.custom-faq-accordion details summary {
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0b1221;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.custom-faq-accordion details summary:hover {
+  color: #008779;
+}
+
+.custom-faq-accordion details summary::after {
+  content: "+";
+  font-size: 22px;
+  color: #008779;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.custom-faq-accordion details[open] summary::after {
+  content: "–";
+}
+
+.custom-faq-accordion details[open] summary {
+  color: #008779;
+}
+
+.custom-faq-accordion details div {
+  padding-top: 16px;
+  color: #475569;
+  line-height: 1.75;
+}
+
+.custom-faq-accordion ol,
+.custom-faq-accordion ul {
+  padding-left: 24px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.custom-faq-accordion li {
+  margin-bottom: 10px;
+  color: #334155;
+  line-height: 1.7;
+}
+
+.custom-faq-accordion ol li::marker {
+  color: #008779;
+  font-weight: 700;
+}
+
+.custom-faq-accordion ul li::marker {
+  color: #008779;
+  font-size: 1.1rem;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .work-grid-4col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .work-grid-3col,
+  .work-grid-2col,
+  .eval-diagram-split-layout,
+  .outside-remit-card-grid {
+    grid-template-columns: 1fr;
+  }
+  .work-main-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-tab-pill {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+  .work-grid-4col {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
-<div class="tabs-container" style="background-color: #f3f6f8; border-radius: 50px; display: inline-flex; padding: 5px; margin-bottom: 40px;">
-<button class="tab-btn" onclick="openTab(event, 'tab-how-we-handle')" style="background-color: transparent; color: #555b66; border-radius: 50px; padding: 14px 40px; font-weight: 600; font-size: 16px; border: none; cursor: pointer; transition: all 0.3s ease;">How We Handle Complaints</button>
-<button class="tab-btn" onclick="openTab(event, 'tab-what-we-cover')" style="background-color: transparent; color: #555b66; border-radius: 50px; padding: 14px 40px; font-weight: 600; font-size: 16px; border: none; cursor: pointer; transition: all 0.3s ease;">What We Cover</button>
-<button class="tab-btn" onclick="openTab(event, 'tab-proactive')" style="background-color: transparent; color: #555b66; border-radius: 50px; padding: 14px 40px; font-weight: 600; font-size: 16px; border: none; cursor: pointer; transition: all 0.3s ease;">Our Proactive Monitoring</button><button class="tab-btn active" onclick="openTab(event, 'tab-working')" style="background-color: #0b1221; color: white; border-radius: 50px; padding: 14px 40px; font-weight: 600; font-size: 16px; border: none; cursor: pointer; transition: all 0.3s ease;">Working with Others</button></div>
-<div class="tab-content" id="tab-how-we-handle" style="display: none; text-align: left;"><style>
-        .hwhc-mobile { display: none; }
-        @media (max-width: 768px) {
-            .hwhc-desktop { display: none; }
-            .hwhc-mobile { display: block; }
-        }
-    </style>
-<section class="page-content"><div class="container"><div class="detail-page"><div class="row" style="display: flex; flex-direction: column; align-items: flex-start;"><div class="content-main" style="max-width: 1280px; padding: 20px 0;"><div class="lft-detail-page workWeDo_Title" style="font-family: var(--font-sans);"><div class="HowWeHandle"><h2 style="font-family: var(--font-serif); font-size: 28px; color: var(--color-asci-green-dark); margin-bottom: 24px; font-weight: 700; line-height: 1.3;">Details of how we handle ad complaints and our complaint infrastructure</h2><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">The following describes the manner in which we handle general complaints.</p><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">Please note that there are different ways in which ASCI handles complaints that have specific circumstances attached to them. A detailed procedure document can be accessed <a href="https://www.ascionline.in/complaint-process/" style="color: var(--color-accent-blue); text-decoration: none; font-weight: 600;">here</a>.</p><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">Complaints to ASCI can be made by the general public, consumer organizations, the government or the industry. ASCI also takes suo motu cognizance of advertisements that may be in potential violation of the <a href="https://www.ascionline.in/the-asci-code/" style="color: var(--color-accent-blue); text-decoration: none; font-weight: 600;"> ASCI code.</a></p><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">ASCI has made it possible for easy ways in which complaints can be registered. Click <a style="color: var(--color-accent-blue); text-decoration: none; font-weight: 600;">here</a> to know more.</p><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">When we receive a complaint, we first examine whether we have the remit to handle such a complaint. ASCI’s remit is restricted to the content of advertising. To know more about ASCI’s remit, click <a style="color: var(--color-accent-blue); text-decoration: none; font-weight: 600;">here</a>.</p><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">ASCI does not accept anonymous complaints. However, the name of the complainant is not revealed to the advertiser, in case the complainant is from the general public. In exceptional circumstances, if the name needs to be revealed, we do so only after getting express permission to do so. In the case of intra industry complaints, or complaints from an interested party, the advertiser will be made aware of the complainant’s identity.</p><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">If the complaint is the kind that ASCI can provide a resolution for, we proceed to check if it is an advertisement that we have already processed in the past for the same or similar objections. If so, the complainant is provided details of our earlier recommendation. Else, we write to the advertiser asking them to respond within a specified time frame.</p><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">In some cases, the advertiser’s response may have technical data such as lab reports, market research data, linical test data etc. Such data is scrutinised by <a href="https://www.ascionline.in/technical-experts/" style="color: var(--color-accent-blue); text-decoration: none; font-weight: 600;">ASCI’s expert panel</a> before it is sent for deliberations to the <a href="https://www.ascionline.in/consumer-complaints-council/" style="color: var(--color-accent-blue); text-decoration: none; font-weight: 600;">Consumer Complaints Council (CCC)</a>.</p><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">Once the CCC deliberates on a case and issues its recommendations, the same is sent to the complainant and the advertiser. If the advertisement has been found in contravention of the ASCI code, the advertiser will need to modify or withdraw the advertisement within a stipulated time. All of ASCI’s recommendations are a matter of public record and can be accessed here.</p></div></div></div><div class="col-sm-12" style="width: 100%; text-align: center; margin-top: 40px;"><div class="hwhc-desktop"> <img alt="Illustration of a complaints infrastructure system with three components: Consumer Complaints Council (CCC) with 40 members, Independent Review Panel (IRP) with 4 retired high court judges, and Technical Experts with 53 experts across over 25 domains, represented with icons and text." data-od-added-fetchpriority="" data-od-xpath="/HTML/BODY/DIV[@id='page']/*[3][self::DIV]/*[2][self::SECTION]/*[1][self::DIV]/*[2][self::DIV]/*[1][self::DIV]/*[3][self::DIV]/*[1][self::DIV]/*[1][self::IMG]" fetchpriority="low" src="../assets/images/hwhc-desktop.png" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);"/></div><div class="hwhc-mobile"> <img alt="Illustration of a complaints infrastructure system with three components: Consumer Complaints Council (CCC) with 40 members, Independent Review Panel (IRP) with 4 retired high court judges, and Technical Experts with 53 experts across over 25 domains, represented with icons and text." data-od-added-fetchpriority="" data-od-xpath="/HTML/BODY/DIV[@id='page']/*[3][self::DIV]/*[2][self::SECTION]/*[1][self::DIV]/*[2][self::DIV]/*[1][self::DIV]/*[3][self::DIV]/*[2][self::DIV]/*[1][self::IMG]" fetchpriority="low" src="../assets/images/hwhc-mobile.png" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);"/></div></div></div></div></div></section>
+
+<!-- Top Segmented Pill Tab Bar -->
+<div class="work-tabs-nav-wrapper">
+  <div class="work-tabs-bar" role="tablist" aria-label="The Work We Do Sections">
+    <button class="work-tab-pill" onclick="openTab(event, 'tab-how-we-handle')" role="tab" aria-selected="false" id="tabbtn-how-we-handle">
+      <span class="tab-pill-badge">01</span>
+      <span class="tab-pill-text">How We Handle Complaints</span>
+    </button>
+    <button class="work-tab-pill" onclick="openTab(event, 'tab-what-we-cover')" role="tab" aria-selected="false" id="tabbtn-what-we-cover">
+      <span class="tab-pill-badge">02</span>
+      <span class="tab-pill-text">What We Cover</span>
+    </button>
+    <button class="work-tab-pill" onclick="openTab(event, 'tab-proactive')" role="tab" aria-selected="false" id="tabbtn-proactive">
+      <span class="tab-pill-badge">03</span>
+      <span class="tab-pill-text">Our Proactive Monitoring</span>
+    </button>
+    <button class="work-tab-pill active" onclick="openTab(event, 'tab-working')" role="tab" aria-selected="true" id="tabbtn-working">
+      <span class="tab-pill-badge">04</span>
+      <span class="tab-pill-text">Working with Others</span>
+    </button>
+  </div>
 </div>
-<div class="tab-content" id="tab-what-we-cover" style="display: none; text-align: left;"><section class="page-content"><div class="container"><div class="detail-page"><div class="row" style="display: flex; flex-direction: column; align-items: flex-start;"><div class="content-main" style="max-width: 1280px; padding: 20px 0;"><div class="lft-detail-page workWeDo_Title" style="font-family: var(--font-sans);"><h2 style="font-family: var(--font-serif); font-size: 28px; color: var(--color-asci-green-dark); margin-bottom: 24px; font-weight: 700; line-height: 1.3;">What Advertisement Related Issues ASCI Can Resolve?</h2><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">Find out which types of advertising, media, and marketing materials are covered by our rules.</p><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">ASCI regulates the CONTENT of advertisements and promotions across media. ASCI resolves issues in advertisements that relate to</p><ol class="whatWeCoverOl" type="1"><li>Dishonest or misleading ads</li><li>Indecent or offensive ads</li><li>Harmful ads</li><li>Ads that are unfair in competition.</li></ol><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">ASCI can look at advertisements across all media types and formats such as TV, print, digital, outdoor, radio, point of sale, claims made on packaging and so on.</p><h3>The following objections fall OUTSIDE of ASCI’s remit</h3><ul class="whatWeCoverul"><li>Duration/frequency/volume of advertisements</li><li>Product or service deficiency cases</li><li>Fraud cases</li><li>Refund issues</li><li>Counterfeit products</li><li>Network quality issues</li><li>Political, non-commercial government advertising.</li><li>Violation of law [example: Emblems and Names (Prevention of Improper Use) Act, 1950; Prevention of Cruelty to Animals Act]</li><li>Violation of code of medical ethics</li><li>Pop-ups</li><li>Spam emails</li><li>Unsolicited SMS</li><li>Sub-judice cases</li><li>Advertisements not meant for Indian audiences (cross-border complaints)</li><li>Pricing issues</li><li>Public notice, news articles and press releases</li><li>Sponsorships</li></ul><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">If we receive a complaint that is not in our remit, we try to guide the complainant to the<br/> correct regulatory authority or forum for a resolution to their complaints.</p></div></div><div class="col-sm-12"><div class="hwhc-desktop"></div><div class="hwhc-mobile"></div></div></div></div></div></section></div>
-<div class="tab-content" id="tab-proactive" style="display: none; text-align: left;"><section class="page-content"><div class="container"><div class="detail-page"><div class="row" style="display: flex; flex-direction: column; align-items: flex-start;"><div class="content-main" style="max-width: 1280px; padding: 20px 0;"><div class="lft-detail-page workWeDo_Title" style="font-family: var(--font-sans);"><h2 style="font-family: var(--font-serif); font-size: 28px; color: var(--color-asci-green-dark); margin-bottom: 24px; font-weight: 700; line-height: 1.3;">We proactively monitor ads across different sectors and media.</h2><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">On a mission to take action against all advertisements that are not decent, honest or fair. ASCI does not just wait to receive complaints.</p><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">Our National Advertising Monitoring Services (NAMS), launched in 2012, keeps a close watch on ads published in national and regional newspapers, TV channels and also digital media.</p><h3 class="pt-3">By proactively monitoring advertisements, ASCI is able to</h3><ol class="OurProactiveMonitoringOl"><li>Take up advertisements in potential violation of the ASCI code soon after they are published</li><li>Create a level playing field for honest advertisers, by spreading its net far and wide to the remotest corners to discover issues of consumer harm caused by advertising.</li></ol><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">ASCI’s suo motu monitoring is increasingly making use of advanced technology particularly in the monitoring of digital and social media, deploying artificial intelligence to sweep certain categories and platforms periodically.</p></div></div><div class="col-sm-12"><div class="hwhc-desktop"></div><div class="hwhc-mobile"></div></div></div></div></div></section></div><div class="tab-content" id="tab-working" style="display: block; text-align: left;"><style>
-        .custom-faq-accordion details summary::-webkit-details-marker { display: none; }
-        .custom-faq-accordion details summary::after {
-            content: "+";
-            font-size: 24px;
-            color: var(--color-accent-orange);
-            font-weight: 400;
-            transition: transform 0.3s ease;
-        }
-        .custom-faq-accordion details[open] summary::after {
-            content: "-";
-        }
-        .custom-faq-accordion details[open] summary {
-            color: var(--color-asci-green-dark);
-        }
+
+<!-- ================= TAB 1: HOW WE HANDLE COMPLAINTS ================= -->
+<div class="tab-content" id="tab-how-we-handle" style="display: none;">
+  <div class="work-tab-pane-wrap">
+    <h2 class="work-main-title">Details of how we handle ad complaints and our complaint infrastructure</h2>
     
-        .custom-faq-accordion ol, .custom-faq-accordion ul {
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-        .custom-faq-accordion li {
-            margin-bottom: 12px;
-            color: var(--color-text-muted);
-        }
-        .custom-faq-accordion ol li::marker, .custom-faq-accordion ul li::marker {
-            color: var(--color-accent-orange);
-            font-weight: 600;
-        }
-        </style><section class="page-content"><div class="container"><div class="detail-page"><div class="row" style="display: flex; flex-direction: column; align-items: flex-start;"><div class="content-main" style="max-width: 1280px; padding: 20px 0;"><div class="lft-detail-page workWeDo_Title" style="font-family: var(--font-sans);"><div class="WorkingWithOther"><h2 style="font-family: var(--font-serif); font-size: 28px; color: var(--color-asci-green-dark); margin-bottom: 24px; font-weight: 700; line-height: 1.3;">How do We work with a variety of organizations and individuals?</h2><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">Our work involves making sure advertisements adhere to the Code laid down by ASCI. The ASCI Code is a constantly evolving set of rules and guidelines, in keeping with changes in the advertising landscape and society. This means we often have to deal with issues that are complex and where different stakeholders are involved.</p><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">We work and consult with a variety of organisations and individuals including advertisers, creative agencies, research companies, other industry bodies, consumer groups and voluntary consumer organisations, regulatory partners, media owners, online platforms, and independent domain experts.</p><div class="mt-3 whyBecomeamenbermain" id="main"><div class="custom-faq-accordion" style="margin-top: 30px; border-top: 1px solid var(--color-card-border);"><details open="true" style="border-bottom: 1px solid var(--color-card-border); padding: 16px 0; transition: all 0.3s ease;"><summary style="font-family: var(--font-sans); font-size: 18px; font-weight: 600; color: var(--color-text-main); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">How we engage with our stakeholders</summary><div style="padding-top: 16px; color: var(--color-text-muted); line-height: 1.7;"><ul class="dots-stakteholders"><li>Changes to the Code – Consultation with stakeholders on proposed changes or additions to the ASCI Code.</li><li>Compliance partnerships with the government/ media for objectionable ads to be removed</li><li>Education and training: Working with academia and industry partners to create educational content on self-regulation and the ASCI code</li><li>Dissemination of reports / information via webinars, mailers and industry platforms.</li><li>Thought leadership reports and studies on certain issues and topics include extensive discussions with different stakeholders to understand their points of view</li><li>Monitoring efforts that are supported by different sectors</li><li>Regular communication and important updates are shared with Members</li></ul></div></details><details style="border-bottom: 1px solid var(--color-card-border); padding: 16px 0; transition: all 0.3s ease;"><summary style="font-family: var(--font-sans); font-size: 18px; font-weight: 600; color: var(--color-text-main); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">Working with the Government</summary><div style="padding-top: 16px; color: var(--color-text-muted); line-height: 1.7;"><ul class="arrow-govt"><li>ASCI works closely with different government ministries from time to time on the issue of objectionable ads. We have engaged with the Ministry of Information &amp; Broadcasting, the Ministry of Consumer Affairs, the Ministry of Education, the Department of Economic Affairs, FSSAI, Ministry of Ayush amongst others on both projects as well as consultations on the issue of objectionable ads. ASCI data is also frequently quoted in the Parliament on questions and discussions pertaining to misleading ads and consumer protection. You will find a list of parliament questions and answers where ASCI is mentioned on this link <a href="https://www.ascionline.in/parliament-questions/" style="color: var(--color-accent-blue); text-decoration: none; font-weight: 600;" target="_blank"> https://www.ascionline.in/parliament-questions/</a></li><li>Recognitions – ASCI’s code, recommendations and processes are recognised by important government entities. This provides a legal backstop to our recommendations.</li></ul></div></details><details style="border-bottom: 1px solid var(--color-card-border); padding: 16px 0; transition: all 0.3s ease;"><summary style="font-family: var(--font-sans); font-size: 18px; font-weight: 600; color: var(--color-text-main); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">ASCI Recognition</summary><div style="padding-top: 16px; color: var(--color-text-muted); line-height: 1.7;"><ol class="asci-recognition" type="1"><li>Ministry of Information and Broadcasting released an advisory to television channels that ASCI Guidelines for Online Gaming to be followed in 2020.</li><li>The ASCI Code is appended in the Cable Television Networks Rules, 1994, Programme and Advertising Codes, prescribed under the Cable Television Network (CTN) Rules, 1994 Rule: 7; The ASCI complaint mechanism is alsomentioned in the statutory grievance redressal procedure of the CTN Amendment Rules, 2021</li><li>The Department of Consumer Affairs (DoCA) had partnered with ASCI to address all complaints pertaining to misleading advertisements received on the Grievances Against Misleading Advertisements (GAMA) portal.</li><li>The Food Safety and Standards Authority of India, through an MoU, had partnered with ASCI to address misleading advertisements in the Food &amp; Beverages sector, April 2016.</li><li>The Ministry of AYUSH, through an MoU, had partnered with ASCI to co-regulate misleading advertisements in the AYUSH sector, January 2017.</li><li>Insurance Regulatory and Development Authority Act mentions adherence by insurance companies to ASCI Codes. Ref. Item No.: 12, more recently (2019) IRDAI issued a master circular under Section 34 (1) of the Insurance Act, 1938.</li><li>The Drug Controller General of India (DCGI) recognized Self-regulation in advertising through ASCI’s Code, 2006</li><li>ASCI Code appended in the Maharashtra Directorate of Technical Education (DTE) Act. Ref. Item 13</li><li>Transport Department, Government of NCT, Delhi recognised the ASCl Code. Ref. Clause 2.3</li><li>The Supreme Court of India (SC), in its judgment dated, 12th January 2017, titled “Common Cause (A Regd. Society) vs. Union of India of India and ORS”, affirmed and recognised the self-regulatory mechanism put in place for advertising content by ASCI</li><li>ASCI’s Code of Self-Regulation in Advertising is appended in the Press Council of India’s Norms of Journalistic Conduct 2010 Edition. (Ref. Page 60, Appendix II)</li><li>The ASCI Code is appended in Indian Broadcasting Foundation’s Self-Regulatory Guidelines for non-news and current affairs programme. Ref. Page 19, Item No. 4</li></ol></div></details><details style="border-bottom: 1px solid var(--color-card-border); padding: 16px 0; transition: all 0.3s ease;"><summary style="font-family: var(--font-sans); font-size: 18px; font-weight: 600; color: var(--color-text-main); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">ASCI as a key stakeholder</summary><div style="padding-top: 16px; color: var(--color-text-muted); line-height: 1.7;"><ol class="asci-recognition" type="1"><li>ASCI was a member of the Steering Committee formed by the Central Government to look into violations of the Cigarettes and other Tobacco Products (Prohibition of Advertisement and Regulation of Trade and Commerce, Production, Supply, and Distribution) Act, 2003 (Ref. Ministry of Health and Family Welfare Notification dated June 9th, 2010, G.S.R. 489 (E))</li><li>ASCI has been a part of a committee constituted by NATIONAL HIGHWAYS AUTHORITY OF INDIA (NHAI) along with NCERT, SCERT to regulate the content of automobile advertisements.</li></ol></div></details><details style="border-bottom: 1px solid var(--color-card-border); padding: 16px 0; transition: all 0.3s ease;"><summary style="font-family: var(--font-sans); font-size: 18px; font-weight: 600; color: var(--color-text-main); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">Working Internationally</summary><div style="padding-top: 16px; color: var(--color-text-muted); line-height: 1.7;"><p style="font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 16px;">ASCI is an important member of the International Council of Ad Self-Regulation (ICAS), since (May 2021), ASCI’s CEO currently serves as one of the four global vice-presidents on the executive committee of ICAS. Being a part of ICAS allows ASCI to access and contribute to the understanding of self-regulation challenges and solutions. Particularly in the digital age, where technology brings about and provides solutions for complex challenges, these conversations and partnerships are invaluable in strengthening self-regulation, and keeping abreast of the latest developments and trends.</p></div></details></div></div></div></div></div><div class="col-sm-12"><div class="hwhc-desktop"></div><div class="hwhc-mobile"></div></div></div></div></div></section>
-<script>
-class SmoothAccordion {
-  constructor(el) {
-    this.el = el;
-    this.summary = el.querySelector('summary');
-    this.content = this.summary.nextElementSibling;
-    this.animation = null;
-    this.isClosing = false;
-    this.isExpanding = false;
-    this.el.__accordion = this; // store instance on element
-    this.summary.addEventListener('click', (e) => this.onClick(e));
-  }
-  
-  onClick(e) {
-    e.preventDefault();
-    this.el.style.overflow = 'hidden';
-    if (this.isClosing || !this.el.open) {
-      this.open();
-    } else if (this.isExpanding || this.el.open) {
-      this.shrink();
-    }
-  }
-
-  shrink() {
-    this.isClosing = true;
-    const startHeight = this.el.offsetHeight + 'px';
-    const endHeight = this.summary.offsetHeight + 'px';
-    if (this.animation) { this.animation.cancel(); }
-    this.animation = this.el.animate({ height: [startHeight, endHeight] }, { duration: 350, easing: 'ease-in-out' });
-    this.animation.onfinish = () => this.onAnimationFinish(false);
-    this.animation.oncancel = () => this.isClosing = false;
-  }
-
-  open() {
-    this.el.style.height = this.el.offsetHeight + 'px';
-    this.el.open = true;
+    <p class="work-lead-text">The following describes the manner in which we handle general complaints.</p>
     
-    // Auto-close others
-    const others = Array.from(document.querySelectorAll('.custom-faq-accordion details')).filter(d => d !== this.el && d.open);
-    others.forEach(other => {
-        if (other.__accordion && !other.__accordion.isClosing) {
-            other.__accordion.shrink();
-        }
-    });
+    <!-- Simple Text (No Box) as requested -->
+    <p class="work-body-p" style="margin-top: -6px; margin-bottom: 24px;">
+      Please note that there are different ways in which ASCI handles complaints that have specific circumstances attached to them. A detailed procedure document can be accessed <a href="https://www.ascionline.in/complaint-process/" target="_blank">here</a>.
+    </p>
 
-    window.requestAnimationFrame(() => {
-      this.isExpanding = true;
-      const startHeight = this.el.offsetHeight + 'px';
-      const endHeight = (this.summary.offsetHeight + this.content.offsetHeight) + 'px';
-      if (this.animation) { this.animation.cancel(); }
-      this.animation = this.el.animate({ height: [startHeight, endHeight] }, { duration: 350, easing: 'ease-in-out' });
-      this.animation.onfinish = () => this.onAnimationFinish(true);
-      this.animation.oncancel = () => this.isExpanding = false;
-    });
-  }
+    <!-- 3 Core Channel & Remit Cards (Exact Original Text) -->
+    <div class="work-grid-3col">
+      
+      <div class="work-feature-card">
+        <div class="work-feature-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <h3 class="work-feature-title">Who Can Complain &amp; Suo Motu</h3>
+        <p class="work-feature-desc">
+          Complaints to ASCI can be made by the general public, consumer organizations, the government or the industry. ASCI also takes suo motu cognizance of advertisements that may be in potential violation of the <a href="https://www.ascionline.in/the-asci-code/" target="_blank">ASCI code.</a>
+        </p>
+      </div>
 
-  onAnimationFinish(open) {
-    this.el.open = open;
-    this.animation = null;
-    this.isClosing = false;
-    this.isExpanding = false;
-    this.el.style.height = this.el.style.overflow = '';
-  }
-}
+      <div class="work-feature-card">
+        <div class="work-feature-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><polyline points="3 7 12 13 21 7"></polyline></svg>
+        </div>
+        <h3 class="work-feature-title">Registering a Complaint</h3>
+        <p class="work-feature-desc">
+          ASCI has made it possible for easy ways in which complaints can be registered. Click <a href="https://tara.ascionline.in/auth/" target="_blank">here</a> to know more.
+        </p>
+      </div>
 
-function initAccordions() {
-    if (window.accordionsInitialized) return;
-    window.accordionsInitialized = true;
+      <div class="work-feature-card">
+        <div class="work-feature-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        </div>
+        <h3 class="work-feature-title">Remit Examination</h3>
+        <p class="work-feature-desc">
+          When we receive a complaint, we first examine whether we have the remit to handle such a complaint. ASCI’s remit is restricted to the content of advertising. To know more about ASCI’s remit, click <a href="javascript:void(0)" onclick="openTab(event, 'tab-what-we-cover')">here</a>.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Confidentiality Policy Card (Exact Original Text) -->
+    <div class="work-callout-card" style="border-left-color: #026095; background: #ffffff;">
+      <h3 style="font-size: 1.1rem; font-weight: 700; color: #0b1221; margin-top: 0; margin-bottom: 10px; font-family: inherit;">
+        Confidentiality &amp; Complainant Identity
+      </h3>
+      <p style="margin-bottom: 0;">
+        ASCI does not accept anonymous complaints. However, the name of the complainant is not revealed to the advertiser, in case the complainant is from the general public. In exceptional circumstances, if the name needs to be revealed, we do so only after getting express permission to do so. In the case of intra industry complaints, or complaints from an interested party, the advertiser will be made aware of the complainant’s identity.
+      </p>
+    </div>
+
+    <!-- 2-Column Split Layout: Left Content & Right Diagram as requested -->
+    <h3 class="work-section-subtitle">Evaluation &amp; Council Recommendations Process</h3>
     
-    document.querySelectorAll('.custom-faq-accordion details').forEach((el) => {
-        if (!el.__accordion) {
-            new SmoothAccordion(el);
-        }
-    });
-}
+    <div class="eval-diagram-split-layout">
+      
+      <!-- Left Column: Steps Flow -->
+      <div class="eval-steps-col">
+        
+        <div class="eval-step-item">
+          <span class="eval-step-circle">01</span>
+          <div class="eval-step-body">
+            <p class="eval-step-text">
+              If the complaint is the kind that ASCI can provide a resolution for, we proceed to check if it is an advertisement that we have already processed in the past for the same or similar objections. If so, the complainant is provided details of our earlier recommendation. Else, we write to the advertiser asking them to respond within a specified time frame.
+            </p>
+          </div>
+        </div>
 
-document.addEventListener('DOMContentLoaded', initAccordions);
-initAccordions();
-</script>
-</div></section>
+        <div class="eval-step-item">
+          <span class="eval-step-circle">02</span>
+          <div class="eval-step-body">
+            <p class="eval-step-text">
+              In some cases, the advertiser’s response may have technical data such as lab reports, market research data, clinical test data etc. Such data is scrutinised by <a href="../people.html?panel=technical-experts">ASCI’s expert panel</a> before it is sent for deliberations to the <a href="../people.html?panel=ccc">Consumer Complaints Council (CCC)</a>.
+            </p>
+          </div>
+        </div>
+
+        <div class="eval-step-item">
+          <span class="eval-step-circle">03</span>
+          <div class="eval-step-body">
+            <p class="eval-step-text">
+              Once the CCC deliberates on a case and issues its recommendations, the same is sent to the complainant and the advertiser. If the advertisement has been found in contravention of the ASCI code, the advertiser will need to modify or withdraw the advertisement within a stipulated time. All of ASCI’s recommendations are a matter of public record and can be accessed <a href="https://www.ascionline.in/the-asci-code/" target="_blank">here</a>.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Diagram Frame -->
+      <div class="eval-diagram-col">
+        <div class="diagram-frame-wrapper">
+          <div class="hwhc-desktop">
+            <img alt="Illustration of a complaints infrastructure system with three components: Consumer Complaints Council (CCC) with 40 members, Independent Review Panel (IRP) with 4 retired high court judges, and Technical Experts with 53 experts across over 25 domains, represented with icons and text." src="../assets/images/hwhc-desktop.png"/>
+          </div>
+          <div class="hwhc-mobile">
+            <img alt="Illustration of a complaints infrastructure system with three components: Consumer Complaints Council (CCC) with 40 members, Independent Review Panel (IRP) with 4 retired high court judges, and Technical Experts with 53 experts across over 25 domains, represented with icons and text." src="../assets/images/hwhc-mobile.png"/>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= TAB 2: WHAT WE COVER ================= -->
+<div class="tab-content" id="tab-what-we-cover" style="display: none;">
+  <div class="work-tab-pane-wrap">
+    <h2 class="work-main-title">What Advertisement Related Issues ASCI Can Resolve?</h2>
+    
+    <p class="work-lead-text" style="margin-bottom: 6px;">Find out which types of advertising, media, and marketing materials are covered by our rules.</p>
+    
+    <!-- Reduced top space as requested -->
+    <p class="work-body-p" style="margin-top: 0; margin-bottom: 22px;">
+      ASCI regulates the CONTENT of advertisements and promotions across media. ASCI resolves issues in advertisements that relate to
+    </p>
+
+    <!-- 4-Column Grid Layout for 4 Core Issues as requested -->
+    <div class="work-grid-4col">
+      
+      <div class="work-feature-card">
+        <div class="work-feature-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+        </div>
+        <h3 class="work-feature-title">1. Dishonest or misleading ads</h3>
+        <p class="work-feature-desc">Ensuring all advertising claims are truthful, substantiated, and do not mislead consumers by ambiguity or omission.</p>
+      </div>
+
+      <div class="work-feature-card">
+        <div class="work-feature-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h3 class="work-feature-title">2. Indecent or offensive ads</h3>
+        <p class="work-feature-desc">Safeguarding against content that offends generally accepted public decency or cultural standards across India.</p>
+      </div>
+
+      <div class="work-feature-card">
+        <div class="work-feature-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        </div>
+        <h3 class="work-feature-title">3. Harmful ads</h3>
+        <p class="work-feature-desc">Preventing promotion of hazardous acts, dangerous stunts, and advertisements that could harm vulnerable consumers or children.</p>
+      </div>
+
+      <div class="work-feature-card">
+        <div class="work-feature-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+        </div>
+        <h3 class="work-feature-title">4. Ads that are unfair in competition</h3>
+        <p class="work-feature-desc">Protecting fair competition by prohibiting unfair disparagement or misleading comparison against competitors.</p>
+      </div>
+
+    </div>
+
+    <!-- Media Formats Strip (Exact Original Text) -->
+    <div class="work-callout-card" style="border-left-color: #026095;">
+      <p style="font-weight: 600; color: #0b1221; margin-bottom: 8px;">Scope Across Media Formats:</p>
+      <p>ASCI can look at advertisements across all media types and formats such as TV, print, digital, outdoor, radio, point of sale, claims made on packaging and so on.</p>
+      <div class="media-pills-container">
+        <span class="media-channel-pill">Television Broadcasts</span>
+        <span class="media-channel-pill">Print Publications</span>
+        <span class="media-channel-pill">Digital Platforms</span>
+        <span class="media-channel-pill">Outdoor Billboards</span>
+        <span class="media-channel-pill">Radio &amp; Podcasts</span>
+        <span class="media-channel-pill">Point of Sale (POS)</span>
+        <span class="media-channel-pill">Packaging &amp; Label Claims</span>
+      </div>
+    </div>
+
+    <!-- The 17 Objections OUTSIDE ASCI Remit (Exact Original Text, Visual Grid) -->
+    <h3 class="work-section-subtitle">The following objections fall OUTSIDE of ASCI’s remit</h3>
+    
+    <div class="outside-remit-card-grid">
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Duration/frequency/volume of advertisements</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Product or service deficiency cases</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Fraud cases</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Refund issues</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Counterfeit products</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Network quality issues</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Political, non-commercial government advertising.</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Violation of law [example: Emblems and Names (Prevention of Improper Use) Act, 1950; Prevention of Cruelty to Animals Act]</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Violation of code of medical ethics</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Pop-ups</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Spam emails</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Unsolicited SMS</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Sub-judice cases</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Advertisements not meant for Indian audiences (cross-border complaints)</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Pricing issues</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Public notice, news articles and press releases</span></div>
+      <div class="outside-remit-item"><span class="outside-bullet-dot"></span><span>Sponsorships</span></div>
+    </div>
+
+    <p class="work-body-p" style="margin-top: 20px;">
+      If we receive a complaint that is not in our remit, we try to guide the complainant to the correct regulatory authority or forum for a resolution to their complaints.
+    </p>
+
+  </div>
+</div>
+
+<!-- ================= TAB 3: OUR PROACTIVE MONITORING ================= -->
+<div class="tab-content" id="tab-proactive" style="display: none;">
+  <div class="work-tab-pane-wrap">
+    <h2 class="work-main-title">We proactively monitor ads across different sectors and media.</h2>
+    
+    <!-- Simple Text (No Box) as requested -->
+    <p class="work-lead-text" style="font-weight: 600; color: #0b1221; margin-bottom: 12px;">
+      On a mission to take action against all advertisements that are not decent, honest or fair. ASCI does not just wait to receive complaints.
+    </p>
+    <p class="work-body-p" style="margin-bottom: 28px;">
+      Our National Advertising Monitoring Services (NAMS), launched in 2012, keeps a close watch on ads published in national and regional newspapers, <BR>TV channels and also digital media.
+    </p>
+
+    <!-- 2 Key Objectives Cards (Exact Original Text, Elevated Design) -->
+    <h3 class="work-section-subtitle">By proactively monitoring advertisements, ASCI is able to</h3>
+    
+    <div class="work-grid-2col">
+      
+      <div class="work-feature-card">
+        <div class="work-feature-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <h3 class="work-feature-title">1. Early Intervention</h3>
+        <p class="work-feature-desc">
+          Take up advertisements in potential violation of the ASCI code soon after they are published
+        </p>
+      </div>
+
+      <div class="work-feature-card">
+        <div class="work-feature-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h3 class="work-feature-title">2. A Fair Marketplace</h3>
+        <p class="work-feature-desc">
+          Create a level playing field for honest advertisers, by spreading its net far and wide to the remotest corners to discover issues of consumer harm caused by advertising.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- AI & Technology Surveillance Callout (Exact Original Text) -->
+    <div class="work-callout-card" style="border-left-color: #026095; background: #ffffff;">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+        <span style="font-weight: 700; color: #026095; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">AI &amp; Advanced Technology Deployment</span>
+      </div>
+      <p style="margin-bottom: 0;">
+        ASCI’s suo motu monitoring is increasingly making use of advanced technology particularly in the monitoring of digital and social media, deploying artificial intelligence to sweep certain categories and platforms periodically.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= TAB 4: WORKING WITH OTHERS ================= -->
+<div class="tab-content" id="tab-working" style="display: block;">
+  <div class="work-tab-pane-wrap">
+    <h2 class="work-main-title">How do We work with a variety of organizations and individuals?</h2>
+    
+    <!-- Simple Text (No Box) as requested -->
+    <p class="work-body-p" style="margin-bottom: 14px;">
+      Our work involves making sure advertisements adhere to the Code laid down by ASCI. The ASCI Code is a constantly evolving set of rules and guidelines, in keeping with changes in the advertising landscape and society. This means we often have to deal with issues that are complex and where different stakeholders are involved.
+    </p>
+    <p class="work-body-p" style="margin-bottom: 28px;">
+      We work and consult with a variety of organisations and individuals including advertisers, creative agencies, research companies, other industry bodies, consumer groups and voluntary consumer organisations, regulatory partners, media owners, online platforms, and independent domain experts.
+    </p>
+
+    <!-- Interactive FAQ Accordion for Working with Others (Auto-close other items on open) -->
+    <div class="custom-faq-accordion">
+      
+      <details name="work-faq-accordion" open="true">
+        <summary>How we engage with our stakeholders</summary>
+        <div>
+          <ul class="dots-stakteholders">
+            <li>Changes to the Code – Consultation with stakeholders on proposed changes or additions to the ASCI Code.</li>
+            <li>Compliance partnerships with the government/ media for objectionable ads to be removed</li>
+            <li>Education and training: Working with academia and industry partners to create educational content on self-regulation and the ASCI code</li>
+            <li>Dissemination of reports / information via webinars, mailers and industry platforms.</li>
+            <li>Thought leadership reports and studies on certain issues and topics include extensive discussions with different stakeholders to understand their points of view</li>
+            <li>Monitoring efforts that are supported by different sectors</li>
+            <li>Regular communication and important updates are shared with Members</li>
+          </ul>
+        </div>
+      </details>
+
+      <details name="work-faq-accordion">
+        <summary>Working with the Government</summary>
+        <div>
+          <ul class="arrow-govt">
+            <li>ASCI works closely with different government ministries from time to time on the issue of objectionable ads. We have engaged with the Ministry of Information &amp; Broadcasting, the Ministry of Consumer Affairs, the Ministry of Education, the Department of Economic Affairs, FSSAI, Ministry of Ayush amongst others on both projects as well as consultations on the issue of objectionable ads. ASCI data is also frequently quoted in the Parliament on questions and discussions pertaining to misleading ads and consumer protection. You will find a list of parliament questions and answers where ASCI is mentioned on this link <a href="https://www.ascionline.in/parliament-questions/" target="_blank"> https://www.ascionline.in/parliament-questions/</a></li>
+            <li>Recognitions – ASCI’s code, recommendations and processes are recognised by important government entities. This provides a legal backstop to our recommendations.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details name="work-faq-accordion">
+        <summary>ASCI Recognition</summary>
+        <div>
+          <ol class="asci-recognition" type="1">
+            <li>Ministry of Information and Broadcasting released an advisory to television channels that ASCI Guidelines for Online Gaming to be followed in 2020.</li>
+            <li>The ASCI Code is appended in the Cable Television Networks Rules, 1994, Programme and Advertising Codes, prescribed under the Cable Television Network (CTN) Rules, 1994 Rule: 7; The ASCI complaint mechanism is alsomentioned in the statutory grievance redressal procedure of the CTN Amendment Rules, 2021</li>
+            <li>The Department of Consumer Affairs (DoCA) had partnered with ASCI to address all complaints pertaining to misleading advertisements received on the Grievances Against Misleading Advertisements (GAMA) portal.</li>
+            <li>The Food Safety and Standards Authority of India, through an MoU, had partnered with ASCI to address misleading advertisements in the Food &amp; Beverages sector, April 2016.</li>
+            <li>The Ministry of AYUSH, through an MoU, had partnered with ASCI to co-regulate misleading advertisements in the AYUSH sector, January 2017.</li>
+            <li>Insurance Regulatory and Development Authority Act mentions adherence by insurance companies to ASCI Codes. Ref. Item No.: 12, more recently (2019) IRDAI issued a master circular under Section 34 (1) of the Insurance Act, 1938.</li>
+            <li>The Drug Controller General of India (DCGI) recognized Self-regulation in advertising through ASCI’s Code, 2006</li>
+            <li>ASCI Code appended in the Maharashtra Directorate of Technical Education (DTE) Act. Ref. Item 13</li>
+            <li>Transport Department, Government of NCT, Delhi recognised the ASCl Code. Ref. Clause 2.3</li>
+            <li>The Supreme Court of India (SC), in its judgment dated, 12th January 2017, titled “Common Cause (A Regd. Society) vs. Union of India of India and ORS”, affirmed and recognised the self-regulatory mechanism put in place for advertising content by ASCI</li>
+            <li>ASCI’s Code of Self-Regulation in Advertising is appended in the Press Council of India’s Norms of Journalistic Conduct 2010 Edition. (Ref. Page 60, Appendix II)</li>
+            <li>The ASCI Code is appended in Indian Broadcasting Foundation’s Self-Regulatory Guidelines for non-news and current affairs programme. Ref. Page 19, Item No. 4</li>
+          </ol>
+        </div>
+      </details>
+
+      <details name="work-faq-accordion">
+        <summary>ASCI as a key stakeholder</summary>
+        <div>
+          <ol class="asci-recognition" type="1">
+            <li>ASCI was a member of the Steering Committee formed by the Central Government to look into violations of the Cigarettes and other Tobacco Products (Prohibition of Advertisement and Regulation of Trade and Commerce, Production, Supply, and Distribution) Act, 2003 (Ref. Ministry of Health and Family Welfare Notification dated June 9th, 2010, G.S.R. 489 (E))</li>
+            <li>ASCI has been a part of a committee constituted by NATIONAL HIGHWAYS AUTHORITY OF INDIA (NHAI) along with NCERT, SCERT to regulate the content of automobile advertisements.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details name="work-faq-accordion">
+        <summary>Working Internationally</summary>
+        <div>
+          <p>ASCI is an important member of the International Council of Ad Self-Regulation (ICAS), since (May 2021), ASCI’s CEO currently serves as one of the four global vice-presidents on the executive committee of ICAS. Being a part of ICAS allows ASCI to access and contribute to the understanding of self-regulation challenges and solutions. Particularly in the digital age, where technology brings about and provides solutions for complex challenges, these conversations and partnerships are invaluable in strengthening self-regulation, and keeping abreast of the latest developments and trends.</p>
+        </div>
+      </details>
+
+    </div>
+
+  </div>
+</div>
+
+</section>
+
+<!-- Tab Switching & Accordion Auto-close Script -->
 <script>
 function openTab(evt, tabId) {
   var i, tabcontent, tablinks;
@@ -4950,29 +5703,57 @@ function openTab(evt, tabId) {
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
-  tablinks = document.getElementsByClassName("tab-btn");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-    tablinks[i].style.backgroundColor = "transparent";
-    tablinks[i].style.color = "#555b66";
-  }
-  document.getElementById(tabId).style.display = "block";
-  evt.currentTarget.className += " active";
-  evt.currentTarget.style.backgroundColor = "#0b1221";
-  evt.currentTarget.style.color = "white";
   
+  tablinks = document.getElementsByClassName("work-tab-pill");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+    tablinks[i].setAttribute("aria-selected", "false");
+  }
+
+  const activeContent = document.getElementById(tabId);
+  if (activeContent) {
+    activeContent.style.display = "block";
+  }
+
+  if (evt && evt.currentTarget) {
+    evt.currentTarget.classList.add("active");
+    evt.currentTarget.setAttribute("aria-selected", "true");
+  } else {
+    const btn = document.querySelector(`[onclick*="${tabId}"]`);
+    if (btn) {
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
+    }
+  }
+
   const tabUrls = {
     'tab-how-we-handle': '/the-work-we-do/how-we-handle-complaints.html',
     'tab-what-we-cover': '/the-work-we-do/what-we-cover.html',
     'tab-proactive': '/the-work-we-do/our-proactive-monitoring.html',
     'tab-working': '/the-work-we-do/working-with-others.html'
   };
-  if (tabUrls[tabId]) {
-      window.history.pushState({}, '', tabUrls[tabId]);
+  if (tabUrls[tabId] && window.history && window.history.pushState) {
+    window.history.pushState({}, '', tabUrls[tabId]);
   }
-
 }
+
+// Mutual Exclusivity for FAQ Accordion: Opening one closes all others
+document.addEventListener("DOMContentLoaded", function() {
+  const accordions = document.querySelectorAll('.custom-faq-accordion details');
+  accordions.forEach(function(detail) {
+    detail.addEventListener('toggle', function() {
+      if (this.open) {
+        accordions.forEach(function(other) {
+          if (other !== detail && other.open) {
+            other.removeAttribute('open');
+          }
+        });
+      }
+    });
+  });
+});
 </script>
+
 <!-- Content -->
 <!-- Footer -->
 <!-- Hero Callout Banner: Responsible advertising is a shared responsibility -->

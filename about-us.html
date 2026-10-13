@@ -8026,7 +8026,167 @@
     </div>
   </section>
 
-  <!-- 9. Newsletter Subscription Section -->
+  <!-- 9. ASCI Explained Section -->
+  <section class="about-section" id="asci-explained">
+    <div class="container">
+      <div class="work-section-title-row">
+        <h2 class="section-heading">ASCI Explained</h2>
+        <a href="asci-explained.html" class="btn-explore-campaigns">
+          <span>Explore All 19 Explainer Videos</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+      <p class="section-intro-text" style="max-width: 720px; margin-bottom: 36px;">
+        Learn about ASCI and self-regulation in advertising, covering the ASCI Code, complaint management, compliance,
+        fairness, and initiatives for responsible ads. Watch official explainer video films across core governance topics.
+      </p>
+
+      <div class="campaigns-grid">
+        <!-- Explainer Card 1: Self-Regulation & ASCI -->
+        <div class="campaign-card" role="button" tabindex="0" onclick="openAboutExplainedModal(0)"
+          onkeydown="if(event.key==='Enter')openAboutExplainedModal(0)"
+          aria-label="Play Self-Regulation & ASCI Explainer Film">
+          <div class="campaign-card-thumb">
+            <img src="https://img.youtube.com/vi/9ftdKChre9U/hqdefault.jpg"
+              alt="Self-Regulation & ASCI" loading="lazy" />
+            <div class="campaign-card-play" aria-label="Watch Video">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+              </svg>
+            </div>
+          </div>
+          <div class="campaign-card-body">
+            <span class="campaign-tag">Mandate &amp; Framework</span>
+            <h3 class="campaign-title">Self-Regulation &amp; ASCI</h3>
+            <p class="campaign-desc">
+              Understanding the philosophy, structure, and foundation of self-regulation in Indian advertising and ASCI's role in protecting consumers.
+            </p>
+            <div class="campaign-card-footer">
+              <span class="campaign-meta">Self-Regulation Foundations</span>
+              <span
+                style="color: var(--color-asci-teal); font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+                Watch Film &rarr;
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Explainer Card 2: Overview of The ASCI Code -->
+        <div class="campaign-card" role="button" tabindex="0" onclick="openAboutExplainedModal(1)"
+          onkeydown="if(event.key==='Enter')openAboutExplainedModal(1)"
+          aria-label="Play Overview of The ASCI Code Explainer Film">
+          <div class="campaign-card-thumb">
+            <img src="https://img.youtube.com/vi/EjMGv8mQOrU/hqdefault.jpg"
+              alt="Overview of The ASCI Code" loading="lazy" />
+            <div class="campaign-card-play" aria-label="Watch Video">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+              </svg>
+            </div>
+          </div>
+          <div class="campaign-card-body">
+            <span class="campaign-tag">The ASCI Code</span>
+            <h3 class="campaign-title">Overview of The ASCI Code</h3>
+            <p class="campaign-desc">
+              An essential primer on the core principles and four fundamental chapters of the Advertising Standards Council of India Code.
+            </p>
+            <div class="campaign-card-footer">
+              <span class="campaign-meta">Code Architecture</span>
+              <span
+                style="color: var(--color-asci-teal); font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+                Watch Film &rarr;
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Explainer Card 3: Chapter 1 of the ASCI Code - Misleading Ads -->
+        <div class="campaign-card" role="button" tabindex="0" onclick="openAboutExplainedModal(2)"
+          onkeydown="if(event.key==='Enter')openAboutExplainedModal(2)"
+          aria-label="Play Chapter 1 of the ASCI Code - Misleading Ads Explainer Film">
+          <div class="campaign-card-thumb">
+            <img src="https://img.youtube.com/vi/CAetoWmQJ14/hqdefault.jpg"
+              alt="Chapter 1 of the ASCI Code - Misleading Ads" loading="lazy" />
+            <div class="campaign-card-play" aria-label="Watch Video">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+              </svg>
+            </div>
+          </div>
+          <div class="campaign-card-body">
+            <span class="campaign-tag">The ASCI Code</span>
+            <h3 class="campaign-title">Chapter 1 of the ASCI Code - Misleading Ads</h3>
+            <p class="campaign-desc">
+              Standards ensuring advertisements are truthful, honest, and do not mislead consumers through ambiguous claims, exaggerations, or omissions.
+            </p>
+            <div class="campaign-card-footer">
+              <span class="campaign-meta">Honest Representations</span>
+              <span
+                style="color: var(--color-asci-teal); font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+                Watch Film &rarr;
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About ASCI Explained Lightbox Modal with Left & Right Navigation Arrows -->
+  <div class="media-modal-backdrop" id="aboutExplainedModal" onclick="closeAboutExplainedModalOnBackdrop(event)">
+    <div class="media-modal-container">
+      <div class="media-modal-header">
+        <div class="media-modal-header-left">
+          <div class="media-modal-title" id="aboutExplainedModalTitle">ASCI Explainer Video</div>
+          <div class="media-modal-counter" id="aboutExplainedModalCounter">1 of 3</div>
+        </div>
+        <button class="media-modal-close-btn" onclick="closeAboutExplainedModal()" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="media-modal-player-wrap" id="aboutExplainedPlayerContent">
+        <!-- Injected dynamically -->
+      </div>
+
+      <!-- Previous & Next Navigation Arrows -->
+      <button class="modal-nav-btn modal-prev-btn" onclick="navigateAboutExplainedModal(-1)"
+        aria-label="Previous explainer video">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button class="modal-nav-btn modal-next-btn" onclick="navigateAboutExplainedModal(1)" aria-label="Next explainer video">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="media-modal-footer">
+        <span id="aboutExplainedMetaTopic">Topic: Overview</span>
+        <div class="media-modal-footer-nav-hint">Tip: Use &larr; &rarr; arrow keys or buttons to navigate</div>
+        <div class="media-modal-footer-actions">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-external-link" id="aboutExplainedExternalLink">
+            <span>Watch on YouTube</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+          <a href="asci-explained.html" class="btn-modal-all-campaigns">
+            <span>Explore All 19 Videos &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. Newsletter Subscription Section -->
   <section class="about-section" id="newsletter" style="background: #f8fafc; border-bottom: none;">
     <div class="container">
       <div class="newsletter-card">
@@ -8847,21 +9007,110 @@
         }
       };
 
+      // ASCI Explained Preview Modal Data & Logic
+      const aboutPreviewExplainers = [
+        {
+          id: '9ftdKChre9U',
+          title: 'Self-Regulation & ASCI',
+          category: 'Mandate & Framework',
+          topic: 'Self-Regulation Foundations',
+          description: 'Understanding the philosophy, structure, and foundation of self-regulation in Indian advertising and ASCI\'s role in protecting consumers.'
+        },
+        {
+          id: 'EjMGv8mQOrU',
+          title: 'Overview of The ASCI Code',
+          category: 'The ASCI Code',
+          topic: 'Code Architecture',
+          description: 'An essential primer on the core principles and four fundamental chapters of the Advertising Standards Council of India Code.'
+        },
+        {
+          id: 'CAetoWmQJ14',
+          title: 'Chapter 1 of the ASCI Code - Misleading Ads',
+          category: 'The ASCI Code',
+          topic: 'Chapter 1: Honest Representations',
+          description: 'Standards ensuring advertisements are truthful, honest, and do not mislead consumers through ambiguous claims, exaggerations, or omissions.'
+        }
+      ];
+
+      let currentAboutExplainedIndex = 0;
+
+      window.openAboutExplainedModal = function (idx) {
+        if (idx < 0) idx = aboutPreviewExplainers.length - 1;
+        if (idx >= aboutPreviewExplainers.length) idx = 0;
+        currentAboutExplainedIndex = idx;
+
+        const item = aboutPreviewExplainers[currentAboutExplainedIndex];
+        if (!item) return;
+
+        const modal = document.getElementById('aboutExplainedModal');
+        const playerWrap = document.getElementById('aboutExplainedPlayerContent');
+        const titleEl = document.getElementById('aboutExplainedModalTitle');
+        const counterEl = document.getElementById('aboutExplainedModalCounter');
+        const topicEl = document.getElementById('aboutExplainedMetaTopic');
+        const extLink = document.getElementById('aboutExplainedExternalLink');
+
+        if (titleEl) titleEl.textContent = item.title;
+        if (counterEl) counterEl.textContent = `${currentAboutExplainedIndex + 1} of ${aboutPreviewExplainers.length}`;
+        if (topicEl) topicEl.textContent = `Topic: ${item.category} · ${item.topic}`;
+
+        if (playerWrap) {
+          playerWrap.innerHTML = `
+            <iframe class="media-modal-iframe" src="https://www.youtube-nocookie.com/embed/${item.id}?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          `;
+          if (extLink) {
+            extLink.href = 'https://www.youtube.com/watch?v=' + item.id;
+          }
+        }
+
+        if (modal) modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      };
+
+      window.navigateAboutExplainedModal = function (dir) {
+        openAboutExplainedModal(currentAboutExplainedIndex + dir);
+      };
+
+      window.closeAboutExplainedModal = function () {
+        const modal = document.getElementById('aboutExplainedModal');
+        const playerWrap = document.getElementById('aboutExplainedPlayerContent');
+        if (modal) modal.classList.remove('open');
+        if (playerWrap) playerWrap.innerHTML = '';
+        document.body.style.overflow = '';
+      };
+
+      window.closeAboutExplainedModalOnBackdrop = function (e) {
+        if (e.target.id === 'aboutExplainedModal') {
+          closeAboutExplainedModal();
+        }
+      };
+
       // Global Keyboard Navigation
       document.addEventListener('keydown', (e) => {
         const aboutModal = document.getElementById('aboutCampaignModal');
         const isAboutModalOpen = aboutModal && aboutModal.classList.contains('open');
+
+        const explainedModal = document.getElementById('aboutExplainedModal');
+        const isExplainedModalOpen = explainedModal && explainedModal.classList.contains('open');
 
         if (e.key === 'Escape') {
           closeCareersModal();
           if (isAboutModalOpen) {
             closeAboutCampaignModal();
           }
+          if (isExplainedModalOpen) {
+            closeAboutExplainedModal();
+          }
         } else if (isAboutModalOpen) {
           if (e.key === 'ArrowLeft') {
             navigateAboutCampaignModal(-1);
           } else if (e.key === 'ArrowRight') {
             navigateAboutCampaignModal(1);
+          }
+        } else if (isExplainedModalOpen) {
+          if (e.key === 'ArrowLeft') {
+            navigateAboutExplainedModal(-1);
+          } else if (e.key === 'ArrowRight') {
+            navigateAboutExplainedModal(1);
           }
         }
       });

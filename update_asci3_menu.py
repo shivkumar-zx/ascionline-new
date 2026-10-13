@@ -53,7 +53,7 @@ new_panel = '''<div class="megamenu-panel" id="aboutMegaPanel">
               </li>
               <li class="megamenu-link-item">
                 <a href="the-work-we-do.html">
-                  <span>The work we do &amp; its impact</span>
+                  <span>Work we do</span>
                   <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
@@ -107,7 +107,7 @@ new_panel = '''<div class="megamenu-panel" id="aboutMegaPanel">
               </li>
               <li class="megamenu-link-item">
                 <a href="about-us.html#newsletter">
-                  <span>Subscribe to our newsletter</span>
+                  <span>Subscribe to newsletter</span>
                   <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>

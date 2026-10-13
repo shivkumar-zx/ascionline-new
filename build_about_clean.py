@@ -475,10 +475,10 @@ about_body = """
     </div>
   </section>
 
-  <!-- 2. The Work We Do & Its Impact -->
+  <!-- 2. Work We Do -->
   <section class="about-section" id="work">
     <div class="container">
-      <h2 class="section-heading">The Work We Do &amp; Its Impact</h2>
+      <h2 class="section-heading">Work We Do</h2>
       <p class="section-intro-text">
         ASCI serves as the guardian of truthful, decent, and fair advertising in India across four core operational areas: handling complaints with an independent infrastructure, regulating advertising content across media, proactive digital monitoring, and institutional co-regulation.
       </p>

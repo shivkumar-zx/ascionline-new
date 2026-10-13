@@ -486,7 +486,7 @@
     .work-page-desc {
       font-size: 1.05rem;
       color: #475569;
-      max-width: 860px;
+      max-width: 100%;
       line-height: 1.65;
       margin-bottom: 24px;
     }
@@ -500,56 +500,580 @@
       margin: 0 auto;
     }
 
-    .content-main-heading {
-      font-family: var(--font-serif);
-      font-size: 28px;
-      color: var(--color-asci-green-dark);
+    /* ================= ELEVATED ABOUT SELF-REGULATION DESIGN ================= */
+    .selfreg-page-wrapper {
+      background: #ffffff;
+      color: var(--color-text-main);
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .selfreg-hero {
+      position: relative;
+      padding: 56px 0 44px;
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+      border-bottom: 1px solid #eef2f6;
+    }
+
+    .selfreg-hero-inner {
+      width: 100%;
+    }
+
+    .breadcrumb-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: #64748b;
       margin-bottom: 24px;
+    }
+
+    .breadcrumb-nav a {
+      color: #008779;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+
+    .breadcrumb-nav a:hover {
+      color: #054c3f;
+      text-decoration: underline;
+    }
+
+    .selfreg-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 135, 121, 0.08);
+      border: 1px solid rgba(0, 135, 121, 0.22);
+      color: #008779;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.8125rem;
       font-weight: 700;
-      line-height: 1.3;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
-    .content-lead-text {
-      font-size: 16px;
+    .selfreg-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #0f172a;
+      letter-spacing: -0.015em;
+      margin-bottom: 20px;
+    }
+
+    .selfreg-hero-lead {
+      font-size: 1.15rem;
       line-height: 1.7;
-      color: var(--color-text-muted);
-      margin-bottom: 16px;
+      color: #334155;
+      max-width: 100%;
+      font-weight: 400;
     }
 
-    .benefit-group {
-      margin-top: 28px;
+    /* Purpose Card */
+    .selfreg-purpose-section {
+      padding: 44px 0 20px;
+    }
+
+    .selfreg-purpose-card {
+      background: linear-gradient(135deg, #f8fafc 0%, #f0fdf4 100%);
+      border: 1.5px solid #dcfce7;
+      border-radius: 20px;
+      padding: 36px 40px;
+      box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .selfreg-purpose-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(180deg, #008779 0%, #10b981 100%);
+    }
+
+    .selfreg-purpose-heading {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: #054c3f;
+      margin-bottom: 14px;
+      font-weight: 700;
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .selfreg-purpose-desc {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 24px;
+    }
+
+    .selfreg-hallmarks-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px dashed #cbd5e1;
+    }
+
+    .selfreg-hallmark-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 7px 16px;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #0f172a;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
+    }
+
+    .selfreg-hallmark-tag:hover {
+      border-color: #008779;
+      color: #008779;
+      transform: translateY(-2px);
+    }
+
+    .selfreg-hallmark-tag svg {
+      width: 15px;
+      height: 15px;
+      stroke: #008779;
+      flex-shrink: 0;
+    }
+
+    /* The Four Pillars Section */
+    .selfreg-section {
+      padding: 56px 0;
+    }
+
+    .selfreg-section-header {
+      margin-bottom: 36px;
+    }
+
+    .selfreg-section-kicker {
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #008779;
+      margin-bottom: 8px;
+    }
+
+    .selfreg-section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+      color: #0f172a;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .selfreg-section-desc {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #475569;
+      max-width: 100%;
+    }
+
+    .pillars-grid-4col {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 24px;
     }
 
-    .benefit-sub-heading {
-      font-size: 20px;
-      font-weight: 600;
-      color: #555b66;
-      margin-bottom: 10px;
-    }
-
-    .benefit-row {
+    .pillar-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px 24px;
+      position: relative;
       display: flex;
+      flex-direction: column;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-5px);
+      border-color: #008779;
+      box-shadow: 0 16px 32px -8px rgba(0, 135, 121, 0.12);
+    }
+
+    .pillar-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .pillar-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: #f0fdf4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #008779;
+      border: 1px solid rgba(0, 135, 121, 0.15);
+      transition: all 0.2s ease;
+    }
+
+    .pillar-card:hover .pillar-icon-box {
+      background: #008779;
+      color: #ffffff;
+    }
+
+    .pillar-number {
+      font-family: var(--font-sans);
+      font-size: 0.8125rem;
+      font-weight: 800;
+      color: #94a3b8;
+      letter-spacing: 0.05em;
+    }
+
+    .pillar-card-badge {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #008779;
+      margin-bottom: 6px;
+    }
+
+    .pillar-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .pillar-card-role {
+      font-size: 0.925rem;
+      line-height: 1.6;
+      color: #475569;
+      flex-grow: 1;
+    }
+
+    /* Mechanism Two-Column Cards */
+    .selfreg-mechanism-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .mechanism-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 32px 30px;
+      display: flex;
+      gap: 20px;
       align-items: flex-start;
-      gap: 14px;
+      transition: all 0.22s ease;
     }
 
-    .orange-chevron {
-      color: #f89e1b;
-      font-size: 1.25rem;
-      line-height: 1.5;
+    .mechanism-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 10px 24px -6px rgba(15, 23, 42, 0.06);
+    }
+
+    .mechanism-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #eff6ff;
+      color: #026095;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
-      font-weight: 900;
-      user-select: none;
+      border: 1px solid rgba(2, 96, 149, 0.15);
     }
 
-    .benefit-text {
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--color-text-muted);
+    .mechanism-card-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: #0f172a;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .mechanism-card-body p {
+      font-size: 0.975rem;
+      line-height: 1.65;
+      color: #475569;
       margin: 0;
+    }
+
+    /* Beneficiaries 3-Column Section */
+    .selfreg-benefits-section {
+      padding: 60px 0 70px;
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .beneficiaries-grid-3col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 32px;
+    }
+
+    .beneficiary-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .beneficiary-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 36px -10px rgba(15, 23, 42, 0.09);
+    }
+
+    .card-ecosystem {
+      border-top: 5px solid #008779;
+    }
+
+    .card-policymakers {
+      border-top: 5px solid #026095;
+    }
+
+    .card-consumers {
+      border-top: 5px solid #d97706;
+    }
+
+    .beneficiary-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .beneficiary-badge {
+      display: inline-block;
+      font-size: 0.725rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 5px 12px;
+      border-radius: 9999px;
+    }
+
+    .card-ecosystem .beneficiary-badge {
+      background: rgba(0, 135, 121, 0.1);
+      color: #008779;
+    }
+
+    .card-policymakers .beneficiary-badge {
+      background: rgba(2, 96, 149, 0.1);
+      color: #026095;
+    }
+
+    .card-consumers .beneficiary-badge {
+      background: rgba(217, 119, 6, 0.1);
+      color: #d97706;
+    }
+
+    .beneficiary-icon-round {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-ecosystem .beneficiary-icon-round {
+      background: #f0fdf4;
+      color: #008779;
+    }
+
+    .card-policymakers .beneficiary-icon-round {
+      background: #eff6ff;
+      color: #026095;
+    }
+
+    .card-consumers .beneficiary-icon-round {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .beneficiary-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .beneficiary-callout-box {
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+
+    .card-ecosystem .beneficiary-callout-box {
+      background: #f0fdf4;
+      color: #054c3f;
+      border: 1px solid rgba(0, 135, 121, 0.2);
+    }
+
+    .card-policymakers .beneficiary-callout-box {
+      background: #eff6ff;
+      color: #0c4a6e;
+      border: 1px solid rgba(2, 96, 149, 0.2);
+    }
+
+    .card-consumers .beneficiary-callout-box {
+      background: #fffbeb;
+      color: #78350f;
+      border: 1px solid rgba(217, 119, 6, 0.25);
+    }
+
+    .beneficiary-text {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: #475569;
+      flex-grow: 1;
+    }
+
+    /* Bottom CTA Ribbon */
+    .selfreg-cta-section {
+      padding: 60px 0 20px;
+    }
+
+    .selfreg-cta-card {
+      background: linear-gradient(135deg, #03362a 0%, #054c3f 100%);
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 48px 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+      box-shadow: 0 20px 40px -10px rgba(5, 76, 63, 0.25);
+    }
+
+    .selfreg-cta-content h2 {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .selfreg-cta-content p {
+      font-size: 1rem;
+      color: #cbd5e1;
+      max-width: 600px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .selfreg-cta-buttons {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+    }
+
+    .btn-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      color: #03362a;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn-cta-primary:hover {
+      background: #f0fdf4;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    .btn-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+      color: #ffffff;
+      padding: 11px 22px;
+      border-radius: 9999px;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .btn-cta-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1024px) {
+      .pillars-grid-4col {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .beneficiaries-grid-3col {
+        grid-template-columns: 1fr;
+      }
+      .selfreg-cta-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .selfreg-purpose-card {
+        padding: 28px 24px;
+      }
+      .pillars-grid-4col {
+        grid-template-columns: 1fr;
+      }
+      .selfreg-mechanism-grid {
+        grid-template-columns: 1fr;
+      }
+      .selfreg-cta-card {
+        padding: 32px 24px;
+      }
     }
 
     /* FOOTER */
@@ -1062,6 +1586,16 @@
                   </a>
                 </li>
                 <li class="megamenu-link-item">
+                  <a href="asci-explained.html">
+                    <span>ASCI Explained</span>
+                    <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </li>
+                <li class="megamenu-link-item">
                   <a href="about-us.html#campaigns">
                     <span>Our past campaigns</span>
                     <svg class="arrow-diag-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
@@ -1130,99 +1664,310 @@
     </div>
   </header>
 
-  <!-- Hero Section (Matching Theme of what-we-cover.html) -->
-  <section class="work-hero">
+  <!-- Hero Section -->
+  <section class="selfreg-hero">
     <div class="container">
       <div class="breadcrumb-nav">
-        <a href="about-us.html">Home</a>
+        <a href="index.html">Home</a>
         <span>/</span>
         <a href="about-us.html">About Us</a>
         <span>/</span>
         <span>About Self-Regulation</span>
       </div>
 
-      <h1 class="work-page-title">Find out how advertising self-regulation works benefits everyone</h1>
+      <h1 class="selfreg-hero-title">Find out how advertising self-regulation works &amp; benefits everyone</h1>
+
+      <p class="selfreg-hero-lead">
+        Advertising Self-regulation means that the ad industry has willingly established a system to moderate all its
+        own ads and ensure that advertisers follow a set of standards while getting ads created.
+      </p>
     </div>
   </section>
 
-  <!-- Main Content Area (Only Data, No Tabs) -->
-  <main class="page-content-wrap">
+  <!-- Main Content Flow -->
+  <main class="selfreg-page-wrapper">
     <div class="container">
-      <div class="page-content-area">
-        <p class="content-lead-text">
-          Advertising Self-regulation means that the ad industry has willingly established a system to moderate all its
-          own ads and ensure that advertisers follow a set of standards while getting ads created.
-        </p>
 
-        <p class="content-lead-text">
-          This is done to ensure that advertisements continue to be honest, truthful, decent, safe and fair. Ads must be
-          planned and crafted in a manner that they are duly responsible towards safeguarding the interests of the
-          consumer as well as society.
-        </p>
+      <!-- Section: Core Purpose & 5 Hallmarks -->
+      <section class="selfreg-purpose-section">
+        <div class="selfreg-purpose-card">
+          <h2 class="selfreg-purpose-heading">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 12 2 2 4-4"></path>
+              <circle cx="12" cy="12" r="10"></circle>
+            </svg>
+            Safeguarding Consumer &amp; Societal Interests
+          </h2>
+          <p class="selfreg-purpose-desc">
+            This is done to ensure that advertisements continue to be honest, truthful, decent, safe and fair. Ads must be
+            planned and crafted in a manner that they are duly responsible towards safeguarding the interests of the
+            consumer as well as society.
+          </p>
 
-        <p class="content-lead-text">
-          ASCI was formed by the representatives of four pillars of the industry itself – the businesses who sponsor/
-          pay for the advertising, the ad agencies who conceptualise and give them a form, the media that carry these
-          ads and allied professions such as PR and market research that support the development of communication.
-        </p>
+          <div class="selfreg-hallmarks-row">
+            <span style="font-size: 0.8125rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 4px;">5 Core Pillars:</span>
+            
+            <div class="selfreg-hallmark-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>Honest</span>
+            </div>
 
-        <p class="content-lead-text">
-          The advertising ecosystem agrees upon a set of standards that ads must adhere to and a system to make sure
-          that the ads that do not meet those standards are quickly corrected or removed.
-        </p>
+            <div class="selfreg-hallmark-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              <span>Truthful</span>
+            </div>
 
-        <p class="content-lead-text">
-          Self-regulation benefits everyone – policymakers, consumers, the advertising ecosystem, and society as a
-          whole.
-        </p>
+            <div class="selfreg-hallmark-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+              <span>Decent</span>
+            </div>
 
-        <!-- 3 Beneficiaries -->
-        <div class="benefit-group">
-          <!-- Item 1: Ecosystem -->
-          <div>
-            <h2 class="benefit-sub-heading">For the advertising ecosystem</h2>
-            <div class="benefit-row">
-              <span class="orange-chevron">&#10095;</span>
-              <p class="benefit-text">
-                According to estimates, about one-third or half of a business’s market capitalisation is represented by
-                its brand reputation. Thus, consumer trust is the key to corporate success. Advertising self-regulation,
-                through the promotion of responsible advertising, helps build consumer trust in brands which inspires
-                brand loyalty and that in turn leads to growth in sales and market share. Maximised returns on long term
-                investments in advertising benefit not only advertisers but also agencies and media, who will see a
-                higher demand for creative yet responsible advertising.
+            <div class="selfreg-hallmark-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <span>Safe</span>
+            </div>
+
+            <div class="selfreg-hallmark-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path></svg>
+              <span>Fair</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Four Pillars of Industry -->
+      <section class="selfreg-section">
+        <div class="selfreg-section-header">
+                    <h2 class="selfreg-section-title">Formed by the Four Pillars of the Industry</h2>
+          <p class="selfreg-section-desc">
+            ASCI was formed by the representatives of four pillars of the industry itself – the businesses who sponsor/pay
+            for the advertising, the ad agencies who conceptualise and give them a form, the media that carry these ads
+            and allied professions such as PR and market research that support the development of communication.
+          </p>
+        </div>
+
+        <div class="pillars-grid-4col">
+          <!-- Pillar 1 -->
+          <div class="pillar-card">
+            <div class="pillar-card-top">
+              <div class="pillar-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+              <span class="pillar-number">01</span>
+            </div>
+                        <h3 class="pillar-card-title">Businesses &amp; Advertisers</h3>
+            <p class="pillar-card-role">
+              The businesses who sponsor and pay for the advertising, driving investment in responsible commercial communication.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="pillar-card">
+            <div class="pillar-card-top">
+              <div class="pillar-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m18 2 4 4-12 12H6v-4L18 2Z"></path>
+                  <path d="m15 5 4 4"></path>
+                </svg>
+              </div>
+              <span class="pillar-number">02</span>
+            </div>
+                        <h3 class="pillar-card-title">Advertising Agencies</h3>
+            <p class="pillar-card-role">
+              The ad agencies who conceptualise, script, and give tangible form to innovative brand campaigns across formats.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="pillar-card">
+            <div class="pillar-card-top">
+              <div class="pillar-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="15" x="2" y="7" rx="2" ry="2"></rect>
+                  <polyline points="17 2 12 7 7 2"></polyline>
+                </svg>
+              </div>
+              <span class="pillar-number">03</span>
+            </div>
+                        <h3 class="pillar-card-title">Media Platforms</h3>
+            <p class="pillar-card-role">
+              The media that carry these ads across television, print, radio, outdoor displays, and rapidly growing digital networks.
+            </p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="pillar-card">
+            <div class="pillar-card-top">
+              <div class="pillar-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <span class="pillar-number">04</span>
+            </div>
+                        <h3 class="pillar-card-title">Allied Professions</h3>
+            <p class="pillar-card-role">
+              Allied professions such as PR, technical research, and market analytics that support the strategic development of communication.
+            </p>
+          </div>
+        </div>
+
+        <!-- How the System Operates -->
+        <div class="selfreg-mechanism-grid">
+          <div class="mechanism-card">
+            <div class="mechanism-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <div class="mechanism-card-body">
+              <h3>Agreed Collective Standards</h3>
+              <p>
+                The advertising ecosystem agrees upon a set of standards that ads must adhere to, codified in the ASCI Code for Self-Regulation.
               </p>
             </div>
           </div>
 
-          <!-- Item 2: Policymakers -->
-          <div>
-            <h2 class="benefit-sub-heading">For policymakers</h2>
-            <div class="benefit-row">
-              <span class="orange-chevron">&#10095;</span>
-              <p class="benefit-text">
-                Self-regulatory advertising standards provide an additional layer of consumer protection that
-                complements the legal framework. Advertising self-regulatory bodies also help avoid problems before they
-                happen by providing advertising advice at the pre-production stage. advice. They keep track of key
-                concerns about advertising and take steps to address them when needed.
-              </p>
+          <div class="mechanism-card">
+            <div class="mechanism-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
             </div>
-          </div>
-
-          <!-- Item 3: Consumers -->
-          <div>
-            <h2 class="benefit-sub-heading">For consumers</h2>
-            <div class="benefit-row">
-              <span class="orange-chevron">&#10095;</span>
-              <p class="benefit-text">
-                Self-regulation provides a cost-free, fast and efficient solution to express their views about
-                advertisements and raise their concerns to an impartial body.
+            <div class="mechanism-card-body">
+              <h3>Swift Correction &amp; Redressal</h3>
+              <p>
+                A collaborative system to make sure that the ads that do not meet those standards are quickly corrected or removed before causing consumer harm.
               </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
     </div>
+
+    <!-- Section: Beneficiaries Grid -->
+    <section class="selfreg-benefits-section">
+      <div class="container">
+        <div class="selfreg-section-header" style="text-align: center; max-width: 780px; margin: 0 auto 36px;">
+                    <h2 class="selfreg-section-title">Self-Regulation Benefits Everyone</h2>
+          <p class="selfreg-section-desc" style="margin: 0 auto;">
+            Self-regulation benefits everyone – policymakers, consumers, the advertising ecosystem, and society as a whole.
+          </p>
+        </div>
+
+        <div class="beneficiaries-grid-3col">
+          <!-- Beneficiary 1: Ecosystem -->
+          <div class="beneficiary-card card-ecosystem">
+            <div class="beneficiary-card-header">
+                            <div class="beneficiary-icon-round">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="20" x2="12" y2="10"></line>
+                  <line x1="18" y1="20" x2="18" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="16"></line>
+                </svg>
+              </div>
+            </div>
+
+            <h3 class="beneficiary-title">For the advertising ecosystem</h3>
+
+            <div class="beneficiary-callout-box">
+              1/3 to 1/2 of market capitalisation is represented by brand reputation.
+            </div>
+
+            <p class="beneficiary-text">
+              According to estimates, about one-third or half of a business’s market capitalisation is represented by its brand reputation. Thus, consumer trust is the key to corporate success. Advertising self-regulation, through the promotion of responsible advertising, helps build consumer trust in brands which inspires brand loyalty and that in turn leads to growth in sales and market share. Maximised returns on long term investments in advertising benefit not only advertisers but also agencies and media, who will see a higher demand for creative yet responsible advertising.
+            </p>
+          </div>
+
+          <!-- Beneficiary 2: Policymakers -->
+          <div class="beneficiary-card card-policymakers">
+            <div class="beneficiary-card-header">
+                            <div class="beneficiary-icon-round">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 21h18"></path>
+                  <path d="M5 21V7l7-4 7 4v14"></path>
+                  <path d="M9 10a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v11H9V10z"></path>
+                </svg>
+              </div>
+            </div>
+
+            <h3 class="beneficiary-title">For policymakers</h3>
+
+            <div class="beneficiary-callout-box">
+              Complementary protection reinforcing legal statutory frameworks.
+            </div>
+
+            <p class="beneficiary-text">
+              Self-regulatory advertising standards provide an additional layer of consumer protection that complements the legal framework. Advertising self-regulatory bodies also help avoid problems before they happen by providing advertising advice at the pre-production stage. They keep track of key concerns about advertising and take steps to address them when needed.
+            </p>
+          </div>
+
+          <!-- Beneficiary 3: Consumers -->
+          <div class="beneficiary-card card-consumers">
+            <div class="beneficiary-card-header">
+                            <div class="beneficiary-icon-round">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+            </div>
+
+            <h3 class="beneficiary-title">For consumers</h3>
+
+            <div class="beneficiary-callout-box">
+              Cost-free, fast and efficient redressal to raise concerns impartially.
+            </div>
+
+            <p class="beneficiary-text">
+              Self-regulation provides a cost-free, fast and efficient solution to express their views about advertisements and raise their concerns to an impartial body.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA Banner -->
+    <div class="container">
+      <section class="selfreg-cta-section">
+        <div class="selfreg-cta-card">
+          <div class="selfreg-cta-content">
+            <h2>Responsible advertising is a shared responsibility.</h2>
+            <p>
+              Explore how the ASCI Code guides advertisers, agencies, and media to build sustainable consumer trust across India.
+            </p>
+          </div>
+          <div class="selfreg-cta-buttons">
+            <a href="https://www.ascionline.in/the-asci-code/" class="btn-cta-primary" target="_blank" rel="noopener">
+              <span>The ASCI Code</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a href="the-work-we-do/how-we-handle-complaints.html" class="btn-cta-secondary">
+              <span>How We Handle Complaints</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
   </main>
+
 
   <!-- Search Modal Overlay -->
   <div class="search-overlay" id="searchOverlay" onclick="closeSearchOnBackdrop(event)">

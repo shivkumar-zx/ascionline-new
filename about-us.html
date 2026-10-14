@@ -6199,63 +6199,56 @@
     }
 
   
-    /* ================= MILESTONES PROGRESS TRACK DESIGN ================= */
-    .milestones-progress-container {
+    /* ================= BESPOKE MILESTONES STEPPER TIMELINE ================= */
+    .milestones-stepper-wrap {
       position: relative;
-      margin-top: 40px;
+      margin-top: 48px;
       padding-top: 10px;
     }
 
-    /* Continuous Horizontal Progress Rail */
-    .milestones-progress-rail {
+    /* Track Line centered through node circles */
+    .stepper-track-line {
       position: absolute;
-      top: 27px;
-      left: 17px;
-      right: 17px;
+      top: 28px;
+      left: calc(12.5% - 10px);
+      right: calc(12.5% - 10px);
       height: 3px;
       background: #e2e8f0;
       z-index: 1;
     }
 
-    .milestones-progress-fill {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+    .stepper-track-fill {
       height: 100%;
-      background: linear-gradient(90deg, #008779 0%, #026095 65%, #059669 100%);
-      border-radius: 9999px;
+      width: 100%;
+      background: linear-gradient(90deg, #008779 0%, #026095 70%, #008779 100%);
+      border-radius: 4px;
     }
 
-    .milestones-progress-grid {
+    /* Grid of 4 Nodes */
+    .stepper-nodes-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
+      gap: 36px;
       position: relative;
       z-index: 2;
     }
 
-    .milestone-progress-card {
+    .stepper-node-col {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       position: relative;
       transition: transform 0.22s ease;
     }
 
-    .milestone-progress-card:hover {
+    .stepper-node-col:hover {
       transform: translateY(-4px);
     }
 
-    .milestone-progress-node-wrap {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .milestone-progress-node {
-      width: 36px;
-      height: 36px;
+    /* Node Circle */
+    .stepper-circle {
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       background: #ffffff;
       border: 2.5px solid #008779;
@@ -6263,80 +6256,91 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.8125rem;
+      font-size: 0.85rem;
       font-weight: 700;
       font-family: var(--font-sans);
-      box-shadow: 0 0 0 4px rgba(0, 135, 121, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
-      flex-shrink: 0;
+      margin-bottom: 24px;
+      box-shadow: 0 0 0 5px #f8fafc, 0 2px 8px rgba(0, 135, 121, 0.15);
       transition: all 0.22s ease;
+      flex-shrink: 0;
     }
 
-    .milestone-progress-card:hover .milestone-progress-node {
+    .stepper-node-col:hover .stepper-circle {
       background: #008779;
       color: #ffffff;
-      box-shadow: 0 0 0 6px rgba(0, 135, 121, 0.25), 0 4px 12px rgba(0, 135, 121, 0.3);
-      transform: scale(1.08);
+      transform: scale(1.1);
+      box-shadow: 0 0 0 6px #f8fafc, 0 4px 14px rgba(0, 135, 121, 0.35);
     }
 
-    /* Node 4 (Current Era: 2021-2026) */
-    .node-current .milestone-progress-node {
+    .stepper-node-col.current-era .stepper-circle {
       border-color: #026095;
       color: #026095;
-      box-shadow: 0 0 0 4px rgba(2, 96, 149, 0.15);
     }
 
-    .node-current:hover .milestone-progress-node {
+    .stepper-node-col.current-era:hover .stepper-circle {
       background: #026095;
       color: #ffffff;
-      box-shadow: 0 0 0 6px rgba(2, 96, 149, 0.25);
+      box-shadow: 0 0 0 6px #f8fafc, 0 4px 14px rgba(2, 96, 149, 0.35);
     }
 
-    .milestone-year-pill {
+    /* Content Area strictly below the circle */
+    .stepper-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .stepper-year {
       font-family: var(--font-serif);
-      font-size: 1.15rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: #0f172a;
-      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+      letter-spacing: -0.015em;
     }
 
-    .milestone-progress-title {
-      font-size: 0.78rem;
+    .stepper-title {
+      font-size: 0.76rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: #008779;
-      margin: 0 0 8px 0;
+      margin: 0 0 10px 0;
       line-height: 1.35;
     }
 
-    .node-current .milestone-progress-title {
+    .stepper-node-col.current-era .stepper-title {
       color: #026095;
     }
 
-    .milestone-progress-desc {
-      font-size: 0.9rem;
+    .stepper-desc {
+      font-size: 0.925rem;
       line-height: 1.65;
       color: #475569;
       margin: 0;
     }
 
     @media (max-width: 991px) {
-      .milestones-progress-rail {
+      .stepper-track-line {
         display: none;
       }
-      .milestones-progress-grid {
+      .stepper-nodes-row {
         grid-template-columns: 1fr;
-        gap: 28px;
-        position: relative;
+        gap: 32px;
         padding-left: 28px;
         border-left: 2px solid #008779;
       }
-      .milestone-progress-node {
+      .stepper-circle {
         position: absolute;
-        left: -46px;
+        left: -48px;
+        top: 0;
+        margin-bottom: 0;
+      }
+      .stepper-content {
+        padding-left: 0;
       }
     }
-
   </style>
 </head>
 
@@ -8107,60 +8111,60 @@
         regulating digital, print, broadcast, and AI-driven commercial content.
       </p>
 
-      <div class="milestones-progress-container">
-        <!-- Connecting Progress Rail -->
-        <div class="milestones-progress-rail" aria-hidden="true">
-          <div class="milestones-progress-fill"></div>
+      <div class="milestones-stepper-wrap">
+        <!-- Connecting Track Line (strictly behind the node circles) -->
+        <div class="stepper-track-line" aria-hidden="true">
+          <div class="stepper-track-fill"></div>
         </div>
 
-        <!-- 4 Milestone Progress Nodes -->
-        <div class="milestones-progress-grid">
-          <!-- Step 1: 1985-1989 -->
-          <div class="milestone-progress-card">
-            <div class="milestone-progress-node-wrap">
-              <span class="milestone-progress-node">01</span>
-              <span class="milestone-year-pill">1985 &ndash; 1989</span>
+        <!-- 4 Stepper Columns with content strictly below -->
+        <div class="stepper-nodes-row">
+          <!-- Era 1: 1985-1989 -->
+          <div class="stepper-node-col">
+            <div class="stepper-circle">01</div>
+            <div class="stepper-content">
+              <div class="stepper-year">1985 &ndash; 1989</div>
+              <h4 class="stepper-title">Founding &amp; Broadcast Codes</h4>
+              <p class="stepper-desc">
+                ASCI founded on 21 October 1985 by 43 industry pioneers. Code adopted into Doordarshan &amp; All India Radio commercial broadcast codes.
+              </p>
             </div>
-            <h4 class="milestone-progress-title">Founding &amp; Broadcast Codes</h4>
-            <p class="milestone-progress-desc">
-              ASCI founded on 21 October 1985 by 43 industry pioneers. Code adopted into Doordarshan &amp; All India Radio commercial broadcast codes.
-            </p>
           </div>
 
-          <!-- Step 2: 2000-2009 -->
-          <div class="milestone-progress-card">
-            <div class="milestone-progress-node-wrap">
-              <span class="milestone-progress-node">02</span>
-              <span class="milestone-year-pill">2000 &ndash; 2009</span>
+          <!-- Era 2: 2000-2009 -->
+          <div class="stepper-node-col">
+            <div class="stepper-circle">02</div>
+            <div class="stepper-content">
+              <div class="stepper-year">2000 &ndash; 2009</div>
+              <h4 class="stepper-title">Statutory Recognition</h4>
+              <p class="stepper-desc">
+                Statutory integration into the Cable TV Networks Act. Central Government officially recognizes ASCI as India's apex advertising self-regulator.
+              </p>
             </div>
-            <h4 class="milestone-progress-title">Statutory Recognition</h4>
-            <p class="milestone-progress-desc">
-              Statutory integration into the Cable TV Networks Act. Central Government officially recognizes ASCI as India's apex advertising self-regulator.
-            </p>
           </div>
 
-          <!-- Step 3: 2010-2020 -->
-          <div class="milestone-progress-card">
-            <div class="milestone-progress-node-wrap">
-              <span class="milestone-progress-node">03</span>
-              <span class="milestone-year-pill">2010 &ndash; 2020</span>
+          <!-- Era 3: 2010-2020 -->
+          <div class="stepper-node-col">
+            <div class="stepper-circle">03</div>
+            <div class="stepper-content">
+              <div class="stepper-year">2010 &ndash; 2020</div>
+              <h4 class="stepper-title">National Monitoring (NAMS)</h4>
+              <p class="stepper-desc">
+                National Advertising Monitoring Services (NAMS) launched. Guidelines introduced for healthcare, food, education, and digital influencers.
+              </p>
             </div>
-            <h4 class="milestone-progress-title">National Monitoring (NAMS)</h4>
-            <p class="milestone-progress-desc">
-              National Advertising Monitoring Services (NAMS) launched. Guidelines introduced for healthcare, food, education, and digital influencers.
-            </p>
           </div>
 
-          <!-- Step 4: 2021-2026 -->
-          <div class="milestone-progress-card node-current">
-            <div class="milestone-progress-node-wrap">
-              <span class="milestone-progress-node">04</span>
-              <span class="milestone-year-pill">2021 &ndash; 2026</span>
+          <!-- Era 4: 2021-2026 -->
+          <div class="stepper-node-col current-era">
+            <div class="stepper-circle">04</div>
+            <div class="stepper-content">
+              <div class="stepper-year">2021 &ndash; 2026</div>
+              <h4 class="stepper-title">ASCI Academy &amp; AI Era</h4>
+              <p class="stepper-desc">
+                ASCI Academy inaugurated; pioneer guidelines issued on Dark Patterns, Environmental Claims (Greenwashing), and Generative AI transparency.
+              </p>
             </div>
-            <h4 class="milestone-progress-title">ASCI Academy &amp; AI Era</h4>
-            <p class="milestone-progress-desc">
-              ASCI Academy inaugurated; pioneer guidelines issued on Dark Patterns, Environmental Claims (Greenwashing), and Generative AI transparency.
-            </p>
           </div>
         </div>
       </div>

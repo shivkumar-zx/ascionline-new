@@ -5732,6 +5732,136 @@
       margin: 0;
     }
 
+    
+    /* Clean Dot & Process Progression Track */
+    .pillar-dot-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .pillar-dot-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pillar-bullet-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #008779;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px rgba(0, 135, 121, 0.18);
+    }
+
+    .pillar-bullet-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #0f172a;
+      line-height: 1.4;
+    }
+
+    /* Process Flow for Pillar 1 (Progress Progression Track) */
+    .pillar-process-track {
+      position: relative;
+      padding-left: 22px;
+      margin: 0 0 28px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .pillar-process-track::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, #008779 0%, #026095 100%);
+      opacity: 0.35;
+    }
+
+    .process-step-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .process-step-dot {
+      position: absolute;
+      left: -22px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #008779;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 2px #008779;
+    }
+
+    .process-step-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #0f172a;
+      line-height: 1.4;
+    }
+
+    .process-step-stage {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #008779;
+      background: #f0fdf4;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: auto;
+      border: 1px solid rgba(0, 135, 121, 0.15);
+    }
+
+    /* Boxed Pill CTA Button */
+    .btn-pillar-box-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1.2px solid #0b0f14;
+      color: #0b0f14 !important;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 8px 20px;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      margin-top: auto;
+      align-self: flex-start;
+      box-shadow: none;
+    }
+
+    .btn-pillar-box-cta:hover {
+      background: #008779;
+      border-color: #008779;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 135, 121, 0.25);
+    }
+
+    .btn-pillar-box-cta svg {
+      transition: transform 0.2s ease, stroke 0.2s ease;
+      stroke: currentColor;
+    }
+
+    .btn-pillar-box-cta:hover svg {
+      stroke: #ffffff;
+      transform: translateX(3px);
+    }
+
     /* 2. Work We Do: Four Operational Pillars Editorial Layout */
     .work-editorial-grid {
       display: grid;
@@ -7581,7 +7711,7 @@
 
       <!-- Four Operational Pillars: Institutional Editorial Layout -->
       <div class="work-editorial-grid">
-        <!-- 01. How We Handle Complaints -->
+        <!-- 01. How We Handle Complaints (With Process Flow & Dots) -->
         <article class="work-editorial-pillar">
           <div class="pillar-meta">
             <span class="pillar-numeral">01</span>
@@ -7591,37 +7721,29 @@
           <p class="pillar-lead">
             An impartial, transparent multi-tier resolution framework ensuring advertiser accountability, consumer protection, and procedural fairness.
           </p>
-          <ul class="pillar-framework-list">
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>TARA Complaint Portal</strong>
-                <span>Direct AI-assisted online grievance filing &amp; tracking</span>
-              </div>
-            </li>
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>Technical Experts Panel</strong>
-                <span>Independent scrutiny of lab tests, clinical data &amp; technical claims</span>
-              </div>
-            </li>
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>Consumer Complaints Council</strong>
-                <span>Independent civil society quorum with &gt;50% non-industry majority</span>
-              </div>
-            </li>
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>Independent Review Panel</strong>
-                <span>Presided over by retired High Court judges for impartial appellate review</span>
-              </div>
-            </li>
-          </ul>
-          <a href="the-work-we-do/how-we-handle-complaints.html" class="pillar-explore-link">
+          <div class="pillar-process-track">
+            <div class="process-step-item">
+              <span class="process-step-dot"></span>
+              <span class="process-step-name">TARA Complaint Portal</span>
+              <span class="process-step-stage">Stage 01</span>
+            </div>
+            <div class="process-step-item">
+              <span class="process-step-dot"></span>
+              <span class="process-step-name">Technical Experts Panel</span>
+              <span class="process-step-stage">Stage 02</span>
+            </div>
+            <div class="process-step-item">
+              <span class="process-step-dot"></span>
+              <span class="process-step-name">Consumer Complaints Council</span>
+              <span class="process-step-stage">Stage 03</span>
+            </div>
+            <div class="process-step-item">
+              <span class="process-step-dot"></span>
+              <span class="process-step-name">Independent Review Panel</span>
+              <span class="process-step-stage">Stage 04</span>
+            </div>
+          </div>
+          <a href="the-work-we-do/how-we-handle-complaints.html" class="btn-pillar-box-cta">
             <span>Explore Complaints Procedure</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -7640,37 +7762,25 @@
           <p class="pillar-lead">
             Comprehensive oversight across print, television, digital channels, influencers, packaging, and AI-driven commercial communications.
           </p>
-          <ul class="pillar-framework-list">
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>Truthful &amp; Honest Claims</strong>
-                <span>Substantiation of performance, efficacy, and pricing representations</span>
-              </div>
+          <ul class="pillar-dot-list">
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">Truthful &amp; Honest Claims</span>
             </li>
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>Decency &amp; Social Standards</strong>
-                <span>Prevention of vulgarity, discrimination, and offensive depictions</span>
-              </div>
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">Decency &amp; Social Standards</span>
             </li>
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>Harm &amp; Safety Prevention</strong>
-                <span>Safeguarding minors and prohibiting hazardous, irresponsible behaviors</span>
-              </div>
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">Harm &amp; Safety Prevention</span>
             </li>
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>Fairness in Competition</strong>
-                <span>Preventing unfair disparagement and misleading brand comparisons</span>
-              </div>
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">Fairness in Competition</span>
             </li>
           </ul>
-          <a href="the-work-we-do/what-we-cover.html" class="pillar-explore-link">
+          <a href="the-work-we-do/what-we-cover.html" class="btn-pillar-box-cta">
             <span>Explore Code Coverage</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -7689,37 +7799,25 @@
           <p class="pillar-lead">
             ASCI does not wait for citizen complaints; our intelligence network actively monitors cross-media advertising in multiple Indian languages.
           </p>
-          <ul class="pillar-framework-list">
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>National Monitoring (NAMS)</strong>
-                <span>Multi-language tracking across 3,000+ publications and TV channels</span>
-              </div>
+          <ul class="pillar-dot-list">
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">National Monitoring (NAMS)</span>
             </li>
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>AI-Powered Digital Sweeps</strong>
-                <span>Continuous scanning of digital ads, dark patterns, and greenwashing</span>
-              </div>
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">AI-Powered Digital Sweeps</span>
             </li>
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>Suo Motu Cognizance</strong>
-                <span>Proactive investigation of non-compliant claims without waiting for objections</span>
-              </div>
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">Suo Motu Cognizance</span>
             </li>
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>Level Playing Field</strong>
-                <span>Protecting ethical brands against unsubstantiated competitor claims</span>
-              </div>
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">Level Playing Field</span>
             </li>
           </ul>
-          <a href="the-work-we-do/our-proactive-monitoring.html" class="pillar-explore-link">
+          <a href="the-work-we-do/our-proactive-monitoring.html" class="btn-pillar-box-cta">
             <span>Explore Proactive Monitoring</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -7738,37 +7836,25 @@
           <p class="pillar-lead">
             Collaborating seamlessly with central ministries, statutory regulators, judicial institutions, and global self-regulatory federations.
           </p>
-          <ul class="pillar-framework-list">
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>Cable TV Networks Rules</strong>
-                <span>ASCI Code officially integrated as statutory mandate under Rule 7(9)</span>
-              </div>
+          <ul class="pillar-dot-list">
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">Cable TV Networks Rules</span>
             </li>
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>Government Partnerships</strong>
-                <span>Formal co-regulatory MoUs with DoCA, FSSAI, AYUSH &amp; State Authorities</span>
-              </div>
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">Government Partnerships</span>
             </li>
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>Supreme Court Affirmation</strong>
-                <span>Judicial endorsement affirming ASCI's self-regulatory dispute jurisdiction</span>
-              </div>
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">Supreme Court Affirmation</span>
             </li>
-            <li>
-              <span class="framework-dash">&mdash;</span>
-              <div class="framework-content">
-                <strong>Global Ad Self-Regulation</strong>
-                <span>Executive membership in ICAS &amp; alignment with global standards</span>
-              </div>
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">Global Ad Self-Regulation</span>
             </li>
           </ul>
-          <a href="the-work-we-do/working-with-others.html" class="pillar-explore-link">
+          <a href="the-work-we-do/working-with-others.html" class="btn-pillar-box-cta">
             <span>Explore Alliances &amp; Co-Regulation</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>

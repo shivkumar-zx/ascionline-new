@@ -6199,146 +6199,310 @@
     }
 
   
-    /* ================= BESPOKE MILESTONES STEPPER TIMELINE ================= */
-    .milestones-stepper-wrap {
+    /* ================= DYNAMIC MOVING MILESTONES PROGRESS SYSTEM ================= */
+    .milestones-dynamic-system {
       position: relative;
-      margin-top: 48px;
-      padding-top: 10px;
+      margin-top: 44px;
+      padding: 10px 0 20px;
     }
 
-    /* Track Line centered through node circles */
-    .stepper-track-line {
+    /* Moving Progress Track Bar */
+    .milestone-track-container {
+      position: relative;
+      width: 100%;
+      height: 48px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Base Rail */
+    .milestone-track-bg {
       position: absolute;
-      top: 28px;
+      top: 50%;
       left: calc(12.5% - 10px);
       right: calc(12.5% - 10px);
-      height: 3px;
+      height: 4px;
       background: #e2e8f0;
+      transform: translateY(-50%);
+      border-radius: 9999px;
+      overflow: hidden;
       z-index: 1;
     }
 
-    .stepper-track-fill {
+    /* Active Glowing Progress Fill that flows */
+    .milestone-track-active-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
       height: 100%;
       width: 100%;
-      background: linear-gradient(90deg, #008779 0%, #026095 70%, #008779 100%);
-      border-radius: 4px;
+      background: linear-gradient(90deg, #008779 0%, #026095 50%, #008779 100%);
+      background-size: 200% 100%;
+      border-radius: 9999px;
+      animation: trackShimmerMove 3s linear infinite;
     }
 
-    /* Grid of 4 Nodes */
-    .stepper-nodes-row {
+    @keyframes trackShimmerMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    /* Moving Comet Glow that travels along the line */
+    .milestone-track-comet {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      width: 60px;
+      height: 8px;
+      transform: translateY(-50%);
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.95) 0%, rgba(0, 135, 121, 0.8) 40%, transparent 80%);
+      border-radius: 9999px;
+      filter: blur(1px);
+      box-shadow: 0 0 12px #008779, 0 0 24px rgba(0, 135, 121, 0.6);
+      z-index: 2;
+      animation: cometTravel 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      pointer-events: none;
+    }
+
+    @keyframes cometTravel {
+      0% { left: 10%; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { left: 90%; opacity: 0; }
+    }
+
+    /* 4 Node Checkpoints aligned along the rail */
+    .milestone-nodes-flex {
+      position: relative;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 36px;
-      position: relative;
-      z-index: 2;
+      width: 100%;
+      z-index: 3;
     }
 
-    .stepper-node-col {
+    .milestone-node-btn {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      outline: none;
       position: relative;
-      transition: transform 0.22s ease;
     }
 
-    .stepper-node-col:hover {
-      transform: translateY(-4px);
-    }
-
-    /* Node Circle */
-    .stepper-circle {
-      width: 38px;
-      height: 38px;
+    /* Circular Node with pulsing animation */
+    .node-disc {
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       background: #ffffff;
-      border: 2.5px solid #008779;
+      border: 3px solid #008779;
       color: #008779;
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.85rem;
-      font-weight: 700;
-      font-family: var(--font-sans);
-      margin-bottom: 24px;
-      box-shadow: 0 0 0 5px #f8fafc, 0 2px 8px rgba(0, 135, 121, 0.15);
-      transition: all 0.22s ease;
-      flex-shrink: 0;
+      box-shadow: 0 0 0 6px #f8fafc, 0 4px 12px rgba(0, 135, 121, 0.15);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
     }
 
-    .stepper-node-col:hover .stepper-circle {
+    /* Radar Ping on Active Node */
+    .milestone-node-btn.active .node-disc {
       background: #008779;
       color: #ffffff;
-      transform: scale(1.1);
-      box-shadow: 0 0 0 6px #f8fafc, 0 4px 14px rgba(0, 135, 121, 0.35);
+      border-color: #008779;
+      transform: scale(1.15);
+      box-shadow: 0 0 0 6px #f8fafc, 0 6px 20px rgba(0, 135, 121, 0.4);
     }
 
-    .stepper-node-col.current-era .stepper-circle {
-      border-color: #026095;
-      color: #026095;
+    .node-pulse-ring {
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      right: -6px;
+      bottom: -6px;
+      border-radius: 50%;
+      border: 2px solid #008779;
+      opacity: 0;
+      pointer-events: none;
     }
 
-    .stepper-node-col.current-era:hover .stepper-circle {
-      background: #026095;
-      color: #ffffff;
-      box-shadow: 0 0 0 6px #f8fafc, 0 4px 14px rgba(2, 96, 149, 0.35);
+    .milestone-node-btn.active .node-pulse-ring {
+      animation: radarPulse 2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
     }
 
-    /* Content Area strictly below the circle */
-    .stepper-content {
+    @keyframes radarPulse {
+      0% { transform: scale(0.9); opacity: 0.8; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    /* 4 Era Cards Grid */
+    .milestone-cards-stage {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 14px;
+    }
+
+    .milestone-card-item {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px 22px;
       display: flex;
       flex-direction: column;
-      width: 100%;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
     }
 
-    .stepper-year {
+    .milestone-card-item:hover {
+      border-color: #008779;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px -6px rgba(0, 135, 121, 0.12);
+    }
+
+    .milestone-card-item.active {
+      border-color: #008779;
+      background: linear-gradient(180deg, #ffffff 0%, #f0fdf9 100%);
+      box-shadow: 0 12px 32px -4px rgba(0, 135, 121, 0.16);
+      transform: translateY(-4px);
+    }
+
+    .milestone-card-item.active::before {
+      content: '';
+      position: absolute;
+      top: -1.5px;
+      left: 16px;
+      right: 16px;
+      height: 3px;
+      background: #008779;
+      border-radius: 4px;
+    }
+
+    /* Card Top Row */
+    .milestone-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .milestone-era-badge {
       font-family: var(--font-serif);
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: #0f172a;
-      line-height: 1.2;
-      margin-bottom: 8px;
+      line-height: 1;
       letter-spacing: -0.015em;
     }
 
-    .stepper-title {
-      font-size: 0.76rem;
+    .milestone-status-tag {
+      font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+      transition: all 0.2s ease;
+    }
+
+    .milestone-card-item.active .milestone-status-tag {
+      background: #e6f4f2;
+      color: #008779;
+      border-color: rgba(0, 135, 121, 0.25);
+    }
+
+    .milestone-item-title {
+      font-size: 0.825rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: #008779;
       margin: 0 0 10px 0;
       line-height: 1.35;
     }
 
-    .stepper-node-col.current-era .stepper-title {
+    .milestone-card-item:nth-child(4) .milestone-item-title {
       color: #026095;
     }
 
-    .stepper-desc {
-      font-size: 0.925rem;
-      line-height: 1.65;
+    .milestone-item-desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
       color: #475569;
       margin: 0;
+      flex-grow: 1;
+    }
+
+    /* Interactive Stepper Navigation Hint */
+    .milestone-stepper-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .milestone-autoplay-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #008779;
+      background: transparent;
+      border: 1px solid rgba(0, 135, 121, 0.25);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .milestone-autoplay-btn:hover {
+      background: #f0fdf9;
+      border-color: #008779;
+    }
+
+    .milestone-progress-dots-indicator {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .milestone-mini-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #cbd5e1;
+      transition: all 0.22s ease;
+      cursor: pointer;
+    }
+
+    .milestone-mini-dot.active {
+      width: 24px;
+      border-radius: 9999px;
+      background: #008779;
     }
 
     @media (max-width: 991px) {
-      .stepper-track-line {
+      .milestone-track-container {
         display: none;
       }
-      .stepper-nodes-row {
+      .milestone-cards-stage {
         grid-template-columns: 1fr;
-        gap: 32px;
-        padding-left: 28px;
-        border-left: 2px solid #008779;
-      }
-      .stepper-circle {
-        position: absolute;
-        left: -48px;
-        top: 0;
-        margin-bottom: 0;
-      }
-      .stepper-content {
-        padding-left: 0;
+        gap: 16px;
       }
     }
   </style>
@@ -8111,60 +8275,109 @@
         regulating digital, print, broadcast, and AI-driven commercial content.
       </p>
 
-      <div class="milestones-stepper-wrap">
-        <!-- Connecting Track Line (strictly behind the node circles) -->
-        <div class="stepper-track-line" aria-hidden="true">
-          <div class="stepper-track-fill"></div>
+      <div class="milestones-dynamic-system" id="milestonesProgressApp">
+        <!-- Moving Track Bar with Comet Beam -->
+        <div class="milestone-track-container">
+          <div class="milestone-track-bg" aria-hidden="true">
+            <div class="milestone-track-active-fill"></div>
+            <div class="milestone-track-comet"></div>
+          </div>
+
+          <!-- 4 Interactive Node Buttons on the Track -->
+          <div class="milestone-nodes-flex">
+            <button class="milestone-node-btn active" onclick="activateMilestone(0)" aria-label="Era 1: 1985 to 1989">
+              <span class="node-disc">
+                <span>01</span>
+                <span class="node-pulse-ring"></span>
+              </span>
+            </button>
+
+            <button class="milestone-node-btn" onclick="activateMilestone(1)" aria-label="Era 2: 2000 to 2009">
+              <span class="node-disc">
+                <span>02</span>
+                <span class="node-pulse-ring"></span>
+              </span>
+            </button>
+
+            <button class="milestone-node-btn" onclick="activateMilestone(2)" aria-label="Era 3: 2010 to 2020">
+              <span class="node-disc">
+                <span>03</span>
+                <span class="node-pulse-ring"></span>
+              </span>
+            </button>
+
+            <button class="milestone-node-btn" onclick="activateMilestone(3)" aria-label="Era 4: 2021 to 2026">
+              <span class="node-disc">
+                <span>04</span>
+                <span class="node-pulse-ring"></span>
+              </span>
+            </button>
+          </div>
         </div>
 
-        <!-- 4 Stepper Columns with content strictly below -->
-        <div class="stepper-nodes-row">
-          <!-- Era 1: 1985-1989 -->
-          <div class="stepper-node-col">
-            <div class="stepper-circle">01</div>
-            <div class="stepper-content">
-              <div class="stepper-year">1985 &ndash; 1989</div>
-              <h4 class="stepper-title">Founding &amp; Broadcast Codes</h4>
-              <p class="stepper-desc">
-                ASCI founded on 21 October 1985 by 43 industry pioneers. Code adopted into Doordarshan &amp; All India Radio commercial broadcast codes.
-              </p>
+        <!-- 4 Milestone Stage Cards (Synchronized with Track) -->
+        <div class="milestone-cards-stage">
+          <!-- Era 1 -->
+          <div class="milestone-card-item active" onclick="activateMilestone(0)">
+            <div class="milestone-card-top">
+              <span class="milestone-era-badge">1985 &ndash; 1989</span>
+              <span class="milestone-status-tag">Foundational</span>
             </div>
+            <h4 class="milestone-item-title">Founding &amp; Broadcast Codes</h4>
+            <p class="milestone-item-desc">
+              ASCI founded on 21 October 1985 by 43 industry pioneers. Code adopted into Doordarshan &amp; All India Radio commercial broadcast codes.
+            </p>
           </div>
 
-          <!-- Era 2: 2000-2009 -->
-          <div class="stepper-node-col">
-            <div class="stepper-circle">02</div>
-            <div class="stepper-content">
-              <div class="stepper-year">2000 &ndash; 2009</div>
-              <h4 class="stepper-title">Statutory Recognition</h4>
-              <p class="stepper-desc">
-                Statutory integration into the Cable TV Networks Act. Central Government officially recognizes ASCI as India's apex advertising self-regulator.
-              </p>
+          <!-- Era 2 -->
+          <div class="milestone-card-item" onclick="activateMilestone(1)">
+            <div class="milestone-card-top">
+              <span class="milestone-era-badge">2000 &ndash; 2009</span>
+              <span class="milestone-status-tag">Statutory</span>
             </div>
+            <h4 class="milestone-item-title">Statutory Recognition</h4>
+            <p class="milestone-item-desc">
+              Statutory integration into the Cable TV Networks Act. Central Government officially recognizes ASCI as India's apex advertising self-regulator.
+            </p>
           </div>
 
-          <!-- Era 3: 2010-2020 -->
-          <div class="stepper-node-col">
-            <div class="stepper-circle">03</div>
-            <div class="stepper-content">
-              <div class="stepper-year">2010 &ndash; 2020</div>
-              <h4 class="stepper-title">National Monitoring (NAMS)</h4>
-              <p class="stepper-desc">
-                National Advertising Monitoring Services (NAMS) launched. Guidelines introduced for healthcare, food, education, and digital influencers.
-              </p>
+          <!-- Era 3 -->
+          <div class="milestone-card-item" onclick="activateMilestone(2)">
+            <div class="milestone-card-top">
+              <span class="milestone-era-badge">2010 &ndash; 2020</span>
+              <span class="milestone-status-tag">Monitoring</span>
             </div>
+            <h4 class="milestone-item-title">National Monitoring (NAMS)</h4>
+            <p class="milestone-item-desc">
+              National Advertising Monitoring Services (NAMS) launched. Guidelines introduced for healthcare, food, education, and digital influencers.
+            </p>
           </div>
 
-          <!-- Era 4: 2021-2026 -->
-          <div class="stepper-node-col current-era">
-            <div class="stepper-circle">04</div>
-            <div class="stepper-content">
-              <div class="stepper-year">2021 &ndash; 2026</div>
-              <h4 class="stepper-title">ASCI Academy &amp; AI Era</h4>
-              <p class="stepper-desc">
-                ASCI Academy inaugurated; pioneer guidelines issued on Dark Patterns, Environmental Claims (Greenwashing), and Generative AI transparency.
-              </p>
+          <!-- Era 4 -->
+          <div class="milestone-card-item" onclick="activateMilestone(3)">
+            <div class="milestone-card-top">
+              <span class="milestone-era-badge">2021 &ndash; 2026</span>
+              <span class="milestone-status-tag">AI Era</span>
             </div>
+            <h4 class="milestone-item-title">ASCI Academy &amp; AI Era</h4>
+            <p class="milestone-item-desc">
+              ASCI Academy inaugurated; pioneer guidelines issued on Dark Patterns, Environmental Claims (Greenwashing), and Generative AI transparency.
+            </p>
+          </div>
+        </div>
+
+        <!-- Controls & Mini Step Indicators -->
+        <div class="milestone-stepper-controls">
+          <button class="milestone-autoplay-btn" id="milestoneAutoplayToggle" onclick="toggleMilestoneAutoplay()">
+            <span id="milestonePlayIcon">&#9646;&#9646;</span>
+            <span id="milestonePlayText">Pause Timeline Tour</span>
+          </button>
+          
+          <div class="milestone-progress-dots-indicator">
+            <span class="milestone-mini-dot active" onclick="activateMilestone(0)"></span>
+            <span class="milestone-mini-dot" onclick="activateMilestone(1)"></span>
+            <span class="milestone-mini-dot" onclick="activateMilestone(2)"></span>
+            <span class="milestone-mini-dot" onclick="activateMilestone(3)"></span>
           </div>
         </div>
       </div>
@@ -9690,6 +9903,57 @@
           }
         }
       });
+    
+      // Interactive Milestone Progress Timeline Tour
+      let activeMilestoneIdx = 0;
+      let milestoneAutoplayTimer = null;
+      let isMilestonePlaying = true;
+
+      window.activateMilestone = function(idx) {
+        activeMilestoneIdx = idx;
+        const nodes = document.querySelectorAll('.milestone-node-btn');
+        const cards = document.querySelectorAll('.milestone-card-item');
+        const dots = document.querySelectorAll('.milestone-mini-dot');
+        const comet = document.querySelector('.milestone-track-comet');
+
+        nodes.forEach((n, i) => n.classList.toggle('active', i === idx));
+        cards.forEach((c, i) => c.classList.toggle('active', i === idx));
+        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+
+        // Position the comet glow near the active node
+        if (comet) {
+          const positions = [12.5, 37.5, 62.5, 87.5];
+          comet.style.left = `calc(${positions[idx]}% - 30px)`;
+        }
+      };
+
+      window.toggleMilestoneAutoplay = function() {
+        const icon = document.getElementById('milestonePlayIcon');
+        const text = document.getElementById('milestonePlayText');
+        if (isMilestonePlaying) {
+          clearInterval(milestoneAutoplayTimer);
+          isMilestonePlaying = false;
+          if (icon) icon.innerHTML = '&#9654;';
+          if (text) text.textContent = 'Play Timeline Tour';
+        } else {
+          startMilestoneAutoplay();
+          isMilestonePlaying = true;
+          if (icon) icon.innerHTML = '&#9646;&#9646;';
+          if (text) text.textContent = 'Pause Timeline Tour';
+        }
+      };
+
+      function startMilestoneAutoplay() {
+        clearInterval(milestoneAutoplayTimer);
+        milestoneAutoplayTimer = setInterval(() => {
+          activeMilestoneIdx = (activeMilestoneIdx + 1) % 4;
+          activateMilestone(activeMilestoneIdx);
+        }, 4000);
+      }
+
+      // Start autoplay when section is loaded
+      startMilestoneAutoplay();
+
     </script>
 
 </body>

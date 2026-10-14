@@ -5678,6 +5678,396 @@
         justify-content: center;
       }
     }
+  
+    /* ================= INSTITUTIONAL EDITORIAL LAYOUT (ANTI-BOXY) ================= */
+    
+    /* 1. About Self-Regulation Editorial Columns */
+    .selfreg-editorial-columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1.5px solid #008779;
+    }
+
+    .selfreg-editorial-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .selfreg-editorial-col:not(:last-child) {
+      padding-right: 32px;
+      border-right: 1px solid #e2e8f0;
+    }
+
+    .selfreg-col-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .selfreg-col-numeral {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #008779;
+      letter-spacing: 0.05em;
+    }
+
+    .selfreg-col-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .selfreg-col-body {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* 2. Work We Do: Four Operational Pillars Editorial Layout */
+    .work-editorial-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px 40px;
+      margin-top: 36px;
+    }
+
+    .work-editorial-pillar {
+      display: flex;
+      flex-direction: column;
+      border-top: 2px solid #008779;
+      padding-top: 24px;
+      position: relative;
+    }
+
+    .pillar-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .pillar-numeral {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #008779;
+      line-height: 1;
+    }
+
+    .pillar-category {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #64748b;
+    }
+
+    .pillar-title {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.25;
+      margin: 0 0 10px 0;
+    }
+
+    .pillar-lead {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #475569;
+      margin: 0 0 20px 0;
+    }
+
+    .pillar-framework-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .pillar-framework-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .framework-dash {
+      color: #008779;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .framework-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .framework-content strong {
+      font-size: 0.925rem;
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    .framework-content span {
+      font-size: 0.84rem;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    .pillar-explore-link {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #008779;
+      text-decoration: none;
+      transition: gap 0.2s ease, color 0.2s ease;
+      align-self: flex-start;
+      padding: 4px 0;
+    }
+
+    .pillar-explore-link:hover {
+      gap: 12px;
+      color: #054c3f;
+    }
+
+    .pillar-explore-link svg {
+      transition: transform 0.2s ease;
+    }
+
+    .pillar-explore-link:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* 3. Governance Tripartite Editorial Layout */
+    .gov-editorial-columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1.5px solid #026095;
+    }
+
+    .gov-editorial-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gov-editorial-col:not(:last-child) {
+      padding-right: 32px;
+      border-right: 1px solid #e2e8f0;
+    }
+
+    .gov-kicker {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #026095;
+      margin-bottom: 8px;
+    }
+
+    .gov-col-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.25;
+      margin: 0 0 12px 0;
+    }
+
+    .gov-col-desc {
+      font-size: 0.925rem;
+      line-height: 1.65;
+      color: #475569;
+      margin: 0 0 20px 0;
+      flex: 1;
+    }
+
+    .gov-inline-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.885rem;
+      font-weight: 700;
+      color: #026095;
+      text-decoration: none;
+      transition: gap 0.2s ease, color 0.2s ease;
+      align-self: flex-start;
+    }
+
+    .gov-inline-link:hover {
+      gap: 10px;
+      color: #008779;
+    }
+
+    .gov-inline-link svg {
+      transition: transform 0.2s ease;
+    }
+
+    .gov-inline-link:hover svg {
+      transform: translateX(3px);
+    }
+
+    .gov-directory-banner {
+      margin-top: 40px;
+      padding: 24px 32px;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: transparent;
+    }
+
+    /* 4. Milestones Editorial Track */
+    .milestones-editorial-track {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1.5px solid #008779;
+    }
+
+    .milestone-editorial-node {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .milestone-editorial-node:not(:last-child) {
+      padding-right: 28px;
+      border-right: 1px solid #e2e8f0;
+    }
+
+    .milestone-era-stamp {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .milestone-era-text {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1;
+    }
+
+    .milestone-node-title {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #008779;
+      margin: 0 0 8px 0;
+    }
+
+    .milestone-node-desc {
+      font-size: 0.885rem;
+      line-height: 1.6;
+      color: #475569;
+      margin: 0;
+    }
+
+    /* 5. Awards Editorial Ledger */
+    .awards-editorial-ledger {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1.5px solid #008779;
+    }
+
+    .award-editorial-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .award-editorial-item:not(:last-child) {
+      padding-right: 32px;
+      border-right: 1px solid #e2e8f0;
+    }
+
+    .award-ledger-stamp {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #026095;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+
+    .award-ledger-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 10px 0;
+      line-height: 1.25;
+    }
+
+    .award-ledger-desc {
+      font-size: 0.925rem;
+      line-height: 1.65;
+      color: #475569;
+      margin: 0;
+    }
+
+    /* Responsive for Editorial Layout */
+    @media (max-width: 991px) {
+      .selfreg-editorial-columns,
+      .gov-editorial-columns,
+      .awards-editorial-ledger {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .selfreg-editorial-col:not(:last-child),
+      .gov-editorial-col:not(:last-child),
+      .award-editorial-item:not(:last-child) {
+        padding-right: 0;
+        padding-bottom: 24px;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      .work-editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .milestones-editorial-track {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .milestone-editorial-node:not(:last-child) {
+        padding-right: 0;
+        padding-bottom: 20px;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+      }
+    }
+
   </style>
 </head>
 
@@ -7189,248 +7579,205 @@
         </p>
       </div>
 
-      <!-- Four Operational Pillars Grid -->
-      <div class="work-split-grid">
-        <!-- 1. How We Handle Complaints -->
-        <div class="work-master-wing wing-preventive">
-          <div class="wing-header">
-            <div class="wing-header-top">
-              <h3 class="wing-title">How We Handle Complaints</h3>
-              <a href="the-work-we-do/how-we-handle-complaints.html" class="btn-wing-explore">
-                <span>Explore More</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-            </div>
-            <p class="wing-desc">
-              Impartial, transparent complaint resolution protecting <br>
-              consumers and ensuring industry accountability:
-            </p>
+      <!-- Four Operational Pillars: Institutional Editorial Layout -->
+      <div class="work-editorial-grid">
+        <!-- 01. How We Handle Complaints -->
+        <article class="work-editorial-pillar">
+          <div class="pillar-meta">
+            <span class="pillar-numeral">01</span>
+            <span class="pillar-category">Dispute Resolution</span>
           </div>
+          <h3 class="pillar-title">How We Handle Complaints</h3>
+          <p class="pillar-lead">
+            An impartial, transparent multi-tier resolution framework ensuring advertiser accountability, consumer protection, and procedural fairness.
+          </p>
+          <ul class="pillar-framework-list">
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>TARA Complaint Portal</strong>
+                <span>Direct AI-assisted online grievance filing &amp; tracking</span>
+              </div>
+            </li>
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>Technical Experts Panel</strong>
+                <span>Independent scrutiny of lab tests, clinical data &amp; technical claims</span>
+              </div>
+            </li>
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>Consumer Complaints Council</strong>
+                <span>Independent civil society quorum with &gt;50% non-industry majority</span>
+              </div>
+            </li>
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>Independent Review Panel</strong>
+                <span>Presided over by retired High Court judges for impartial appellate review</span>
+              </div>
+            </li>
+          </ul>
+          <a href="the-work-we-do/how-we-handle-complaints.html" class="pillar-explore-link">
+            <span>Explore Complaints Procedure</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </article>
 
-          <div class="wing-cards-stack">
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">TARA Complaint Portal</h4>
-            </div>
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">Technical Experts Panel</h4>
-            </div>
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">Consumer Complaints Council</h4>
-            </div>
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">Independent Review Panel</h4>
-            </div>
+        <!-- 02. What We Cover -->
+        <article class="work-editorial-pillar">
+          <div class="pillar-meta">
+            <span class="pillar-numeral">02</span>
+            <span class="pillar-category">Code Architecture</span>
           </div>
-        </div>
+          <h3 class="pillar-title">What We Cover</h3>
+          <p class="pillar-lead">
+            Comprehensive oversight across print, television, digital channels, influencers, packaging, and AI-driven commercial communications.
+          </p>
+          <ul class="pillar-framework-list">
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>Truthful &amp; Honest Claims</strong>
+                <span>Substantiation of performance, efficacy, and pricing representations</span>
+              </div>
+            </li>
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>Decency &amp; Social Standards</strong>
+                <span>Prevention of vulgarity, discrimination, and offensive depictions</span>
+              </div>
+            </li>
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>Harm &amp; Safety Prevention</strong>
+                <span>Safeguarding minors and prohibiting hazardous, irresponsible behaviors</span>
+              </div>
+            </li>
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>Fairness in Competition</strong>
+                <span>Preventing unfair disparagement and misleading brand comparisons</span>
+              </div>
+            </li>
+          </ul>
+          <a href="the-work-we-do/what-we-cover.html" class="pillar-explore-link">
+            <span>Explore Code Coverage</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </article>
 
-        <!-- 2. What We Cover -->
-        <div class="work-master-wing wing-coverage">
-          <div class="wing-header">
-            <div class="wing-header-top">
-              <h3 class="wing-title">What We Cover</h3>
-              <a href="the-work-we-do/what-we-cover.html" class="btn-wing-explore">
-                <span>Explore More</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-            </div>
-            <p class="wing-desc">
-              Regulating commercial advertising content across <br>TV, print, digital, radio, outdoor, and packaging:
-            </p>
+        <!-- 03. Our Proactive Monitoring -->
+        <article class="work-editorial-pillar">
+          <div class="pillar-meta">
+            <span class="pillar-numeral">03</span>
+            <span class="pillar-category">Surveillance &amp; AI</span>
           </div>
+          <h3 class="pillar-title">Our Proactive Monitoring</h3>
+          <p class="pillar-lead">
+            ASCI does not wait for citizen complaints; our intelligence network actively monitors cross-media advertising in multiple Indian languages.
+          </p>
+          <ul class="pillar-framework-list">
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>National Monitoring (NAMS)</strong>
+                <span>Multi-language tracking across 3,000+ publications and TV channels</span>
+              </div>
+            </li>
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>AI-Powered Digital Sweeps</strong>
+                <span>Continuous scanning of digital ads, dark patterns, and greenwashing</span>
+              </div>
+            </li>
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>Suo Motu Cognizance</strong>
+                <span>Proactive investigation of non-compliant claims without waiting for objections</span>
+              </div>
+            </li>
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>Level Playing Field</strong>
+                <span>Protecting ethical brands against unsubstantiated competitor claims</span>
+              </div>
+            </li>
+          </ul>
+          <a href="the-work-we-do/our-proactive-monitoring.html" class="pillar-explore-link">
+            <span>Explore Proactive Monitoring</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </article>
 
-          <div class="wing-cards-stack">
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">Truthful &amp; Honest Claims</h4>
-            </div>
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">Decency &amp; Social Standards</h4>
-            </div>
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">Harm &amp; Safety Prevention</h4>
-            </div>
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">Fairness in Competition</h4>
-            </div>
+        <!-- 04. Working with Others -->
+        <article class="work-editorial-pillar">
+          <div class="pillar-meta">
+            <span class="pillar-numeral">04</span>
+            <span class="pillar-category">Institutional Alliances</span>
           </div>
-        </div>
-
-        <!-- 3. Our Proactive Monitoring -->
-        <div class="work-master-wing wing-monitoring">
-          <div class="wing-header">
-            <div class="wing-header-top">
-              <h3 class="wing-title">Our Proactive Monitoring</h3>
-              <a href="the-work-we-do/our-proactive-monitoring.html" class="btn-wing-explore">
-                <span>Explore More</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-            </div>
-            <p class="wing-desc">
-              ASCI does not wait for complaints; we actively track <br>advertisements through continuous multi-channel
-              monitoring:
-            </p>
-          </div>
-
-          <div class="wing-cards-stack">
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">National Monitoring (NAMS)</h4>
-            </div>
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">AI-Powered Digital Sweeps</h4>
-            </div>
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">Suo Motu Cognizance</h4>
-            </div>
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">Level Playing Field</h4>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Working with Others -->
-        <div class="work-master-wing wing-corrective">
-          <div class="wing-header">
-            <div class="wing-header-top">
-              <h3 class="wing-title">Working with Others</h3>
-              <a href="the-work-we-do/working-with-others.html" class="btn-wing-explore">
-                <span>Explore More</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-            </div>
-            <p class="wing-desc">
-              Consulting and collaborating with central ministries,<br> statutory regulators, industry bodies, and
-              global
-              forums:
-            </p>
-          </div>
-
-          <div class="wing-cards-stack">
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">Cable TV Networks Rules</h4>
-            </div>
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">Government Partnerships</h4>
-            </div>
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">Supreme Court Affirmation</h4>
-            </div>
-            <div class="wing-feature-card">
-              <span class="wing-check-badge" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <h4 class="wing-feature-title">Global Ad Self-Regulation</h4>
-            </div>
-          </div>
-        </div>
+          <h3 class="pillar-title">Working with Others</h3>
+          <p class="pillar-lead">
+            Collaborating seamlessly with central ministries, statutory regulators, judicial institutions, and global self-regulatory federations.
+          </p>
+          <ul class="pillar-framework-list">
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>Cable TV Networks Rules</strong>
+                <span>ASCI Code officially integrated as statutory mandate under Rule 7(9)</span>
+              </div>
+            </li>
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>Government Partnerships</strong>
+                <span>Formal co-regulatory MoUs with DoCA, FSSAI, AYUSH &amp; State Authorities</span>
+              </div>
+            </li>
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>Supreme Court Affirmation</strong>
+                <span>Judicial endorsement affirming ASCI's self-regulatory dispute jurisdiction</span>
+              </div>
+            </li>
+            <li>
+              <span class="framework-dash">&mdash;</span>
+              <div class="framework-content">
+                <strong>Global Ad Self-Regulation</strong>
+                <span>Executive membership in ICAS &amp; alignment with global standards</span>
+              </div>
+            </li>
+          </ul>
+          <a href="the-work-we-do/working-with-others.html" class="pillar-explore-link">
+            <span>Explore Alliances &amp; Co-Regulation</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </article>
       </div>
+    </div>
   </section>
 
 
@@ -7442,76 +7789,68 @@
         and case adjudication are maintained across distinct, independent bodies:
       </p>
 
-      <div class="governance-card-grid">
-        <a href="people.html?panel=board#directory" class="gov-summary-card gov-summary-card-link">
-          <div>
-            <div class="gov-card-tag">Strategic Leadership</div>
-            <h3 class="gov-card-title">Board of Governors</h3>
-            <p class="gov-card-desc">
-              Composed of senior executives from advertisers, media networks, and advertising agencies who establish
-              institutional policy, code updates, and financial governance.
-            </p>
-          </div>
-          <div class="gov-card-action">
+      <div class="gov-editorial-columns">
+        <div class="gov-editorial-col">
+          <span class="gov-kicker">Strategic Leadership</span>
+          <h3 class="gov-col-title">Board of Governors</h3>
+          <p class="gov-col-desc">
+            Composed of senior executives from advertisers, media networks, and advertising agencies who establish institutional policy, code updates, and financial governance.
+          </p>
+          <a href="people.html?panel=board#directory" class="gov-inline-link">
             <span>View Board Members</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-              stroke-linecap="round" stroke-linejoin="round">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
-          </div>
-        </a>
+          </a>
+        </div>
 
-        <a href="people.html?panel=ccc#directory" class="gov-summary-card gov-summary-card-link">
-          <div>
-            <div class="gov-card-tag">Independent Adjudication</div>
-            <h3 class="gov-card-title">Consumer Complaints Council</h3>
-            <p class="gov-card-desc">
-              The decision-making heart of ASCI. By constitution, at least 50% of the CCC consists of eminent civil
-              society members—doctors, lawyers, consumer activists, and educators.
-            </p>
-          </div>
-          <div class="gov-card-action">
+        <div class="gov-editorial-col">
+          <span class="gov-kicker">Independent Adjudication</span>
+          <h3 class="gov-col-title">Consumer Complaints Council</h3>
+          <p class="gov-col-desc">
+            The decision-making heart of ASCI. By constitution, at least 50% of the CCC consists of eminent civil society members—doctors, lawyers, consumer activists, and educators.
+          </p>
+          <a href="people.html?panel=ccc#directory" class="gov-inline-link">
             <span>View CCC Roster</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-              stroke-linecap="round" stroke-linejoin="round">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
-          </div>
-        </a>
+          </a>
+        </div>
 
-        <a href="people.html?panel=review-panel#directory" class="gov-summary-card gov-summary-card-link">
-          <div>
-            <div class="gov-card-tag">Judicial Review</div>
-            <h3 class="gov-card-title">Independent Review Panel</h3>
-            <p class="gov-card-desc">
-              Presided over by retired High Court Judges to independently hear appeals and procedural reviews,
-              guaranteeing natural justice for both complainants and advertisers.
-            </p>
-          </div>
-          <div class="gov-card-action">
+        <div class="gov-editorial-col">
+          <span class="gov-kicker">Judicial Review</span>
+          <h3 class="gov-col-title">Independent Review Panel</h3>
+          <p class="gov-col-desc">
+            Presided over by retired High Court Judges to independently hear appeals and procedural reviews, guaranteeing natural justice for both complainants and advertisers.
+          </p>
+          <a href="people.html?panel=review-panel#directory" class="gov-inline-link">
             <span>View Review Panel</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-              stroke-linecap="round" stroke-linejoin="round">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
 
-      <div
-        style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
+      <div class="gov-directory-banner">
         <div>
-          <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: #0f172a; margin-bottom: 6px;">Looking
-            for specific leadership profiles or council rosters?</h4>
-          <p style="color: #64748b; font-size: 0.95rem; margin: 0;">Access our FSSAI-style institutional directory with
-            instant search and member details.</p>
+          <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: #0f172a; margin-bottom: 4px;">
+            Looking for specific leadership profiles or council rosters?
+          </h4>
+          <p style="color: #64748b; font-size: 0.95rem; margin: 0;">
+            Access our institutional directory with instant search and member details.
+          </p>
         </div>
-        <a href="people.html"
-          style="background: #008779; color: #ffffff; padding: 10px 22px; border-radius: 9999px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
-          <span>Open People Directory &rarr;</span>
+        <a href="people.html" class="btn-work-explore-top btn-teal">
+          <span>Open People Directory</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
         </a>
       </div>
     </div>
@@ -7547,36 +7886,44 @@
         regulating digital, print, broadcast, and AI-driven commercial content.
       </p>
 
-      <div class="timeline-preview-wrap" style="margin-bottom: 0;">
-        <div class="decade-card">
-          <div class="decade-year">1985 – 1989</div>
-          <p class="decade-text">
-            ASCI founded on 21 October 1985 by 43 members. Code adopted into Doordarshan &amp; All India Radio
-            commercial broadcast codes.
+      <div class="milestones-editorial-track">
+        <div class="milestone-editorial-node">
+          <div class="milestone-era-stamp">
+            <span class="milestone-era-text">1985 &ndash; 1989</span>
+          </div>
+          <h4 class="milestone-node-title">Founding &amp; Broadcast Codes</h4>
+          <p class="milestone-node-desc">
+            ASCI founded on 21 October 1985 by 43 pioneers. Code adopted into Doordarshan &amp; All India Radio broadcast standards.
           </p>
         </div>
 
-        <div class="decade-card">
-          <div class="decade-year">2000 – 2009</div>
-          <p class="decade-text">
-            Statutory alignment with Cable TV Networks Act. Government officially recognizes ASCI as the primary
-            advertising self-regulator in India.
+        <div class="milestone-editorial-node">
+          <div class="milestone-era-stamp">
+            <span class="milestone-era-text">2000 &ndash; 2009</span>
+          </div>
+          <h4 class="milestone-node-title">Statutory Recognition</h4>
+          <p class="milestone-node-desc">
+            Statutory integration into the Cable TV Networks Act. Central Government recognizes ASCI as India's apex advertising self-regulator.
           </p>
         </div>
 
-        <div class="decade-card">
-          <div class="decade-year">2010 – 2020</div>
-          <p class="decade-text">
-            National Advertising Monitoring Services (NAMS) launched. Guidelines introduced for healthcare, food,
-            education, and digital influencers.
+        <div class="milestone-editorial-node">
+          <div class="milestone-era-stamp">
+            <span class="milestone-era-text">2010 &ndash; 2020</span>
+          </div>
+          <h4 class="milestone-node-title">National Monitoring (NAMS)</h4>
+          <p class="milestone-node-desc">
+            National Advertising Monitoring Services (NAMS) launched. Specialized guidelines introduced for healthcare, food, education, and digital creators.
           </p>
         </div>
 
-        <div class="decade-card">
-          <div class="decade-year">2021 – 2026</div>
-          <p class="decade-text">
-            ASCI Academy inaugurated; guidelines issued on Dark Patterns, Environmental Claims (Greenwashing), and
-            Generative AI transparency.
+        <div class="milestone-editorial-node">
+          <div class="milestone-era-stamp">
+            <span class="milestone-era-text">2021 &ndash; 2026</span>
+          </div>
+          <h4 class="milestone-node-title">ASCI Academy &amp; AI Era</h4>
+          <p class="milestone-node-desc">
+            ASCI Academy established; pioneer guidelines issued on Dark Patterns, Greenwashing claims, and Generative AI transparency.
           </p>
         </div>
       </div>
@@ -7594,57 +7941,28 @@
         integration and prestigious international accolades.
       </p>
 
-      <div class="awards-grid">
-        <div class="award-card">
-          <div class="award-card-header">
-            <div class="award-badge-year">2025</div>
-            <div class="award-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="7"></circle>
-                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-              </svg>
-            </div>
-          </div>
-          <h3 class="award-title">ICAS Global Honors</h3>
-          <p class="award-desc">
-            Received two international awards at the International Council for Advertising Self-Regulation (ICAS) Global
-            Summit in Mumbai for excellence in digital advertising education through the ASCI Academy.
+      <div class="awards-editorial-ledger">
+        <div class="award-editorial-item">
+          <div class="award-ledger-stamp">2025</div>
+          <h3 class="award-ledger-title">ICAS Global Honors</h3>
+          <p class="award-ledger-desc">
+            Received two international awards at the International Council for Advertising Self-Regulation (ICAS) Global Summit in Mumbai for excellence in digital advertising education through the ASCI Academy.
           </p>
         </div>
 
-        <div class="award-card">
-          <div class="award-card-header">
-            <div class="award-badge-year">2013</div>
-            <div class="award-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="7"></circle>
-                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-              </svg>
-            </div>
-          </div>
-          <h3 class="award-title">EASA Best Practice Gold Award</h3>
-          <p class="award-desc">
-            Conferred the prestigious Gold Award by the European Advertising Standards Alliance (EASA) for benchmark
-            complaints-handling procedures, speed of resolution, and cross-border cooperation.
+        <div class="award-editorial-item">
+          <div class="award-ledger-stamp">2013</div>
+          <h3 class="award-ledger-title">EASA Best Practice Gold Award</h3>
+          <p class="award-ledger-desc">
+            Conferred the prestigious Gold Award by the European Advertising Standards Alliance (EASA) for benchmark complaints-handling procedures, speed of resolution, and cross-border cooperation.
           </p>
         </div>
 
-        <div class="award-card">
-          <div class="award-card-header">
-            <div class="award-badge-year">Statutory Mandate</div>
-            <div class="award-icon-wrap">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-            </div>
-          </div>
-          <h3 class="award-title">Government Co-Regulation</h3>
-          <p class="award-desc">
-            Officially recognized under the Cable Television Networks Rules, with active co-regulatory partnerships
-            alongside the Department of Consumer Affairs (DoCA), FSSAI, AYUSH, and Maha RERA.
+        <div class="award-editorial-item">
+          <div class="award-ledger-stamp">Statutory</div>
+          <h3 class="award-ledger-title">Government Co-Regulation</h3>
+          <p class="award-ledger-desc">
+            Officially recognized under the Cable Television Networks Rules, with active co-regulatory partnerships alongside the Department of Consumer Affairs (DoCA), FSSAI, AYUSH, and Maha RERA.
           </p>
         </div>
       </div>

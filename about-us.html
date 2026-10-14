@@ -5688,7 +5688,7 @@
       gap: 36px;
       margin-top: 32px;
       padding-top: 28px;
-      border-top: 1.5px solid #008779;
+      border-top: 1px solid #e2e8f0;
     }
 
     .selfreg-editorial-col {
@@ -5873,8 +5873,8 @@
     .work-editorial-pillar {
       display: flex;
       flex-direction: column;
-      border-top: 2px solid #008779;
-      padding-top: 24px;
+      border-top: none;
+      padding-top: 10px;
       position: relative;
     }
 
@@ -5992,8 +5992,8 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 36px;
       margin-top: 32px;
-      padding-top: 28px;
-      border-top: 1.5px solid #026095;
+      padding-top: 10px;
+      border-top: none;
     }
 
     .gov-editorial-col {
@@ -6059,15 +6059,16 @@
 
     .gov-directory-banner {
       margin-top: 40px;
-      padding: 24px 32px;
-      border-top: 1px solid #e2e8f0;
-      border-bottom: 1px solid #e2e8f0;
+      padding: 28px 32px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      background: transparent;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
     }
 
     /* 4. Milestones Editorial Track */
@@ -6128,7 +6129,7 @@
       gap: 36px;
       margin-top: 32px;
       padding-top: 28px;
-      border-top: 1.5px solid #008779;
+      border-top: 1px solid #e2e8f0;
     }
 
     .award-editorial-item {
@@ -9162,10 +9163,9 @@
     <script>
       // ASCI Interactive Scripts
       document.addEventListener('DOMContentLoaded', () => {
-        // Megamenu interaction for all top navigation dropdown items
+        // Megamenu interaction: Click to open/close (no hover)
         const navItemsWithMenu = document.querySelectorAll('.nav-item-dropdown');
         const allMegamenuPanels = document.querySelectorAll('.megamenu-panel');
-        let menuTimeout;
 
         function closeAllMegamenus() {
           navItemsWithMenu.forEach(i => i.classList.remove('open'));
@@ -9176,42 +9176,18 @@
           const targetMenuId = item.getAttribute('data-menu');
           const targetPanel = document.getElementById(targetMenuId);
 
-          function showCurrentMenu() {
-            clearTimeout(menuTimeout);
-            navItemsWithMenu.forEach(i => i.classList.remove('open'));
-            allMegamenuPanels.forEach(p => p.classList.remove('active'));
-            item.classList.add('open');
-            if (targetPanel) targetPanel.classList.add('active');
-          }
-
-          function hideCurrentMenu() {
-            menuTimeout = setTimeout(() => {
-              if (!targetPanel || !targetPanel.matches(':hover')) {
-                item.classList.remove('open');
-                if (targetPanel) targetPanel.classList.remove('active');
-              }
-            }, 150);
-          }
-
-          item.addEventListener('mouseenter', showCurrentMenu);
-          item.addEventListener('mouseleave', hideCurrentMenu);
-
-          if (targetPanel) {
-            targetPanel.addEventListener('mouseenter', () => clearTimeout(menuTimeout));
-            targetPanel.addEventListener('mouseleave', hideCurrentMenu);
-          }
-
-          const link = item.querySelector('.nav-link');
-          if (link) {
-            link.addEventListener('click', (e) => {
-              e.preventDefault();
-              const isOpen = item.classList.contains('open');
-              closeAllMegamenus();
-              if (!isOpen) {
-                showCurrentMenu();
-              }
-            });
-          }
+          // Click on nav link toggles menu
+          const link = item.querySelector('.nav-link') || item;
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const isOpen = item.classList.contains('open');
+            closeAllMegamenus();
+            if (!isOpen) {
+              item.classList.add('open');
+              if (targetPanel) targetPanel.classList.add('active');
+            }
+          });
         });
 
         // Close megamenu when clicking outside

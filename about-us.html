@@ -6198,6 +6198,145 @@
       }
     }
 
+  
+    /* ================= MILESTONES PROGRESS TRACK DESIGN ================= */
+    .milestones-progress-container {
+      position: relative;
+      margin-top: 40px;
+      padding-top: 10px;
+    }
+
+    /* Continuous Horizontal Progress Rail */
+    .milestones-progress-rail {
+      position: absolute;
+      top: 27px;
+      left: 17px;
+      right: 17px;
+      height: 3px;
+      background: #e2e8f0;
+      z-index: 1;
+    }
+
+    .milestones-progress-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #008779 0%, #026095 65%, #059669 100%);
+      border-radius: 9999px;
+    }
+
+    .milestones-progress-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .milestone-progress-card {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.22s ease;
+    }
+
+    .milestone-progress-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .milestone-progress-node-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .milestone-progress-node {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2.5px solid #008779;
+      color: #008779;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      font-family: var(--font-sans);
+      box-shadow: 0 0 0 4px rgba(0, 135, 121, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+      flex-shrink: 0;
+      transition: all 0.22s ease;
+    }
+
+    .milestone-progress-card:hover .milestone-progress-node {
+      background: #008779;
+      color: #ffffff;
+      box-shadow: 0 0 0 6px rgba(0, 135, 121, 0.25), 0 4px 12px rgba(0, 135, 121, 0.3);
+      transform: scale(1.08);
+    }
+
+    /* Node 4 (Current Era: 2021-2026) */
+    .node-current .milestone-progress-node {
+      border-color: #026095;
+      color: #026095;
+      box-shadow: 0 0 0 4px rgba(2, 96, 149, 0.15);
+    }
+
+    .node-current:hover .milestone-progress-node {
+      background: #026095;
+      color: #ffffff;
+      box-shadow: 0 0 0 6px rgba(2, 96, 149, 0.25);
+    }
+
+    .milestone-year-pill {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.01em;
+    }
+
+    .milestone-progress-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #008779;
+      margin: 0 0 8px 0;
+      line-height: 1.35;
+    }
+
+    .node-current .milestone-progress-title {
+      color: #026095;
+    }
+
+    .milestone-progress-desc {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: #475569;
+      margin: 0;
+    }
+
+    @media (max-width: 991px) {
+      .milestones-progress-rail {
+        display: none;
+      }
+      .milestones-progress-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        position: relative;
+        padding-left: 28px;
+        border-left: 2px solid #008779;
+      }
+      .milestone-progress-node {
+        position: absolute;
+        left: -46px;
+      }
+    }
+
   </style>
 </head>
 
@@ -7721,28 +7860,24 @@
           <p class="pillar-lead">
             An impartial, transparent multi-tier resolution framework ensuring advertiser accountability, consumer protection, and procedural fairness.
           </p>
-          <div class="pillar-process-track">
-            <div class="process-step-item">
-              <span class="process-step-dot"></span>
-              <span class="process-step-name">TARA Complaint Portal</span>
-              <span class="process-step-stage">Stage 01</span>
-            </div>
-            <div class="process-step-item">
-              <span class="process-step-dot"></span>
-              <span class="process-step-name">Technical Experts Panel</span>
-              <span class="process-step-stage">Stage 02</span>
-            </div>
-            <div class="process-step-item">
-              <span class="process-step-dot"></span>
-              <span class="process-step-name">Consumer Complaints Council</span>
-              <span class="process-step-stage">Stage 03</span>
-            </div>
-            <div class="process-step-item">
-              <span class="process-step-dot"></span>
-              <span class="process-step-name">Independent Review Panel</span>
-              <span class="process-step-stage">Stage 04</span>
-            </div>
-          </div>
+          <ul class="pillar-dot-list">
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">TARA Complaint Portal</span>
+            </li>
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">Technical Experts Panel</span>
+            </li>
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">Consumer Complaints Council</span>
+            </li>
+            <li class="pillar-dot-item">
+              <span class="pillar-bullet-dot"></span>
+              <span class="pillar-bullet-name">Independent Review Panel</span>
+            </li>
+          </ul>
           <a href="the-work-we-do/how-we-handle-complaints.html" class="btn-pillar-box-cta">
             <span>Explore Complaints Procedure</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -7972,45 +8107,61 @@
         regulating digital, print, broadcast, and AI-driven commercial content.
       </p>
 
-      <div class="milestones-editorial-track">
-        <div class="milestone-editorial-node">
-          <div class="milestone-era-stamp">
-            <span class="milestone-era-text">1985 &ndash; 1989</span>
-          </div>
-          <h4 class="milestone-node-title">Founding &amp; Broadcast Codes</h4>
-          <p class="milestone-node-desc">
-            ASCI founded on 21 October 1985 by 43 pioneers. Code adopted into Doordarshan &amp; All India Radio broadcast standards.
-          </p>
+      <div class="milestones-progress-container">
+        <!-- Connecting Progress Rail -->
+        <div class="milestones-progress-rail" aria-hidden="true">
+          <div class="milestones-progress-fill"></div>
         </div>
 
-        <div class="milestone-editorial-node">
-          <div class="milestone-era-stamp">
-            <span class="milestone-era-text">2000 &ndash; 2009</span>
+        <!-- 4 Milestone Progress Nodes -->
+        <div class="milestones-progress-grid">
+          <!-- Step 1: 1985-1989 -->
+          <div class="milestone-progress-card">
+            <div class="milestone-progress-node-wrap">
+              <span class="milestone-progress-node">01</span>
+              <span class="milestone-year-pill">1985 &ndash; 1989</span>
+            </div>
+            <h4 class="milestone-progress-title">Founding &amp; Broadcast Codes</h4>
+            <p class="milestone-progress-desc">
+              ASCI founded on 21 October 1985 by 43 industry pioneers. Code adopted into Doordarshan &amp; All India Radio commercial broadcast codes.
+            </p>
           </div>
-          <h4 class="milestone-node-title">Statutory Recognition</h4>
-          <p class="milestone-node-desc">
-            Statutory integration into the Cable TV Networks Act. Central Government recognizes ASCI as India's apex advertising self-regulator.
-          </p>
-        </div>
 
-        <div class="milestone-editorial-node">
-          <div class="milestone-era-stamp">
-            <span class="milestone-era-text">2010 &ndash; 2020</span>
+          <!-- Step 2: 2000-2009 -->
+          <div class="milestone-progress-card">
+            <div class="milestone-progress-node-wrap">
+              <span class="milestone-progress-node">02</span>
+              <span class="milestone-year-pill">2000 &ndash; 2009</span>
+            </div>
+            <h4 class="milestone-progress-title">Statutory Recognition</h4>
+            <p class="milestone-progress-desc">
+              Statutory integration into the Cable TV Networks Act. Central Government officially recognizes ASCI as India's apex advertising self-regulator.
+            </p>
           </div>
-          <h4 class="milestone-node-title">National Monitoring (NAMS)</h4>
-          <p class="milestone-node-desc">
-            National Advertising Monitoring Services (NAMS) launched. Specialized guidelines introduced for healthcare, food, education, and digital creators.
-          </p>
-        </div>
 
-        <div class="milestone-editorial-node">
-          <div class="milestone-era-stamp">
-            <span class="milestone-era-text">2021 &ndash; 2026</span>
+          <!-- Step 3: 2010-2020 -->
+          <div class="milestone-progress-card">
+            <div class="milestone-progress-node-wrap">
+              <span class="milestone-progress-node">03</span>
+              <span class="milestone-year-pill">2010 &ndash; 2020</span>
+            </div>
+            <h4 class="milestone-progress-title">National Monitoring (NAMS)</h4>
+            <p class="milestone-progress-desc">
+              National Advertising Monitoring Services (NAMS) launched. Guidelines introduced for healthcare, food, education, and digital influencers.
+            </p>
           </div>
-          <h4 class="milestone-node-title">ASCI Academy &amp; AI Era</h4>
-          <p class="milestone-node-desc">
-            ASCI Academy established; pioneer guidelines issued on Dark Patterns, Greenwashing claims, and Generative AI transparency.
-          </p>
+
+          <!-- Step 4: 2021-2026 -->
+          <div class="milestone-progress-card node-current">
+            <div class="milestone-progress-node-wrap">
+              <span class="milestone-progress-node">04</span>
+              <span class="milestone-year-pill">2021 &ndash; 2026</span>
+            </div>
+            <h4 class="milestone-progress-title">ASCI Academy &amp; AI Era</h4>
+            <p class="milestone-progress-desc">
+              ASCI Academy inaugurated; pioneer guidelines issued on Dark Patterns, Environmental Claims (Greenwashing), and Generative AI transparency.
+            </p>
+          </div>
         </div>
       </div>
     </div>

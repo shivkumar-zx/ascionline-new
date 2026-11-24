@@ -3473,7 +3473,7 @@ button {
   margin-bottom: 16px;
 }
 
-/* Full-Width Hero Slider & Smooth Fade Animation */
+/* Full-Width Hero Slider & Smooth Slide Transition */
 .academy-hero-carousel-section {
   width: 100% !important;
   max-width: 100% !important;
@@ -3494,26 +3494,21 @@ button {
   box-shadow: none !important;
 }
 
+.academy-hero-track {
+  display: flex !important;
+  width: 100% !important;
+  height: 100% !important;
+  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  will-change: transform;
+}
+
 .academy-hero-slide {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
+  flex: 0 0 100% !important;
   width: 100% !important;
   height: 100% !important;
   display: block !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  transform: scale(1.02) !important;
-  z-index: 1 !important;
+  position: relative !important;
   text-decoration: none !important;
-}
-
-.academy-hero-slide.active {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: scale(1) !important;
-  z-index: 2 !important;
 }
 
 .academy-hero-slide img {
@@ -3521,6 +3516,51 @@ button {
   height: 100% !important;
   object-fit: cover !important;
   display: block !important;
+}
+
+.hero-arrow {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background: rgba(0, 0, 0, 0.38) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 10 !important;
+  backdrop-filter: blur(8px) !important;
+  transition: all 0.25s ease !important;
+  opacity: 0.75;
+}
+.hero-arrow:hover {
+  background: rgba(0, 0, 0, 0.75) !important;
+  border-color: #ffffff !important;
+  opacity: 1 !important;
+  transform: translateY(-50%) scale(1.08) !important;
+}
+.hero-arrow-prev {
+  left: 20px !important;
+}
+.hero-arrow-next {
+  right: 20px !important;
+}
+@media (max-width: 640px) {
+  .hero-arrow {
+    width: 36px !important;
+    height: 36px !important;
+    opacity: 0.85 !important;
+  }
+  .hero-arrow-prev {
+    left: 10px !important;
+  }
+  .hero-arrow-next {
+    right: 10px !important;
+  }
 }
 
 .academy-hero-dots {
@@ -3868,32 +3908,40 @@ h3, h4, h5, h6,
   </header>
 
 <main class="academy-main-content">
-<!-- 1. FULL-WIDTH HERO BANNER CAROUSEL (CLEAN, WIDESCREEN, AUTHENTIC) -->
 <!-- 1. FULL-WIDTH HERO BANNER CAROUSEL (EDGE-TO-EDGE, SMOOTH ANIMATION) -->
 <section class="academy-hero-carousel-section">
   <div id="academyHeroCarousel">
-    
-    <!-- Slide 1: What The Sigma -->
-    <a href="academy-reports.html#what-the-sigma" class="academy-hero-slide active" aria-label="What The Sigma Report">
-      <img src="assets/images/academy/What-The-Sigma-Website-Banner-png.avif" alt="What The Sigma Banner">
-    </a>
+    <div class="academy-hero-track" id="academyHeroTrack">
+      <!-- Slide 1: What The Sigma -->
+      <a href="academy-reports.html#what-the-sigma" class="academy-hero-slide active" aria-label="What The Sigma Report">
+        <img src="assets/images/academy/What-The-Sigma-Website-Banner-png.avif" alt="What The Sigma Banner">
+      </a>
 
-    <!-- Slide 2: Ethical UI/UX Designs -->
-    <a href="academy-courses.html#ethical-ui-ux" class="academy-hero-slide" aria-label="Ethical UI/UX Designs Course">
-      <img src="assets/images/academy/ethical-ui-ux-designs-building-consumer-trust-homepage-banner-desktop.webp" alt="Ethical UI/UX Banner">
-    </a>
+      <!-- Slide 2: Ethical UI/UX Designs -->
+      <a href="academy-courses.html#ethical-ui-ux" class="academy-hero-slide" aria-label="Ethical UI/UX Designs Course">
+        <img src="assets/images/academy/ethical-ui-ux-designs-building-consumer-trust-homepage-banner-desktop.webp" alt="Ethical UI/UX Banner">
+      </a>
 
-    <!-- Slide 3: Conscious Patterns 11 -->
-    <a href="academy-reports.html#ad-next" class="academy-hero-slide" aria-label="Conscious Patterns AD Next AI Edition">
-      <img src="assets/images/academy/ASCI-Academy-Website-Banner-Conscious-Patterns-11.jpg" alt="Conscious Patterns Banner 11">
-    </a>
+      <!-- Slide 3: Conscious Patterns 11 -->
+      <a href="academy-reports.html#ad-next" class="academy-hero-slide" aria-label="Conscious Patterns AD Next AI Edition">
+        <img src="assets/images/academy/ASCI-Academy-Website-Banner-Conscious-Patterns-11.jpg" alt="Conscious Patterns Banner 11">
+      </a>
 
-    <!-- Slide 4: Conscious Patterns 9 -->
-    <a href="academy-reports.html#gender-next" class="academy-hero-slide" aria-label="Manifest Masculinities Beyond The Mask Report">
-      <img src="assets/images/academy/ASCI-Academy-Website-Banner-Conscious-Patterns-9.jpg" alt="Conscious Patterns Banner 9">
-    </a>
+      <!-- Slide 4: Conscious Patterns 9 -->
+      <a href="academy-reports.html#gender-next" class="academy-hero-slide" aria-label="Manifest Masculinities Beyond The Mask Report">
+        <img src="assets/images/academy/ASCI-Academy-Website-Banner-Conscious-Patterns-9.jpg" alt="Conscious Patterns Banner 9">
+      </a>
+    </div>
 
-    <!-- Bottom Pagination Dots (No left/right arrows as requested) -->
+    <!-- Navigation Arrows -->
+    <button class="hero-arrow hero-arrow-prev" onclick="prevHeroSlide()" aria-label="Previous Slide">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <button class="hero-arrow hero-arrow-next" onclick="nextHeroSlide()" aria-label="Next Slide">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+
+    <!-- Bottom Pagination Dots -->
     <div class="academy-hero-dots">
       <button onclick="setHeroSlide(0)" class="hero-dot active" aria-label="Slide 1"></button>
       <button onclick="setHeroSlide(1)" class="hero-dot" aria-label="Slide 2"></button>
@@ -3982,6 +4030,7 @@ var currentHeroSlide = 0;
 var heroInterval = null;
 
 function showHeroSlide(idx) {
+  var track = document.getElementById('academyHeroTrack');
   var slides = document.querySelectorAll('.academy-hero-slide');
   var dots = document.querySelectorAll('.hero-dot');
   if (!slides || !slides.length) return;
@@ -3989,6 +4038,10 @@ function showHeroSlide(idx) {
   if (idx >= slides.length) idx = 0;
   if (idx < 0) idx = slides.length - 1;
   currentHeroSlide = idx;
+
+  if (track) {
+    track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+  }
 
   for (var i = 0; i < slides.length; i++) {
     if (i === idx) {
@@ -4007,6 +4060,14 @@ function showHeroSlide(idx) {
   }
 }
 
+function nextHeroSlide() {
+  showHeroSlide(currentHeroSlide + 1);
+}
+
+function prevHeroSlide() {
+  showHeroSlide(currentHeroSlide - 1);
+}
+
 function setHeroSlide(idx) {
   clearInterval(heroInterval);
   showHeroSlide(idx);
@@ -4016,20 +4077,36 @@ function setHeroSlide(idx) {
 function startHeroTimer() {
   clearInterval(heroInterval);
   heroInterval = setInterval(function() {
-    showHeroSlide(currentHeroSlide + 1);
+    nextHeroSlide();
   }, 4500);
 }
 
-window.addEventListener('load', function() {
+document.addEventListener('DOMContentLoaded', function() {
   showHeroSlide(0);
   startHeroTimer();
   var box = document.getElementById('academyHeroCarousel');
   if (box) {
     box.addEventListener('mouseenter', function() { clearInterval(heroInterval); });
     box.addEventListener('mouseleave', function() { startHeroTimer(); });
-  }
-});
-    box.addEventListener('mouseleave', function() { startHeroTimer(); });
+
+    // Touch swipe support
+    var startX = 0;
+    box.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+      clearInterval(heroInterval);
+    }, {passive: true});
+
+    box.addEventListener('touchend', function(e) {
+      var diffX = e.changedTouches[0].clientX - startX;
+      if (Math.abs(diffX) > 40) {
+        if (diffX < 0) {
+          nextHeroSlide();
+        } else {
+          prevHeroSlide();
+        }
+      }
+      startHeroTimer();
+    }, {passive: true});
   }
 });
 </script>

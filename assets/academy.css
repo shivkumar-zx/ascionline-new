@@ -88,7 +88,7 @@
 .academy-hero-subtitle {
   font-size: 1.125rem;
   line-height: 1.6;
-  color: #cbd5e1;
+  color: #ffffff !important;
   margin-bottom: 32px;
   max-width: 580px;
 }

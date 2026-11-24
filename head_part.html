@@ -568,6 +568,25 @@ button {
   }
 }
 
+
+.academy-mega-grid-5col {
+  display: grid;
+  grid-template-columns: 1.15fr repeat(4, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+@media (max-width: 1024px) {
+  .academy-mega-grid-5col {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+@media (max-width: 640px) {
+  .academy-mega-grid-5col {
+    grid-template-columns: 1fr;
+  }
+}
+
 .academy-mega-grid-6col {
   display: grid;
   grid-template-columns: 1.1fr repeat(3, 1fr);
@@ -3452,5 +3471,94 @@ button {
   padding: 5px;
   margin-bottom: 16px;
 }
+/* CTA Callout Paragraph Full Left Alignment */
+.cta-callout-section p,
+.cta-callout-section .cta-callout-desc,
+.cta-split-grid p,
+.cta-col p,
+.cta-col-left p,
+.cta-col-right p,
+.cta-col-copy p {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  align-self: flex-start !important;
+}
+
+
+/* ================= ALL SUBHEADINGS & NUMBERS USE INTER FONT ONLY ================= */
+h3, h4, h5, h6,
+.subheading,
+.sub-heading,
+.section-subheading,
+.section-sub-heading,
+.card-title,
+.card-name,
+.award-title,
+.award-ledger-title,
+.pillar-title,
+.pv-card-title,
+.benefit-heading,
+.benefit-card-title,
+.work-card-title,
+.campaign-title,
+.milestone-item-title,
+.careers-modal-title,
+.directory-card-title,
+.megamenu-col-title,
+.footer-col-title {
+  font-family: var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+}
+
+/* All Numbers, Metric Counts, Year Stamps & Digits */
+.stat-num,
+.stat-number,
+.purpose-year,
+.metric-num,
+.metric-count,
+.timeline-metric-num,
+.award-ledger-stamp,
+.node-disc,
+.milestone-era-badge,
+.badge-year,
+.award-badge-year,
+.step-number,
+.step-num,
+.index-num,
+.counter,
+.stat-val,
+.stat-value,
+.step-badge,
+.timeline-entry h2,
+.story-timeline__heading strong,
+.story-timeline__nav-copy strong {
+  font-family: var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+  font-feature-settings: 'tnum' on, 'cv05' on !important;
+}
+
+
+/* ================= NUMBERS IN HEADINGS & ACCENTS: INTER ONLY ================= */
+@font-face {
+  font-family: 'InterDigits';
+  src: local('Inter');
+  unicode-range: U+0030-0039, U+002B, U+0025, U+002D, U+2013, U+2014; /* 0-9, +, %, -, en-dash, em-dash */
+}
+
+.font-inter,
+.title-num,
+.heading-num {
+  font-family: var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif) !important;
+  font-feature-settings: 'tnum' on, 'cv05' on !important;
+  font-weight: inherit !important;
+}
+
+/* Ensure timeline entry year headings in history page are strictly Inter */
+.timeline-entry h2,
+.story-timeline__heading strong,
+.story-timeline__nav-copy strong {
+  font-family: var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif) !important;
+  font-feature-settings: 'tnum' on, 'cv05' on !important;
+}
+
 </style>
 </head>

@@ -1,0 +1,396 @@
+/* ================= UNIFIED SITE FOOTER (CHARCOAL DARK THEME) ================= */
+:root {
+  --footer-charcoal: #2e3438;
+  --footer-bottom-charcoal: #252a2e;
+  --color-asci-teal: #008779;
+}
+
+.site-footer {
+  background: var(--footer-charcoal, #2e3438) !important;
+  color: #e8edf0 !important;
+  padding: 60px 0 0 !important;
+  border-top: none !important;
+  margin-top: 0 !important;
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif) !important;
+}
+
+.site-footer .container {
+  width: 100% !important;
+  max-width: var(--container-max-w, 1280px) !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+}
+
+.footer-top-grid {
+  display: grid !important;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr !important;
+  gap: 36px !important;
+  padding-bottom: 45px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.footer-brand-col {
+  padding-right: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.footer-logo-img {
+  height: 48px !important;
+  width: auto !important;
+  display: block !important;
+  margin-bottom: 18px !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.footer-email-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  margin-bottom: 20px !important;
+  transition: color 0.2s ease !important;
+}
+
+.footer-email-link:hover {
+  color: var(--color-asci-teal, #008779) !important;
+}
+
+.footer-socials-label {
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  margin-bottom: 8px !important;
+}
+
+.footer-social-icons {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 4px !important;
+}
+
+.social-icon-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.social-icon-btn:hover {
+  background: var(--color-asci-teal, #008779) !important;
+  transform: translateY(-2px) !important;
+}
+
+.footer-col-title {
+  font-family: var(--font-sans, inherit) !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin-top: 0 !important;
+  margin-bottom: 18px !important;
+}
+
+.footer-links-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.footer-links-list li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.footer-links-list a {
+  font-size: 0.9rem !important;
+  color: #c6ced4 !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.footer-links-list a:hover {
+  color: #ffffff !important;
+}
+
+.footer-bottom-bar {
+  background: var(--footer-bottom-charcoal, #252a2e) !important;
+  color: #aeb7bf !important;
+  font-size: 0.8125rem !important;
+  padding: 16px 0 !important;
+}
+
+.footer-bottom-flex {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+
+.footer-legal-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex-wrap: wrap !important;
+}
+
+.footer-legal-links a {
+  color: #c6ced4 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.footer-legal-links a:hover {
+  color: #ffffff !important;
+}
+
+@media (max-width: 991px) {
+  .site-footer {
+    padding: 45px 0 0 !important;
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    text-align: center !important;
+  }
+  .footer-brand-col {
+    align-items: center !important;
+    padding-right: 0 !important;
+  }
+  .footer-logo-img {
+    margin: 0 auto 14px !important;
+  }
+  .footer-email-link {
+    justify-content: center !important;
+  }
+  .footer-social-icons {
+    justify-content: center !important;
+  }
+  .footer-links-list {
+    align-items: center !important;
+  }
+  .footer-bottom-flex {
+    flex-direction: column !important;
+    gap: 10px !important;
+    text-align: center !important;
+  }
+  .footer-legal-links {
+    justify-content: center !important;
+  }
+}
+
+
+/* ================= HERO CALLOUT BANNER: YELLOW MEMBERSHIP & NEWSLETTER CTA ================= */
+.cta-callout-section {
+  position: relative !important;
+  background-color: #f7a719 !important;
+  color: #000000 !important;
+  padding: 80px 0 !important;
+  overflow: hidden !important;
+}
+
+.cta-callout-section .container {
+  width: 100% !important;
+  max-width: var(--container-max-w, 1280px) !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.cta-split-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 72px !important;
+  align-items: stretch !important;
+}
+
+.cta-col {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.cta-col-left {
+  padding-right: 52px !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.14) !important;
+}
+
+.cta-col-right {
+  padding-left: 0 !important;
+}
+
+.cta-col-copy {
+  margin-bottom: 30px !important;
+}
+
+.cta-callout-title {
+  font-family: var(--font-serif, Georgia, serif) !important;
+  font-size: 2.1rem !important;
+  line-height: 1.2 !important;
+  font-weight: 500 !important;
+  color: #000000 !important;
+  letter-spacing: -0.015em !important;
+  margin-bottom: 16px !important;
+}
+
+.cta-callout-section p,
+.cta-callout-section .cta-callout-desc,
+.cta-callout-desc {
+  color: #111827 !important;
+  font-size: 1rem !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+  max-width: 520px !important;
+}
+
+.cta-col-action {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.cta-callout-section .btn-cta-membership {
+  min-width: 0 !important;
+  width: fit-content !important;
+  justify-content: center !important;
+  background: #30363b !important;
+  border: 0 !important;
+  color: #ffffff !important;
+  padding: 15px 32px !important;
+  box-shadow: none !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  border-radius: 9999px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: background 0.22s ease, transform 0.22s ease !important;
+}
+
+.cta-callout-section .btn-cta-membership:hover {
+  background: #20262b !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+
+@media (max-width: 900px) {
+  .cta-callout-section {
+    padding: 46px 0 40px !important;
+  }
+  .cta-split-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .cta-col-left {
+    padding-right: 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14) !important;
+    padding-bottom: 36px !important;
+  }
+  .cta-callout-title {
+    font-size: 1.85rem !important;
+  }
+  .cta-callout-title br {
+    display: none !important;
+  }
+  .cta-callout-section .btn-cta-membership {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+}
+
+
+/* ================= ALL SUBHEADINGS & NUMBERS USE INTER FONT ONLY ================= */
+h3, h4, h5, h6,
+.subheading,
+.sub-heading,
+.section-subheading,
+.section-sub-heading,
+.card-title,
+.card-name,
+.award-title,
+.award-ledger-title,
+.pillar-title,
+.pv-card-title,
+.benefit-heading,
+.benefit-card-title,
+.work-card-title,
+.campaign-title,
+.milestone-item-title,
+.careers-modal-title,
+.directory-card-title,
+.megamenu-col-title,
+.footer-col-title {
+  font-family: var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+}
+
+/* All Numbers, Metric Counts, Year Stamps & Digits */
+.stat-num,
+.stat-number,
+.purpose-year,
+.metric-num,
+.metric-count,
+.timeline-metric-num,
+.award-ledger-stamp,
+.node-disc,
+.milestone-era-badge,
+.badge-year,
+.award-badge-year,
+.step-number,
+.step-num,
+.index-num,
+.counter,
+.stat-val,
+.stat-value,
+.step-badge,
+.timeline-entry h2,
+.story-timeline__heading strong,
+.story-timeline__nav-copy strong {
+  font-family: var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+  font-feature-settings: 'tnum' on, 'cv05' on !important;
+}
+
+/* ================= NUMBERS IN HEADINGS & ACCENTS: INTER ONLY ================= */
+@font-face {
+  font-family: 'InterDigits';
+  src: local('Inter');
+  unicode-range: U+0030-0039, U+002B, U+0025, U+002D, U+2013, U+2014; /* 0-9, +, %, -, en-dash, em-dash */
+}
+
+.font-inter,
+.title-num,
+.heading-num {
+  font-family: var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif) !important;
+  font-feature-settings: 'tnum' on, 'cv05' on !important;
+  font-weight: inherit !important;
+}
+
+/* Ensure timeline entry year headings in history page are strictly Inter */
+.timeline-entry h2,
+.story-timeline__heading strong,
+.story-timeline__nav-copy strong {
+  font-family: var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif) !important;
+  font-feature-settings: 'tnum' on, 'cv05' on !important;
+}

@@ -1,1 +1,7 @@
 scratch/
+__pycache__/
+*.pyc
+asci-website-package/
+asci-website-package.zip
+*.backup.html
+data/

@@ -3553,7 +3553,6 @@ h2 + p,
 .timeline-page-title + p,
 .directory-page-title + p,
 .work-page-title + p,
-.academy-hero-title + p,
 .hero-desc,
 .about-page-lead,
 .section-intro-text,
@@ -3667,6 +3666,19 @@ h3, h4, h5, h6,
 .story-timeline__nav-copy strong {
   font-family: var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif) !important;
   font-feature-settings: 'tnum' on, 'cv05' on !important;
+}
+
+
+/* Academy Hero Banner Text Always Pure White */
+.academy-hero p,
+.academy-hero .academy-hero-subtitle,
+.academy-hero-subtitle,
+.academy-hero-title + p,
+.academy-hero-text p,
+.academy-hero-card p,
+.academy-hero-card div,
+.academy-hero-card span {
+  color: #ffffff !important;
 }
 
 </style>
@@ -3800,7 +3812,7 @@ h3, h4, h5, h6,
           <span>Knowledge &amp; Evidence</span>
         </div>
         <h1 class="academy-hero-title">Research reports &amp; <span>white papers</span>.</h1>
-        <p class="academy-hero-subtitle">
+        <p class="academy-hero-subtitle" style="color: #ffffff !important;">
           Empirical studies and thought leadership publications examining generative AI, deceptive patterns, influencer credibility, and societal representation in Indian advertising.
         </p>
       </div>

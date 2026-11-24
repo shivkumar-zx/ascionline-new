@@ -3553,7 +3553,6 @@ h2 + p,
 .timeline-page-title + p,
 .directory-page-title + p,
 .work-page-title + p,
-.academy-hero-title + p,
 .hero-desc,
 .about-page-lead,
 .section-intro-text,
@@ -3667,6 +3666,19 @@ h3, h4, h5, h6,
 .story-timeline__nav-copy strong {
   font-family: var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif) !important;
   font-feature-settings: 'tnum' on, 'cv05' on !important;
+}
+
+
+/* Academy Hero Banner Text Always Pure White */
+.academy-hero p,
+.academy-hero .academy-hero-subtitle,
+.academy-hero-subtitle,
+.academy-hero-title + p,
+.academy-hero-text p,
+.academy-hero-card p,
+.academy-hero-card div,
+.academy-hero-card span {
+  color: #ffffff !important;
 }
 
 </style>
@@ -3827,110 +3839,281 @@ h3, h4, h5, h6,
   </div>
 </section>
 
-<!-- Pillar 1: Colleges & Universities -->
-<section class="academy-section" id="colleges">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
-      <div>
-        <span class="academy-section-kicker">For Institutes &amp; Universities</span>
-        <h2 class="academy-section-title">Academic Partnership Program (APP)</h2>
-        <p class="academy-section-desc" style="margin-bottom: 20px;">
-          The Academic Partnership Program (APP) bridges academic theory with live industry self-regulation. We partner with universities to embed certified modules on truthfulness, legal compliance, social decency, and digital ethics directly into undergraduate and postgraduate curricula.
-        </p>
-        <ul style="color: #475569; line-height: 1.8; margin-bottom: 24px; padding-left: 20px;">
-          <li>Curriculum co-design with ASCI experts</li>
-          <li>Access to 40+ years of ASCI case studies and complaints history</li>
-          <li>Joint certification upon student course completion</li>
-          <li>Guest lectures by advertising councils and regulatory authorities</li>
-        </ul>
-        <a href="academy.html#collaborate" class="btn-enroll-course">
-          <span>Inquire for Your University</span>
-        </a>
-      </div>
-      <div>
-        <img src="assets/images/academy/DSC4569-1024x682.jpg" alt="University Training" style="width: 100%; border-radius: 16px; box-shadow: 0 12px 30px rgba(0,0,0,0.08);">
-      </div>
+<!-- 1. For Institutes & Colleges -->
+<section class="programs-section-group" id="colleges">
+  <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 20px;">
+    
+    <div class="programs-group-header">
+      <span class="programs-group-kicker">Academic Integration &amp; Faculty Upskilling</span>
+      <h2 class="programs-group-title">For Institutes / Colleges</h2>
+      <p class="programs-group-desc">
+        Comprehensive self-regulation education, degree-integrated modules, and educator enablement programs designed for Indian universities and management institutions.
+      </p>
     </div>
+
+    <!-- 2-Column Grid with Middle Gap -->
+    <div class="programs-grid-2col">
+
+      <!-- Left Card: Academic Partnership Program (APP) -->
+      <div class="program-card">
+        <div class="program-card-media">
+          <img src="assets/images/academy/Academic-Partnership-Program-Thumbnail-1.webp" alt="Academic Partnership Program" class="program-card-img">
+          <span class="program-media-badge">University Integration</span>
+        </div>
+        <div class="program-card-body">
+          <span class="program-card-kicker">Undergraduate &amp; Post-Grad</span>
+          <h3 class="program-card-title">Academic Partnership Program (APP)</h3>
+          <p class="program-card-desc">
+            The Academic Partnership Program (APP) bridges academic theory with live industry self-regulation. We partner with universities to embed certified modules on truthfulness, legal compliance, social decency, and digital ethics directly into undergraduate and postgraduate curricula.
+          </p>
+          <ul class="program-card-list">
+            <li>Curriculum co-design with senior ASCI regulatory experts</li>
+            <li>Direct access to 40+ years of ASCI case studies and complaints history</li>
+            <li>Joint verifiable certification awarded upon student graduation</li>
+            <li>Guest masterclasses and lectures by industry leaders &amp; council members</li>
+          </ul>
+          <div class="program-card-action">
+            <a href="academy.html#collaborate" class="btn-program-action">
+              <span>Inquire for Your University</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Card: Faculty Development Program (FDP) with Smooth Physical Slider -->
+      <div class="program-card" id="fdp">
+        <div class="program-card-media" id="fdpSliderBox">
+          <div class="program-slider-track" id="fdpSliderTrack">
+            <div class="program-slide-item">
+              <img src="assets/images/academy/Symbiosis-Institute.png" alt="Faculty Training at Symbiosis Institute">
+            </div>
+            <div class="program-slide-item">
+              <img src="assets/images/academy/Jamia-Millia.png" alt="Faculty Training at Jamia Millia Islamia">
+            </div>
+            <div class="program-slide-item">
+              <img src="assets/images/academy/IILM-University.png" alt="Faculty Training at IILM University">
+            </div>
+            <div class="program-slide-item">
+              <img src="assets/images/academy/DY-Patil-School-of-Creative-Studies.jpg" alt="Faculty Training at DY Patil School">
+            </div>
+            <div class="program-slide-item">
+              <img src="assets/images/academy/Ahmedabad-Management-Association.jpg" alt="Faculty Training at Ahmedabad Management Association">
+            </div>
+          </div>
+
+          <!-- Slider Chevrons -->
+          <button type="button" class="program-slider-btn program-slider-btn-prev" onclick="prevFdpSlide()" aria-label="Previous Slide">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button type="button" class="program-slider-btn program-slider-btn-next" onclick="nextFdpSlide()" aria-label="Next Slide">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <!-- Slider Dots -->
+          <div class="program-slider-dots">
+            <button type="button" onclick="setFdpSlide(0)" class="program-slider-dot active fdp-dot" aria-label="Slide 1"></button>
+            <button type="button" onclick="setFdpSlide(1)" class="program-slider-dot fdp-dot" aria-label="Slide 2"></button>
+            <button type="button" onclick="setFdpSlide(2)" class="program-slider-dot fdp-dot" aria-label="Slide 3"></button>
+            <button type="button" onclick="setFdpSlide(3)" class="program-slider-dot fdp-dot" aria-label="Slide 4"></button>
+            <button type="button" onclick="setFdpSlide(4)" class="program-slider-dot fdp-dot" aria-label="Slide 5"></button>
+          </div>
+
+          <span class="program-media-badge">Faculty Training</span>
+        </div>
+        <div class="program-card-body">
+          <span class="program-card-kicker">Educator Enablement</span>
+          <h3 class="program-card-title">Empowering Ethical Advertising – FDP</h3>
+          <p class="program-card-desc">
+            The Faculty Development Program (FDP) trains professors, senior lecturers, and departmental deans in contemporary advertising laws, deceptive design patterns, influencer disclosure mandates, and case analysis methodologies.
+          </p>
+          <ul class="program-card-list">
+            <li>Multi-day intensive certification sessions with ASCI master trainers</li>
+            <li>Practical workshops analyzing contentious and disputed national campaigns</li>
+            <li>Exclusive pedagogical toolkits, case studies, and presentation slide libraries</li>
+            <li>Formal ASCI Certified Educator credentials and institutional recognition</li>
+          </ul>
+          <div class="program-card-action">
+            <a href="academy.html#collaborate" class="btn-program-action">
+              <span>Join Faculty Program</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
-<!-- Pillar 2: Faculty Development Program -->
-<section class="academy-section-alt" id="fdp">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
-      <div>
-        <img src="assets/images/academy/DSC4721-1024x682.jpg" alt="Faculty Development Program" style="width: 100%; border-radius: 16px; box-shadow: 0 12px 30px rgba(0,0,0,0.08);">
-      </div>
-      <div>
-        <span class="academy-section-kicker">Educator Enablement</span>
-        <h2 class="academy-section-title">Empowering Ethical Advertising – FDP</h2>
-        <p class="academy-section-desc" style="margin-bottom: 20px;">
-          The Faculty Development Program (FDP) trains professors, senior lecturers, and departmental deans in contemporary advertising laws, deceptive design patterns, influencer disclosure mandates, and case analysis methodologies.
-        </p>
-        <ul style="color: #475569; line-height: 1.8; margin-bottom: 24px; padding-left: 20px;">
-          <li>Multi-day intensive certification sessions</li>
-          <li>Practical workshops analyzing disputed campaigns</li>
-          <li>Exclusive pedagogical toolkits and slide libraries</li>
-          <li>Formal ASCI Certified Educator credentials</li>
-        </ul>
-        <a href="academy.html#collaborate" class="btn-enroll-course">
-          <span>Join Faculty Program</span>
-        </a>
-      </div>
+<!-- 2. For Schools -->
+<section class="programs-section-group" id="schools">
+  <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 20px;">
+    
+    <div class="programs-group-header">
+      <span class="programs-group-kicker">Youth Digital Literacy</span>
+      <h2 class="programs-group-title">For Schools</h2>
+      <p class="programs-group-desc">
+        Equipping younger students to identify, question, and evaluate commercial messages critically in the digital age.
+      </p>
     </div>
-  </div>
-</section>
 
-<!-- Pillar 3: Schools & AdWise -->
-<section class="academy-section" id="schools">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
-      <div>
-        <span class="academy-section-kicker">Youth Digital Literacy</span>
-        <h2 class="academy-section-title">The AdWise Program for Schools</h2>
-        <p class="academy-section-desc" style="margin-bottom: 20px;">
+    <!-- Wide Split Card -->
+    <div class="program-card" style="display: grid; grid-template-columns: 1fr 1.15fr; align-items: stretch;">
+      <div style="position: relative; height: 100%; min-height: 320px; overflow: hidden; background: #001a3a;">
+        <img src="assets/images/academy/adwise-feat.webp" alt="AdWise School Program" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <span class="program-media-badge">School Curriculum</span>
+      </div>
+      <div class="program-card-body">
+        <span class="program-card-kicker">Grades 3–8 Initiative</span>
+        <h3 class="program-card-title">AdWise: Youth Advertising Literacy Program</h3>
+        <p class="program-card-desc">
           Children and adolescents encounter thousands of commercial messages daily across games, social apps, and online video. AdWise instills critical thinking, helping students distinguish between objective content, paid promotions, sponsored trends, and deceptive claims.
         </p>
-        <ul style="color: #475569; line-height: 1.8; margin-bottom: 24px; padding-left: 20px;">
-          <li>Age-appropriate interactive workshops</li>
-          <li>Gamified exercises on spotting hidden ads</li>
-          <li>Digital privacy and safe consumerism tips</li>
+        <ul class="program-card-list">
+          <li>Age-appropriate interactive workshops designed for school children</li>
+          <li>Gamified exercises on spotting hidden ads, sponsored feeds &amp; brand placements</li>
+          <li>Digital privacy, safe consumerism, and conscious media consumption tips</li>
+          <li>Resource kits for educators, parents, and school guidance counselors</li>
         </ul>
-        <a href="academy.html#collaborate" class="btn-enroll-course">
-          <span>Bring AdWise to Your School</span>
-        </a>
-      </div>
-      <div>
-        <img src="assets/images/academy/adwise-feat.webp" alt="AdWise School Program" style="width: 100%; border-radius: 16px; box-shadow: 0 12px 30px rgba(0,0,0,0.08);">
+        <div class="program-card-action">
+          <a href="academy.html#collaborate" class="btn-program-action">
+            <span>Bring AdWise to Your School</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- Pillar 4: Corporate Masterclasses & Ad Advisory -->
-<section class="academy-section-alt" id="corporates">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
-      <div>
-        <img src="assets/images/academy/masterclass-at-castrol.jpg" alt="Corporate Masterclass" style="width: 100%; border-radius: 16px; box-shadow: 0 12px 30px rgba(0,0,0,0.08);">
-      </div>
-      <div>
-        <span class="academy-section-kicker">Enterprise Solutions</span>
-        <h2 class="academy-section-title">Corporate Masterclasses &amp; Ad Advisory</h2>
-        <p class="academy-section-desc" style="margin-bottom: 20px;">
-          On-site and hybrid customized workshops for corporate marketing, agency creative teams, brand custodians, and legal departments.
-        </p>
-        <ul style="color: #475569; line-height: 1.8; margin-bottom: 24px; padding-left: 20px;">
-          <li>Sector-specific compliance (FMCG, Healthcare, EdTech, BFSI, Gaming)</li>
-          <li>Dark patterns and UI/UX compliance audit training</li>
-          <li>Ad Advisory: Pre-release non-binding guidance on draft campaign concepts</li>
-          <li>Endorser due diligence advisory</li>
-        </ul>
-        <a href="academy.html#collaborate" class="btn-enroll-course">
-          <span>Book Corporate Workshop</span>
-        </a>
-      </div>
+<!-- 3. For Corporates -->
+<section class="programs-section-group" id="corporates">
+  <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 20px;">
+    
+    <div class="programs-group-header">
+      <span class="programs-group-kicker">Enterprise Compliance &amp; Legal Advisory</span>
+      <h2 class="programs-group-title">For Corporates</h2>
+      <p class="programs-group-desc">
+        Specialized industry masterclasses and pre-release advertising advisory services for brand custodians, agencies, and legal departments.
+      </p>
     </div>
+
+    <!-- 2-Column Grid with Middle Gap -->
+    <div class="programs-grid-2col">
+
+      <!-- Left Card: Masterclass with Smooth Physical Slider -->
+      <div class="program-card">
+        <div class="program-card-media" id="mcSliderBox">
+          <div class="program-slider-track" id="mcSliderTrack">
+            <div class="program-slide-item">
+              <img src="assets/images/academy/masterclass-at-castrol.jpg" alt="Masterclass at Castrol">
+            </div>
+            <div class="program-slide-item">
+              <img src="assets/images/academy/Coca-Cola-1.webp" alt="Corporate Workshop with Coca-Cola">
+            </div>
+            <div class="program-slide-item">
+              <img src="assets/images/academy/Marico-Limited.webp" alt="Corporate Workshop with Marico">
+            </div>
+            <div class="program-slide-item">
+              <img src="assets/images/academy/ITC-2.webp" alt="Corporate Workshop with ITC">
+            </div>
+            <div class="program-slide-item">
+              <img src="assets/images/academy/Mars-International.webp" alt="Corporate Workshop with Mars">
+            </div>
+            <div class="program-slide-item">
+              <img src="assets/images/academy/LOreal.webp" alt="Corporate Workshop with L'Oreal">
+            </div>
+            <div class="program-slide-item">
+              <img src="assets/images/academy/Britannia-Industries.jpg" alt="Corporate Workshop with Britannia">
+            </div>
+            <div class="program-slide-item">
+              <img src="assets/images/academy/McDonalds.jpg" alt="Corporate Workshop with McDonald's">
+            </div>
+            <div class="program-slide-item">
+              <img src="assets/images/academy/Godrej.jpg" alt="Corporate Workshop with Godrej">
+            </div>
+            <div class="program-slide-item">
+              <img src="assets/images/academy/Cipla.jpg" alt="Corporate Workshop with Cipla">
+            </div>
+          </div>
+
+          <!-- Slider Chevrons -->
+          <button type="button" class="program-slider-btn program-slider-btn-prev" onclick="prevMcSlide()" aria-label="Previous Slide">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button type="button" class="program-slider-btn program-slider-btn-next" onclick="nextMcSlide()" aria-label="Next Slide">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <!-- Slider Dots -->
+          <div class="program-slider-dots">
+            <button type="button" onclick="setMcSlide(0)" class="program-slider-dot active mc-dot" aria-label="Slide 1"></button>
+            <button type="button" onclick="setMcSlide(1)" class="program-slider-dot mc-dot" aria-label="Slide 2"></button>
+            <button type="button" onclick="setMcSlide(2)" class="program-slider-dot mc-dot" aria-label="Slide 3"></button>
+            <button type="button" onclick="setMcSlide(3)" class="program-slider-dot mc-dot" aria-label="Slide 4"></button>
+            <button type="button" onclick="setMcSlide(4)" class="program-slider-dot mc-dot" aria-label="Slide 5"></button>
+            <button type="button" onclick="setMcSlide(5)" class="program-slider-dot mc-dot" aria-label="Slide 6"></button>
+            <button type="button" onclick="setMcSlide(6)" class="program-slider-dot mc-dot" aria-label="Slide 7"></button>
+            <button type="button" onclick="setMcSlide(7)" class="program-slider-dot mc-dot" aria-label="Slide 8"></button>
+            <button type="button" onclick="setMcSlide(8)" class="program-slider-dot mc-dot" aria-label="Slide 9"></button>
+            <button type="button" onclick="setMcSlide(9)" class="program-slider-dot mc-dot" aria-label="Slide 10"></button>
+          </div>
+
+          <span class="program-media-badge">Executive Masterclasses</span>
+        </div>
+        <div class="program-card-body">
+          <span class="program-card-kicker">Corporate Masterclasses</span>
+          <h3 class="program-card-title">Masterclass</h3>
+          <p class="program-card-desc">
+            On-site and hybrid customized workshops for corporate marketing, agency creative teams, brand custodians, and legal departments.
+          </p>
+          <ul class="program-card-list">
+            <li>Sector-specific compliance (FMCG, Healthcare, EdTech, BFSI, Real Estate, Gaming)</li>
+            <li>Dark patterns and digital UI/UX compliance audit training for product designers</li>
+            <li>Regulatory due diligence for celebrity brand ambassadors &amp; influencer rosters</li>
+            <li>Interactive case studies resolving active Advertising Standards disputes</li>
+          </ul>
+          <div class="program-card-action">
+            <a href="academy.html#collaborate" class="btn-program-action">
+              <span>Book Corporate Workshop</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Card: Ad Advisory -->
+      <div class="program-card">
+        <div class="program-card-media">
+          <img src="assets/images/academy/Ad-Advisory-Thumbnail.webp" alt="Ad Advisory Services" class="program-card-img">
+          <span class="program-media-badge">Regulatory Advisory</span>
+        </div>
+        <div class="program-card-body">
+          <span class="program-card-kicker">Pre-Release Clearance</span>
+          <h3 class="program-card-title">Ad Advisory</h3>
+          <p class="program-card-desc">
+            The Advertising Advice Service assists advertisers in identifying any potential violation-related problems before campaigns go live, mitigating costly public complaints and reputational exposure.
+          </p>
+          <ul class="program-card-list">
+            <li>Pre-release non-binding guidance on draft campaign concepts and copy</li>
+            <li>Technical and claim substantiation review by specialized technical panels</li>
+            <li>Confidential evaluation protecting creative IP prior to release</li>
+            <li>Fast turnaround guidance from senior ASCI regulatory experts</li>
+          </ul>
+          <div class="program-card-action">
+            <a href="the-work-we-do/advertising-advice.html" class="btn-program-action">
+              <span>Explore Ad Advisory</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
@@ -4198,134 +4381,131 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ================= 3D HERO CARD DECK SHUFFLE SLIDER =================
-  let activeIndex = 0;
-  let isAnimating = false;
-  let autoSlideTimer = null;
+  // ================= FACULTY DEVELOPMENT PROGRAM (FDP) SLIDER =================
+  let currentFdp = 0;
+  let fdpInterval = null;
+  const fdpTrack = document.getElementById('fdpSliderTrack');
+  const fdpDots = document.querySelectorAll('.fdp-dot');
+  const fdpSlidesCount = 5;
 
-  const deckCards = document.querySelectorAll('.deck-card');
-  const dots = document.querySelectorAll('.slider-dot');
-  const heroVisual = document.querySelector('.hero-visual');
-  const deckContainer = document.getElementById('deckContainer');
-
-  function updateDeckPositions(targetIndex, direction = 'next') {
-    if (isAnimating || targetIndex === activeIndex) return;
-    isAnimating = true;
-
-    const currentCard = document.querySelector(`.deck-card[data-index="${activeIndex}"]`);
-
-    // 1. Fade away top card smoothly
-    if (currentCard) {
-      currentCard.classList.add(direction === 'next' ? 'fade-away-left' : 'fade-away-right');
+  window.showFdpSlide = function(idx) {
+    if (idx >= fdpSlidesCount) idx = 0;
+    if (idx < 0) idx = fdpSlidesCount - 1;
+    currentFdp = idx;
+    if (fdpTrack) {
+      fdpTrack.style.transform = `translateX(-${idx * 100}%)`;
     }
+    fdpDots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === idx);
+    });
+  };
 
-    // 2. Update active dot indicator
-    activeIndex = targetIndex;
-    dots.forEach((d, i) => d.classList.toggle('active', i === activeIndex));
+  window.nextFdpSlide = function() {
+    window.showFdpSlide(currentFdp + 1);
+  };
 
-    // 3. Re-assign card stack positions (pos-0 top main card, pos-1, pos-2, pos-3 back layers)
-    setTimeout(() => {
-      deckCards.forEach((card) => {
-        const cardIdx = parseInt(card.getAttribute('data-index'), 10);
-        const relPos = (cardIdx - activeIndex + 4) % 4;
+  window.prevFdpSlide = function() {
+    window.showFdpSlide(currentFdp - 1);
+  };
 
-        if (card === currentCard) {
-          // Disable CSS transition on old top card so it silently snaps to back position without flying back
-          card.style.transition = 'none';
-          card.className = 'deck-card';
-          card.classList.add(`pos-${relPos}`);
-          // Force DOM reflow
-          void card.offsetWidth;
-          // Restore CSS transition after silent repositioning
-          setTimeout(() => {
-            card.style.transition = '';
-          }, 40);
-        } else {
-          card.className = 'deck-card';
-          card.classList.add(`pos-${relPos}`);
-        }
-      });
+  window.setFdpSlide = function(idx) {
+    clearInterval(fdpInterval);
+    window.showFdpSlide(idx);
+    startFdpTimer();
+  };
 
-      setTimeout(() => {
-        isAnimating = false;
-      }, 300);
-    }, 280);
+  function startFdpTimer() {
+    clearInterval(fdpInterval);
+    fdpInterval = setInterval(() => {
+      window.nextFdpSlide();
+    }, 4000);
   }
 
-  // Dot click handlers
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      if (index === activeIndex) return;
-      const direction = index > activeIndex ? 'next' : 'prev';
-      resetAutoSlide();
-      updateDeckPositions(index, direction);
-    });
-  });
+  const fdpBox = document.getElementById('fdpSliderBox');
+  if (fdpBox) {
+    fdpBox.addEventListener('mouseenter', () => clearInterval(fdpInterval));
+    fdpBox.addEventListener('mouseleave', () => startFdpTimer());
 
-  // Clicking directly on the card stack shuffles to next
-  deckCards.forEach((card) => {
-    card.addEventListener('click', () => {
-      const nextIndex = (activeIndex + 1) % 4;
-      resetAutoSlide();
-      updateDeckPositions(nextIndex, 'next');
-    });
-  });
-
-  // Touch Swipe support for mobile / trackpad
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  if (deckContainer) {
-    deckContainer.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
+    let fdpTouchStart = 0;
+    fdpBox.addEventListener('touchstart', (e) => {
+      fdpTouchStart = e.touches[0].clientX;
+      clearInterval(fdpInterval);
     }, { passive: true });
 
-    deckContainer.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }, { passive: true });
-  }
-
-  function handleSwipe() {
-    const diffX = touchEndX - touchStartX;
-    if (Math.abs(diffX) > 40) {
-      if (diffX < 0) {
-        // Swipe left -> Next card
-        const nextIndex = (activeIndex + 1) % 4;
-        updateDeckPositions(nextIndex, 'next');
-      } else {
-        // Swipe right -> Prev card
-        const prevIndex = (activeIndex - 1 + 4) % 4;
-        updateDeckPositions(prevIndex, 'prev');
+    fdpBox.addEventListener('touchend', (e) => {
+      const diff = e.changedTouches[0].clientX - fdpTouchStart;
+      if (Math.abs(diff) > 35) {
+        if (diff < 0) window.nextFdpSlide();
+        else window.prevFdpSlide();
       }
-      resetAutoSlide();
+      startFdpTimer();
+    }, { passive: true });
+  }
+
+  startFdpTimer();
+
+  // ================= CORPORATE MASTERCLASS SLIDER =================
+  let currentMc = 0;
+  let mcInterval = null;
+  const mcTrack = document.getElementById('mcSliderTrack');
+  const mcDots = document.querySelectorAll('.mc-dot');
+  const mcSlidesCount = 10;
+
+  window.showMcSlide = function(idx) {
+    if (idx >= mcSlidesCount) idx = 0;
+    if (idx < 0) idx = mcSlidesCount - 1;
+    currentMc = idx;
+    if (mcTrack) {
+      mcTrack.style.transform = `translateX(-${idx * 100}%)`;
     }
+    mcDots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === idx);
+    });
+  };
+
+  window.nextMcSlide = function() {
+    window.showMcSlide(currentMc + 1);
+  };
+
+  window.prevMcSlide = function() {
+    window.showMcSlide(currentMc - 1);
+  };
+
+  window.setMcSlide = function(idx) {
+    clearInterval(mcInterval);
+    window.showMcSlide(idx);
+    startMcTimer();
+  };
+
+  function startMcTimer() {
+    clearInterval(mcInterval);
+    mcInterval = setInterval(() => {
+      window.nextMcSlide();
+    }, 3800);
   }
 
-  // Auto slide functionality
-  function startAutoSlide() {
-    stopAutoSlide();
-    autoSlideTimer = setInterval(() => {
-      const nextIndex = (activeIndex + 1) % 4;
-      updateDeckPositions(nextIndex, 'next');
-    }, 4200);
+  const mcBox = document.getElementById('mcSliderBox');
+  if (mcBox) {
+    mcBox.addEventListener('mouseenter', () => clearInterval(mcInterval));
+    mcBox.addEventListener('mouseleave', () => startMcTimer());
+
+    let mcTouchStart = 0;
+    mcBox.addEventListener('touchstart', (e) => {
+      mcTouchStart = e.touches[0].clientX;
+      clearInterval(mcInterval);
+    }, { passive: true });
+
+    mcBox.addEventListener('touchend', (e) => {
+      const diff = e.changedTouches[0].clientX - mcTouchStart;
+      if (Math.abs(diff) > 35) {
+        if (diff < 0) window.nextMcSlide();
+        else window.prevMcSlide();
+      }
+      startMcTimer();
+    }, { passive: true });
   }
 
-  function stopAutoSlide() {
-    if (autoSlideTimer) clearInterval(autoSlideTimer);
-  }
-
-  function resetAutoSlide() {
-    startAutoSlide();
-  }
-
-  if (heroVisual) {
-    heroVisual.addEventListener('mouseenter', stopAutoSlide);
-    heroVisual.addEventListener('mouseleave', startAutoSlide);
-  }
-
-  // Start auto slide on page load
-  startAutoSlide();
+  startMcTimer();
 
   // ================= RESPONSIBLE ADVERTISING 3D RIPPLE ANIMATION =================
   const rippleCanvas = document.getElementById('ctaRippleCanvas');

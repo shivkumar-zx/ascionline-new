@@ -15,6 +15,17 @@
     { "source": "/the-work-we-do/the-work-we-do.html", "destination": "/the-work-we-do.html" },
     { "source": "/the-work-we-do/index", "destination": "/index.html" },
     { "source": "/the-work-we-do/index.html", "destination": "/index.html" },
-    { "source": "/the-work-we-do/ASCI (3).html", "destination": "/index.html" }
+    { "source": "/the-work-we-do/ASCI (3).html", "destination": "/index.html" },
+    { "source": "/academy", "destination": "/academy.html" },
+    { "source": "/academy/courses", "destination": "/academy-courses.html" },
+    { "source": "/academy/courses-2", "destination": "/academy-courses.html" },
+    { "source": "/academy/our-programs", "destination": "/academy-programs.html" },
+    { "source": "/academy/reports", "destination": "/academy-reports.html" },
+    { "source": "/academy/events", "destination": "/academy-events.html" },
+    { "source": "/academy/category/event", "destination": "/academy-events.html" },
+    { "source": "/academy/about", "destination": "/academy-about.html" },
+    { "source": "/academy/about-asci-academy", "destination": "/academy-about.html" },
+    { "source": "/academy/my-account", "destination": "/academy-login.html" },
+    { "source": "/academy/cart", "destination": "/academy-login.html" }
   ]
 }

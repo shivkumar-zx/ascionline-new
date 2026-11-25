@@ -757,7 +757,7 @@
   font-size: 1rem !important;
   line-height: 1.55 !important;
   margin: 0 !important;
-  max-width: 520px;
+  max-width: 580px !important;
 }
 .cta-callout-title {
   font-family: var(--font-serif) !important;

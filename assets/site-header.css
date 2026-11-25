@@ -455,9 +455,9 @@ button {
 }
 
 .megamenu-highlight-desc {
-  font-size: 0.92rem;
-  color: #4b5563;
-  line-height: 1.6;
+  font-size: 15px !important;
+  color: #4b5563 !important;
+  line-height: 1.6 !important;
   margin-bottom: 24px;
 }
 

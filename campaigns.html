@@ -4396,7 +4396,7 @@ h3, h4, h5, h6,
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
-          <style id="unified-heading-scale">
+            <style id="unified-heading-scale">
   /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
   html body main h1,
   html body section h1,
@@ -4431,6 +4431,10 @@ h3, h4, h5, h6,
   html body section h3:not(.megamenu-highlight-title):not(.careers-modal-title),
   html body .report-card-title {
     font-size: 1.25rem !important;
+  }
+  html body .report-card-title {
+    font-family: var(--font-sans, 'Inter', sans-serif) !important;
+    font-variant-numeric: tabular-nums;
   }
   .cta-callout-section p,
   .cta-callout-section .cta-callout-desc,
@@ -5169,7 +5173,42 @@ h3, h4, h5, h6,
   </div>
 
   <!-- Main Section with Floating Controls Card (Matching people.html) -->
-<section class="campaigns-main-section" id="campaigns">
+  <!-- Directory Hero Section -->
+  <section class="directory-hero">
+    <div class="container">
+      <div class="directory-hero-content-wrapper">
+        <div class="directory-hero-left">
+          <h1 class="directory-page-title">Our Past Campaigns</h1>
+          <p class="directory-page-desc">
+            Find out more about the ads that ASCI has made in the past to encourage consumers to be more vigilant. Explore official video films, PSAs, and print campaigns from 2016 to 2025.
+          </p>
+        </div>
+
+        <div class="directory-hero-right">
+          <div class="directory-stats-grid">
+            <div class="stat-cell">
+              <div class="stat-number">113</div>
+              <div class="stat-label">Total Campaign Assets</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">26</div>
+              <div class="stat-label">Video Films &amp; PSAs</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">87</div>
+              <div class="stat-label">Print &amp; Digital Artboards</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">6</div>
+              <div class="stat-label">Major Campaign Years (2016 – 2025)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="campaigns-main-section" id="campaigns">
   <div class="container">
     <!-- Floating Sticky Controls Card (top: 155px matching people.html) -->
     <div class="directory-controls-card">

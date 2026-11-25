@@ -3735,6 +3735,65 @@ h3, h4, h5, h6,
     max-width: 580px !important;
   }
 </style>
+  <style id="academy-people-cards">
+  .academy-council-grid,
+  .academy-team-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)) !important;
+    gap: 22px !important;
+  }
+  .academy-member-card.people-style-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px !important;
+    padding: 22px 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    text-align: left !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease !important;
+  }
+  .academy-member-card.people-style-card:hover {
+    transform: translateY(-4px) !important;
+    border-color: #008779 !important;
+    box-shadow: 0 12px 24px rgba(0, 135, 121, 0.08) !important;
+  }
+  .people-style-avatar {
+    width: 68px !important;
+    height: 68px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 2px solid #e2e8f0 !important;
+    background: #f1f5f9 !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+  .people-style-info {
+    min-width: 0;
+    flex: 1;
+  }
+  .people-style-badge {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #008779;
+    margin-bottom: 3px;
+    letter-spacing: 0.01em;
+  }
+  .people-style-org {
+    font-size: 0.875rem;
+    color: #555b66;
+    line-height: 1.45;
+  }
+  @media (max-width: 560px) {
+    .academy-council-grid,
+    .academy-team-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
 </head>
 
     <!-- Top Notification Bar -->
@@ -3934,38 +3993,62 @@ h3, h4, h5, h6,
         </p>
       </div>
       <div class="academy-council-grid" style="margin-bottom: 56px;">
-        <div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Frame-49.png" alt="Chandan Mukherji" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Chandan Mukherji</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Sr. Vice President &amp; Director, Nestle</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Untitled-design-8.png" alt="Karthi Marshan" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Karthi Marshan</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Principal, Marshan.Ink (Invitee)</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Frame-47.png" alt="Nitin Saini" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Nitin Saini</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Vice President Marketing, Mondelez</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Frame-40.png" alt="Ruchira Jaitly" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Ruchira Jaitly</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">CMO, Diageo India</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Untitled-design-2-1.png" alt="Shri. Senthil Rajan" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Shri. Senthil Rajan</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Joint Secretary, Ministry of Information &amp; Broadcasting (Invitee)</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Frame-42.png" alt="Srinandan Sundaram" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Srinandan Sundaram</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Executive Director, Hindustan Unilever</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Frame-39.png" alt="Subhash Kamath" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Subhash Kamath</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Special Invitee</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/S.-Subramanyeswar.webp" alt="S. Subramanyeswar" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">S. Subramanyeswar</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Vice Chaiman ASCI, Group CEO &amp; Chief Strategy Officer-APAC, MullenLowe Lintas Group.</div>
+        <div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Frame-49.png" alt="Chandan Mukherji" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Apex Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Chandan Mukherji</h3>
+            <div class="people-style-org">Sr. Vice President &amp; Director, Nestle</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Untitled-design-8.png" alt="Karthi Marshan" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Apex Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Karthi Marshan</h3>
+            <div class="people-style-org">Principal, Marshan.Ink (Invitee)</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Frame-47.png" alt="Nitin Saini" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Apex Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Nitin Saini</h3>
+            <div class="people-style-org">Vice President Marketing, Mondelez</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Frame-40.png" alt="Ruchira Jaitly" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Apex Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Ruchira Jaitly</h3>
+            <div class="people-style-org">CMO, Diageo India</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Untitled-design-2-1.png" alt="Shri. Senthil Rajan" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Apex Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Shri. Senthil Rajan</h3>
+            <div class="people-style-org">Joint Secretary, Ministry of Information &amp; Broadcasting (Invitee)</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Frame-42.png" alt="Srinandan Sundaram" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Apex Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Srinandan Sundaram</h3>
+            <div class="people-style-org">Executive Director, Hindustan Unilever</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Frame-39.png" alt="Subhash Kamath" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Apex Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Subhash Kamath</h3>
+            <div class="people-style-org">Special Invitee</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/S.-Subramanyeswar.webp" alt="S. Subramanyeswar" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Apex Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">S. Subramanyeswar</h3>
+            <div class="people-style-org">Vice Chaiman ASCI, Group CEO &amp; Chief Strategy Officer-APAC, MullenLowe Lintas Group.</div>
+          </div>
         </div>
       </div>
 
@@ -3976,50 +4059,83 @@ h3, h4, h5, h6,
         </p>
       </div>
       <div class="academy-council-grid">
-        <div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Frame-37.png" alt="Apoorva Bapna" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Apoorva Bapna</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Independent Consultant (Invitee Member)</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Kaustubh-Jha.webp" alt="Kaustubh Jha" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Kaustubh Jha</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Head – Sports &amp; Entertainment Marketing, India and South West Asia at The Coca-Cola Company.</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Frame-38.png" alt="Kamal Batra" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Kamal Batra</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Director, Learning Services OpenText Inc. (Invitee)</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Frame-48.png" alt="Lipika Kumaran" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Lipika Kumaran</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Senior VP, Futurebrands (Invitee)</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Amit-Kumar-Nanchahal.webp" alt="Amit Kumar Nanchahal" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Amit Kumar Nanchahal</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Head- Corporate Communications – India and South Asia.</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Frame-41.png" alt="Prabha Narasimhan" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Prabha Narasimhan</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Managing Director, Colgate Palmolive India Ltd.</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Frame-36.png" alt="P.N. Vasanti" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">P.N. Vasanti</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Director General, Centre for Media Studies (Invitee)</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Untitled-design-2.png" alt="Mukta Maheshwari" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Mukta Maheshwari</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Chief Marketing Officer, Procter &amp; Gamble India</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Manoj-Gadgil.jpg" alt="Manoj Gadgil" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Manoj Gadgil</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Business Unit Head &amp; VP Marketing, Kenvue</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Untitled-design-4.png" alt="Sameer Chugh" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Sameer Chugh</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Chief Legal Officer, Games24x7</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Untitled-design-1.png" alt="Satish Sahoo" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Satish Sahoo</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Director- Marketing, Cipla Health Ltd</div>
+        <div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Frame-37.png" alt="Apoorva Bapna" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Vertical Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Apoorva Bapna</h3>
+            <div class="people-style-org">Independent Consultant (Invitee Member)</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Kaustubh-Jha.webp" alt="Kaustubh Jha" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Vertical Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Kaustubh Jha</h3>
+            <div class="people-style-org">Head – Sports &amp; Entertainment Marketing, India and South West Asia at The Coca-Cola Company.</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Frame-38.png" alt="Kamal Batra" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Vertical Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Kamal Batra</h3>
+            <div class="people-style-org">Director, Learning Services OpenText Inc. (Invitee)</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Frame-48.png" alt="Lipika Kumaran" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Vertical Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Lipika Kumaran</h3>
+            <div class="people-style-org">Senior VP, Futurebrands (Invitee)</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Amit-Kumar-Nanchahal.webp" alt="Amit Kumar Nanchahal" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Vertical Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Amit Kumar Nanchahal</h3>
+            <div class="people-style-org">Head- Corporate Communications – India and South Asia.</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Frame-41.png" alt="Prabha Narasimhan" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Vertical Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Prabha Narasimhan</h3>
+            <div class="people-style-org">Managing Director, Colgate Palmolive India Ltd.</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Frame-36.png" alt="P.N. Vasanti" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Vertical Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">P.N. Vasanti</h3>
+            <div class="people-style-org">Director General, Centre for Media Studies (Invitee)</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Untitled-design-2.png" alt="Mukta Maheshwari" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Vertical Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Mukta Maheshwari</h3>
+            <div class="people-style-org">Chief Marketing Officer, Procter &amp; Gamble India</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Manoj-Gadgil.jpg" alt="Manoj Gadgil" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Vertical Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Manoj Gadgil</h3>
+            <div class="people-style-org">Business Unit Head &amp; VP Marketing, Kenvue</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Untitled-design-4.png" alt="Sameer Chugh" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Vertical Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Sameer Chugh</h3>
+            <div class="people-style-org">Chief Legal Officer, Games24x7</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Untitled-design-1.png" alt="Satish Sahoo" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">Vertical Council</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Satish Sahoo</h3>
+            <div class="people-style-org">Director- Marketing, Cipla Health Ltd</div>
+          </div>
         </div>
       </div>
     </div>
@@ -4072,14 +4188,20 @@ h3, h4, h5, h6,
         </p>
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; max-width: 620px;">
-        <div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/Namrata-Image.png" alt="Namrata Bachani" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Namrata Bachani</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Director- ASCI Academy</div>
-        </div><div class="academy-member-card" style="text-align:center;padding:24px 18px;">
-          <img src="assets/images/academy/esha-vaidya.webp" alt="Esha Vaidya" class="academy-member-avatar" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid #f1f5f9;">
-          <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#002d62;margin-bottom:6px;">Esha Vaidya</h3>
-          <div class="academy-member-org" style="font-size:0.86rem;color:#475569;line-height:1.45;">Senior Manager - ASCI Academy</div>
+        <div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/Namrata-Image.png" alt="Namrata Bachani" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">ASCI Academy Team</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Namrata Bachani</h3>
+            <div class="people-style-org">Director- ASCI Academy</div>
+          </div>
+        </div><div class="academy-member-card people-style-card">
+          <img src="assets/images/academy/esha-vaidya.webp" alt="Esha Vaidya" class="people-style-avatar">
+          <div class="people-style-info">
+            <div class="people-style-badge">ASCI Academy Team</div>
+            <h3 class="academy-member-name" style="font-family:var(--font-serif);color:#0f172a;margin:0 0 4px 0;line-height:1.3;">Esha Vaidya</h3>
+            <div class="people-style-org">Senior Manager - ASCI Academy</div>
+          </div>
         </div>
       </div>
     </div>

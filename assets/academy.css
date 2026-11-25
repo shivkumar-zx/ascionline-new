@@ -170,7 +170,8 @@
   border-right: none;
 }
 .academy-stat-number {
-  font-family: var(--font-serif, 'Domine', Georgia, serif);
+  font-family: var(--font-sans, 'Inter', sans-serif) !important;
+  font-variant-numeric: tabular-nums;
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--color-asci-green, #086b59);
@@ -736,5 +737,89 @@
   .hero-unified-grid {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
+  }
+}
+
+/* ================= UNIFIED YELLOW CTA CALLOUT BANNER ================= */
+.cta-callout-section {
+  background: #f7a719 !important;
+  background-image: none !important;
+  color: #10161b !important;
+  padding: 70px 0 58px !important;
+  text-align: left !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.cta-callout-section p,
+.cta-callout-section .cta-callout-desc,
+.cta-callout-desc {
+  color: #111827 !important;
+  font-size: 1rem !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+  max-width: 520px;
+}
+.cta-callout-title {
+  font-family: var(--font-serif) !important;
+  font-size: 2.1rem !important;
+  line-height: 1.2 !important;
+  font-weight: 500 !important;
+  color: #000000 !important;
+  letter-spacing: -0.015em;
+  margin-bottom: 16px !important;
+}
+.cta-split-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 72px !important;
+  align-items: stretch !important;
+}
+.cta-col {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+.cta-col-left {
+  padding-right: 52px !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.14) !important;
+}
+.cta-col-copy {
+  margin-bottom: 30px !important;
+}
+.cta-callout-section .btn-cta-membership {
+  min-width: 0 !important;
+  width: fit-content !important;
+  justify-content: center !important;
+  background: #30363b !important;
+  border: 0 !important;
+  color: #ffffff !important;
+  padding: 15px 32px !important;
+  box-shadow: none !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  border-radius: 9999px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+.cta-callout-section .btn-cta-membership:hover {
+  background: #20262b !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+@media (max-width: 768px) {
+  .cta-callout-section {
+    padding: 46px 0 40px !important;
+  }
+  .cta-split-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .cta-col-left {
+    padding-right: 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14) !important;
+    padding-bottom: 32px !important;
   }
 }

@@ -3804,9 +3804,10 @@ h3, h4, h5, h6,
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
-  <style id="unified-heading-scale">
+      <style id="unified-heading-scale">
   /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
   main h1,
+  section h1,
   .academy-hero-title,
   .about-page-title,
   .selfreg-hero-title,
@@ -3817,14 +3818,25 @@ h3, h4, h5, h6,
     font-size: clamp(2rem, 3.75vw, 3rem) !important;
   }
   main h2:not(.cta-callout-title):not(.search-modal-title),
+  section h2:not(.cta-callout-title):not(.search-modal-title),
   .section-headline,
   .section-heading,
   .academy-section-title,
   .exec-heading {
     font-size: clamp(1.65rem, 2.8vw, 2.25rem) !important;
   }
-  main h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
+  main h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  section h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
     font-size: 1.25rem !important;
+  }
+  .cta-callout-section p,
+  .cta-callout-section .cta-callout-desc,
+  .cta-callout-desc {
+    color: #111827 !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    max-width: 580px !important;
   }
 </style>
 </head>
@@ -3995,7 +4007,7 @@ h3, h4, h5, h6,
       <!-- Left: Purpose & CTAs -->
       <div>
 
-        <h1 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.2vw, 2.7rem); font-weight: 400; line-height: 1.2; color: #002d62; margin: 0 0 16px 0;">
+        <h1 style="font-family: var(--font-serif); font-weight: 400; line-height: 1.2; color: #002d62; margin: 0 0 16px 0;">
           Build advertising people can trust.
         </h1>
 
@@ -4144,7 +4156,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 20px;">
     <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 16px;">
       <div>
-        <h2 style="font-family: var(--font-serif); font-size: clamp(1.9rem, 3vw, 2.5rem); font-weight: 400; color: #002d62; margin: 0;">
+        <h2 style="font-family: var(--font-serif); font-weight: 400; color: #002d62; margin: 0;">
           Featured Certification Courses
         </h2>
       </div>
@@ -4170,7 +4182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div style="padding: 22px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.25rem; font-weight: 600; color: #002d62; margin: 10px 0;">
+            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #002d62; margin: 10px 0;">
               Ethical UI/UX Designs: Building Consumer Trust
             </h3>
             <p style="font-size: 0.92rem; line-height: 1.55; color: #475569; margin-bottom: 16px;">
@@ -4202,7 +4214,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div style="padding: 22px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.25rem; font-weight: 600; color: #002d62; margin: 10px 0;">
+            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #002d62; margin: 10px 0;">
               The ASCI Guide to Responsible Advertising
             </h3>
             <p style="font-size: 0.92rem; line-height: 1.55; color: #475569; margin-bottom: 16px;">
@@ -4234,7 +4246,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div style="padding: 22px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.25rem; font-weight: 600; color: #002d62; margin: 10px 0;">
+            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #002d62; margin: 10px 0;">
               The Responsible Influencing Playbook
             </h3>
             <p style="font-size: 0.92rem; line-height: 1.55; color: #475569; margin-bottom: 16px;">
@@ -4264,7 +4276,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <section id="workshops" style="padding: 72px 0; background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
   <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 20px;">
     <div style="width: 100%; margin: 0 0 40px 0; text-align: left;">
-      <h2 style="font-family: var(--font-serif); font-size: clamp(1.9rem, 3vw, 2.5rem); font-weight: 400; color: #002d62; margin-bottom: 12px;">
+      <h2 style="font-family: var(--font-serif); font-weight: 400; color: #002d62; margin-bottom: 12px;">
         Workshops, Masterclasses &amp; Campus Programs
       </h2>
       <p style="font-size: 1.05rem; color: #64748b; line-height: 1.6; width: 100%;">
@@ -4282,7 +4294,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <span style="font-size: 0.75rem; font-weight: 700; color: #086b59; background: rgba(8, 107, 89, 0.1); padding: 3px 8px; border-radius: 999px; text-transform: uppercase;">
               In-Person / Hybrid • For Educators
             </span>
-            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.25rem; font-weight: 600; color: #002d62; margin: 10px 0;">
+            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #002d62; margin: 10px 0;">
               Empowering Ethical Advertising (FDP)
             </h3>
             <p style="font-size: 0.9rem; line-height: 1.6; color: #475569; margin: 0;">
@@ -4305,7 +4317,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <span style="font-size: 0.75rem; font-weight: 700; color: #002d62; background: rgba(0, 45, 98, 0.08); padding: 3px 8px; border-radius: 999px; text-transform: uppercase;">
               On-Site Corporate Workshop
             </span>
-            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.25rem; font-weight: 600; color: #002d62; margin: 10px 0;">
+            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #002d62; margin: 10px 0;">
               Corporate Masterclass &amp; Executive Training
             </h3>
             <p style="font-size: 0.9rem; line-height: 1.6; color: #475569; margin: 0;">
@@ -4328,7 +4340,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <span style="font-size: 0.75rem; font-weight: 700; color: #e05829; background: rgba(224, 88, 41, 0.1); padding: 3px 8px; border-radius: 999px; text-transform: uppercase;">
               Campus Program • Media Students
             </span>
-            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.25rem; font-weight: 600; color: #002d62; margin: 10px 0;">
+            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #002d62; margin: 10px 0;">
               ASCI Placement Program (APP)
             </h3>
             <p style="font-size: 0.9rem; line-height: 1.6; color: #475569; margin: 0;">
@@ -4355,7 +4367,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <!-- Left Column: Reports with Real Live Report Cover Thumbnails -->
       <div style="display: flex; flex-direction: column; height: 100%;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; border-bottom: 2px solid #086b59; padding-bottom: 10px;">
-          <h2 style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 400; color: #002d62; margin: 0;">
+          <h2 style="font-family: var(--font-serif); font-weight: 400; color: #002d62; margin: 0;">
             Featured Reports &amp; Whitepapers
           </h2>
           <a href="academy-reports.html" style="font-size: 0.88rem; font-weight: 700; color: #086b59; text-decoration: none;">View All &rarr;</a>
@@ -4370,7 +4382,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span style="font-size: 0.72rem; font-weight: 700; color: #086b59; background: rgba(8, 107, 89, 0.1); padding: 2px 8px; border-radius: 999px; text-transform: uppercase;">
                 Diversity &amp; Inclusion Benchmark
               </span>
-              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.12rem; font-weight: 600; color: #002d62; margin: 5px 0;">
+              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #002d62; margin: 5px 0;">
                 D&amp;I Landscape of Indian Advertising
               </h3>
               <p style="font-size: 0.86rem; color: #64748b; line-height: 1.45; margin: 0 0 8px 0;">
@@ -4389,7 +4401,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span style="font-size: 0.72rem; font-weight: 700; color: #e05829; background: rgba(224, 88, 41, 0.1); padding: 2px 8px; border-radius: 999px; text-transform: uppercase;">
                 E-Commerce UX Compliance
               </span>
-              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.12rem; font-weight: 600; color: #002d62; margin: 5px 0;">
+              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #002d62; margin: 5px 0;">
                 What The Sigma: Dark Patterns in E-Commerce
               </h3>
               <p style="font-size: 0.86rem; color: #64748b; line-height: 1.45; margin: 0 0 8px 0;">
@@ -4408,7 +4420,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span style="font-size: 0.72rem; font-weight: 700; color: #026095; background: rgba(2, 96, 149, 0.1); padding: 2px 8px; border-radius: 999px; text-transform: uppercase;">
                 Digital Ad-Tech &amp; AI
               </span>
-              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.12rem; font-weight: 600; color: #002d62; margin: 5px 0;">
+              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #002d62; margin: 5px 0;">
                 ADNext: Navigating Future of Digital Ads
               </h3>
               <p style="font-size: 0.86rem; color: #64748b; line-height: 1.45; margin: 0 0 8px 0;">
@@ -4426,7 +4438,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <!-- Right Column: Events with Real Live Launch Photo & Video Player -->
       <div id="events" style="display: flex; flex-direction: column; height: 100%;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; border-bottom: 2px solid #e05829; padding-bottom: 10px;">
-          <h2 style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 400; color: #002d62; margin: 0;">
+          <h2 style="font-family: var(--font-serif); font-weight: 400; color: #002d62; margin: 0;">
             Academy Events &amp; Milestones
           </h2>
           <span style="font-size: 0.85rem; font-weight: 700; color: #e05829;">Inaugural Charter</span>
@@ -4445,7 +4457,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
 
           <div>
-            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.25rem; font-weight: 600; color: #002d62; margin-bottom: 8px;">
+            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #002d62; margin-bottom: 8px;">
               ASCI Academy Official Launch Event
             </h3>
             <p style="font-size: 0.88rem; color: #475569; line-height: 1.5; margin-bottom: 14px;">
@@ -4481,7 +4493,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       <!-- Left Column: Section Header & Collaboration Tracks -->
       <div style="display: flex; flex-direction: column;">
-        <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.2vw, 2.6rem); font-weight: 400; color: #002d62; margin-bottom: 14px; line-height: 1.25;">
+        <h2 style="font-family: var(--font-serif); font-weight: 400; color: #002d62; margin-bottom: 14px; line-height: 1.25;">
           How Can I Collaborate?
         </h2>
         <p style="font-size: 1.02rem; color: #475569; line-height: 1.6; margin-bottom: 26px;">
@@ -4496,7 +4508,7 @@ document.addEventListener('DOMContentLoaded', function() {
               1
             </div>
             <div>
-              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.15rem; font-weight: 600; color: #002d62; margin: 0 0 4px 0;">
+              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #002d62; margin: 0 0 4px 0;">
                 Universities &amp; Colleges
               </h3>
               <p style="font-size: 0.88rem; color: #64748b; line-height: 1.5; margin: 0;">
@@ -4510,7 +4522,7 @@ document.addEventListener('DOMContentLoaded', function() {
               2
             </div>
             <div>
-              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.15rem; font-weight: 600; color: #002d62; margin: 0 0 4px 0;">
+              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #002d62; margin: 0 0 4px 0;">
                 Brands &amp; Creative Agencies
               </h3>
               <p style="font-size: 0.88rem; color: #64748b; line-height: 1.5; margin: 0;">
@@ -4524,7 +4536,7 @@ document.addEventListener('DOMContentLoaded', function() {
               3
             </div>
             <div>
-              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.15rem; font-weight: 600; color: #002d62; margin: 0 0 4px 0;">
+              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #002d62; margin: 0 0 4px 0;">
                 Creators &amp; Talent Agencies
               </h3>
               <p style="font-size: 0.88rem; color: #64748b; line-height: 1.5; margin: 0;">
@@ -4538,7 +4550,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       <!-- Right Column: Section Header & Interactive Collaboration Form -->
       <div style="display: flex; flex-direction: column;">
-        <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.2vw, 2.6rem); font-weight: 400; color: #002d62; margin-bottom: 14px; line-height: 1.25;">
+        <h2 style="font-family: var(--font-serif); font-weight: 400; color: #002d62; margin-bottom: 14px; line-height: 1.25;">
           Inquire / Register Your Interest
         </h2>
         <p style="font-size: 1.02rem; color: #475569; line-height: 1.6; margin-bottom: 26px;">

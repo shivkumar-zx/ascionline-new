@@ -3685,9 +3685,10 @@ h3, h4, h5, h6,
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
-  <style id="unified-heading-scale">
+      <style id="unified-heading-scale">
   /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
   main h1,
+  section h1,
   .academy-hero-title,
   .about-page-title,
   .selfreg-hero-title,
@@ -3698,14 +3699,25 @@ h3, h4, h5, h6,
     font-size: clamp(2rem, 3.75vw, 3rem) !important;
   }
   main h2:not(.cta-callout-title):not(.search-modal-title),
+  section h2:not(.cta-callout-title):not(.search-modal-title),
   .section-headline,
   .section-heading,
   .academy-section-title,
   .exec-heading {
     font-size: clamp(1.65rem, 2.8vw, 2.25rem) !important;
   }
-  main h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
+  main h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  section h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
     font-size: 1.25rem !important;
+  }
+  .cta-callout-section p,
+  .cta-callout-section .cta-callout-desc,
+  .cta-callout-desc {
+    color: #111827 !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    max-width: 580px !important;
   }
 </style>
 </head>
@@ -3830,7 +3842,7 @@ h3, h4, h5, h6,
 
     <!-- Page Header -->
     <div style="text-align: center; margin-bottom: 40px;">
-      <h1 style="font-family: var(--font-serif); font-size: clamp(2.2rem, 3.8vw, 3rem); font-weight: 700; color: #002d62; margin-bottom: 12px;">
+      <h1 style="font-family: var(--font-serif); font-weight: 700; color: #002d62; margin-bottom: 12px;">
         Learner Account &amp; Course Portal
       </h1>
       <p style="font-size: 1.1rem; color: #64748b; max-width: 620px; margin: 0 auto;">
@@ -3852,7 +3864,7 @@ h3, h4, h5, h6,
 
     <!-- VIEW 1: SIGN IN FORM -->
     <div id="viewLogin" style="max-width: 520px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(0, 45, 98, 0.08);">
-      <h2 style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: #002d62; margin-bottom: 8px; text-align: center;">
+      <h2 style="font-family: var(--font-serif); font-weight: 700; color: #002d62; margin-bottom: 8px; text-align: center;">
         Sign In to Your Courses
       </h2>
       <p style="font-size: 0.92rem; color: #64748b; text-align: center; margin-bottom: 28px;">
@@ -3915,7 +3927,7 @@ h3, h4, h5, h6,
           </div>
           <div>
             <div style="font-size: 0.85rem; font-weight: 700; color: #e05829; text-transform: uppercase; letter-spacing: 0.05em;">Learner Portal • Enrolled Member</div>
-            <h2 style="font-family: var(--font-serif); font-size: 1.55rem; font-weight: 700; color: #002d62; margin: 4px 0;">
+            <h2 style="font-family: var(--font-serif); font-weight: 700; color: #002d62; margin: 4px 0;">
               Welcome back, Priya Sharma
             </h2>
             <div style="font-size: 0.9rem; color: #64748b;">Member ID: <b>ASCI-LRN-2026-8812</b> • Enterprise Brand License</div>
@@ -3937,7 +3949,7 @@ h3, h4, h5, h6,
         
         <!-- Left Column: Active Enrolled Courses -->
         <div style="display: flex; flex-direction: column; gap: 20px;">
-          <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.35rem; font-weight: 700; color: #002d62; margin: 0;">
+          <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #002d62; margin: 0;">
             My Enrolled Certifications
           </h3>
 

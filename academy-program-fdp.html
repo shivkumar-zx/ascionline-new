@@ -3686,9 +3686,10 @@ h3, h4, h5, h6,
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
-  <style id="unified-heading-scale">
+      <style id="unified-heading-scale">
   /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
   main h1,
+  section h1,
   .academy-hero-title,
   .about-page-title,
   .selfreg-hero-title,
@@ -3699,14 +3700,25 @@ h3, h4, h5, h6,
     font-size: clamp(2rem, 3.75vw, 3rem) !important;
   }
   main h2:not(.cta-callout-title):not(.search-modal-title),
+  section h2:not(.cta-callout-title):not(.search-modal-title),
   .section-headline,
   .section-heading,
   .academy-section-title,
   .exec-heading {
     font-size: clamp(1.65rem, 2.8vw, 2.25rem) !important;
   }
-  main h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
+  main h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  section h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
     font-size: 1.25rem !important;
+  }
+  .cta-callout-section p,
+  .cta-callout-section .cta-callout-desc,
+  .cta-callout-desc {
+    color: #111827 !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    max-width: 580px !important;
   }
 </style>
 </head>
@@ -3884,19 +3896,19 @@ h3, h4, h5, h6,
     <h2 class="academy-section-title" style="margin-bottom: 28px;">What&rsquo;s in it for you</h2>
     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px;">
       <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:24px;">
-        <h3 style="font-family:var(--font-serif);font-size:1.15rem;color:#002d62;margin-bottom:10px;">Boost Your Credentials</h3>
+        <h3 style="font-family:var(--font-serif);color:#002d62;margin-bottom:10px;">Boost Your Credentials</h3>
         <p style="font-size:0.9rem;color:#475569;line-height:1.6;">Achieve dual certification with a personalised ASCI digital certificate, enhancing your professional profile.</p>
       </div>
       <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:24px;">
-        <h3 style="font-family:var(--font-serif);font-size:1.15rem;color:#002d62;margin-bottom:10px;">Seamless Learning Experience</h3>
+        <h3 style="font-family:var(--font-serif);color:#002d62;margin-bottom:10px;">Seamless Learning Experience</h3>
         <p style="font-size:0.9rem;color:#475569;line-height:1.6;">Enjoy dedicated access to the ASCI LMS, your hub for all program resources.</p>
       </div>
       <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:24px;">
-        <h3 style="font-family:var(--font-serif);font-size:1.15rem;color:#002d62;margin-bottom:10px;">Simplify Your Teaching</h3>
+        <h3 style="font-family:var(--font-serif);color:#002d62;margin-bottom:10px;">Simplify Your Teaching</h3>
         <p style="font-size:0.9rem;color:#475569;line-height:1.6;">Utilise pre-prepared class materials and assessments, making your teaching more efficient and effective.</p>
       </div>
       <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:24px;">
-        <h3 style="font-family:var(--font-serif);font-size:1.15rem;color:#002d62;margin-bottom:10px;">Stay Informed &amp; Grow</h3>
+        <h3 style="font-family:var(--font-serif);color:#002d62;margin-bottom:10px;">Stay Informed &amp; Grow</h3>
         <p style="font-size:0.9rem;color:#475569;line-height:1.6;">Get your own Responsible Advertising handbook and benefit from free e-learning courses for yourself and students.</p>
       </div>
     </div>
@@ -3911,7 +3923,7 @@ h3, h4, h5, h6,
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
       <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:28px;display:flex;flex-direction:column;">
         <img src="assets/images/academy/Empowering_Ethical_Advertising_UID_Certificate.webp" alt="Certificate of Completion" style="width:100%;height:220px;object-fit:contain;background:#f8fafc;border-radius:10px;padding:10px;margin-bottom:20px;">
-        <h3 style="font-family:var(--font-serif);font-size:1.35rem;color:#002d62;margin-bottom:10px;">Certificate of Completion</h3>
+        <h3 style="font-family:var(--font-serif);color:#002d62;margin-bottom:10px;">Certificate of Completion</h3>
         <p style="color:#475569;font-size:0.92rem;line-height:1.6;margin-bottom:12px;">Awarded upon successful FDP completion. This certificate empowers faculty from Media/Communications, Management/Business, Law, Marketing, and Advertising to:</p>
         <ul style="color:#475569;padding-left:20px;line-height:1.7;font-size:0.9rem;">
           <li>Train their students effectively.</li>
@@ -3920,7 +3932,7 @@ h3, h4, h5, h6,
       </div>
       <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:28px;display:flex;flex-direction:column;">
         <img src="assets/images/academy/ASCI-Academy-FDP-Certificate-Gold-Certificate.jpg" alt="Gold Standard FDP Certificate" style="width:100%;height:220px;object-fit:contain;background:#f8fafc;border-radius:10px;padding:10px;margin-bottom:20px;">
-        <h3 style="font-family:var(--font-serif);font-size:1.35rem;color:#002d62;margin-bottom:10px;">Gold Standard FDP Certificate</h3>
+        <h3 style="font-family:var(--font-serif);color:#002d62;margin-bottom:10px;">Gold Standard FDP Certificate</h3>
         <p style="color:#475569;font-size:0.92rem;line-height:1.6;margin-bottom:12px;">Enhance student learning to get awarded the prestigious Gold Standard FDP Certificate and join ASCI&rsquo;s Faculty Master Club:</p>
         <ul style="color:#475569;padding-left:20px;line-height:1.7;font-size:0.9rem;">
           <li>Recognition of both you and your college on ASCI platforms &amp; newsletters</li>
@@ -3939,7 +3951,7 @@ h3, h4, h5, h6,
     <h2 class="academy-section-title" style="margin-bottom: 28px;">What does the course cover?</h2>
     <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
       <div style="background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #002d62;border-radius:12px;padding:24px;">
-        <h3 style="font-family:var(--font-serif);font-size:1.25rem;color:#002d62;margin-bottom:12px;">Session <span style="font-family: var(--font-sans, 'Inter', sans-serif) !important;">1</span>: Responsible Advertising</h3>
+        <h3 style="font-family:var(--font-serif);color:#002d62;margin-bottom:12px;">Session <span style="font-family: var(--font-sans, 'Inter', sans-serif) !important;">1</span>: Responsible Advertising</h3>
         <ul style="color:#475569;padding-left:18px;line-height:1.75;font-size:0.92rem;">
           <li>The Need for Responsible Advertising in Today’s Society</li>
           <li>The Case for Advertising Self-Regulation</li>
@@ -3947,7 +3959,7 @@ h3, h4, h5, h6,
         </ul>
       </div>
       <div style="background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #e05829;border-radius:12px;padding:24px;">
-        <h3 style="font-family:var(--font-serif);font-size:1.25rem;color:#002d62;margin-bottom:12px;">Session <span style="font-family: var(--font-sans, 'Inter', sans-serif) !important;">2</span>: The ASCI Code</h3>
+        <h3 style="font-family:var(--font-serif);color:#002d62;margin-bottom:12px;">Session <span style="font-family: var(--font-sans, 'Inter', sans-serif) !important;">2</span>: The ASCI Code</h3>
         <ul style="color:#475569;padding-left:18px;line-height:1.75;font-size:0.92rem;">
           <li>Principles of Responsible Advertising &amp; The Four Chapters</li>
           <li>Interpreting and Actioning the ASCI Code</li>
@@ -3955,7 +3967,7 @@ h3, h4, h5, h6,
         </ul>
       </div>
       <div style="background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #086b59;border-radius:12px;padding:24px;">
-        <h3 style="font-family:var(--font-serif);font-size:1.25rem;color:#002d62;margin-bottom:12px;">Session <span style="font-family: var(--font-sans, 'Inter', sans-serif) !important;">3</span>: The Evolving Role of ASCI</h3>
+        <h3 style="font-family:var(--font-serif);color:#002d62;margin-bottom:12px;">Session <span style="font-family: var(--font-sans, 'Inter', sans-serif) !important;">3</span>: The Evolving Role of ASCI</h3>
         <ul style="color:#475569;padding-left:18px;line-height:1.75;font-size:0.92rem;">
           <li>Digitisation of the Complaint Management System</li>
           <li>Preventive Mechanisms &amp; Collaborations with Government</li>
@@ -3963,7 +3975,7 @@ h3, h4, h5, h6,
         </ul>
       </div>
       <div style="background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #7c3aed;border-radius:12px;padding:24px;">
-        <h3 style="font-family:var(--font-serif);font-size:1.25rem;color:#002d62;margin-bottom:12px;">Session <span style="font-family: var(--font-sans, 'Inter', sans-serif) !important;">4</span>: From Responsive to Responsible Advertising</h3>
+        <h3 style="font-family:var(--font-serif);color:#002d62;margin-bottom:12px;">Session <span style="font-family: var(--font-sans, 'Inter', sans-serif) !important;">4</span>: From Responsive to Responsible Advertising</h3>
         <ul style="color:#475569;padding-left:18px;line-height:1.75;font-size:0.92rem;">
           <li>Impact of Brand Communications</li>
           <li>Using Ads to Influence Society in the Right Way</li>

@@ -3673,9 +3673,10 @@ h3, h4, h5, h6,
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
-  <style id="unified-heading-scale">
+      <style id="unified-heading-scale">
   /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
   main h1,
+  section h1,
   .academy-hero-title,
   .about-page-title,
   .selfreg-hero-title,
@@ -3686,14 +3687,25 @@ h3, h4, h5, h6,
     font-size: clamp(2rem, 3.75vw, 3rem) !important;
   }
   main h2:not(.cta-callout-title):not(.search-modal-title),
+  section h2:not(.cta-callout-title):not(.search-modal-title),
   .section-headline,
   .section-heading,
   .academy-section-title,
   .exec-heading {
     font-size: clamp(1.65rem, 2.8vw, 2.25rem) !important;
   }
-  main h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
+  main h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  section h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
     font-size: 1.25rem !important;
+  }
+  .cta-callout-section p,
+  .cta-callout-section .cta-callout-desc,
+  .cta-callout-desc {
+    color: #111827 !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    max-width: 580px !important;
   }
 </style>
 </head>

@@ -6763,9 +6763,10 @@ h3 .heading-num {
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
-  <style id="unified-heading-scale">
+      <style id="unified-heading-scale">
   /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
   main h1,
+  section h1,
   .academy-hero-title,
   .about-page-title,
   .selfreg-hero-title,
@@ -6776,14 +6777,25 @@ h3 .heading-num {
     font-size: clamp(2rem, 3.75vw, 3rem) !important;
   }
   main h2:not(.cta-callout-title):not(.search-modal-title),
+  section h2:not(.cta-callout-title):not(.search-modal-title),
   .section-headline,
   .section-heading,
   .academy-section-title,
   .exec-heading {
     font-size: clamp(1.65rem, 2.8vw, 2.25rem) !important;
   }
-  main h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
+  main h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  section h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
     font-size: 1.25rem !important;
+  }
+  .cta-callout-section p,
+  .cta-callout-section .cta-callout-desc,
+  .cta-callout-desc {
+    color: #111827 !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    max-width: 580px !important;
   }
 </style>
 </head>
@@ -7560,7 +7572,7 @@ h3 .heading-num {
 
     <div class="container" style="position: relative; z-index: 2;">
       <!-- Main Section Heading: Identical 3rem font-size and 500 weight matching other titles -->
-      <h2 class="section-heading" style="font-family: var(--font-serif) !important; font-size: 3rem !important; font-weight: 500 !important; color: #0f172a !important; margin-bottom: 36px !important; letter-spacing: -0.015em !important; line-height: 1.15;">
+      <h2 class="section-heading" style="font-family: var(--font-serif) !important; font-weight: 500 !important; color: #0f172a !important; margin-bottom: 36px !important; letter-spacing: -0.015em !important; line-height: 1.15;">
         Purpose of Self-Regulation in <br>Advertising
       </h2>
 
@@ -7582,7 +7594,7 @@ h3 .heading-num {
             </div>
 
             <!-- Card Headline -->
-            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.45rem; font-weight: 600; color: #0f172a; line-height: 1.35; margin-bottom: 14px;">
+            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #0f172a; line-height: 1.35; margin-bottom: 14px;">
               Protecting Consumers. Supporting Responsible Industry.
             </h3>
 
@@ -7658,7 +7670,7 @@ h3 .heading-num {
             </div>
 
             <!-- Card Headline -->
-            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.45rem; font-weight: 600; color: #0f172a; line-height: 1.35; margin-bottom: 14px;">
+            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #0f172a; line-height: 1.35; margin-bottom: 14px;">
               Vision <span class="font-inter">2032</span>: Building &amp; Measuring Ecosystem Trust
             </h3>
 
@@ -7756,7 +7768,7 @@ h3 .heading-num {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </div>
-            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.22rem; font-weight: 700; color: #0f172a; margin: 0;">
+            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin: 0;">
               For consumers
             </h3>
           </div>
@@ -7776,7 +7788,7 @@ h3 .heading-num {
                 <line x1="6" y1="20" x2="6" y2="16"></line>
               </svg>
             </div>
-            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.22rem; font-weight: 700; color: #0f172a; margin: 0;">
+            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin: 0;">
               For the advertising industry
             </h3>
           </div>
@@ -7796,7 +7808,7 @@ h3 .heading-num {
                 <path d="M9 10a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v11H9V10z"></path>
               </svg>
             </div>
-            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.22rem; font-weight: 700; color: #0f172a; margin: 0;">
+            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin: 0;">
               For policymakers
             </h3>
           </div>
@@ -7816,7 +7828,7 @@ h3 .heading-num {
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
               </svg>
             </div>
-            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.22rem; font-weight: 700; color: #0f172a; margin: 0;">
+            <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin: 0;">
               For society
             </h3>
           </div>
@@ -7844,7 +7856,7 @@ h3 .heading-num {
     <div class="container">
       <div class="work-section-header">
         <div class="work-section-title-row">
-          <h2 class="section-heading" style="font-family: var(--font-serif) !important; font-size: 3rem !important; font-weight: 500 !important; color: #0f172a !important; letter-spacing: -0.015em !important; line-height: 1.15; margin-bottom: 0;">
+          <h2 class="section-heading" style="font-family: var(--font-serif) !important; font-weight: 500 !important; color: #0f172a !important; letter-spacing: -0.015em !important; line-height: 1.15; margin-bottom: 0;">
             Work We Do
           </h2>
           <a href="the-work-we-do.html" class="btn-work-explore-top">
@@ -8242,7 +8254,7 @@ h3 .heading-num {
   <section class="about-section" id="awards" style="background-color: #ffffff; padding: 76px 0;">
     <div class="container">
       <div class="work-section-title-row" style="margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
-        <h2 class="section-heading" style="font-family: var(--font-serif) !important; font-size: 2.75rem !important; font-weight: 500 !important; color: #0f172a !important; margin: 0; letter-spacing: -0.015em; line-height: 1.15;">
+        <h2 class="section-heading" style="font-family: var(--font-serif) !important; font-weight: 500 !important; color: #0f172a !important; margin: 0; letter-spacing: -0.015em; line-height: 1.15;">
           Awards &amp; Institutional Recognition
         </h2>
       </div>
@@ -8264,7 +8276,7 @@ h3 .heading-num {
               </svg>
             </div>
             <div>
-              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin: 0 0 4px 0; line-height: 1.25;">
+              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin: 0 0 4px 0; line-height: 1.25;">
                 European Advertising Standards Alliance (EASA)
               </h3>
               <span style="font-size: 0.8125rem; font-weight: 600; color: #008779; text-transform: uppercase; letter-spacing: 0.05em;">
@@ -8369,7 +8381,7 @@ h3 .heading-num {
               </svg>
             </div>
             <div>
-              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin: 0 0 4px 0; line-height: 1.25;">
+              <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin: 0 0 4px 0; line-height: 1.25;">
                 International Council for Ad Self-Regulation (ICAS)
               </h3>
               <span style="font-size: 0.8125rem; font-weight: 600; color: #026095; text-transform: uppercase; letter-spacing: 0.05em;">
@@ -8813,7 +8825,7 @@ h3 .heading-num {
     <div class="container">
       <div class="careers-banner-card" style="background: linear-gradient(135deg, #093b32 0%, #008779 100%); border-radius: 20px; padding: 44px 48px; display: flex; align-items: center; justify-content: space-between; gap: 36px; color: #ffffff !important; box-shadow: 0 12px 32px rgba(9, 59, 50, 0.15);">
         <div class="careers-content" style="flex: 1;">
-          <h2 style="font-family: var(--font-serif); font-size: 2rem; color: #ffffff !important; margin-bottom: 12px; font-weight: 700;">
+          <h2 style="font-family: var(--font-serif); color: #ffffff !important; margin-bottom: 12px; font-weight: 700;">
             Explore Careers with ASCI
           </h2>
           <p style="color: #ffffff !important; opacity: 0.95; font-size: 1.05rem; line-height: 1.6; max-width: 680px; margin-bottom: 24px;">

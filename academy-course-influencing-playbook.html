@@ -3685,9 +3685,10 @@ h3, h4, h5, h6,
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
-  <style id="unified-heading-scale">
+      <style id="unified-heading-scale">
   /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
   main h1,
+  section h1,
   .academy-hero-title,
   .about-page-title,
   .selfreg-hero-title,
@@ -3698,14 +3699,25 @@ h3, h4, h5, h6,
     font-size: clamp(2rem, 3.75vw, 3rem) !important;
   }
   main h2:not(.cta-callout-title):not(.search-modal-title),
+  section h2:not(.cta-callout-title):not(.search-modal-title),
   .section-headline,
   .section-heading,
   .academy-section-title,
   .exec-heading {
     font-size: clamp(1.65rem, 2.8vw, 2.25rem) !important;
   }
-  main h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
+  main h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  section h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
     font-size: 1.25rem !important;
+  }
+  .cta-callout-section p,
+  .cta-callout-section .cta-callout-desc,
+  .cta-callout-desc {
+    color: #111827 !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    max-width: 580px !important;
   }
 </style>
 </head>
@@ -4275,87 +4287,87 @@ h3, h4, h5, h6,
     <div class="course-curriculum-grid" style="grid-template-columns: repeat(3, 1fr);">
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">01</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Introduction to Responsible Influencing</h3>
+        <h3 class="course-module-title" style="margin: 0;">Introduction to Responsible Influencing</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">02</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Why Advertising Self-Regulation Matters</h3>
+        <h3 class="course-module-title" style="margin: 0;">Why Advertising Self-Regulation Matters</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">03</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Who Is an Influencer & Virtual Influencers</h3>
+        <h3 class="course-module-title" style="margin: 0;">Who Is an Influencer & Virtual Influencers</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">04</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Material Connection Explained</h3>
+        <h3 class="course-module-title" style="margin: 0;">Material Connection Explained</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">05</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Disclosure Labels & Permitted Terms</h3>
+        <h3 class="course-module-title" style="margin: 0;">Disclosure Labels & Permitted Terms</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">06</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Placement, Visibility & Duration of Disclosures</h3>
+        <h3 class="course-module-title" style="margin: 0;">Placement, Visibility & Duration of Disclosures</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">07</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Platform-Specific Disclosure Norms (Instagram, YouTube & More)</h3>
+        <h3 class="course-module-title" style="margin: 0;">Platform-Specific Disclosure Norms (Instagram, YouTube & More)</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">08</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Audio, Video & Live Stream Disclosures</h3>
+        <h3 class="course-module-title" style="margin: 0;">Audio, Video & Live Stream Disclosures</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">09</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Honest & Truthful Representation (ASCI Code Chapter 1)</h3>
+        <h3 class="course-module-title" style="margin: 0;">Honest & Truthful Representation (ASCI Code Chapter 1)</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">10</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Substantiating Claims & Before/After Visuals</h3>
+        <h3 class="course-module-title" style="margin: 0;">Substantiating Claims & Before/After Visuals</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">11</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Non-Offensive Content & Decency (ASCI Code Chapter 2)</h3>
+        <h3 class="course-module-title" style="margin: 0;">Non-Offensive Content & Decency (ASCI Code Chapter 2)</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">12</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Avoiding Harmful Content & Safety (ASCI Code Chapter 3)</h3>
+        <h3 class="course-module-title" style="margin: 0;">Avoiding Harmful Content & Safety (ASCI Code Chapter 3)</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">13</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Vulnerable Audiences & Children</h3>
+        <h3 class="course-module-title" style="margin: 0;">Vulnerable Audiences & Children</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">14</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Fair Competition & Comparisons (ASCI Code Chapter 4)</h3>
+        <h3 class="course-module-title" style="margin: 0;">Fair Competition & Comparisons (ASCI Code Chapter 4)</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">15</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Restricted Categories: Alcohol, Tobacco & Surrogate Ads</h3>
+        <h3 class="course-module-title" style="margin: 0;">Restricted Categories: Alcohol, Tobacco & Surrogate Ads</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">16</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Health, Wellness & Nutritional Claims</h3>
+        <h3 class="course-module-title" style="margin: 0;">Health, Wellness & Nutritional Claims</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">17</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Financial & Crypto Influencer Guidelines</h3>
+        <h3 class="course-module-title" style="margin: 0;">Financial & Crypto Influencer Guidelines</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">18</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Real-Money Gaming & Fantasy Sports Disclosures</h3>
+        <h3 class="course-module-title" style="margin: 0;">Real-Money Gaming & Fantasy Sports Disclosures</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">19</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">De-Influencing & Honest Reviews</h3>
+        <h3 class="course-module-title" style="margin: 0;">De-Influencing & Honest Reviews</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">20</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Handling Brand Briefs & Contracts Responsibly</h3>
+        <h3 class="course-module-title" style="margin: 0;">Handling Brand Briefs & Contracts Responsibly</h3>
       </div>
       <div class="course-module-card" style="padding: 18px 20px;">
         <span class="course-module-num">Module <span class="num-inter">21</span></span>
-        <h3 class="course-module-title" style="margin: 0; font-size: 1rem;">Final Assessment & ASCI Certification</h3>
+        <h3 class="course-module-title" style="margin: 0;">Final Assessment & ASCI Certification</h3>
       </div>
     </div>
   </div>

@@ -4632,9 +4632,10 @@ h3, h4, h5, h6,
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
-  <style id="unified-heading-scale">
+      <style id="unified-heading-scale">
   /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
   main h1,
+  section h1,
   .academy-hero-title,
   .about-page-title,
   .selfreg-hero-title,
@@ -4645,14 +4646,25 @@ h3, h4, h5, h6,
     font-size: clamp(2rem, 3.75vw, 3rem) !important;
   }
   main h2:not(.cta-callout-title):not(.search-modal-title),
+  section h2:not(.cta-callout-title):not(.search-modal-title),
   .section-headline,
   .section-heading,
   .academy-section-title,
   .exec-heading {
     font-size: clamp(1.65rem, 2.8vw, 2.25rem) !important;
   }
-  main h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
+  main h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  section h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
     font-size: 1.25rem !important;
+  }
+  .cta-callout-section p,
+  .cta-callout-section .cta-callout-desc,
+  .cta-callout-desc {
+    color: #111827 !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    max-width: 580px !important;
   }
 </style>
 </head>
@@ -5507,7 +5519,7 @@ h3, h4, h5, h6,
       <!-- Empty State -->
       <div id="dirEmptyState"
         style="display:none; text-align:center; padding: 60px 20px; background:#ffffff; border:1px solid #e2e8f0; border-radius:16px;">
-        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size:1.25rem; color:#0f172a; margin-bottom:8px;">No matching
+        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); color:#0f172a; margin-bottom:8px;">No matching
           positions found</h3>
         <p style="color:#64748b; font-size:0.95rem; margin-bottom:16px;">Try adjusting your keyword or clearing the
           selected category filters.</p>
@@ -5519,7 +5531,7 @@ h3, h4, h5, h6,
       <!-- General Application Box -->
       <div class="general-application-box"
         style="margin-top: 48px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 40px; text-align: center;">
-        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.75rem; color: #0f172a; margin-bottom: 16px;">Don't see a
+        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); color: #0f172a; margin-bottom: 16px;">Don't see a
           role that fits?</h3>
         <p style="color: #475569; font-size: 1.05rem; line-height: 1.6; max-width: 680px; margin: 0 auto 32px;">
           We are always looking for passionate professionals to join our mission of promoting responsible advertising.

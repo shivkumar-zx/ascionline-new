@@ -3684,9 +3684,10 @@ h3, h4, h5, h6,
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
-  <style id="unified-heading-scale">
+      <style id="unified-heading-scale">
   /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
   main h1,
+  section h1,
   .academy-hero-title,
   .about-page-title,
   .selfreg-hero-title,
@@ -3697,14 +3698,25 @@ h3, h4, h5, h6,
     font-size: clamp(2rem, 3.75vw, 3rem) !important;
   }
   main h2:not(.cta-callout-title):not(.search-modal-title),
+  section h2:not(.cta-callout-title):not(.search-modal-title),
   .section-headline,
   .section-heading,
   .academy-section-title,
   .exec-heading {
     font-size: clamp(1.65rem, 2.8vw, 2.25rem) !important;
   }
-  main h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
+  main h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  section h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
     font-size: 1.25rem !important;
+  }
+  .cta-callout-section p,
+  .cta-callout-section .cta-callout-desc,
+  .cta-callout-desc {
+    color: #111827 !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    max-width: 580px !important;
   }
 </style>
 </head>
@@ -3849,7 +3861,7 @@ h3, h4, h5, h6,
 <section style="padding: 64px 0 80px; background: #ffffff;">
   <div class="container">
     <div class="academy-section-header" style="text-align: center; max-width: 680px; margin: 0 auto 48px;">
-      <h2 style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; color: #0f172a; margin-bottom: 14px;">Key Events &amp; Thought Leadership Summits</h2>
+      <h2 style="font-family: var(--font-serif); font-weight: 700; color: #0f172a; margin-bottom: 14px;">Key Events &amp; Thought Leadership Summits</h2>
       <p style="color: #64748b; font-size: 1rem; line-height: 1.6;">A chronological record of our high-impact conclaves, stakeholder workshops, and national whitepaper releases.</p>
     </div>
 
@@ -3864,7 +3876,7 @@ h3, h4, h5, h6,
         </div>
         <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
           <span style="font-size: 0.78rem; font-weight: 700; color: #008779; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px;">Conclave &amp; Research</span>
-          <h3 style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.3;">Lens on Gen Alpha</h3>
+          <h3 style="font-family: var(--font-serif); font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.3;">Lens on Gen Alpha</h3>
           <p style="color: #64748b; font-size: 0.92rem; line-height: 1.55; margin-bottom: 20px; flex: 1;">
             A deep-dive research event exploring the media consumption, brand perceptions, and ethical touchpoints shaping India's youngest generation of digital natives.
           </p>
@@ -3883,7 +3895,7 @@ h3, h4, h5, h6,
         </div>
         <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
           <span style="font-size: 0.78rem; font-weight: 700; color: #008779; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px;">Diversity &amp; Inclusion</span>
-          <h3 style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.3;">Manifest: Masculinities Beyond the Mask</h3>
+          <h3 style="font-family: var(--font-serif); font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.3;">Manifest: Masculinities Beyond the Mask</h3>
           <p style="color: #64748b; font-size: 0.92rem; line-height: 1.55; margin-bottom: 20px; flex: 1;">
             In collaboration with creative and media leaders, examining progressive portrayals of men and boys in Indian advertising to dismantle rigid stereotypes.
           </p>
@@ -3902,7 +3914,7 @@ h3, h4, h5, h6,
         </div>
         <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
           <span style="font-size: 0.78rem; font-weight: 700; color: #008779; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px;">Technology &amp; AI</span>
-          <h3 style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.3;">Adnext: The AI Edition</h3>
+          <h3 style="font-family: var(--font-serif); font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.3;">Adnext: The AI Edition</h3>
           <p style="color: #64748b; font-size: 0.92rem; line-height: 1.55; margin-bottom: 20px; flex: 1;">
             Addressing the revolutionary convergence of Generative AI, synthetic media, and self-regulatory guardrails to ensure truthful consumer communication.
           </p>
@@ -3921,7 +3933,7 @@ h3, h4, h5, h6,
         </div>
         <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
           <span style="font-size: 0.78rem; font-weight: 700; color: #008779; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px;">Industry Conclave</span>
-          <h3 style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.3;">D&amp;I Edge Summit</h3>
+          <h3 style="font-family: var(--font-serif); font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.3;">D&amp;I Edge Summit</h3>
           <p style="color: #64748b; font-size: 0.92rem; line-height: 1.55; margin-bottom: 20px; flex: 1;">
             Empowering brands, agencies, and storytellers to weave authentic diversity, equity, and inclusion principles into modern campaign narratives.
           </p>
@@ -3940,7 +3952,7 @@ h3, h4, h5, h6,
         </div>
         <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
           <span style="font-size: 0.78rem; font-weight: 700; color: #008779; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px;">Whitepaper Launch</span>
-          <h3 style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.3;">Privacy &amp; Progress: Pillars of Digital Bharat</h3>
+          <h3 style="font-family: var(--font-serif); font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.3;">Privacy &amp; Progress: Pillars of Digital Bharat</h3>
           <p style="color: #64748b; font-size: 0.92rem; line-height: 1.55; margin-bottom: 20px; flex: 1;">
             Strategic collaboration with Lexplosion dissecting India's Digital Personal Data Protection (DPDP) Act and practical compliance mandates for digital marketers.
           </p>
@@ -3959,7 +3971,7 @@ h3, h4, h5, h6,
         </div>
         <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
           <span style="font-size: 0.78rem; font-weight: 700; color: #008779; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px;">Inaugural Launch</span>
-          <h3 style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.3;">ASCI Academy Launch Event</h3>
+          <h3 style="font-family: var(--font-serif); font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.3;">ASCI Academy Launch Event</h3>
           <p style="color: #64748b; font-size: 0.92rem; line-height: 1.55; margin-bottom: 20px; flex: 1;">
             Official national inauguration by consumer affairs dignitaries and industry pioneers, formally establishing the institutional education wing of ASCI.
           </p>
@@ -3978,7 +3990,7 @@ h3, h4, h5, h6,
         </div>
         <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
           <span style="font-size: 0.78rem; font-weight: 700; color: #008779; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px;">Influencer Conclave</span>
-          <h3 style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.3;">ASCI #GetItRight Brand Influencer Summit</h3>
+          <h3 style="font-family: var(--font-serif); font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.3;">ASCI #GetItRight Brand Influencer Summit</h3>
           <p style="color: #64748b; font-size: 0.92rem; line-height: 1.55; margin-bottom: 20px; flex: 1;">
             Pioneering national convention uniting top digital creators, influencer marketing agencies, and brand CMOs around disclosure compliance and authentic consumer trust.
           </p>

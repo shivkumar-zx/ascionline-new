@@ -3686,9 +3686,10 @@ h3, h4, h5, h6,
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
-  <style id="unified-heading-scale">
+      <style id="unified-heading-scale">
   /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
   main h1,
+  section h1,
   .academy-hero-title,
   .about-page-title,
   .selfreg-hero-title,
@@ -3699,14 +3700,25 @@ h3, h4, h5, h6,
     font-size: clamp(2rem, 3.75vw, 3rem) !important;
   }
   main h2:not(.cta-callout-title):not(.search-modal-title),
+  section h2:not(.cta-callout-title):not(.search-modal-title),
   .section-headline,
   .section-heading,
   .academy-section-title,
   .exec-heading {
     font-size: clamp(1.65rem, 2.8vw, 2.25rem) !important;
   }
-  main h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
+  main h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  section h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
     font-size: 1.25rem !important;
+  }
+  .cta-callout-section p,
+  .cta-callout-section .cta-callout-desc,
+  .cta-callout-desc {
+    color: #111827 !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    max-width: 580px !important;
   }
 </style>
 </head>
@@ -3904,7 +3916,7 @@ h3, h4, h5, h6,
       </div>
 
       <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:18px;padding:32px;">
-        <h2 class="academy-section-title" style="font-size:1.7rem;margin-bottom:14px;">Program Aim &amp; Objectives</h2>
+        <h2 class="academy-section-title" style="margin-bottom:14px;">Program Aim &amp; Objectives</h2>
         <p style="color:#475569;line-height:1.65;margin-bottom:20px;">
           The AdWise program aims to reach 1 million kids in classrooms across the country through structured sessions for Grades 3&ndash;5 and Grades 6&ndash;8.
         </p>
@@ -3932,24 +3944,24 @@ h3, h4, h5, h6,
     <h2 class="academy-section-title" style="margin-bottom: 28px;">How The Program Works</h2>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 32px;">
       <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:24px;">
-        <h3 style="font-family:var(--font-serif);font-size:1.2rem;color:#002d62;margin-bottom:8px;">Interactive Learning</h3>
+        <h3 style="font-family:var(--font-serif);color:#002d62;margin-bottom:8px;">Interactive Learning</h3>
         <p style="color:#475569;font-size:0.92rem;line-height:1.6;">1-hour facilitator-led presentations with games customised for Grades 3&ndash;5 and Grades 6&ndash;8.</p>
       </div>
       <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:24px;">
-        <h3 style="font-family:var(--font-serif);font-size:1.2rem;color:#002d62;margin-bottom:8px;">Multi-Lingual Content</h3>
+        <h3 style="font-family:var(--font-serif);color:#002d62;margin-bottom:8px;">Multi-Lingual Content</h3>
         <p style="color:#475569;font-size:0.92rem;line-height:1.6;margin-bottom:10px;">Training material available in 8 Indian languages:</p>
         <div style="display:flex;flex-wrap:wrap;gap:6px;">
           <span style="background:#eef2ff;color:#002d62;padding:3px 10px;border-radius:999px;font-size:0.78rem;font-weight:600;">English</span><span style="background:#eef2ff;color:#002d62;padding:3px 10px;border-radius:999px;font-size:0.78rem;font-weight:600;">Hindi</span><span style="background:#eef2ff;color:#002d62;padding:3px 10px;border-radius:999px;font-size:0.78rem;font-weight:600;">Marathi</span><span style="background:#eef2ff;color:#002d62;padding:3px 10px;border-radius:999px;font-size:0.78rem;font-weight:600;">Kannada</span><span style="background:#eef2ff;color:#002d62;padding:3px 10px;border-radius:999px;font-size:0.78rem;font-weight:600;">Gujarati</span><span style="background:#eef2ff;color:#002d62;padding:3px 10px;border-radius:999px;font-size:0.78rem;font-weight:600;">Telugu</span><span style="background:#eef2ff;color:#002d62;padding:3px 10px;border-radius:999px;font-size:0.78rem;font-weight:600;">Tamil</span><span style="background:#eef2ff;color:#002d62;padding:3px 10px;border-radius:999px;font-size:0.78rem;font-weight:600;">Assamese</span>
         </div>
       </div>
       <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:24px;">
-        <h3 style="font-family:var(--font-serif);font-size:1.2rem;color:#002d62;margin-bottom:8px;">Assessment &amp; Recognition</h3>
+        <h3 style="font-family:var(--font-serif);color:#002d62;margin-bottom:8px;">Assessment &amp; Recognition</h3>
         <p style="color:#475569;font-size:0.92rem;line-height:1.6;">Pre and post-training evaluation to gauge learning gains, plus official certificates for participating schools and notice board game posters.</p>
       </div>
     </div>
 
     <div style="background:#ffffff;border:1px solid #cbd5e1;border-radius:16px;padding:28px;">
-      <h3 style="font-family:var(--font-serif);font-size:1.3rem;color:#002d62;margin-bottom:10px;">Parent-Teacher e-Resource Material</h3>
+      <h3 style="font-family:var(--font-serif);color:#002d62;margin-bottom:10px;">Parent-Teacher e-Resource Material</h3>
       <p style="color:#475569;margin-bottom:12px;">Digital resource material to help parents &amp; teachers guide children through everyday digital moments:</p>
       <ul style="color:#334155;padding-left:20px;line-height:1.75;font-size:0.94rem;">
         <li>The <strong>S.M.A.R.T. approach</strong> explained in the classroom session.</li>
@@ -3983,7 +3995,7 @@ h3, h4, h5, h6,
     </div>
 
     <div style="background:#032b22;color:#ffffff;border-radius:18px;padding:36px;text-align:center;">
-      <h3 style="font-family:var(--font-serif);font-size:1.7rem;color:#ffffff;margin-bottom:10px;">Bring AdWise to Your School</h3>
+      <h3 style="font-family:var(--font-serif);color:#ffffff;margin-bottom:10px;">Bring AdWise to Your School</h3>
       <p style="color:#ffffff !important;max-width:640px;margin:0 auto 22px;line-height:1.6;">Write to <a href="mailto:academy@ascionline.in" style="color:#86efac;font-weight:700;">academy@ascionline.in</a> to bring AdWise workshops to your school and empower your students.</p>
       <a href="academy.html#collaborate" class="btn-academy-primary"><span>Request School Workshop</span></a>
     </div>

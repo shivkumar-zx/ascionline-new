@@ -3685,9 +3685,10 @@ h3, h4, h5, h6,
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
-  <style id="unified-heading-scale">
+      <style id="unified-heading-scale">
   /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
   main h1,
+  section h1,
   .academy-hero-title,
   .about-page-title,
   .selfreg-hero-title,
@@ -3698,14 +3699,25 @@ h3, h4, h5, h6,
     font-size: clamp(2rem, 3.75vw, 3rem) !important;
   }
   main h2:not(.cta-callout-title):not(.search-modal-title),
+  section h2:not(.cta-callout-title):not(.search-modal-title),
   .section-headline,
   .section-heading,
   .academy-section-title,
   .exec-heading {
     font-size: clamp(1.65rem, 2.8vw, 2.25rem) !important;
   }
-  main h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
+  main h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  section h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
     font-size: 1.25rem !important;
+  }
+  .cta-callout-section p,
+  .cta-callout-section .cta-callout-desc,
+  .cta-callout-desc {
+    color: #111827 !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    max-width: 580px !important;
   }
 </style>
 </head>
@@ -3910,7 +3922,7 @@ h3, h4, h5, h6,
         </div>
         <div>
           <span class="academy-course-badge" style="position: static; margin-bottom: 12px; display: inline-block;">Featured Course</span>
-          <h2 class="academy-section-title" style="font-size: 1.85rem; margin-bottom: 14px;">Ethical UI/UX Designs: Building Consumer Trust</h2>
+          <h2 class="academy-section-title" style="margin-bottom: 14px;">Ethical UI/UX Designs: Building Consumer Trust</h2>
           <p class="academy-section-desc" style="margin-bottom: 20px;">
             Designed for Brand, Legal, and UI/UX professionals, this essential course equips you to spot online dark patterns before they trigger consumer backlash or regulatory action. Through real-world app simulations, you’ll learn to identify manipulative design tactics and explore ethical alternatives.
           </p>
@@ -3942,7 +3954,7 @@ h3, h4, h5, h6,
       <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; padding: 40px; align-items: stretch;">
         <div>
           <span class="academy-course-badge" style="position: static; margin-bottom: 12px; display: inline-block;">Creator Certification</span>
-          <h2 class="academy-section-title" style="font-size: 1.85rem; margin-bottom: 14px;">The Responsible Influencing Playbook</h2>
+          <h2 class="academy-section-title" style="margin-bottom: 14px;">The Responsible Influencing Playbook</h2>
           <p class="academy-section-desc" style="margin-bottom: 20px;">
             Elevate your influence with ASCI’s Responsible Influencing Playbook Certification Course. Tailored for today’s digital storytellers, this program delves into advertising codes, legal requirements, disclosure labels, and fostering responsible brand collaborations.
           </p>
@@ -4083,7 +4095,7 @@ h3, h4, h5, h6,
         </div>
         <div>
           <span class="academy-course-badge" style="position: static; margin-bottom: 12px; display: inline-block;">Foundational Course</span>
-          <h2 class="academy-section-title" style="font-size: 1.85rem; margin-bottom: 14px;">The ASCI Guide to Responsible Advertising</h2>
+          <h2 class="academy-section-title" style="margin-bottom: 14px;">The ASCI Guide to Responsible Advertising</h2>
           <p class="academy-section-desc" style="margin-bottom: 20px;">
             Explore this interactive eLearning experience that navigates through the core principles of the ASCI Code for advertising self-regulation. Immerse yourself in real-world advertisements and scenarios that bring these principles to life.
           </p>

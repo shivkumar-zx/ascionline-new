@@ -3686,9 +3686,10 @@ h3, h4, h5, h6,
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
-  <style id="unified-heading-scale">
+      <style id="unified-heading-scale">
   /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
   main h1,
+  section h1,
   .academy-hero-title,
   .about-page-title,
   .selfreg-hero-title,
@@ -3699,14 +3700,25 @@ h3, h4, h5, h6,
     font-size: clamp(2rem, 3.75vw, 3rem) !important;
   }
   main h2:not(.cta-callout-title):not(.search-modal-title),
+  section h2:not(.cta-callout-title):not(.search-modal-title),
   .section-headline,
   .section-heading,
   .academy-section-title,
   .exec-heading {
     font-size: clamp(1.65rem, 2.8vw, 2.25rem) !important;
   }
-  main h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
+  main h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  section h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
     font-size: 1.25rem !important;
+  }
+  .cta-callout-section p,
+  .cta-callout-section .cta-callout-desc,
+  .cta-callout-desc {
+    color: #111827 !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    max-width: 580px !important;
   }
 </style>
 </head>
@@ -3866,7 +3878,7 @@ h3, h4, h5, h6,
         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px;">
           <span style="background:#f1f5f9;border:1px solid #cbd5e1;color:#002d62;padding:8px 16px;border-radius:9999px;font-size:0.9rem;font-weight:600;">Media & Communications Studies</span><span style="background:#f1f5f9;border:1px solid #cbd5e1;color:#002d62;padding:8px 16px;border-radius:9999px;font-size:0.9rem;font-weight:600;">Marketing</span><span style="background:#f1f5f9;border:1px solid #cbd5e1;color:#002d62;padding:8px 16px;border-radius:9999px;font-size:0.9rem;font-weight:600;">Advertising</span><span style="background:#f1f5f9;border:1px solid #cbd5e1;color:#002d62;padding:8px 16px;border-radius:9999px;font-size:0.9rem;font-weight:600;">Digital Media</span><span style="background:#f1f5f9;border:1px solid #cbd5e1;color:#002d62;padding:8px 16px;border-radius:9999px;font-size:0.9rem;font-weight:600;">Law</span><span style="background:#f1f5f9;border:1px solid #cbd5e1;color:#002d62;padding:8px 16px;border-radius:9999px;font-size:0.9rem;font-weight:600;">Business Administration</span><span style="background:#f1f5f9;border:1px solid #cbd5e1;color:#002d62;padding:8px 16px;border-radius:9999px;font-size:0.9rem;font-weight:600;">Journalism</span>
         </div>
-        <h3 style="font-family: var(--font-serif); font-size: 1.45rem; color: #002d62; margin-bottom: 14px;">Become Part of a National Academic Network</h3>
+        <h3 style="font-family: var(--font-serif); color: #002d62; margin-bottom: 14px;">Become Part of a National Academic Network</h3>
         <p style="color: #475569; line-height: 1.65; margin-bottom: 12px;">
           By joining the ASCI Academic Partnership Program, your institution becomes part of a growing network of universities and colleges dedicated to nurturing ethical and socially conscious media professionals.
         </p>
@@ -3876,7 +3888,7 @@ h3, h4, h5, h6,
       </div>
 
       <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 18px; padding: 30px;">
-        <h3 style="font-family: var(--font-serif); font-size: 1.45rem; color: #002d62; margin-bottom: 18px;">Program Highlights</h3>
+        <h3 style="font-family: var(--font-serif); color: #002d62; margin-bottom: 18px;">Program Highlights</h3>
         <ul style="color: #334155; line-height: 1.75; padding-left: 20px; font-size: 0.95rem;">
           <li>Official Partnership Certificate for colleges</li>
           <li>Free Access to ASCI Academy e-learning courses for students:
@@ -3903,7 +3915,7 @@ h3, h4, h5, h6,
     </div>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
       <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-top: 5px solid #64748b; border-radius: 16px; padding: 32px; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
-        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: #0f172a; margin-bottom: 6px;">Silver Tier</h3>
+        <h3 style="font-family: var(--font-serif); color: #0f172a; margin-bottom: 6px;">Silver Tier</h3>
         <p style="font-weight: 700; color: #086b59; margin-bottom: 18px; font-size: 0.95rem;">70% Student Participation</p>
         <ul style="color: #475569; line-height: 1.8; padding-left: 20px;">
           <li>Guest lectures from ASCI &amp; Industry experts</li>
@@ -3913,7 +3925,7 @@ h3, h4, h5, h6,
         </ul>
       </div>
       <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-top: 5px solid #002d62; border-radius: 16px; padding: 32px; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
-        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: #002d62; margin-bottom: 6px;">Platinum Tier</h3>
+        <h3 style="font-family: var(--font-serif); color: #002d62; margin-bottom: 6px;">Platinum Tier</h3>
         <p style="font-weight: 700; color: #e05829; margin-bottom: 18px; font-size: 0.95rem;">2+ Years of Silver Tier</p>
         <ul style="color: #475569; line-height: 1.8; padding-left: 20px;">
           <li>All Silver Tier privileges included</li>
@@ -3934,7 +3946,7 @@ h3, h4, h5, h6,
     </div>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
       <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px;">
-        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: #002d62; margin-bottom: 14px;">Institute Benefits</h3>
+        <h3 style="font-family: var(--font-serif); color: #002d62; margin-bottom: 14px;">Institute Benefits</h3>
         <ul style="color: #475569; line-height: 1.7; padding-left: 18px; font-size: 0.92rem;">
           <li>Well aligned with National Education Policy (NEP) 2020 under 21st-century skills and value-based education</li>
           <li>Works across disciplines: media, law, business, communication</li>
@@ -3942,14 +3954,14 @@ h3, h4, h5, h6,
         </ul>
       </div>
       <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px;">
-        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: #002d62; margin-bottom: 14px;">Faculty Benefits</h3>
+        <h3 style="font-family: var(--font-serif); color: #002d62; margin-bottom: 14px;">Faculty Benefits</h3>
         <ul style="color: #475569; line-height: 1.7; padding-left: 18px; font-size: 0.92rem;">
           <li>Gain access to ready-to-use teaching resources, case studies, and assessments that integrate seamlessly into programs in communication, marketing, and media studies</li>
           <li>Faculty members can participate in guest lectures, research collaborations, and national webinars under the ASCI Academy banner</li>
         </ul>
       </div>
       <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px;">
-        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: #002d62; margin-bottom: 14px;">Student Benefits</h3>
+        <h3 style="font-family: var(--font-serif); color: #002d62; margin-bottom: 14px;">Student Benefits</h3>
         <ul style="color: #475569; line-height: 1.7; padding-left: 18px; font-size: 0.92rem;">
           <li>Stand out in the industry as a well-informed communicator</li>
           <li>Empowers them for a career in advertising, media &amp; marketing</li>
@@ -3967,12 +3979,12 @@ h3, h4, h5, h6,
     <h2 class="academy-section-title" style="margin-bottom: 12px;">Our Academic Partnership Program Members</h2>
     <p class="academy-section-desc" style="margin-bottom: 32px;">Silver Tier Members and accredited university partners across India.</p>
 
-    <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: #002d62; margin-bottom: 18px;">Silver Tier Members</h3>
+    <h3 style="font-family: var(--font-serif); color: #002d62; margin-bottom: 18px;">Silver Tier Members</h3>
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px; margin-bottom: 42px;">
       <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:18px;display:flex;align-items:center;justify-content:center;height:100px;box-shadow:0 2px 8px rgba(0,0,0,0.03);"><img src="assets/images/academy/Ashoka-University.webp" alt="Ashoka University" style="max-height:68px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:18px;display:flex;align-items:center;justify-content:center;height:100px;box-shadow:0 2px 8px rgba(0,0,0,0.03);"><img src="assets/images/academy/Bennett_10_11zon.png" alt="Bennett University" style="max-height:68px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:18px;display:flex;align-items:center;justify-content:center;height:100px;box-shadow:0 2px 8px rgba(0,0,0,0.03);"><img src="assets/images/academy/DY-Patil-Creative-Studies_14_11zon.png" alt="D.Y. Patil School of Creative Studies" style="max-height:68px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:18px;display:flex;align-items:center;justify-content:center;height:100px;box-shadow:0 2px 8px rgba(0,0,0,0.03);"><img src="assets/images/academy/MDI-Gurgaon_23_11zon.png" alt="MDI Gurgaon" style="max-height:68px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:18px;display:flex;align-items:center;justify-content:center;height:100px;box-shadow:0 2px 8px rgba(0,0,0,0.03);"><img src="assets/images/academy/NMIMS-Soba.webp" alt="NMIMS School of Branding & Advertising" style="max-height:68px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:18px;display:flex;align-items:center;justify-content:center;height:100px;box-shadow:0 2px 8px rgba(0,0,0,0.03);"><img src="assets/images/academy/Shaheed-Sukhdev_28_11zon.png" alt="Shaheed Sukhdev College of Business Studies" style="max-height:68px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:18px;display:flex;align-items:center;justify-content:center;height:100px;box-shadow:0 2px 8px rgba(0,0,0,0.03);"><img src="assets/images/academy/St-Joseph-University_30_11zon.png" alt="St. Joseph University" style="max-height:68px;max-width:100%;object-fit:contain;"></div>
     </div>
 
-    <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: #002d62; margin-bottom: 18px;">Program Members</h3>
+    <h3 style="font-family: var(--font-serif); color: #002d62; margin-bottom: 18px;">Program Members</h3>
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(135px, 1fr)); gap: 14px;">
       <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/AAFT.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/XIM-University.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/KC-college.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/IMS-Ghaziabad.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/South-Asian-University.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/GITAM.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/Karnavati-University.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/SOB-MIT-WPU.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/Ram-Lal-Anand-College.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/DIHE.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/International-School-of-Media-and-Entertainment-Studies.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/NorthCap-University.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/SNDT.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/Jai-Hind-College.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/Sophia-SCM.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/GIBS.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/Deviprasad-Goenka.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/Lovely-Professional-University.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/Maharaja-Agrasen-College.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/IMT-Ghaziabad.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/ST-Paul-Institute.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/hpkv_business_school_logo.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/UPG.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/XIC.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/Symbiosis-Centre-for-Media-Communication-1.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/St._Xaviers_College_Mumbai_crest-1.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/National_University_of_Study_and_Research_in_Law_Logo-1.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/MET-Institute-of-Mass-Media.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/IILM-University_logostandard-BLUE-copy.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/ATLAS.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/KMS.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/KBS.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/GTU.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/SIES-Nerul.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/HR-College.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/MET-Institute-of-Management.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/vu_logo.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/VSIT.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div><div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center;height:82px;"><img src="assets/images/academy/KBP-Hinduja.webp" alt="Partner Institution" style="max-height:56px;max-width:100%;object-fit:contain;"></div>
     </div>

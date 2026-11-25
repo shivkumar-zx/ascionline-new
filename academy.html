@@ -3804,29 +3804,35 @@ h3, h4, h5, h6,
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
-      <style id="unified-heading-scale">
+        <style id="unified-heading-scale">
   /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
-  main h1,
-  section h1,
-  .academy-hero-title,
-  .about-page-title,
-  .selfreg-hero-title,
-  .timeline-page-title,
-  .directory-page-title,
-  .work-page-title,
-  .course-hero-title {
+  html body main h1,
+  html body section h1,
+  html body .academy-hero-title,
+  html body .about-page-title,
+  html body .selfreg-hero-title,
+  html body .timeline-page-title,
+  html body .directory-page-title,
+  html body .work-page-title,
+  html body .course-hero-title {
     font-size: clamp(2rem, 3.75vw, 3rem) !important;
   }
-  main h2:not(.cta-callout-title):not(.search-modal-title),
-  section h2:not(.cta-callout-title):not(.search-modal-title),
-  .section-headline,
-  .section-heading,
-  .academy-section-title,
-  .exec-heading {
+  html body main h2:not(.cta-callout-title):not(.search-modal-title),
+  html body section h2:not(.cta-callout-title):not(.search-modal-title),
+  html body #purpose .section-heading,
+  html body .section-headline,
+  html body .section-heading,
+  html body .academy-section-title,
+  html body .exec-heading {
     font-size: clamp(1.65rem, 2.8vw, 2.25rem) !important;
   }
-  main h3:not(.megamenu-highlight-title):not(.careers-modal-title),
-  section h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
+  html body .exec-heading {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.015em !important;
+  }
+  html body main h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  html body section h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
     font-size: 1.25rem !important;
   }
   .cta-callout-section p,

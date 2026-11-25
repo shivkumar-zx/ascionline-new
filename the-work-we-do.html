@@ -3818,6 +3818,52 @@ h3, h4, h5, h6,
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
+  <style id="unified-heading-scale">
+  /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
+  html body main h1,
+  html body section h1,
+  html body .academy-hero-title,
+  html body .about-page-title,
+  html body .selfreg-hero-title,
+  html body .timeline-page-title,
+  html body .directory-page-title,
+  html body .work-page-title,
+  html body .course-hero-title {
+    font-size: clamp(2rem, 3.75vw, 3rem) !important;
+  }
+  html body main h2:not(.cta-callout-title):not(.search-modal-title),
+  html body section h2:not(.cta-callout-title):not(.search-modal-title),
+  html body #purpose .section-heading,
+  html body .section-headline,
+  html body .section-heading,
+  html body .academy-section-title,
+  html body .exec-heading,
+  html body .work-main-title,
+  html body .featured-report-title {
+    font-size: clamp(1.65rem, 2.8vw, 2.25rem) !important;
+  }
+  html body .exec-heading,
+  html body .work-main-title,
+  html body .featured-report-title {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.015em !important;
+  }
+  html body main h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  html body section h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  html body .report-card-title {
+    font-size: 1.25rem !important;
+  }
+  .cta-callout-section p,
+  .cta-callout-section .cta-callout-desc,
+  .cta-callout-desc {
+    color: #111827 !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    max-width: 580px !important;
+  }
+</style>
 </head>
 <body>
 <!-- Top Notice Bar -->
@@ -5141,7 +5187,7 @@ h3, h4, h5, h6,
           <span style="font-size: 0.8rem; font-weight: 800; color: #008779; text-transform: uppercase; letter-spacing: 0.05em; background: #e6f4f2; padding: 4px 12px; border-radius: 9999px;">
             Process Flow
           </span>
-          <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-top: 8px; margin-bottom: 0;">
+          <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin-top: 8px; margin-bottom: 0;">
             What happens when you complain?
           </h3>
         </div>
@@ -5295,7 +5341,7 @@ h3, h4, h5, h6,
       
       <!-- Box 1 -->
       <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 26px 24px; box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);">
-        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 10px;">
+        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin-bottom: 10px;">
           What happens after a decision?
         </h3>
         <p style="font-size: 0.95rem; line-height: 1.65; color: #475569; margin: 0;">
@@ -5305,7 +5351,7 @@ h3, h4, h5, h6,
 
       <!-- Box 2 -->
       <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 26px 24px; box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);">
-        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 10px;">
+        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin-bottom: 10px;">
           How long does it take?
         </h3>
         <p style="font-size: 0.95rem; line-height: 1.65; color: #475569; margin-bottom: 12px;">
@@ -5328,7 +5374,7 @@ h3, h4, h5, h6,
           Complete Impartiality
         </span>
       </div>
-      <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.45rem; font-weight: 600; color: #ffffff; margin-bottom: 10px;">
+      <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 600; color: #ffffff; margin-bottom: 10px;">
         Who Decides?
       </h3>
       <p style="font-size: 0.98rem; line-height: 1.7; color: #cbd5e1; margin-bottom: 24px; max-width: 820px;">
@@ -5380,7 +5426,7 @@ h3, h4, h5, h6,
     </div>
 
     <!-- 4 Core Issues Grid -->
-    <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.45rem; font-weight: 700; color: #0f172a; margin-bottom: 18px;">
+    <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin-bottom: 18px;">
       What can you complain about?
     </h3>
     
@@ -5426,7 +5472,7 @@ h3, h4, h5, h6,
 
     <!-- What We Do NOT Cover (Visual Card Grid) -->
     <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 28px; margin-bottom: 36px;">
-      <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 10px;">
+      <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin-bottom: 10px;">
         What we do not cover
       </h3>
       <p style="font-size: 0.95rem; line-height: 1.6; color: #475569; margin-bottom: 20px;">
@@ -5477,7 +5523,7 @@ h3, h4, h5, h6,
         <span style="font-size: 0.8rem; font-weight: 800; color: #008779; text-transform: uppercase; letter-spacing: 0.05em; background: #e6f4f2; padding: 4px 12px; border-radius: 9999px;">
           Education &amp; Training
         </span>
-        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-top: 10px; margin-bottom: 8px;">
+        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin-top: 10px; margin-bottom: 8px;">
           ASCI Academy
         </h3>
         <p style="font-size: 0.95rem; line-height: 1.65; color: #475569; margin: 0;">
@@ -5517,7 +5563,7 @@ h3, h4, h5, h6,
             <polyline points="12 6 12 12 16 14"></polyline>
           </svg>
         </div>
-        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 12px;">
+        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin-bottom: 12px;">
           How we monitor advertising
         </h3>
         <p style="font-size: 0.95rem; line-height: 1.7; color: #475569; margin: 0;">
@@ -5532,7 +5578,7 @@ h3, h4, h5, h6,
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
         </div>
-        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 12px;">
+        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin-bottom: 12px;">
           What happens when we spot a possible issue?
         </h3>
         <p style="font-size: 0.95rem; line-height: 1.7; color: #475569; margin: 0;">
@@ -5564,7 +5610,7 @@ h3, h4, h5, h6,
       
       <!-- Box 1: Keeping the rules up to date -->
       <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 28px 24px;">
-        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 10px;">
+        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin-bottom: 10px;">
           Keeping the rules up to date
         </h3>
         <p style="font-size: 0.95rem; line-height: 1.65; color: #475569; margin: 0;">
@@ -5574,7 +5620,7 @@ h3, h4, h5, h6,
 
       <!-- Box 2: Working with government and regulators -->
       <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 28px 24px;">
-        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 10px;">
+        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin-bottom: 10px;">
           Working with government and regulators
         </h3>
         <p style="font-size: 0.95rem; line-height: 1.65; color: #475569; margin: 0;">
@@ -5584,7 +5630,7 @@ h3, h4, h5, h6,
 
       <!-- Box 3: Sharing guidance and training -->
       <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 28px 24px;">
-        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 10px;">
+        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin-bottom: 10px;">
           Sharing guidance and training
         </h3>
         <p style="font-size: 0.95rem; line-height: 1.65; color: #475569; margin: 0;">
@@ -5594,7 +5640,7 @@ h3, h4, h5, h6,
 
       <!-- Box 4: Research and International Collaborations -->
       <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 28px 24px;">
-        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 10px;">
+        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin-bottom: 10px;">
           Research &amp; International Collaborations
         </h3>
         <p style="font-size: 0.95rem; line-height: 1.65; color: #475569; margin: 0;">
@@ -5626,7 +5672,7 @@ h3, h4, h5, h6,
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
         </div>
-        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 12px;">
+        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin-bottom: 12px;">
           Practical Outcomes
         </h3>
         <p style="font-size: 0.95rem; line-height: 1.7; color: #475569; margin: 0;">
@@ -5640,7 +5686,7 @@ h3, h4, h5, h6,
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
           </svg>
         </div>
-        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 1.3rem; font-weight: 700; color: #0f172a; margin-bottom: 12px;">
+        <h3 style="font-family: var(--font-sans, 'Inter', sans-serif); font-weight: 700; color: #0f172a; margin-bottom: 12px;">
           Beyond Individual Advertisements
         </h3>
         <p style="font-size: 0.95rem; line-height: 1.7; color: #475569; margin: 0;">

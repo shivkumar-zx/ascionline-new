@@ -3806,6 +3806,52 @@ h3, h4, h5, h6,
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
+  <style id="unified-heading-scale">
+  /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
+  html body main h1,
+  html body section h1,
+  html body .academy-hero-title,
+  html body .about-page-title,
+  html body .selfreg-hero-title,
+  html body .timeline-page-title,
+  html body .directory-page-title,
+  html body .work-page-title,
+  html body .course-hero-title {
+    font-size: clamp(2rem, 3.75vw, 3rem) !important;
+  }
+  html body main h2:not(.cta-callout-title):not(.search-modal-title),
+  html body section h2:not(.cta-callout-title):not(.search-modal-title),
+  html body #purpose .section-heading,
+  html body .section-headline,
+  html body .section-heading,
+  html body .academy-section-title,
+  html body .exec-heading,
+  html body .work-main-title,
+  html body .featured-report-title {
+    font-size: clamp(1.65rem, 2.8vw, 2.25rem) !important;
+  }
+  html body .exec-heading,
+  html body .work-main-title,
+  html body .featured-report-title {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.015em !important;
+  }
+  html body main h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  html body section h3:not(.megamenu-highlight-title):not(.careers-modal-title),
+  html body .report-card-title {
+    font-size: 1.25rem !important;
+  }
+  .cta-callout-section p,
+  .cta-callout-section .cta-callout-desc,
+  .cta-callout-desc {
+    color: #111827 !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    margin: 0 !important;
+    max-width: 580px !important;
+  }
+</style>
 </head>
 <body>
 <!-- Top Notice Bar -->
@@ -5153,7 +5199,7 @@ h3, h4, h5, h6,
 
     <!-- Confidentiality Policy Card (Exact Original Text) -->
     <div class="work-callout-card" style="border-left-color: #026095; background: #ffffff;">
-      <h3 style="font-size: 1.1rem; font-weight: 700; color: #0b1221; margin-top: 0; margin-bottom: 10px; font-family: inherit;">
+      <h3 style="font-weight: 700; color: #0b1221; margin-top: 0; margin-bottom: 10px; font-family: inherit;">
         Confidentiality &amp; Complainant Identity
       </h3>
       <p style="margin-bottom: 0;">

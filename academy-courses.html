@@ -3817,19 +3817,21 @@ h3, h4, h5, h6,
           <!-- Course Visuals Interactive Slider -->
           <div class="course-slider-box" style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0, 33, 71, 0.1); background: #f8fafc; flex: 1; height: 100%; min-height: 320px;">
             
-            <!-- Slide 1: Course Banner -->
-            <div id="courseSlide1" class="course-slide" style="display: block; height: 100%; transition: opacity 0.3s ease;">
-              <img src="assets/images/academy/ethical-ui-ux-designs-building-consumer-trust-homepage-banner-desktop.webp" alt="Ethical UI UX Course Banner" style="width: 100%; height: 100%; min-height: 320px; object-fit: contain; background: #f8fafc; display: block;">
-              <div style="position: absolute; top: 12px; left: 12px; background: rgba(0, 45, 98, 0.9); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">
-                Course Overview
+            <div id="courseTrack1" style="display: flex; width: 100%; height: 100%; transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1); will-change: transform;">
+              <!-- Slide 1: Course Banner -->
+              <div style="flex: 0 0 100%; width: 100%; height: 100%; position: relative;">
+                <img src="assets/images/academy/ethical-ui-ux-designs-building-consumer-trust-homepage-banner-desktop.webp" alt="Ethical UI UX Course Banner" style="width: 100%; height: 100%; min-height: 320px; object-fit: contain; background: #f8fafc; display: block;">
+                <div style="position: absolute; top: 12px; left: 12px; background: rgba(0, 45, 98, 0.9); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">
+                  Course Overview
+                </div>
               </div>
-            </div>
 
-            <!-- Slide 2: Verifiable Certificate Preview -->
-            <div id="courseSlide2" class="course-slide" style="display: none; height: 100%; transition: opacity 0.3s ease;">
-              <img src="assets/images/academy/Ethical_UI_UX_Designs_Certificate_UID.webp" alt="Certificate Preview" style="width: 100%; height: 100%; min-height: 320px; object-fit: contain; background: #ffffff; display: block; padding: 16px;">
-              <div style="position: absolute; top: 12px; left: 12px; background: rgba(8, 107, 89, 0.95); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">
-                Verifiable Certificate
+              <!-- Slide 2: Verifiable Certificate Preview -->
+              <div style="flex: 0 0 100%; width: 100%; height: 100%; position: relative;">
+                <img src="assets/images/academy/Ethical_UI_UX_Designs_Certificate_UID.webp" alt="Certificate Preview" style="width: 100%; height: 100%; min-height: 320px; object-fit: contain; background: #ffffff; display: block; padding: 16px;">
+                <div style="position: absolute; top: 12px; left: 12px; background: rgba(8, 107, 89, 0.95); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">
+                  Verifiable Certificate
+                </div>
               </div>
             </div>
 
@@ -3848,40 +3850,22 @@ h3, h4, h5, h6,
             </div>
           </div>
           <script>
+            var courseIdx1 = 0;
             function setCourseSlide(idx) {
-              var s1 = document.getElementById('courseSlide1');
-              var s2 = document.getElementById('courseSlide2');
+              courseIdx1 = idx;
+              var tr = document.getElementById('courseTrack1');
               var d0 = document.getElementById('courseDot0');
               var d1 = document.getElementById('courseDot1');
-              if (!s1 || !s2) return;
+              if (tr) tr.style.transform = 'translateX(-' + (idx * 100) + '%)';
               if (idx === 0) {
-                s1.style.display = 'block';
-                s2.style.display = 'none';
-                d0.style.background = 'rgba(255,255,255,0.95)';
-                d0.style.color = '#002d62';
-                d0.style.border = 'none';
-                d1.style.background = 'rgba(0,26,58,0.7)';
-                d1.style.color = '#ffffff';
-                d1.style.border = '1px solid rgba(255,255,255,0.3)';
+                d0.style.background = 'rgba(255,255,255,0.95)'; d0.style.color = '#002d62'; d0.style.border = 'none';
+                d1.style.background = 'rgba(0,26,58,0.7)'; d1.style.color = '#ffffff'; d1.style.border = '1px solid rgba(255,255,255,0.3)';
               } else {
-                s1.style.display = 'none';
-                s2.style.display = 'block';
-                d1.style.background = 'rgba(255,255,255,0.95)';
-                d1.style.color = '#002d62';
-                d1.style.border = 'none';
-                d0.style.background = 'rgba(0,26,58,0.7)';
-                d0.style.color = '#ffffff';
-                d0.style.border = '1px solid rgba(255,255,255,0.3)';
+                d1.style.background = 'rgba(255,255,255,0.95)'; d1.style.color = '#002d62'; d1.style.border = 'none';
+                d0.style.background = 'rgba(0,26,58,0.7)'; d0.style.color = '#ffffff'; d0.style.border = '1px solid rgba(255,255,255,0.3)';
               }
             }
-            function switchCourseSlide() {
-              var s1 = document.getElementById('courseSlide1');
-              if (s1 && s1.style.display !== 'none') {
-                setCourseSlide(1);
-              } else {
-                setCourseSlide(0);
-              }
-            }
+            function switchCourseSlide() { setCourseSlide(courseIdx1 === 0 ? 1 : 0); }
           </script>
         </div>
         <div>
@@ -3898,10 +3882,14 @@ h3, h4, h5, h6,
             <div>✔ Self-paced Online eLearning</div>
             <div>✔ Verifiable ASCI Certificate</div>
           </div>
-          <div style="display: flex; gap: 16px; align-items: center;">
-            <a href="https://www.ascionline.in/academy/product/ethical-ui-ux-designs-building-consumer-trust/" target="_blank" class="btn-enroll-course" style="font-size: 1rem; padding: 12px 28px;">
-              <span>Enroll on ASCI Academy</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <a href="academy-course-ethical-ui-ux.html" class="btn-enroll-course" style="font-size: 0.95rem; padding: 12px 24px;">
+              <span>View Course Details</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="https://www.ascionline.in/academy/product/ethical-ui-ux-designs-building-consumer-trust/" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 700; color: #002d62; padding: 11px 20px; border: 1.5px solid #002d62; border-radius: 999px; text-decoration: none;">
+              <span>Enroll Now</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </a>
           </div>
         </div>
@@ -3926,10 +3914,14 @@ h3, h4, h5, h6,
             <div>✔ Self-paced Video Lessons &amp; Quizzes</div>
             <div>✔ ASCI Certified Influencer Badge</div>
           </div>
-          <div style="display: flex; gap: 16px; align-items: center;">
-            <a href="https://www.ascionline.in/academy/course/the-responsible-influencing-playbook/" target="_blank" class="btn-enroll-course" style="font-size: 1rem; padding: 12px 28px;">
-              <span>Enroll on ASCI Academy</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <a href="academy-course-influencing-playbook.html" class="btn-enroll-course" style="font-size: 0.95rem; padding: 12px 24px;">
+              <span>View Course Details</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="https://www.ascionline.in/academy/course/the-responsible-influencing-playbook/" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 700; color: #002d62; padding: 11px 20px; border: 1.5px solid #002d62; border-radius: 999px; text-decoration: none;">
+              <span>Enroll Now</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </a>
           </div>
         </div>
@@ -3937,19 +3929,21 @@ h3, h4, h5, h6,
           <!-- Course 2 Visuals Interactive Slider -->
           <div class="course-slider-box" style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0, 33, 71, 0.1); background: #f8fafc; flex: 1; height: 100%; min-height: 320px;">
             
-            <!-- Slide 1: Course Banner -->
-            <div id="courseSlide2_1" class="course-slide" style="display: block; height: 100%; transition: opacity 0.3s ease;">
-              <img src="assets/images/academy/Responsible-Influencing-Playbook.png" alt="Responsible Influencing Playbook" style="width: 100%; height: 100%; min-height: 320px; object-fit: contain; background: #f8fafc; display: block;">
-              <div style="position: absolute; top: 12px; left: 12px; background: rgba(0, 45, 98, 0.9); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">
-                Creator Certification
+            <div id="courseTrack2" style="display: flex; width: 100%; height: 100%; transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1); will-change: transform;">
+              <!-- Slide 1: Course Banner -->
+              <div style="flex: 0 0 100%; width: 100%; height: 100%; position: relative;">
+                <img src="assets/images/academy/Responsible-Influencing-Playbook.png" alt="Responsible Influencing Playbook" style="width: 100%; height: 100%; min-height: 320px; object-fit: contain; background: #f8fafc; display: block;">
+                <div style="position: absolute; top: 12px; left: 12px; background: rgba(0, 45, 98, 0.9); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">
+                  Creator Certification
+                </div>
               </div>
-            </div>
 
-            <!-- Slide 2: Verifiable Certificate Preview -->
-            <div id="courseSlide2_2" class="course-slide" style="display: none; height: 100%; transition: opacity 0.3s ease;">
-              <img src="assets/images/academy/The_Responsible_Influencing_Playbook_UID_Certificate.webp" alt="Influencer Certificate Preview" style="width: 100%; height: 100%; min-height: 320px; object-fit: contain; background: #ffffff; display: block; padding: 16px;">
-              <div style="position: absolute; top: 12px; left: 12px; background: rgba(8, 107, 89, 0.95); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">
-                Verifiable Certificate
+              <!-- Slide 2: Verifiable Certificate Preview -->
+              <div style="flex: 0 0 100%; width: 100%; height: 100%; position: relative;">
+                <img src="assets/images/academy/The_Responsible_Influencing_Playbook_UID_Certificate.webp" alt="Influencer Certificate Preview" style="width: 100%; height: 100%; min-height: 320px; object-fit: contain; background: #ffffff; display: block; padding: 16px;">
+                <div style="position: absolute; top: 12px; left: 12px; background: rgba(8, 107, 89, 0.95); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">
+                  Verifiable Certificate
+                </div>
               </div>
             </div>
 
@@ -3968,40 +3962,22 @@ h3, h4, h5, h6,
             </div>
           </div>
           <script>
+            var courseIdx2 = 0;
             function setCourseSlide2(idx) {
-              var s1 = document.getElementById('courseSlide2_1');
-              var s2 = document.getElementById('courseSlide2_2');
+              courseIdx2 = idx;
+              var tr = document.getElementById('courseTrack2');
               var d0 = document.getElementById('courseDot2_0');
               var d1 = document.getElementById('courseDot2_1');
-              if (!s1 || !s2) return;
+              if (tr) tr.style.transform = 'translateX(-' + (idx * 100) + '%)';
               if (idx === 0) {
-                s1.style.display = 'block';
-                s2.style.display = 'none';
-                d0.style.background = 'rgba(255,255,255,0.95)';
-                d0.style.color = '#002d62';
-                d0.style.border = 'none';
-                d1.style.background = 'rgba(0,26,58,0.7)';
-                d1.style.color = '#ffffff';
-                d1.style.border = '1px solid rgba(255,255,255,0.3)';
+                d0.style.background = 'rgba(255,255,255,0.95)'; d0.style.color = '#002d62'; d0.style.border = 'none';
+                d1.style.background = 'rgba(0,26,58,0.7)'; d1.style.color = '#ffffff'; d1.style.border = '1px solid rgba(255,255,255,0.3)';
               } else {
-                s1.style.display = 'none';
-                s2.style.display = 'block';
-                d1.style.background = 'rgba(255,255,255,0.95)';
-                d1.style.color = '#002d62';
-                d1.style.border = 'none';
-                d0.style.background = 'rgba(0,26,58,0.7)';
-                d0.style.color = '#ffffff';
-                d0.style.border = '1px solid rgba(255,255,255,0.3)';
+                d1.style.background = 'rgba(255,255,255,0.95)'; d1.style.color = '#002d62'; d1.style.border = 'none';
+                d0.style.background = 'rgba(0,26,58,0.7)'; d0.style.color = '#ffffff'; d0.style.border = '1px solid rgba(255,255,255,0.3)';
               }
             }
-            function switchCourseSlide2() {
-              var s1 = document.getElementById('courseSlide2_1');
-              if (s1 && s1.style.display !== 'none') {
-                setCourseSlide2(1);
-              } else {
-                setCourseSlide2(0);
-              }
-            }
+            function switchCourseSlide2() { setCourseSlide2(courseIdx2 === 0 ? 1 : 0); }
           </script>
         </div>
       </div>
@@ -4014,19 +3990,21 @@ h3, h4, h5, h6,
           <!-- Course 3 Visuals Interactive Slider -->
           <div class="course-slider-box" style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0, 33, 71, 0.1); background: #f8fafc; flex: 1; height: 100%; min-height: 320px;">
             
-            <!-- Slide 1: Course Banner -->
-            <div id="courseSlide3_1" class="course-slide" style="display: block; height: 100%; transition: opacity 0.3s ease;">
-              <img src="assets/images/academy/guide-to-responsible-advertising.png" alt="Guide to Responsible Advertising" style="width: 100%; height: 100%; min-height: 320px; object-fit: contain; background: #f8fafc; display: block;">
-              <div style="position: absolute; top: 12px; left: 12px; background: rgba(224, 88, 41, 0.95); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">
-                Foundational Course
+            <div id="courseTrack3" style="display: flex; width: 100%; height: 100%; transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1); will-change: transform;">
+              <!-- Slide 1: Course Banner -->
+              <div style="flex: 0 0 100%; width: 100%; height: 100%; position: relative;">
+                <img src="assets/images/academy/guide-to-responsible-advertising.png" alt="Guide to Responsible Advertising" style="width: 100%; height: 100%; min-height: 320px; object-fit: contain; background: #f8fafc; display: block;">
+                <div style="position: absolute; top: 12px; left: 12px; background: rgba(224, 88, 41, 0.95); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">
+                  Foundational Course
+                </div>
               </div>
-            </div>
 
-            <!-- Slide 2: Verifiable Certificate Preview -->
-            <div id="courseSlide3_2" class="course-slide" style="display: none; height: 100%; transition: opacity 0.3s ease;">
-              <img src="assets/images/academy/Responsible_Advertising_Certificate_UID.webp" alt="Responsible Advertising Certificate" style="width: 100%; height: 100%; min-height: 320px; object-fit: contain; background: #ffffff; display: block; padding: 16px;">
-              <div style="position: absolute; top: 12px; left: 12px; background: rgba(8, 107, 89, 0.95); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">
-                Verifiable Certificate
+              <!-- Slide 2: Verifiable Certificate Preview -->
+              <div style="flex: 0 0 100%; width: 100%; height: 100%; position: relative;">
+                <img src="assets/images/academy/Responsible_Advertising_Certificate_UID.webp" alt="Responsible Advertising Certificate" style="width: 100%; height: 100%; min-height: 320px; object-fit: contain; background: #ffffff; display: block; padding: 16px;">
+                <div style="position: absolute; top: 12px; left: 12px; background: rgba(8, 107, 89, 0.95); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">
+                  Verifiable Certificate
+                </div>
               </div>
             </div>
 
@@ -4045,40 +4023,22 @@ h3, h4, h5, h6,
             </div>
           </div>
           <script>
+            var courseIdx3 = 0;
             function setCourseSlide3(idx) {
-              var s1 = document.getElementById('courseSlide3_1');
-              var s2 = document.getElementById('courseSlide3_2');
+              courseIdx3 = idx;
+              var tr = document.getElementById('courseTrack3');
               var d0 = document.getElementById('courseDot3_0');
               var d1 = document.getElementById('courseDot3_1');
-              if (!s1 || !s2) return;
+              if (tr) tr.style.transform = 'translateX(-' + (idx * 100) + '%)';
               if (idx === 0) {
-                s1.style.display = 'block';
-                s2.style.display = 'none';
-                d0.style.background = 'rgba(255,255,255,0.95)';
-                d0.style.color = '#002d62';
-                d0.style.border = 'none';
-                d1.style.background = 'rgba(0,26,58,0.7)';
-                d1.style.color = '#ffffff';
-                d1.style.border = '1px solid rgba(255,255,255,0.3)';
+                d0.style.background = 'rgba(255,255,255,0.95)'; d0.style.color = '#002d62'; d0.style.border = 'none';
+                d1.style.background = 'rgba(0,26,58,0.7)'; d1.style.color = '#ffffff'; d1.style.border = '1px solid rgba(255,255,255,0.3)';
               } else {
-                s1.style.display = 'none';
-                s2.style.display = 'block';
-                d1.style.background = 'rgba(255,255,255,0.95)';
-                d1.style.color = '#002d62';
-                d1.style.border = 'none';
-                d0.style.background = 'rgba(0,26,58,0.7)';
-                d0.style.color = '#ffffff';
-                d0.style.border = '1px solid rgba(255,255,255,0.3)';
+                d1.style.background = 'rgba(255,255,255,0.95)'; d1.style.color = '#002d62'; d1.style.border = 'none';
+                d0.style.background = 'rgba(0,26,58,0.7)'; d0.style.color = '#ffffff'; d0.style.border = '1px solid rgba(255,255,255,0.3)';
               }
             }
-            function switchCourseSlide3() {
-              var s1 = document.getElementById('courseSlide3_1');
-              if (s1 && s1.style.display !== 'none') {
-                setCourseSlide3(1);
-              } else {
-                setCourseSlide3(0);
-              }
-            }
+            function switchCourseSlide3() { setCourseSlide3(courseIdx3 === 0 ? 1 : 0); }
           </script>
         </div>
         <div>
@@ -4095,10 +4055,14 @@ h3, h4, h5, h6,
             <div>✔ Case Law &amp; Precedents</div>
             <div>✔ ASCI Certificate of Completion</div>
           </div>
-          <div style="display: flex; gap: 16px; align-items: center;">
-            <a href="https://www.ascionline.in/academy/product/the-ascis-guide-to-responsible-advertising/" target="_blank" class="btn-enroll-course" style="font-size: 1rem; padding: 12px 28px;">
-              <span>Enroll on ASCI Academy</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <a href="academy-course-responsible-advertising.html" class="btn-enroll-course" style="font-size: 0.95rem; padding: 12px 24px;">
+              <span>View Course Details</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="https://www.ascionline.in/academy/product/the-ascis-guide-to-responsible-advertising/" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 700; color: #002d62; padding: 11px 20px; border: 1.5px solid #002d62; border-radius: 999px; text-decoration: none;">
+              <span>Enroll Now</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </a>
           </div>
         </div>

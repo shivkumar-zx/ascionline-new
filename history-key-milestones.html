@@ -4622,6 +4622,29 @@ h3, h4, h5, h6,
 
   <link rel="stylesheet" href="assets/site-header.css">
   <link rel="stylesheet" href="assets/site-footer.css">
+  <style id="unified-heading-scale">
+  /* Unified Heading Scale: H1 48px (3rem), H2 36px (2.25rem), H3 20px (1.25rem) */
+  main h1,
+  .academy-hero-title,
+  .about-page-title,
+  .selfreg-hero-title,
+  .timeline-page-title,
+  .directory-page-title,
+  .work-page-title,
+  .course-hero-title {
+    font-size: clamp(2rem, 3.75vw, 3rem) !important;
+  }
+  main h2:not(.cta-callout-title):not(.search-modal-title),
+  .section-headline,
+  .section-heading,
+  .academy-section-title,
+  .exec-heading {
+    font-size: clamp(1.65rem, 2.8vw, 2.25rem) !important;
+  }
+  main h3:not(.megamenu-highlight-title):not(.careers-modal-title) {
+    font-size: 1.25rem !important;
+  }
+</style>
 </head>
 
 <body>

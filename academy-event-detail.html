@@ -3787,42 +3787,41 @@ h3, h4, h5, h6,
 <!-- Hero Section -->
 <section class="academy-hero">
   <div class="container">
-    <div style="max-width: 860px;">
-      <a href="academy-events.html" style="display: inline-flex; align-items: center; gap: 6px; color: #86efac; font-size: 0.88rem; font-weight: 600; text-decoration: none; margin-bottom: 16px;">
+    <div style="max-width: 820px;">
+      <a href="academy-events.html" style="display: inline-flex; align-items: center; gap: 6px; color: #86efac; font-size: 0.88rem; font-weight: 600; text-decoration: none; margin-bottom: 14px;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-        <span>Back to All Events</span>
+        <span>Back to Events</span>
       </a>
-      <div id="eventMetaLine" style="font-size: 0.88rem; font-weight: 700; color: #86efac; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px;"></div>
       <h1 class="academy-hero-title" id="eventPageTitle">ASCI Academy Event</h1>
-      <p class="academy-hero-subtitle" id="eventPageDesc" style="color: #ffffff !important; max-width: 740px;"></p>
+      <p class="academy-hero-subtitle" id="eventPageDesc" style="color: #ffffff !important; max-width: 720px; margin-bottom: 0;"></p>
     </div>
   </div>
 </section>
 
-<!-- Single Large Image Showcase Slider -->
-<section class="academy-section" style="padding: 56px 0 72px;">
-  <div class="container" style="max-width: 1120px;">
-    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
-      <h2 class="academy-section-title" style="margin: 0;">Event Highlights</h2>
-      <div id="slideCounter" style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 0.95rem; font-weight: 700; color: #002d62; background: #f1f5f9; padding: 6px 16px; border-radius: 999px; border: 1px solid #cbd5e1;">1 / 9</div>
-    </div>
+<!-- Simple Single-Image Slider -->
+<section class="academy-section" style="padding: 56px 0 72px; background: #ffffff;">
+  <div class="container" style="max-width: 960px; margin: 0 auto; padding: 0 20px;">
+    
+    <!-- Simple Clean Image Slider Box -->
+    <div id="eventStageBox" style="position: relative; width: 100%; height: clamp(300px, 52vw, 540px); border-radius: 16px; overflow: hidden; background: #f8fafc; box-shadow: 0 10px 30px rgba(0, 45, 98, 0.08); border: 1px solid #e2e8f0;">
+      <div id="eventSlideTrack" style="display: flex; width: 100%; height: 100%; transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1); will-change: transform;"></div>
 
-    <!-- Main Large Image Stage -->
-    <div id="eventStageBox" style="position: relative; width: 100%; height: clamp(340px, 54vw, 620px); border-radius: 18px; overflow: hidden; background: #0b1320; box-shadow: 0 14px 38px rgba(0, 45, 98, 0.14); border: 1px solid #cbd5e1;">
-      <div id="eventSlideTrack" style="display: flex; width: 100%; height: 100%; transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1); will-change: transform;"></div>
-
-      <!-- Prev / Next Big Arrow Controls -->
-      <button type="button" onclick="prevEventPhoto()" aria-label="Previous photo" style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border-radius: 50%; background: rgba(0, 26, 58, 0.78); color: #ffffff; border: 1.5px solid rgba(255, 255, 255, 0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; backdrop-filter: blur(8px); transition: all 0.2s ease;" onmouseover="this.style.background='#086b59';this.style.transform='translateY(-50%) scale(1.08)'" onmouseout="this.style.background='rgba(0, 26, 58, 0.78)';this.style.transform='translateY(-50%)'">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      <!-- Simple Left / Right Arrows -->
+      <button type="button" onclick="prevEventPhoto()" aria-label="Previous photo" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 255, 255, 0.9); color: #0f172a; border: 1px solid #e2e8f0; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; box-shadow: 0 2px 10px rgba(0,0,0,0.12); transition: all 0.2s ease;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
       </button>
 
-      <button type="button" onclick="nextEventPhoto()" aria-label="Next photo" style="position: absolute; right: 18px; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border-radius: 50%; background: rgba(0, 26, 58, 0.78); color: #ffffff; border: 1.5px solid rgba(255, 255, 255, 0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; backdrop-filter: blur(8px); transition: all 0.2s ease;" onmouseover="this.style.background='#086b59';this.style.transform='translateY(-50%) scale(1.08)'" onmouseout="this.style.background='rgba(0, 26, 58, 0.78)';this.style.transform='translateY(-50%)'">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <button type="button" onclick="nextEventPhoto()" aria-label="Next photo" style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 255, 255, 0.9); color: #0f172a; border: 1px solid #e2e8f0; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; box-shadow: 0 2px 10px rgba(0,0,0,0.12); transition: all 0.2s ease;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </button>
     </div>
 
-    <!-- Clean Thumbnail Strip Below to Jump to Any Photo -->
-    <div id="eventThumbStrip" style="display: flex; gap: 12px; margin-top: 20px; overflow-x: auto; padding: 6px 2px; justify-content: center; flex-wrap: wrap;"></div>
+    <!-- Simple Dots & Counter Below -->
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 18px; flex-wrap: wrap; gap: 12px;">
+      <div id="eventDots" style="display: flex; gap: 8px; align-items: center;"></div>
+      <div id="slideCounter" style="font-family: var(--font-sans, 'Inter', sans-serif); font-size: 0.88rem; font-weight: 600; color: #64748b;">1 / 9</div>
+    </div>
+
   </div>
 </section>
 
@@ -3830,6 +3829,7 @@ h3, h4, h5, h6,
 const EVENTS_DATA = {"lens-on-gen-alpha": {"title": "Lens on Gen Alpha", "date": "October 2024", "category": "Conclave & Research", "description": "A deep-dive research event exploring the media consumption, brand perceptions, and ethical touchpoints shaping India's youngest generation of digital natives.", "photos": ["assets/images/academy/events/lens-on-gen-alpha/photo-1.webp", "assets/images/academy/events/lens-on-gen-alpha/photo-2.webp", "assets/images/academy/events/lens-on-gen-alpha/photo-3.webp", "assets/images/academy/events/lens-on-gen-alpha/photo-4.webp", "assets/images/academy/events/lens-on-gen-alpha/photo-5.webp", "assets/images/academy/events/lens-on-gen-alpha/photo-6.webp", "assets/images/academy/events/lens-on-gen-alpha/photo-7.webp", "assets/images/academy/events/lens-on-gen-alpha/photo-8.webp", "assets/images/academy/events/lens-on-gen-alpha/photo-9.webp"]}, "manifest-masculinities": {"title": "Manifest Masculinities: Beyond The Mask", "date": "March 2025", "category": "Diversity & Inclusion", "description": "Launch event and industry roundtable unpacking modern masculine representation in advertising alongside leading creative directors and social researchers.", "photos": ["assets/images/academy/events/manifest-masculinities/photo-1.jpg", "assets/images/academy/events/manifest-masculinities/photo-2.jpg", "assets/images/academy/events/manifest-masculinities/photo-3.jpg", "assets/images/academy/events/manifest-masculinities/photo-4.jpg", "assets/images/academy/events/manifest-masculinities/photo-5.jpg", "assets/images/academy/events/manifest-masculinities/photo-6.jpg", "assets/images/academy/events/manifest-masculinities/photo-7.jpg", "assets/images/academy/events/manifest-masculinities/photo-8.jpg", "assets/images/academy/events/manifest-masculinities/photo-9.jpg"]}, "adnext-ai": {"title": "ADNext: The AI Edition", "date": "March 2025", "category": "Technology & AI", "description": "Flagship conference addressing generative AI, deepfakes, synthetic disclosures, and regulatory guardrails for future-ready creative teams.", "photos": ["assets/images/academy/events/adnext-ai/photo-1.jpg", "assets/images/academy/events/adnext-ai/photo-2.jpg", "assets/images/academy/events/adnext-ai/photo-3.jpg", "assets/images/academy/events/adnext-ai/photo-4.jpg", "assets/images/academy/events/adnext-ai/photo-5.jpg", "assets/images/academy/events/adnext-ai/photo-6.jpg", "assets/images/academy/events/adnext-ai/photo-7.jpg", "assets/images/academy/events/adnext-ai/photo-8.jpg", "assets/images/academy/events/adnext-ai/photo-9.jpg"]}, "di-edge-summit": {"title": "D&I Edge Summit", "date": "December 2023", "category": "Industry Conclave", "description": "Bringing together diversity champions, brand custodians, and global advisors to establish inclusive storytelling benchmarks across Indian media.", "photos": ["assets/images/academy/events/di-edge-summit/photo-1.jpg", "assets/images/academy/events/di-edge-summit/photo-2.jpg", "assets/images/academy/events/di-edge-summit/photo-3.jpg", "assets/images/academy/events/di-edge-summit/photo-4.jpg", "assets/images/academy/events/di-edge-summit/photo-5.jpg", "assets/images/academy/events/di-edge-summit/photo-6.jpg", "assets/images/academy/events/di-edge-summit/photo-7.jpg", "assets/images/academy/events/di-edge-summit/photo-8.jpg", "assets/images/academy/events/di-edge-summit/photo-9.jpg"]}, "privacy-progress": {"title": "Privacy Progress: Pillars of Digital Bharat", "date": "March 2024", "category": "Whitepaper Launch", "description": "Collaborative summit and whitepaper launch with Lexplosion examining consumer data consent, digital privacy, and user protection across Bharat.", "photos": ["assets/images/academy/events/privacy-progress/photo-1.jpg", "assets/images/academy/events/privacy-progress/photo-2.jpg", "assets/images/academy/events/privacy-progress/photo-3.jpg", "assets/images/academy/events/privacy-progress/photo-4.jpg", "assets/images/academy/events/privacy-progress/photo-5.jpg", "assets/images/academy/events/privacy-progress/photo-6.jpg", "assets/images/academy/events/privacy-progress/photo-7.jpg", "assets/images/academy/events/privacy-progress/photo-8.jpg", "assets/images/academy/events/privacy-progress/photo-9.jpg"]}, "academy-launch": {"title": "ASCI Academy Launch Event", "date": "August 2023", "category": "Inaugural Launch", "description": "The grand inauguration of ASCI Academy in Mumbai, bringing together regulators, global leaders, and academic institutions to champion ethical advertising.", "photos": ["assets/images/academy/events/academy-launch/photo-1.jpg", "assets/images/academy/events/academy-launch/photo-2.jpg", "assets/images/academy/events/academy-launch/photo-3.jpg", "assets/images/academy/events/academy-launch/photo-4.jpg", "assets/images/academy/events/academy-launch/photo-5.jpg", "assets/images/academy/events/academy-launch/photo-6.jpg", "assets/images/academy/events/academy-launch/photo-7.jpg", "assets/images/academy/events/academy-launch/photo-8.jpg", "assets/images/academy/events/academy-launch/photo-9.jpg"]}, "getitright-summit": {"title": "ASCI GetItRight Brand & Influencer Summit", "date": "2023", "category": "Influencer Conclave", "description": "Dedicated summit empowering creators, talent agencies, and brands on responsible influencer disclosures, transparency, and consumer trust.", "photos": ["assets/images/academy/events/getitright-summit/photo-1.jpg", "assets/images/academy/events/getitright-summit/photo-2.jpg", "assets/images/academy/events/getitright-summit/photo-3.jpg", "assets/images/academy/events/getitright-summit/photo-4.jpg", "assets/images/academy/events/getitright-summit/photo-5.jpg", "assets/images/academy/events/getitright-summit/photo-6.jpg", "assets/images/academy/events/getitright-summit/photo-7.jpg", "assets/images/academy/events/getitright-summit/photo-8.jpg", "assets/images/academy/events/getitright-summit/photo-9.jpg"]}};
 let currentPhotos = [];
 let currentIdx = 0;
+let slideTimer = null;
 
 function loadEventPage() {
   const params = new URLSearchParams(window.location.search);
@@ -3837,8 +3837,7 @@ function loadEventPage() {
   if (!EVENTS_DATA[slug]) slug = 'lens-on-gen-alpha';
   const ev = EVENTS_DATA[slug];
 
-  document.title = ev.title + ' | ASCI Academy Events';
-  document.getElementById('eventMetaLine').textContent = ev.date + '  •  ' + ev.category;
+  document.title = ev.title + ' | ASCI Academy';
   document.getElementById('eventPageTitle').textContent = ev.title;
   document.getElementById('eventPageDesc').textContent = ev.description;
 
@@ -3846,19 +3845,18 @@ function loadEventPage() {
 
   const track = document.getElementById('eventSlideTrack');
   track.innerHTML = currentPhotos.map((src, i) => `
-    <div style="flex: 0 0 100%; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-      <img src="${src}" alt="${ev.title} Photo ${i+1}" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+    <div style="flex: 0 0 100%; width: 100%; height: 100%;">
+      <img src="${src}" alt="${ev.title} Photo ${i+1}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
     </div>
   `).join('');
 
-  const strip = document.getElementById('eventThumbStrip');
-  strip.innerHTML = currentPhotos.map((src, i) => `
-    <button type="button" onclick="goToEventPhoto(${i})" class="ev-thumb-btn" style="width: 84px; height: 58px; border-radius: 8px; overflow: hidden; padding: 0; border: 2.5px solid ${i === 0 ? '#086b59' : 'transparent'}; opacity: ${i === 0 ? '1' : '0.6'}; cursor: pointer; transition: all 0.2s ease; background: #0f172a; flex-shrink: 0;">
-      <img src="${src}" alt="Thumb ${i+1}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-    </button>
+  const dotsWrap = document.getElementById('eventDots');
+  dotsWrap.innerHTML = currentPhotos.map((_, i) => `
+    <button type="button" onclick="setEventPhoto(${i})" class="ev-dot-btn" aria-label="Photo ${i+1}" style="width: ${i===0 ? '24px' : '9px'}; height: 9px; border-radius: 999px; border: none; padding: 0; cursor: pointer; background: ${i===0 ? '#086b59' : '#cbd5e1'}; transition: all 0.25s ease;"></button>
   `).join('');
 
   goToEventPhoto(0);
+  startSlideTimer();
 }
 
 function goToEventPhoto(idx) {
@@ -3874,26 +3872,36 @@ function goToEventPhoto(idx) {
 
   document.getElementById('slideCounter').textContent = (idx + 1) + ' / ' + currentPhotos.length;
 
-  const thumbs = document.querySelectorAll('.ev-thumb-btn');
-  thumbs.forEach((btn, i) => {
-    if (i === idx) {
-      btn.style.borderColor = '#086b59';
-      btn.style.opacity = '1';
-      btn.style.transform = 'scale(1.06)';
-    } else {
-      btn.style.borderColor = 'transparent';
-      btn.style.opacity = '0.6';
-      btn.style.transform = 'none';
-    }
+  const dots = document.querySelectorAll('.ev-dot-btn');
+  dots.forEach((d, i) => {
+    d.style.width = (i === idx) ? '24px' : '9px';
+    d.style.background = (i === idx) ? '#086b59' : '#cbd5e1';
   });
 }
 
+function setEventPhoto(idx) {
+  clearInterval(slideTimer);
+  goToEventPhoto(idx);
+  startSlideTimer();
+}
+
 function nextEventPhoto() {
+  clearInterval(slideTimer);
   goToEventPhoto(currentIdx + 1);
+  startSlideTimer();
 }
 
 function prevEventPhoto() {
+  clearInterval(slideTimer);
   goToEventPhoto(currentIdx - 1);
+  startSlideTimer();
+}
+
+function startSlideTimer() {
+  clearInterval(slideTimer);
+  slideTimer = setInterval(function() {
+    goToEventPhoto(currentIdx + 1);
+  }, 4000);
 }
 
 document.addEventListener('keydown', function(e) {
@@ -3905,14 +3913,18 @@ document.addEventListener('DOMContentLoaded', function() {
   loadEventPage();
   const box = document.getElementById('eventStageBox');
   if (box) {
+    box.addEventListener('mouseenter', () => clearInterval(slideTimer));
+    box.addEventListener('mouseleave', () => startSlideTimer());
+
     let startX = 0;
-    box.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, {passive: true});
+    box.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; clearInterval(slideTimer); }, {passive: true});
     box.addEventListener('touchend', (e) => {
       const diff = e.changedTouches[0].clientX - startX;
       if (Math.abs(diff) > 40) {
-        if (diff < 0) nextEventPhoto();
-        else prevEventPhoto();
+        if (diff < 0) goToEventPhoto(currentIdx + 1);
+        else goToEventPhoto(currentIdx - 1);
       }
+      startSlideTimer();
     }, {passive: true});
   }
 });

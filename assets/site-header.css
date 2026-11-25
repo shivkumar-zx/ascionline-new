@@ -1410,3 +1410,80 @@ button {
   line-height: 1 !important;
   border: 2px solid #ffffff !important;
 }
+
+/* ==========================================================================
+   ACADEMY SIMPLE DROPDOWN MENUS (Courses & Our Programs)
+   ========================================================================== */
+.academy-nav-item-dropdown {
+  position: relative !important;
+}
+
+.academy-nav-chevron {
+  transition: transform 0.18s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.academy-nav-item-dropdown:hover .academy-nav-chevron,
+.academy-nav-item-dropdown:focus-within .academy-nav-chevron,
+.academy-nav-item-dropdown.open .academy-nav-chevron {
+  transform: rotate(180deg) !important;
+}
+
+.academy-dropdown-menu {
+  position: absolute !important;
+  top: calc(100% + 1px) !important;
+  left: 0 !important;
+  min-width: 290px !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 12px 30px rgba(0, 33, 71, 0.12) !important;
+  padding: 8px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(6px) !important;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease !important;
+  z-index: 999 !important;
+}
+
+.academy-nav-item-dropdown:hover > .academy-dropdown-menu,
+.academy-nav-item-dropdown:focus-within > .academy-dropdown-menu,
+.academy-nav-item-dropdown.open > .academy-dropdown-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.academy-dropdown-divider {
+  height: 1px !important;
+  background: #e2e8f0 !important;
+  margin: 6px 8px !important;
+}
+
+.academy-dropdown-link {
+  display: block !important;
+  padding: 9px 14px !important;
+  border-radius: 7px !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: #1f2937 !important;
+  text-decoration: none !important;
+  line-height: 1.4 !important;
+  transition: background 0.15s ease, color 0.15s ease !important;
+  white-space: nowrap !important;
+}
+
+.academy-dropdown-link:hover {
+  background: #f1f5f9 !important;
+  color: #002d62 !important;
+  text-decoration: none !important;
+}
+
+.academy-dropdown-link.active {
+  background: #eef4fb !important;
+  color: #002d62 !important;
+  font-weight: 600 !important;
+}

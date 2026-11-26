@@ -5,7 +5,6 @@
     { "source": "/the-work-we-do/about-us.html", "destination": "/about-us.html" },
     { "source": "/the-work-we-do/people", "destination": "/people.html" },
     { "source": "/the-work-we-do/people.html", "destination": "/people.html" },
-    { "source": "/people/:slug", "destination": "/person.html?id=:slug" },
     { "source": "/the-work-we-do/careers", "destination": "/careers.html" },
     { "source": "/the-work-we-do/careers.html", "destination": "/careers.html" },
     { "source": "/the-work-we-do/annual-reports", "destination": "/annual-reports.html" },

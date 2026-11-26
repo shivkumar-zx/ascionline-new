@@ -6615,6 +6615,194 @@ h3, h4, h5, h6,
     }
   }
 </style>
+    <style id="owh-people-cards-css">
+  .people-subpage-hero {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 52px 0 44px;
+  }
+  .people-subpage-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #086b59;
+    text-decoration: none;
+    margin-bottom: 16px;
+  }
+  .people-subpage-back:hover {
+    color: #002d62;
+  }
+  .people-subpage-title {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    color: #0f172a;
+    margin: 0 0 14px;
+  }
+  .people-subpage-lead {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 1.05rem !important;
+    line-height: 1.65 !important;
+    color: #475569 !important;
+    max-width: 780px;
+    margin: 0 0 26px;
+  }
+  .people-subnav-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .people-subnav-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    color: #334155;
+    transition: all 0.18s ease;
+  }
+  .people-subnav-pill:hover,
+  .people-subnav-pill.active {
+    background: #086b59;
+    border-color: #086b59;
+    color: #ffffff;
+  }
+
+  /* OneWorld Health Inline Card Design (exact screenshot match) */
+  .owh-group-section {
+    padding: 60px 0 68px;
+  }
+  .owh-group-section.bg-gray {
+    background: #eef0ed;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .owh-group-section.bg-white {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .owh-group-header {
+    padding-bottom: 16px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid #cbd5e1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .owh-group-heading {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    color: #1e3a4c;
+    margin: 0 !important;
+  }
+  .owh-inline-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+  }
+  .owh-inline-grid.owh-inline-grid-single {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .owh-inline-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  .owh-inline-thumb {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: transparent;
+    border-radius: 200px;
+    padding: 0;
+    border: 2.5px solid transparent;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .owh-inline-card:hover .owh-inline-thumb {
+    border-color: #f89e1b;
+    transform: scale(1.03);
+  }
+  .owh-inline-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    border-radius: 100%;
+  }
+  .owh-inline-fallback {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #002d62 0%, #086b59 100%);
+    color: #ffffff;
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  .owh-inline-text {
+    min-width: 0;
+    flex: 1;
+  }
+  .owh-inline-name {
+    font-family: var(--font-sans, 'Inter', sans-serif) !important;
+    font-weight: 700 !important;
+    color: #1e3a4c;
+    margin: 0 0 4px 0;
+    line-height: 1.25;
+    transition: color 0.2s ease;
+  }
+  .owh-inline-card:hover .owh-inline-name {
+    color: #f89e1b;
+  }
+  .owh-inline-role {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #334155;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .owh-inline-bio {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.875rem;
+    color: #475569;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .owh-inline-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 24px;
+    }
+  }
+  @media (max-width: 640px) {
+    .owh-inline-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .owh-inline-thumb {
+      width: 96px;
+      height: 96px;
+    }
+  }
+</style>
   <style id="people-tabs-css">
   .people-sticky-tabs-wrap {
     position: sticky;
@@ -7419,6 +7607,8 @@ h3, h4, h5, h6,
 <main>
   
 <main>
+  
+<main>
   <section class="directory-hero" style="border-bottom: none;">
     <div class="container">
       <div class="directory-hero-content-wrapper">
@@ -7641,7 +7831,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Anuradha Sengupta</h3>
           <div class="owh-inline-role">Independent journalist and producer</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -7649,7 +7838,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Rohit Kumar Singh</h3>
           <div class="owh-inline-role">Member, National Consumer Disputes Redressal Commission (NCDRC) Former Secretary to the Government of India, Department of Consumer Affairs (DoCA)</div>
-          
         </div>
       </div>
       </div>
@@ -7731,7 +7919,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Sam Balsara</h3>
           <div class="owh-inline-role">Chairman &amp; Managing Director, Madison Comms P. Ltd. | Former Chairman, ASCI</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -7739,7 +7926,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Bharat V. Patel</h3>
           <div class="owh-inline-role">Ex - Chairman &amp; Managing Director, Procter &amp; Gamble India Ltd | Former Chairman, ASCI</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -7747,7 +7933,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Subhash Kamath</h3>
           <div class="owh-inline-role">Former CEO, BBH &amp; Publicis Worldwide, India | Former Chairman, ASCI</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -7755,7 +7940,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Madhukar Kamath</h3>
           <div class="owh-inline-role">Managing Director &amp; CEO, Mudra Communications Pvt. Ltd. | Former Chairman, ASCI</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -7763,7 +7947,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Partha Sinha</h3>
           <div class="owh-inline-role">Founding Partner, ABLTY Advisory LLP | Former Chairman, ASCI</div>
-          
         </div>
       </div>
       </div>
@@ -7844,7 +8027,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Burjor D. Nariman</h3>
           <div class="owh-inline-role">Proprietor of Nariman &amp; Associates</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -7852,7 +8034,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Archana Girish Sabnis</h3>
           <div class="owh-inline-role">MedicoLegal and Consumer Law Consultant</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -7875,7 +8056,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/06/CCC-member-photos.png" alt="George Cheriyan" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">GC</div></div>
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">George Cheriyan</h3>
-          <div class="owh-inline-role">CCC Member</div>
           <p class="owh-inline-bio">(Representative of Consumers) Working President, Consumers Protection Association (CPA), Agartala, Tripura</p>
         </div>
       </div>
@@ -7939,7 +8119,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2023/05/Preeti-Vyas.png" alt="Preeti Vyas" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PV</div></div>
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Preeti Vyas</h3>
-          <div class="owh-inline-role">CCC Member</div>
           <p class="owh-inline-bio">CEO, Amar Chitra Katha Pvt Ltd.</p>
         </div>
       </div>
@@ -8028,7 +8207,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Vinita Dang Mohoni</h3>
           <div class="owh-inline-role">Business &amp; Marketing Strategy Consultant</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8111,7 +8289,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Kalpesh Shah</h3>
           <div class="owh-inline-role">Eye specialist</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8119,7 +8296,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Muralidharan Rajamani</h3>
           <div class="owh-inline-role">Finance and Insurance</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8127,7 +8303,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Prof. Yogendra Shastri</h3>
           <div class="owh-inline-role">Sustainability</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8135,7 +8310,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">(Dr.) Kalyani Barve</h3>
           <div class="owh-inline-role">Cosmetics</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8143,7 +8317,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Prof. Mahesh Tirumkudulu</h3>
           <div class="owh-inline-role">Personal Care / FMCG / Chemistry / Efficacy</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8151,7 +8324,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Ravi Raghavan</h3>
           <div class="owh-inline-role">Chemicals</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8159,7 +8331,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Prof. Jayesh Bellare</h3>
           <div class="owh-inline-role">Personal Care / FMCG / Chemistry/Efficacy</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8167,7 +8338,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Prof. Vivek Agarwal</h3>
           <div class="owh-inline-role">Electric</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8175,7 +8345,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Prof. Rangan Banerjee</h3>
           <div class="owh-inline-role">Electronics / Energy</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8183,7 +8352,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Amartya Banerjee</h3>
           <div class="owh-inline-role">Education</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8191,7 +8359,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Vishi Bansal</h3>
           <div class="owh-inline-role">Aryuveda &amp; Herbal</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8199,7 +8366,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Ramesh Bhonde</h3>
           <div class="owh-inline-role">Stem Cell Research and Therapy</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8207,7 +8373,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Rohinton Noshir Bilimoria</h3>
           <div class="owh-inline-role">Dentistry / Teeth</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8215,7 +8380,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Tathagata Chakravarty</h3>
           <div class="owh-inline-role">Tyre Technical</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8223,7 +8387,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Pramod Deodhar</h3>
           <div class="owh-inline-role">Food &amp; Beverages</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8231,7 +8394,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Manasi Deshpande</h3>
           <div class="owh-inline-role">Aryuveda &amp; Herbal</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8239,7 +8401,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Shovan Ganguli</h3>
           <div class="owh-inline-role">Food &amp; Beverages</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8247,7 +8408,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Shonali Ghosh</h3>
           <div class="owh-inline-role">Market Research</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8255,7 +8415,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Jehangir Gai</h3>
           <div class="owh-inline-role">Legal Matters</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8263,7 +8422,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Geeta Jotwani</h3>
           <div class="owh-inline-role">Stem Cell Research and Therapy</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8271,7 +8429,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Aazmeen Kasad</h3>
           <div class="owh-inline-role">Legal Matters</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8279,7 +8436,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Neeta R. Khanolkar</h3>
           <div class="owh-inline-role">Microbiology</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8287,7 +8443,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Abhay Kumar</h3>
           <div class="owh-inline-role">Microbiology</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8295,7 +8450,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Prof. Bipin Kumar</h3>
           <div class="owh-inline-role">Textiles</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8303,7 +8457,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Devishree M.</h3>
           <div class="owh-inline-role">Food &amp; Beverages</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8311,7 +8464,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Prof. Anurag Mehra</h3>
           <div class="owh-inline-role">Personal Care / FMCG / Chemistry / Efficacy</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8319,7 +8471,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Chitra Nayak</h3>
           <div class="owh-inline-role">Dermatology</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8327,7 +8478,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Urmi Palan</h3>
           <div class="owh-inline-role">Immunology</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8335,7 +8485,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Sibiraj B. Pillai</h3>
           <div class="owh-inline-role">Telecom</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8343,7 +8492,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. R. D. Potdar</h3>
           <div class="owh-inline-role">Medical / Physiology</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8351,7 +8499,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">P. Surya Prakash</h3>
           <div class="owh-inline-role">Construction</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8359,7 +8506,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Rajaretnam (Raja)</h3>
           <div class="owh-inline-role">Market Research</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8367,7 +8513,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr.T.N.V.V.RAO</h3>
           <div class="owh-inline-role">Mirobiology sp. Water</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8375,7 +8520,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Archana Sabnis</h3>
           <div class="owh-inline-role">Homeopathy</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8383,7 +8527,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Sadhana Sathaye</h3>
           <div class="owh-inline-role">Cosmetics</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8391,7 +8534,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Prof. Supreet Saini</h3>
           <div class="owh-inline-role">Microbiology</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8399,7 +8541,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Gaurav Saksena</h3>
           <div class="owh-inline-role">Organic Claim (F&amp;B)</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8407,7 +8548,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Muralidhara Rao Sakhumalla</h3>
           <div class="owh-inline-role">Microbiology</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8415,7 +8555,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Ninad Sathe</h3>
           <div class="owh-inline-role">Aryuveda &amp; Herbal</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8423,7 +8562,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. B. Sesikeran</h3>
           <div class="owh-inline-role">Food &amp; Beverages</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8431,7 +8569,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Shrikant Shenoy</h3>
           <div class="owh-inline-role">IRS / Readership / Viewership Market Share</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8439,7 +8576,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Prof. Ashutosh Sinha</h3>
           <div class="owh-inline-role">Market Research</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8447,7 +8583,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Shashi Sinha</h3>
           <div class="owh-inline-role">IRS / Readership / Viewership Market Share</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8455,7 +8590,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr Vivek P Soni</h3>
           <div class="owh-inline-role">Dentistry / Teeth</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8463,7 +8597,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Alok Srivastava</h3>
           <div class="owh-inline-role">Stem Cell Research and Therapy</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8471,7 +8604,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Prof. Dr. Mahesh T.S</h3>
           <div class="owh-inline-role">Aryuveda &amp; Herbal</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8479,7 +8611,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">P.N. Vasanti</h3>
           <div class="owh-inline-role">Education</div>
-          
         </div>
       </div>
       </div>
@@ -8496,7 +8627,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Abhay Chowdhary</h3>
           <div class="owh-inline-role">VIROLOGY &amp;</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8504,7 +8634,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Shripad Kulkarni</h3>
           <div class="owh-inline-role">TELEVISION MEASUREMENTS</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8512,7 +8641,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Prof. Smita Lele</h3>
           <div class="owh-inline-role">Food &amp; Beverages</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8520,7 +8648,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Girish Malhotra</h3>
           <div class="owh-inline-role">Banking / Retail</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8528,7 +8655,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr.D.B.A.Narayana</h3>
           <div class="owh-inline-role">Aryuveda &amp; Herbal</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8536,7 +8662,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Sarang Panchal</h3>
           <div class="owh-inline-role">Market Research</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8544,7 +8669,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Prof. (Dr.) Dinakar Pasla</h3>
           <div class="owh-inline-role">Construction (cement, pipes, tiles)</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8552,7 +8676,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Punit Saraogi</h3>
           <div class="owh-inline-role">Hair &amp; Skin Expert</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8560,7 +8683,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Dr. Sujal Shah</h3>
           <div class="owh-inline-role">Eye specialist</div>
-          
         </div>
       </div>
       <div class="owh-inline-card">
@@ -8568,7 +8690,6 @@ h3, h4, h5, h6,
         <div class="owh-inline-text">
           <h3 class="owh-inline-name">Preetika Singh</h3>
           <div class="owh-inline-role">Legal</div>
-          
         </div>
       </div>
       </div>

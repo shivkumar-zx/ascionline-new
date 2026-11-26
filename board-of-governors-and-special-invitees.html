@@ -4508,60 +4508,55 @@ h3, h4, h5, h6,
     <style id="people-tabs-css">
   .people-sticky-tabs-wrap {
     position: sticky;
-    top: 126px;
+    top: 142px;
     z-index: 45;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-top: 1px solid #e2e8f0;
-    border-bottom: 1px solid #e2e8f0;
-    padding: 13px 0;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    background: #1d2721 !important;
+    border: none;
   }
   .people-tabs-bar {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 8px;
+    gap: 0 20px;
+    padding: 0;
   }
   .people-tab-btn {
     display: inline-flex;
     align-items: center;
-    padding: 8px 17px;
-    border-radius: 999px;
+    padding: 14px 4px;
+    line-height: 1.3;
+    border: none !important;
+    border-radius: 0;
+    background: transparent;
     font-family: var(--font-sans, 'Inter', sans-serif);
-    font-size: 0.855rem;
+    font-size: 0.92rem;
     font-weight: 500;
+    color: #ffffff;
+    text-decoration: none !important;
     cursor: pointer;
-    border: 1px solid #e2e8f0;
-    background: #f8fafc;
-    color: #334155;
     white-space: nowrap;
-    transition: all 0.18s ease;
+    transition: color 0.16s ease;
   }
   .people-tab-btn:hover {
-    background: #eef0ed;
-    border-color: #cbd5e1;
-    color: #086b59;
+    color: #f89e1b;
+    text-decoration: none !important;
+    border: none !important;
   }
   .people-tab-btn.active {
-    background: #086b59;
-    border-color: #086b59;
-    color: #ffffff;
-    font-weight: 600;
-    box-shadow: 0 4px 12px rgba(8, 107, 89, 0.2), inset 0 -2.5px 0 #f7a719;
+    color: #f89e1b;
+    font-weight: 700;
+    border: none !important;
   }
   @media (max-width: 900px) {
     .people-sticky-tabs-wrap {
       top: 72px;
-      padding: 10px 0;
     }
     .people-tabs-bar {
       flex-wrap: nowrap;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding-bottom: 2px;
+      gap: 24px;
     }
     .people-tabs-bar::-webkit-scrollbar {
       display: none;
@@ -4661,6 +4656,10 @@ h3, h4, h5, h6,
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
   }
+  .owh-inline-grid.owh-inline-grid-single {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
   .owh-inline-card {
     display: flex;
     align-items: center;
@@ -4671,9 +4670,9 @@ h3, h4, h5, h6,
     height: 130px;
     overflow: hidden;
     flex-shrink: 0;
-    background: #fff;
+    background: transparent;
     border-radius: 200px;
-    padding: 3px;
+    padding: 0;
   }
   .owh-inline-thumb img {
     width: 100%;
@@ -5476,6 +5475,15 @@ h3, h4, h5, h6,
 
 
 
+
+
+
+<main>
+  
+<main>
+  
+<main>
+  
 <main>
   <section class="people-subpage-hero">
     <div class="container">

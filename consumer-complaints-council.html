@@ -4673,11 +4673,10 @@ h3, h4, h5, h6,
     background: transparent;
     border-radius: 200px;
     padding: 0;
-    border: 2.5px solid transparent;
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
   }
   .owh-inline-card:hover .owh-inline-thumb {
-    border-color: #f89e1b;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
     transform: scale(1.03);
   }
   .owh-inline-thumb img {
@@ -4718,20 +4717,21 @@ h3, h4, h5, h6,
   }
   .owh-inline-role {
     font-family: var(--font-sans, 'Inter', sans-serif);
-    font-size: 0.76rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    letter-spacing: 0;
     color: #334155;
     margin-bottom: 8px;
     line-height: 1.4;
   }
   .owh-inline-bio {
     font-family: var(--font-sans, 'Inter', sans-serif);
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     color: #475569;
     line-height: 1.55;
     margin: 0;
+    font-weight: 600;
   }
 
   @media (max-width: 1024px) {
@@ -5488,6 +5488,8 @@ h3, h4, h5, h6,
 
 
 
+<main>
+  
 <main>
   
 <main>

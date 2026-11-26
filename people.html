@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>People | ASCI | The Advertising Standards Council of India</title>
+  <title>People &amp; Governance Directory – ASCI | The Advertising Standards Council of India</title>
   <meta name="description"
     content="Complete directory of the Board of Governors, Consumer Complaints Council (CCC), Leadership Team, and Technical Experts governing self-regulation in Indian advertising.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -5715,44 +5715,224 @@ h3, h4, h5, h6,
     }
   }
 </style>
+    <style id="owh-people-cards-css">
+  .people-subpage-hero {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 52px 0 44px;
+  }
+  .people-subpage-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #086b59;
+    text-decoration: none;
+    margin-bottom: 16px;
+  }
+  .people-subpage-back:hover {
+    color: #002d62;
+  }
+  .people-subpage-title {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    color: #0f172a;
+    margin: 0 0 14px;
+  }
+  .people-subpage-lead {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 1.05rem !important;
+    line-height: 1.65 !important;
+    color: #475569 !important;
+    max-width: 780px;
+    margin: 0 0 26px;
+  }
+  .people-subnav-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .people-subnav-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    color: #334155;
+    transition: all 0.18s ease;
+  }
+  .people-subnav-pill:hover,
+  .people-subnav-pill.active {
+    background: #086b59;
+    border-color: #086b59;
+    color: #ffffff;
+  }
+
+  /* OneWorld Health Inline Card Design (exact screenshot match) */
+  .owh-group-section {
+    padding: 60px 0 68px;
+  }
+  .owh-group-section.bg-gray {
+    background: #eef0ed;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .owh-group-section.bg-white {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .owh-group-header {
+    padding-bottom: 16px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid #cbd5e1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .owh-group-heading {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    color: #1e3a4c;
+    margin: 0 !important;
+  }
+  .owh-inline-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+  }
+  .owh-inline-grid.owh-inline-grid-single {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .owh-inline-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  .owh-inline-thumb {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 200px;
+    padding: 3px;
+  }
+  .owh-inline-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    border-radius: 100%;
+  }
+  .owh-inline-fallback {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #002d62 0%, #086b59 100%);
+    color: #ffffff;
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  .owh-inline-text {
+    min-width: 0;
+    flex: 1;
+  }
+  .owh-inline-name {
+    font-family: var(--font-sans, 'Inter', sans-serif) !important;
+    font-weight: 700 !important;
+    color: #1e3a4c;
+    margin: 0 0 4px 0;
+    line-height: 1.25;
+  }
+  .owh-inline-role {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #334155;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .owh-inline-bio {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.875rem;
+    color: #475569;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .owh-inline-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 24px;
+    }
+  }
+  @media (max-width: 640px) {
+    .owh-inline-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .owh-inline-thumb {
+      width: 96px;
+      height: 96px;
+    }
+  }
+</style>
   <style id="people-tabs-css">
   .people-sticky-tabs-wrap {
     position: sticky;
     top: 126px;
     z-index: 45;
-    background: #ffffff;
-    border-top: 1px solid #e2e8f0;
-    border-bottom: 1px solid #e2e8f0;
+    background: #1d2721 !important;
+    border: none;
   }
   .people-tabs-bar {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 24px;
+    gap: 10px 32px;
+    padding: 4px 0;
   }
   .people-tab-btn {
     display: inline-flex;
     align-items: center;
-    padding: 14px 2px;
-    border: none;
-    border-bottom: 2.5px solid transparent;
+    padding: 16px 6px;
+    border: none !important;
     border-radius: 0;
     background: transparent;
     font-family: var(--font-sans, 'Inter', sans-serif);
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     font-weight: 500;
-    color: #64748b;
+    color: #ffffff;
+    text-decoration: none !important;
     cursor: pointer;
     white-space: nowrap;
-    transition: color 0.15s ease, border-color 0.15s ease;
+    transition: color 0.16s ease;
   }
   .people-tab-btn:hover {
-    color: #0f172a;
+    color: #f89e1b;
+    text-decoration: none !important;
+    border: none !important;
   }
   .people-tab-btn.active {
-    color: #086b59;
-    font-weight: 600;
-    border-bottom-color: #086b59;
+    color: #f89e1b;
+    font-weight: 700;
+    border: none !important;
   }
   @media (max-width: 900px) {
     .people-sticky-tabs-wrap {
@@ -5763,7 +5943,7 @@ h3, h4, h5, h6,
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      gap: 20px;
+      gap: 24px;
     }
     .people-tabs-bar::-webkit-scrollbar {
       display: none;
@@ -6506,17 +6686,45 @@ h3, h4, h5, h6,
 
 
 
+
 <main>
-  <section class="people-subpage-hero" style="border-bottom: none; padding-bottom: 36px;">
+  <section class="directory-hero" style="border-bottom: none;">
     <div class="container">
-      <h1 class="people-subpage-title">People</h1>
-      <p class="people-subpage-lead" style="margin-bottom: 0;">
-        Meet our Board of Governor, Consultative Committee, Secretariat, Consumer Complaints Council, and Technical Experts
-      </p>
+      <div class="directory-hero-content-wrapper">
+        <div class="directory-hero-left">
+          <h1 class="directory-page-title">People &amp; Governance Directory</h1>
+          <p class="directory-page-desc">
+            ASCI operates through an independent, tripartite governance model comprising leaders from advertisers,
+            advertising agencies, media organisations, and an independent majority of civil society members. Explore our
+            governance bodies and technical panels below.
+          </p>
+        </div>
+
+        <div class="directory-hero-right">
+          <div class="directory-stats-grid">
+            <div class="stat-cell">
+              <div class="stat-number">128</div>
+              <div class="stat-label">Members &amp; Experts Listed</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">50%+</div>
+              <div class="stat-label">Civil Society Quorum on CCC</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Independent Appellate Review</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">40+</div>
+              <div class="stat-label">Years Of Voluntary Stewardship</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <div class="people-sticky-tabs-wrap">
+  <div class="people-sticky-tabs-wrap" id="peopleStickyTabs">
     <div class="container">
       <div class="people-tabs-bar" id="peopleTabsBar">
         <button type="button" class="people-tab-btn active" data-tab="all" onclick="switchPeopleTab('all')">All</button>
@@ -7133,7 +7341,7 @@ h3, h4, h5, h6,
       <div class="owh-group-header">
         <h2 class="owh-group-heading section-heading">ASCI Leadership &amp; Secretariat</h2>
       </div>
-      <div class="owh-inline-grid">
+      <div class="owh-inline-grid owh-inline-grid-single">
       <div class="owh-inline-card">
         <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2023/10/IMG_294X294.jpg" alt="Barnita Dasgupta" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">BD</div></div>
         <div class="owh-inline-text">
@@ -7638,13 +7846,21 @@ h3, h4, h5, h6,
 </main>
 
 <script>
-  window.switchPeopleTab = function (tab) {
+  window.switchPeopleTab = function (tab, shouldScroll) {
     document.querySelectorAll('#peopleTabsBar .people-tab-btn').forEach(function (btn) {
       btn.classList.toggle('active', btn.getAttribute('data-tab') === tab);
     });
     document.querySelectorAll('.people-tab-section').forEach(function (sec) {
       sec.style.display = (tab === 'all' || sec.getAttribute('data-group') === tab) ? '' : 'none';
     });
+    if (shouldScroll !== false) {
+      var bar = document.getElementById('peopleStickyTabs');
+      if (bar) {
+        var offset = window.innerWidth <= 900 ? 72 : 126;
+        var y = bar.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      }
+    }
   };
 
   (function () {
@@ -7654,7 +7870,7 @@ h3, h4, h5, h6,
       if (p === 'review-panel') p = 'irp';
       if (p === 'technical-experts') p = 'experts';
       var btn = document.querySelector('#peopleTabsBar .people-tab-btn[data-tab="' + p + '"]');
-      if (btn) window.switchPeopleTab(p);
+      if (btn) window.switchPeopleTab(p, false);
     }
   })();
 </script>

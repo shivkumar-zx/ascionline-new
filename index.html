@@ -6918,6 +6918,7 @@ h3, h4, h5, h6,
         <div class="stat-card stat-card-blue" data-stat-api="/api/complaints-count">
           <div class="stat-number" id="statCumulativeComplaints">92,143</div>
           <div class="stat-label">complaints handled to date (cumulative)</div>
+          <div class="stat-updated" id="statCumulativeDate" style="font-size: 0.78rem; color: #64748b; margin-top: 6px; font-weight: 500;">Updated: 26 Nov 2026</div>
         </div>
         <div class="stat-card stat-card-pink">
           <div class="stat-number">86%</div>
@@ -8662,12 +8663,16 @@ h3, h4, h5, h6,
   <script>
     (function () {
       var el = document.getElementById('statCumulativeComplaints');
+      var dateEl = document.getElementById('statCumulativeDate');
       if (!el || !window.fetch) return;
       fetch('/api/complaints-count')
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (data) {
           if (data && data.formatted) {
             el.textContent = data.formatted;
+          }
+          if (data && data.updatedDate && dateEl) {
+            dateEl.textContent = 'Updated: ' + data.updatedDate;
           }
         })
         .catch(function () {});

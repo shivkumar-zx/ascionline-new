@@ -1,6 +1,14 @@
 export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Cache-Control", "s-maxage=1800, stale-while-revalidate=86400");
+  res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=3600");
+
+  const formatISTDate = (d) =>
+    d.toLocaleDateString("en-IN", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+      timeZone: "Asia/Kolkata",
+    });
 
   try {
     const response = await fetch("https://www.ascionline.in/", {
@@ -19,15 +27,19 @@ export default async function handler(req, res) {
       throw new Error("Counter element not found in upstream HTML");
     }
     const numeric = parseInt(match[1].replace(/,/g, ""), 10);
+    const lastMod = response.headers.get("last-modified");
+    const dateObj = lastMod ? new Date(lastMod) : new Date();
     return res.status(200).json({
       count: numeric,
       formatted: numeric.toLocaleString("en-US"),
+      updatedDate: formatISTDate(isNaN(dateObj.getTime()) ? new Date() : dateObj),
       source: "live",
     });
   } catch (err) {
     return res.status(200).json({
       count: 92143,
       formatted: "92,143",
+      updatedDate: formatISTDate(new Date()),
       source: "fallback",
     });
   }

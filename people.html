@@ -5893,6 +5893,184 @@ h3, h4, h5, h6,
     }
   }
 </style>
+    <style id="owh-people-cards-css">
+  .people-subpage-hero {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 52px 0 44px;
+  }
+  .people-subpage-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #086b59;
+    text-decoration: none;
+    margin-bottom: 16px;
+  }
+  .people-subpage-back:hover {
+    color: #002d62;
+  }
+  .people-subpage-title {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    color: #0f172a;
+    margin: 0 0 14px;
+  }
+  .people-subpage-lead {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 1.05rem !important;
+    line-height: 1.65 !important;
+    color: #475569 !important;
+    max-width: 780px;
+    margin: 0 0 26px;
+  }
+  .people-subnav-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .people-subnav-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    color: #334155;
+    transition: all 0.18s ease;
+  }
+  .people-subnav-pill:hover,
+  .people-subnav-pill.active {
+    background: #086b59;
+    border-color: #086b59;
+    color: #ffffff;
+  }
+
+  /* OneWorld Health Inline Card Design (exact screenshot match) */
+  .owh-group-section {
+    padding: 60px 0 68px;
+  }
+  .owh-group-section.bg-gray {
+    background: #eef0ed;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .owh-group-section.bg-white {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .owh-group-header {
+    padding-bottom: 16px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid #cbd5e1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .owh-group-heading {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    color: #1e3a4c;
+    margin: 0 !important;
+  }
+  .owh-inline-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+  }
+  .owh-inline-grid.owh-inline-grid-single {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .owh-inline-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  .owh-inline-thumb {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 200px;
+    padding: 3px;
+  }
+  .owh-inline-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    border-radius: 100%;
+  }
+  .owh-inline-fallback {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #002d62 0%, #086b59 100%);
+    color: #ffffff;
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  .owh-inline-text {
+    min-width: 0;
+    flex: 1;
+  }
+  .owh-inline-name {
+    font-family: var(--font-sans, 'Inter', sans-serif) !important;
+    font-weight: 700 !important;
+    color: #1e3a4c;
+    margin: 0 0 4px 0;
+    line-height: 1.25;
+  }
+  .owh-inline-role {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #334155;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .owh-inline-bio {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.875rem;
+    color: #475569;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .owh-inline-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 24px;
+    }
+  }
+  @media (max-width: 640px) {
+    .owh-inline-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .owh-inline-thumb {
+      width: 96px;
+      height: 96px;
+    }
+  }
+</style>
   <style id="people-tabs-css">
   .people-sticky-tabs-wrap {
     position: sticky;
@@ -5905,13 +6083,14 @@ h3, h4, h5, h6,
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px 32px;
-    padding: 4px 0;
+    gap: 0 20px;
+    padding: 0;
   }
   .people-tab-btn {
     display: inline-flex;
     align-items: center;
-    padding: 16px 6px;
+    padding: 14px 4px;
+    line-height: 1.3;
     border: none !important;
     border-radius: 0;
     background: transparent;
@@ -6687,6 +6866,8 @@ h3, h4, h5, h6,
 
 
 
+<main>
+  
 <main>
   <section class="directory-hero" style="border-bottom: none;">
     <div class="container">

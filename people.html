@@ -4847,7 +4847,188 @@ h3, h4, h5, h6,
     }
   }
 </style>
+    <style id="owh-people-cards-css">
+  .people-subpage-hero {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 52px 0 44px;
+  }
+  .people-subpage-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #086b59;
+    text-decoration: none;
+    margin-bottom: 16px;
+  }
+  .people-subpage-back:hover {
+    color: #002d62;
+  }
+  .people-subpage-title {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    color: #0f172a;
+    margin: 0 0 14px;
+  }
+  .people-subpage-lead {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 1.05rem !important;
+    line-height: 1.65 !important;
+    color: #475569 !important;
+    max-width: 780px;
+    margin: 0 0 26px;
+  }
+  .people-subnav-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .people-subnav-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    color: #334155;
+    transition: all 0.18s ease;
+  }
+  .people-subnav-pill:hover,
+  .people-subnav-pill.active {
+    background: #086b59;
+    border-color: #086b59;
+    color: #ffffff;
+  }
+
+  /* OneWorld Health Inline Card Design (exact screenshot match) */
+  .owh-group-section {
+    padding: 60px 0 68px;
+  }
+  .owh-group-section.bg-gray {
+    background: #eef0ed;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .owh-group-section.bg-white {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .owh-group-header {
+    padding-bottom: 16px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid #cbd5e1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .owh-group-heading {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    color: #1e3a4c;
+    margin: 0 !important;
+  }
+  .owh-inline-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 32px;
+  }
+  .owh-inline-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .owh-inline-thumb {
+    width: 112px;
+    height: 112px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #e2e8f0;
+  }
+  .owh-inline-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .owh-inline-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #002d62 0%, #086b59 100%);
+    color: #ffffff;
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  .owh-inline-text {
+    min-width: 0;
+    flex: 1;
+  }
+  .owh-inline-name {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    color: #1e3a4c;
+    margin: 0 0 4px 0;
+    line-height: 1.25;
+  }
+  .owh-inline-role {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #334155;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .owh-inline-bio {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.875rem;
+    color: #475569;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .owh-inline-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 24px;
+    }
+  }
+  @media (max-width: 640px) {
+    .owh-inline-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .owh-inline-thumb {
+      width: 96px;
+      height: 96px;
+    }
+  }
+</style>
   <style id="people-tabs-css">
+  .people-sticky-tabs-wrap {
+    position: sticky;
+    top: 126px;
+    z-index: 45;
+    background: #fffbeb;
+    border-top: 1px solid #fde68a;
+    border-bottom: 2px solid #f7a719;
+    padding: 14px 0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  }
   .people-tabs-bar {
     display: flex;
     flex-wrap: wrap;
@@ -4862,9 +5043,9 @@ h3, h4, h5, h6,
     font-size: 0.875rem;
     font-weight: 600;
     cursor: pointer;
-    border: 1.5px solid #cbd5e1;
-    background: #f8fafc;
-    color: #334155;
+    border: 1.5px solid #e2e8f0;
+    background: #ffffff;
+    color: #1f2937;
     transition: all 0.18s ease;
   }
   .people-tab-btn:hover {
@@ -4872,9 +5053,15 @@ h3, h4, h5, h6,
     color: #086b59;
   }
   .people-tab-btn.active {
-    background: #086b59;
-    border-color: #086b59;
-    color: #ffffff;
+    background: #f7a719;
+    border-color: #f7a719;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  @media (max-width: 900px) {
+    .people-sticky-tabs-wrap {
+      top: 72px;
+    }
   }
 </style>
 </head>
@@ -5037,7 +5224,7 @@ h3, h4, h5, h6,
           <!-- Col 3: People -->
                     <!-- Col 3: People -->
           <div class="megamenu-col">
-            <h4 class="megamenu-col-title">People</h4>
+            <h4 class="megamenu-col-title"><a href="people.html" style="color:inherit;text-decoration:none;">People</a></h4>
             <ul class="megamenu-links-list">
               <li class="megamenu-link-item"><a href="people.html?panel=board"><span>Board of Governors &amp; Special Invitees</span></a></li>
               <li class="megamenu-link-item"><a href="people.html?panel=consultative"><span>Consultative Committee</span></a></li>
@@ -5608,13 +5795,19 @@ h3, h4, h5, h6,
   <!-- Directory Hero Section -->
   
 
+
 <main>
-  <section class="people-subpage-hero">
+  <section class="people-subpage-hero" style="border-bottom: none; padding-bottom: 36px;">
     <div class="container">
       <h1 class="people-subpage-title">People</h1>
-      <p class="people-subpage-lead">
+      <p class="people-subpage-lead" style="margin-bottom: 0;">
         Meet our Board of Governor, Consultative Committee, Secretariat, Consumer Complaints Council, and Technical Experts
       </p>
+    </div>
+  </section>
+
+  <div class="people-sticky-tabs-wrap">
+    <div class="container">
       <div class="people-tabs-bar" id="peopleTabsBar">
         <button type="button" class="people-tab-btn active" data-tab="all" onclick="switchPeopleTab('all')">All</button>
         <button type="button" class="people-tab-btn" data-tab="board" onclick="switchPeopleTab('board')">Board of Governors &amp; Special Invitees</button>
@@ -5625,7 +5818,7 @@ h3, h4, h5, h6,
         <button type="button" class="people-tab-btn" data-tab="experts" onclick="switchPeopleTab('experts')">Technical Experts</button>
       </div>
     </div>
-  </section>
+  </div>
 
   <section class="owh-group-section bg-gray people-tab-section" data-group="board">
     <div class="container">
@@ -6743,6 +6936,17 @@ h3, h4, h5, h6,
       sec.style.display = (tab === 'all' || sec.getAttribute('data-group') === tab) ? '' : 'none';
     });
   };
+
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var p = params.get('panel');
+    if (p) {
+      if (p === 'review-panel') p = 'irp';
+      if (p === 'technical-experts') p = 'experts';
+      var btn = document.querySelector('#peopleTabsBar .people-tab-btn[data-tab="' + p + '"]');
+      if (btn) window.switchPeopleTab(p);
+    }
+  })();
 </script>
 <section class="cta-callout-section">
     <div class="container cta-callout-container">

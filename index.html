@@ -6915,8 +6915,8 @@ h3, h4, h5, h6,
   <section class="stats-section">
     <div class="container">
       <div class="stats-grid">
-        <div class="stat-card stat-card-blue" data-stat-api="https://api.ascionline.in/v1/complaints/cumulative">
-          <div class="stat-number" id="statCumulativeComplaints">11,581</div>
+        <div class="stat-card stat-card-blue" data-stat-api="/api/complaints-count">
+          <div class="stat-number" id="statCumulativeComplaints">92,143</div>
           <div class="stat-label">complaints handled to date (cumulative)</div>
         </div>
         <div class="stat-card stat-card-pink">
@@ -8659,6 +8659,20 @@ h3, h4, h5, h6,
       </div>
     </div>
 
+  <script>
+    (function () {
+      var el = document.getElementById('statCumulativeComplaints');
+      if (!el || !window.fetch) return;
+      fetch('/api/complaints-count')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (data && data.formatted) {
+            el.textContent = data.formatted;
+          }
+        })
+        .catch(function () {});
+    })();
+  </script>
 </body>
 
 </html>

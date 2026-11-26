@@ -4506,33 +4506,66 @@ h3, h4, h5, h6,
   }
 </style>
     <style id="people-tabs-css">
+  .people-sticky-tabs-wrap {
+    position: sticky;
+    top: 126px;
+    z-index: 45;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 13px 0;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  }
   .people-tabs-bar {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    align-items: center;
+    gap: 8px;
   }
   .people-tab-btn {
     display: inline-flex;
     align-items: center;
-    padding: 9px 18px;
+    padding: 8px 17px;
     border-radius: 999px;
     font-family: var(--font-sans, 'Inter', sans-serif);
-    font-size: 0.875rem;
-    font-weight: 600;
+    font-size: 0.855rem;
+    font-weight: 500;
     cursor: pointer;
-    border: 1.5px solid #cbd5e1;
+    border: 1px solid #e2e8f0;
     background: #f8fafc;
     color: #334155;
+    white-space: nowrap;
     transition: all 0.18s ease;
   }
   .people-tab-btn:hover {
-    border-color: #086b59;
+    background: #eef0ed;
+    border-color: #cbd5e1;
     color: #086b59;
   }
   .people-tab-btn.active {
     background: #086b59;
     border-color: #086b59;
     color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(8, 107, 89, 0.2), inset 0 -2.5px 0 #f7a719;
+  }
+  @media (max-width: 900px) {
+    .people-sticky-tabs-wrap {
+      top: 72px;
+      padding: 10px 0;
+    }
+    .people-tabs-bar {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 2px;
+    }
+    .people-tabs-bar::-webkit-scrollbar {
+      display: none;
+    }
   }
 </style>
   <style id="owh-people-cards-css">
@@ -4626,20 +4659,21 @@ h3, h4, h5, h6,
   .owh-inline-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px 32px;
+    gap: 50px;
   }
   .owh-inline-card {
     display: flex;
-    align-items: flex-start;
-    gap: 18px;
+    align-items: center;
+    gap: 30px;
   }
   .owh-inline-thumb {
-    width: 112px;
-    height: 112px;
-    border-radius: 10px;
+    width: 130px;
+    height: 130px;
     overflow: hidden;
     flex-shrink: 0;
-    background: #e2e8f0;
+    background: #fff;
+    border-radius: 200px;
+    padding: 3px;
   }
   .owh-inline-thumb img {
     width: 100%;
@@ -4647,10 +4681,12 @@ h3, h4, h5, h6,
     object-fit: cover;
     object-position: top center;
     display: block;
+    border-radius: 100%;
   }
   .owh-inline-fallback {
     width: 100%;
     height: 100%;
+    border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4665,8 +4701,8 @@ h3, h4, h5, h6,
     flex: 1;
   }
   .owh-inline-name {
-    font-family: var(--font-serif) !important;
-    font-weight: 500 !important;
+    font-family: var(--font-sans, 'Inter', sans-serif) !important;
+    font-weight: 700 !important;
     color: #1e3a4c;
     margin: 0 0 4px 0;
     line-height: 1.25;
@@ -5436,6 +5472,8 @@ h3, h4, h5, h6,
 
   <!-- Directory Hero Section -->
   
+
+
 
 
 <main>

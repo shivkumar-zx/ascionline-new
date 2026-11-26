@@ -4676,64 +4676,205 @@ h3, h4, h5, h6,
     }
   }
 </style>
-  <style id="people-overview-css">
-  .people-overview-section {
+    <style id="owh-people-cards-css">
+  .people-subpage-hero {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 52px 0 44px;
+  }
+  .people-subpage-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #086b59;
+    text-decoration: none;
+    margin-bottom: 16px;
+  }
+  .people-subpage-back:hover {
+    color: #002d62;
+  }
+  .people-subpage-title {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    color: #0f172a;
+    margin: 0 0 14px;
+  }
+  .people-subpage-lead {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 1.05rem !important;
+    line-height: 1.65 !important;
+    color: #475569 !important;
+    max-width: 780px;
+    margin: 0 0 26px;
+  }
+  .people-subnav-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .people-subnav-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    color: #334155;
+    transition: all 0.18s ease;
+  }
+  .people-subnav-pill:hover,
+  .people-subnav-pill.active {
+    background: #086b59;
+    border-color: #086b59;
+    color: #ffffff;
+  }
+
+  /* OneWorld Health Inline Card Design (exact screenshot match) */
+  .owh-group-section {
+    padding: 60px 0 68px;
+  }
+  .owh-group-section.bg-gray {
     background: #eef0ed;
-    padding: 64px 0 76px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   }
-  .people-overview-grid {
+  .owh-group-section.bg-white {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .owh-group-header {
+    padding-bottom: 16px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid #cbd5e1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .owh-group-heading {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    color: #1e3a4c;
+    margin: 0 !important;
+  }
+  .owh-inline-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 40px 32px;
   }
-  .people-overview-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 30px 28px;
+  .owh-inline-card {
     display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(0, 33, 71, 0.04);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    align-items: flex-start;
+    gap: 18px;
   }
-  .people-overview-card:hover {
-    transform: translateY(-4px);
-    border-color: #086b59;
-    box-shadow: 0 14px 28px rgba(8, 107, 89, 0.1);
+  .owh-inline-thumb {
+    width: 112px;
+    height: 112px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #e2e8f0;
   }
-  .people-overview-title {
-    font-family: var(--font-serif) !important;
-    font-size: 1.45rem !important;
-    font-weight: 500 !important;
-    color: #002d62;
-    margin: 0 0 12px 0;
-    line-height: 1.3;
+  .owh-inline-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
   }
-  .people-overview-desc {
-    font-family: var(--font-sans, 'Inter', sans-serif);
-    font-size: 0.95rem;
-    color: #475569;
-    line-height: 1.6;
-    margin: 0 0 20px 0;
+  .owh-inline-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #002d62 0%, #086b59 100%);
+    color: #ffffff;
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  .owh-inline-text {
+    min-width: 0;
     flex: 1;
   }
-  .people-overview-link {
-    font-family: var(--font-sans, 'Inter', sans-serif);
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #086b59;
+  .owh-inline-name {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    color: #1e3a4c;
+    margin: 0 0 4px 0;
+    line-height: 1.25;
   }
-  @media (max-width: 980px) {
-    .people-overview-grid {
+  .owh-inline-role {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #334155;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .owh-inline-bio {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.875rem;
+    color: #475569;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .owh-inline-grid {
       grid-template-columns: repeat(2, 1fr);
+      gap: 32px 24px;
     }
   }
   @media (max-width: 640px) {
-    .people-overview-grid {
+    .owh-inline-grid {
       grid-template-columns: 1fr;
+      gap: 28px;
     }
+    .owh-inline-thumb {
+      width: 96px;
+      height: 96px;
+    }
+  }
+</style>
+  <style id="people-tabs-css">
+  .people-tabs-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .people-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 18px;
+    border-radius: 999px;
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1.5px solid #cbd5e1;
+    background: #f8fafc;
+    color: #334155;
+    transition: all 0.18s ease;
+  }
+  .people-tab-btn:hover {
+    border-color: #086b59;
+    color: #086b59;
+  }
+  .people-tab-btn.active {
+    background: #086b59;
+    border-color: #086b59;
+    color: #ffffff;
   }
 </style>
 </head>
@@ -5466,6 +5607,7 @@ h3, h4, h5, h6,
 
   <!-- Directory Hero Section -->
   
+
 <main>
   <section class="people-subpage-hero">
     <div class="container">
@@ -5473,46 +5615,1135 @@ h3, h4, h5, h6,
       <p class="people-subpage-lead">
         Meet our Board of Governor, Consultative Committee, Secretariat, Consumer Complaints Council, and Technical Experts
       </p>
+      <div class="people-tabs-bar" id="peopleTabsBar">
+        <button type="button" class="people-tab-btn active" data-tab="all" onclick="switchPeopleTab('all')">All</button>
+        <button type="button" class="people-tab-btn" data-tab="board" onclick="switchPeopleTab('board')">Board of Governors &amp; Special Invitees</button>
+        <button type="button" class="people-tab-btn" data-tab="consultative" onclick="switchPeopleTab('consultative')">Consultative Committee</button>
+        <button type="button" class="people-tab-btn" data-tab="ccc" onclick="switchPeopleTab('ccc')">Consumer Complaints Council</button>
+        <button type="button" class="people-tab-btn" data-tab="irp" onclick="switchPeopleTab('irp')">Independent Review Panel</button>
+        <button type="button" class="people-tab-btn" data-tab="secretariat" onclick="switchPeopleTab('secretariat')">ASCI Leadership</button>
+        <button type="button" class="people-tab-btn" data-tab="experts" onclick="switchPeopleTab('experts')">Technical Experts</button>
+      </div>
     </div>
   </section>
 
-  <section class="people-overview-section">
+  <section class="owh-group-section bg-gray people-tab-section" data-group="board">
     <div class="container">
-      <div class="people-overview-grid">
-      <a href="board-of-governors-and-special-invitees.html" class="people-overview-card">
-        <h2 class="people-overview-title">Board of Governors &amp; Special Invitees</h2>
-        <p class="people-overview-desc">The people who lead ASCI in the right direction with their expertise and perspectives.</p>
-        <span class="people-overview-link">Know More &rarr;</span>
-      </a>
-      <a href="consultative-committee.html" class="people-overview-card">
-        <h2 class="people-overview-title">Consultative Committee</h2>
-        <p class="people-overview-desc">An integral and important part of ASCI, they play an advisory role to the Board of Governors at ASCI.</p>
-        <span class="people-overview-link">Know More &rarr;</span>
-      </a>
-      <a href="consumer-complaints-council.html" class="people-overview-card">
-        <h2 class="people-overview-title">Consumer Complaints Council</h2>
-        <p class="people-overview-desc">The heart of ASCI, the CCC is an independent panel that reviews complaints and advertisers’ responses, providing its recommendation on whether an ad needs to change.</p>
-        <span class="people-overview-link">Know More &rarr;</span>
-      </a>
-      <a href="independent-review-panel.html" class="people-overview-card">
-        <h2 class="people-overview-title">Independent Review Panel</h2>
-        <p class="people-overview-desc">As part of ASCI’s appeal process, complaints that are received for an Independent Review are adjudicated by a panel of eminent retired high court judges.</p>
-        <span class="people-overview-link">Know More &rarr;</span>
-      </a>
-      <a href="secretariat.html" class="people-overview-card">
-        <h2 class="people-overview-title">ASCI Leadership</h2>
-        <p class="people-overview-desc">The team that keeps a close watch on advertising in India and oversees the day-to-day operations of ASCI.</p>
-        <span class="people-overview-link">Know More &rarr;</span>
-      </a>
-      <a href="technical-experts.html" class="people-overview-card">
-        <h2 class="people-overview-title">Technical Experts</h2>
-        <p class="people-overview-desc">Two independent and distinct teams of experts help verify technical data provided in support of an advertisement.</p>
-        <span class="people-overview-link">Know More &rarr;</span>
-      </a>
+      <div class="owh-group-header">
+        <h2 class="owh-group-heading section-heading">Board of Governors</h2>
+      </div>
+      <div class="owh-inline-grid">
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Sudhanshu-Vats.png" alt="Sudhanshu Vats" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SV</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Sudhanshu Vats</h3>
+          <div class="owh-inline-role">Chairman, ASCI</div>
+          <p class="owh-inline-bio">Managing Director, Pidilite Industries Ltd.</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2023/05/Photo-S.-Subramanyeswar.jpg" alt="S. Subramanyeswar" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">S. Subramanyeswar</h3>
+          <div class="owh-inline-role">Vice Chairman, ASCI</div>
+          <p class="owh-inline-bio">Group CEO &amp; Chief Strategy Officer-APAC, MullenLowe Lintas Group</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/08/Paritosh.png" alt="Paritosh Joshi" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PJ</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Paritosh Joshi</h3>
+          <div class="owh-inline-role">Hon. Treasurer, ASCI</div>
+          <p class="owh-inline-bio">Principal, Provocateur Advisory</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/09/Manish-Anandani.png" alt="Manish Anandani" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">MA</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Manish Anandani</h3>
+          <div class="owh-inline-role">Managing Director, India</div>
+          <p class="owh-inline-bio">Kenvue</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Saugata-Gupta.png" alt="Saugata Gupta" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SG</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Saugata Gupta</h3>
+          <div class="owh-inline-role">Managing Director &amp; CEO</div>
+          <p class="owh-inline-bio">Marico Limited</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2023/05/Prabha-Narasimhan.png" alt="Prabha Narasimhan" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PN</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prabha Narasimhan</h3>
+          <div class="owh-inline-role">Managing Director &amp; CEO</div>
+          <p class="owh-inline-bio">Colgate-Palmolive (India) Ltd.</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2025/08/Hemant-Malik-png.avif" alt="Hemant Malik" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">HM</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Hemant Malik</h3>
+          <div class="owh-inline-role">Executive Director – ITC Limited</div>
+          <p class="owh-inline-bio">Divisional Chief Executive-Foods Division</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/08/V.K.png" alt="Kumar Venkatasubramanian" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">KV</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Kumar Venkatasubramanian</h3>
+          <div class="owh-inline-role">CEO, P&amp;G India</div>
+          <p class="owh-inline-bio">Procter &amp; Gamble</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2026/04/Vandana-Suri-png.avif" alt="Vandana Suri" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">VS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Vandana Suri</h3>
+          <div class="owh-inline-role">Executive Director, Home Care</div>
+          <p class="owh-inline-bio">Hindustan Unilever Ltd.</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/11/Satya-Raghavan.png" alt="Satyanarayan Raghavan" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SR</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Satyanarayan Raghavan</h3>
+          <div class="owh-inline-role">Director</div>
+          <p class="owh-inline-bio">Google India Pvt. Ltd.</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/11/Arun-Srinivas.png" alt="Arun Srinivas" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">AS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Arun Srinivas</h3>
+          <div class="owh-inline-role">Managing Director and Head (India)</div>
+          <p class="owh-inline-bio">Meta</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2025/11/Surinder-Chawla-png.avif" alt="Surinder Chawla" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SC</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Surinder Chawla</h3>
+          <div class="owh-inline-role">President – Response</div>
+          <p class="owh-inline-bio">Bennett, Coleman &amp; Company Limited</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2026/05/Kevin-Vaz-png.avif" alt="Kevin Vaz" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">KV</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Kevin Vaz</h3>
+          <div class="owh-inline-role">CEO, Entertainment</div>
+          <p class="owh-inline-bio">JioStar India Pvt. Ltd.</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2023/05/Anupriya-Acharya.png" alt="Anupriya Acharya" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">AA</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Anupriya Acharya</h3>
+          <div class="owh-inline-role">CEO</div>
+          <p class="owh-inline-bio">Publicis Communications Pvt. Ltd.</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/K.V.-Sridhar.png" alt="K.V. Sridhar" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">KS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">K.V. Sridhar</h3>
+          <div class="owh-inline-role">Chief Creative Officer (Global)</div>
+          <p class="owh-inline-bio">Nihilent Ltd.</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2026/05/Hepzibah-Pathak-png.avif" alt="Hephzibah Pathak" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">HP</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Hephzibah Pathak</h3>
+          <div class="owh-inline-role">WPP Creative CEO India &amp; Executive Chairperson</div>
+          <p class="owh-inline-bio">Ogilvy India</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2023/09/Janakiraman-.png" alt="Prof. Janakiraman Moorthy" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PJ</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prof. Janakiraman Moorthy</h3>
+          <div class="owh-inline-role">Department Chair - Marketing Area</div>
+          <p class="owh-inline-bio">S.P. Jain Institute of Management &amp; Research</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/09/Prasun-Basu.png" alt="Prasun Basu" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PB</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prasun Basu</h3>
+          <div class="owh-inline-role">Chairman and Co-Founder</div>
+          <p class="owh-inline-bio">Inteliphyle Pvt. Ltd</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/08/Praveen.png" alt="Praveen Tripathi" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PT</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Praveen Tripathi</h3>
+          <div class="owh-inline-role">Chief Executive Officer</div>
+          <p class="owh-inline-bio">Magic9 Media &amp; Consumer Knowledge Pvt Ltd</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <section class="owh-group-section bg-white people-tab-section" data-group="board">
+    <div class="container">
+      <div class="owh-group-header">
+        <h2 class="owh-group-heading section-heading">Eminent Members</h2>
+      </div>
+      <div class="owh-inline-grid">
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/11/Shibhani-9.png" alt="Anuradha Sengupta" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">AS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Anuradha Sengupta</h3>
+          <div class="owh-inline-role">Independent journalist and producer</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2025/07/Rohit-Kumar-Singh-png.avif" alt="Rohit Kumar Singh" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">RK</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Rohit Kumar Singh</h3>
+          <div class="owh-inline-role">Member, National Consumer Disputes Redressal Commission (NCDRC) Former Secretary to the Government of India, Department of Consumer Affairs (DoCA)</div>
+          
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <section class="owh-group-section bg-gray people-tab-section" data-group="board">
+    <div class="container">
+      <div class="owh-group-header">
+        <h2 class="owh-group-heading section-heading">Special Invitee Members</h2>
+      </div>
+      <div class="owh-inline-grid">
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Sunil-Kataria.png" alt="Sunil Kataria" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SK</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Sunil Kataria</h3>
+          <div class="owh-inline-role">Managing Director</div>
+          <p class="owh-inline-bio">Godrej Agrovet Limited</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/08/Shivan-Puri.png" alt="Shivam Puri" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SP</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Shivam Puri</h3>
+          <div class="owh-inline-role">CEO</div>
+          <p class="owh-inline-bio">One India Business</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2025/06/Praveen-Someshwar-png.avif" alt="Praveen Someshwar" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Praveen Someshwar</h3>
+          <div class="owh-inline-role">Managing Director &amp; CEO</div>
+          <p class="owh-inline-bio">United Spirits Limited</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2025/09/Vivek-Gupta-png.avif" alt="Vivek Gupta" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">VG</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Vivek Gupta</h3>
+          <div class="owh-inline-role">CEO and Managing Director</div>
+          <p class="owh-inline-bio">United Breweries Ltd.</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2026/09/Herjit-Singh-Balla-png.avif" alt="Herjit Singh Bhalla" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">HS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Herjit Singh Bhalla</h3>
+          <div class="owh-inline-role">CEO</div>
+          <p class="owh-inline-bio">Dabur India Limited</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2026/09/Rana-Barua-png.avif" alt="Ranadeb Barua" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">RB</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Ranadeb Barua</h3>
+          <div class="owh-inline-role">Group CEO India, SEA &amp; North Asia (Japan &amp; South Korea)</div>
+          <p class="owh-inline-bio">Havas Worldwide India Pvt. Limited</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2026/10/Prasanth-Kumar-png.avif" alt="Prasanth Kumar" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PK</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prasanth Kumar</h3>
+          <div class="owh-inline-role">CEO- South Asia</div>
+          <p class="owh-inline-bio">WPP Media India Pvt. Limited</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <section class="owh-group-section bg-white people-tab-section" data-group="consultative">
+    <div class="container">
+      <div class="owh-group-header">
+        <h2 class="owh-group-heading section-heading">Consultative Committee</h2>
+      </div>
+      <div class="owh-inline-grid">
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/2-2.png" alt="Sam Balsara" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SB</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Sam Balsara</h3>
+          <div class="owh-inline-role">Chairman &amp; Managing Director, Madison Comms P. Ltd. | Former Chairman, ASCI</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/3-2.png" alt="Bharat V. Patel" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">BV</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Bharat V. Patel</h3>
+          <div class="owh-inline-role">Ex - Chairman &amp; Managing Director, Procter &amp; Gamble India Ltd | Former Chairman, ASCI</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/subhash-Kamath.png" alt="Subhash Kamath" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SK</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Subhash Kamath</h3>
+          <div class="owh-inline-role">Former CEO, BBH &amp; Publicis Worldwide, India | Former Chairman, ASCI</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/08/Madhukar-Kamath.png" alt="Madhukar Kamath" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">MK</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Madhukar Kamath</h3>
+          <div class="owh-inline-role">Managing Director &amp; CEO, Mudra Communications Pvt. Ltd. | Former Chairman, ASCI</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2025/10/Partha-Sinha-png.avif" alt="Partha Sinha" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Partha Sinha</h3>
+          <div class="owh-inline-role">Founding Partner, ABLTY Advisory LLP | Former Chairman, ASCI</div>
+          
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <section class="owh-group-section bg-gray people-tab-section" data-group="ccc">
+    <div class="container">
+      <div class="owh-group-header">
+        <h2 class="owh-group-heading section-heading">Consumer Complaints Council (CCC)</h2>
+      </div>
+      <div class="owh-inline-grid">
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/11/Photo-Abhinav-Narula.jpg" alt="Abhinav Narula" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">AN</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Abhinav Narula</h3>
+          <div class="owh-inline-role">VP – Marketing</div>
+          <p class="owh-inline-bio">MakeMyTrip (India) Pvt. Ltd.</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2025/04/Ajay-Dang.png" alt="Ajay Dang" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">AD</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Ajay Dang</h3>
+          <div class="owh-inline-role">President &amp; Head Marketing</div>
+          <p class="owh-inline-bio">Ultratech Cement Limited, Mumbai</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/11/Ankita-Sharma.png" alt="Ankita Sharma" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">AS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Ankita Sharma</h3>
+          <div class="owh-inline-role">Associate Vice President Legal</div>
+          <p class="owh-inline-bio">Honasa Consumer Limited</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2026/10/Anshul-Tewari-png.avif" alt="Anshul Tewari" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">AT</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Anshul Tewari</h3>
+          <div class="owh-inline-role">Founder</div>
+          <p class="owh-inline-bio">Youth ki Awaaz</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/3-3.png" alt="Arun Anant" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">AA</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Arun Anant</h3>
+          <div class="owh-inline-role">Director</div>
+          <p class="owh-inline-bio">Incvalue Advisors Pvt. Ltd.</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2025/11/Arvind-Mittal-png.avif" alt="Arvind Harish Mittal" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">AH</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Arvind Harish Mittal</h3>
+          <div class="owh-inline-role">Managing Director &amp; CEO</div>
+          <p class="owh-inline-bio">Moulis Advertising Service Pvt Ltd.</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/11/Ashim-Sanyal.png" alt="Ashim Sanyal" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">AS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Ashim Sanyal</h3>
+          <div class="owh-inline-role">Managing Trustee &amp; Secretary</div>
+          <p class="owh-inline-bio">Consumer Voice</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/11/Basant-Rathore.png" alt="Basant Rathore" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">BR</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Basant Rathore</h3>
+          <div class="owh-inline-role">Sr. VP - Strategy, Brand &amp; Business Development</div>
+          <p class="owh-inline-bio">Jagran Prakashan Ltd</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2023/05/Burjor-Nariman.png" alt="Burjor D. Nariman" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">BD</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Burjor D. Nariman</h3>
+          <div class="owh-inline-role">Proprietor of Nariman &amp; Associates</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/11/Archana-Girish-Sabnis.png" alt="Dr. Archana Girish Sabnis" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DA</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Archana Girish Sabnis</h3>
+          <div class="owh-inline-role">MedicoLegal and Consumer Law Consultant</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/11/Dr-B-Sesikeran.png" alt="Dr. B. Sesikeran MD" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DB</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. B. Sesikeran MD</h3>
+          <div class="owh-inline-role">Former Director</div>
+          <p class="owh-inline-bio">National Institute of Nutrition (ICMR)</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/11/Dr-Falguni-Vasavada.png" alt="Dr. Falguni Vasavada" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DF</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Falguni Vasavada</h3>
+          <div class="owh-inline-role">Professor of Marketing, MICA.</div>
+          <p class="owh-inline-bio">TEDx Speaker, Social Media</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/06/CCC-member-photos.png" alt="George Cheriyan" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">GC</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">George Cheriyan</h3>
+          <div class="owh-inline-role">CCC Member</div>
+          <p class="owh-inline-bio">(Representative of Consumers) Working President, Consumers Protection Association (CPA), Agartala, Tripura</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2023/05/Jenna-V-Krishnan.png" alt="Jenna V. Krishnan" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">JV</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Jenna V. Krishnan</h3>
+          <div class="owh-inline-role">Advocate</div>
+          <p class="owh-inline-bio">Mumbai</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2025/11/Jyoti-Vadehra-png.avif" alt="Jyoti Vadehra" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">JV</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Jyoti Vadehra</h3>
+          <div class="owh-inline-role">Head Online Safety &amp; Wellbeing</div>
+          <p class="owh-inline-bio">Centre for Social Research (CSR), India</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2023/05/Kopal-Doshi.png" alt="Kopal Doshi" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">KD</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Kopal Doshi</h3>
+          <div class="owh-inline-role">Sr. Manager, Digital &amp; Data Analytics</div>
+          <p class="owh-inline-bio">Kellogg India Pvt. Ltd. Mumbai</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2026/10/Manish-Joshi-png.avif" alt="Manish Joshi" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">MJ</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Manish Joshi</h3>
+          <div class="owh-inline-role">Head - Business Development &amp; Projects</div>
+          <p class="owh-inline-bio">Zydus Wellness Limited</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2026/09/Sayak-Mukherjee-png.avif" alt="Sayak Mukherjee" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SM</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Sayak Mukherjee</h3>
+          <div class="owh-inline-role">Founder, Director</div>
+          <p class="owh-inline-bio">Creatorcult Media Pvt. Limited</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/11/Nisha-Singhania.png" alt="Nisha Singhania" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">NS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Nisha Singhania</h3>
+          <div class="owh-inline-role">Co-Founder &amp; Director</div>
+          <p class="owh-inline-bio">Infectious Advertising</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/11/Parul-Ohri.png" alt="Parul Ohri" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PO</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Parul Ohri</h3>
+          <div class="owh-inline-role">Former Chief Editor</div>
+          <p class="owh-inline-bio">Momspresso</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2023/05/Preeti-Vyas.png" alt="Preeti Vyas" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PV</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Preeti Vyas</h3>
+          <div class="owh-inline-role">CCC Member</div>
+          <p class="owh-inline-bio">CEO, Amar Chitra Katha Pvt Ltd.</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2026/10/Priyanka-Verma-png.avif" alt="Priyanka Verma" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PV</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Priyanka Verma</h3>
+          <div class="owh-inline-role">CMO</div>
+          <p class="owh-inline-bio">Nutricia International Pvt. Limited (Danone)</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/01/CCC-member-photos-2.png" alt="Prof (Dr) Abhimanyu Kumar" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">P(</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prof (Dr) Abhimanyu Kumar</h3>
+          <div class="owh-inline-role">Chairman &amp; CEO</div>
+          <p class="owh-inline-bio">Centre for Ayurveda Education, Innovation &amp; Technology (CAYEIT)</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2025/05/Prof.-Chandradeep-CD-Mitra.png" alt="Prof. Chandradeep (CD) Mitra" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PC</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prof. Chandradeep (CD) Mitra</h3>
+          <div class="owh-inline-role">Advisor &amp; Mentor</div>
+          <p class="owh-inline-bio">IIM Calcutta Innovation Park</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/08/Renu-Gupta.png" alt="Renu Gupta" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">RG</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Renu Gupta</h3>
+          <div class="owh-inline-role">Advocate and Co-Founder</div>
+          <p class="owh-inline-bio">Olive Law</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2026/05/Rohit-Bhasin-png.avif" alt="Rohit Bhasin" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">RB</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Rohit Bhasin</h3>
+          <div class="owh-inline-role">President, Head – Business Banking and CMO</div>
+          <p class="owh-inline-bio">Kotak Mahindra Bank Limited</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2026/07/Rupa-Murudkar-png.avif" alt="Rupa Murudkar" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">RM</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Rupa Murudkar</h3>
+          <div class="owh-inline-role">VP Marketing</div>
+          <p class="owh-inline-bio">Cholayil Pvt. Limited</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/11/Sanjeev-Roy.png" alt="Sanjeev Roy" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SR</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Sanjeev Roy</h3>
+          <div class="owh-inline-role">Managing Partner</div>
+          <p class="owh-inline-bio">Bullzi Inc</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2025/02/Sayanti-Ray.png" alt="Sayanti Ray" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SR</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Sayanti Ray</h3>
+          <div class="owh-inline-role">Head of Communications</div>
+          <p class="owh-inline-bio">Milaap Social Ventures India Pvt. Ltd.</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2025/11/Shashank-Golani-png.avif" alt="Shashank Golani" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SG</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Shashank Golani</h3>
+          <div class="owh-inline-role">Deputy Vice President - Marketing</div>
+          <p class="owh-inline-bio">Piramal Consumer Healthcare</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/11/Ulhas-Joshi.png" alt="Ulhas Joshi" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">UJ</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Ulhas Joshi</h3>
+          <div class="owh-inline-role">Director</div>
+          <p class="owh-inline-bio">Stratex Enterprises</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/11/Vinita-Dang-Mohoni.png" alt="Vinita Dang Mohoni" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">VD</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Vinita Dang Mohoni</h3>
+          <div class="owh-inline-role">Business &amp; Marketing Strategy Consultant</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/12/Vivek-Malhotra.jpg" alt="Vivek Malhotra" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">VM</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Vivek Malhotra</h3>
+          <div class="owh-inline-role">Group CMO &amp; COO, Consumer Revenue</div>
+          <p class="owh-inline-bio">India Today Group</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <section class="owh-group-section bg-white people-tab-section" data-group="irp">
+    <div class="container">
+      <div class="owh-group-header">
+        <h2 class="owh-group-heading section-heading">Independent Review Panel</h2>
+      </div>
+      <div class="owh-inline-grid">
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/1-1.png" alt="Justice Nishita Mhatre (Retd.)" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">JN</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Justice Nishita Mhatre (Retd.)</h3>
+          <div class="owh-inline-role">Former Acting Chief Justice</div>
+          <p class="owh-inline-bio">Calcutta High Court</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/2-1.png" alt="Justice Anand Vasant Nirgude (Retd.)" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">JA</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Justice Anand Vasant Nirgude (Retd.)</h3>
+          <div class="owh-inline-role">Former Judge</div>
+          <p class="owh-inline-bio">Bombay High Court</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <section class="owh-group-section bg-gray people-tab-section" data-group="secretariat">
+    <div class="container">
+      <div class="owh-group-header">
+        <h2 class="owh-group-heading section-heading">ASCI Leadership &amp; Secretariat</h2>
+      </div>
+      <div class="owh-inline-grid">
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2023/10/IMG_294X294.jpg" alt="Barnita Dasgupta" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">BD</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Barnita Dasgupta</h3>
+          <div class="owh-inline-role">Chief Financial Officer</div>
+          <p class="owh-inline-bio">Barnita Dasgupta has joined ASCI as the Chief Administrative / Financial officer. She is a Bachelor of Commerce with Honours in Accountancy, a Cost Accountant and a Chartered Accountant. She has over 20 years of experience having worked with a range of organisations from small startups to established multinational entities. Barnita oversees all financial, administrative and legal matters at ASCI.</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/1.png" alt="Manisha Kapoor" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">MK</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Manisha Kapoor</h3>
+          <div class="owh-inline-role">CEO &amp; Secretary General</div>
+          <p class="owh-inline-bio">Manisha is the CEO &amp; Secretary General of ASCI. She was previously associated with ASCI since 2015 in the capacity of a Consumer Complaints Council (CCC) member. Manisha spearheads several strategic initiatives to get ASCI ready to be future-facing in an extremely dynamic time for the advertising industry. On the global circuit, representing ASCI, Manisha is one of the four vice-presidents on the executive committee of the International Council of Ad Self-Regulation (ICAS). Manisha is a management graduate from the Jamnalal Bajaj Institute of Management Studies and has over 25 years of operating and consulting experience in brand and business strategy across several industries, including consumer goods, BFSI, media, and automotive.</p>
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/2.png" alt="Saheli Sinha" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Saheli Sinha</h3>
+          <div class="owh-inline-role">Director, Operations</div>
+          <p class="owh-inline-bio">Saheli is the Director of Operations and oversees the critical Complaints Resolution mechanism and Marketing at ASCI. Under her leadership, ASCI has taken several initiatives in the area of digital tracking, and the development of a new, agile, complaint management system. She also leads ASCI’s training and education initiatives for key stakeholders, including corporates and students. Prior to ASCI she has been a Research Insights and Brand Strategy Consultant with over 17 years of experience across Academia and Management Consulting. Saheli has a PhD in Sociology from Jawaharlal Nehru University, New Delhi and has worked across academia and industry, which has helped her understand culture, society and people better, equipping her with a richer understanding of human response to various thoughts, including brands and advertising.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <section class="owh-group-section bg-white people-tab-section" data-group="experts">
+    <div class="container">
+      <div class="owh-group-header">
+        <h2 class="owh-group-heading section-heading">CCC Technical Experts</h2>
+      </div>
+      <div class="owh-inline-grid">
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/06/blank-asci.webp" alt="Dr. Kalpesh Shah" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DK</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Kalpesh Shah</h3>
+          <div class="owh-inline-role">Eye specialist</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/06/CCC-member-photos-10.png" alt="Muralidharan Rajamani" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">MR</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Muralidharan Rajamani</h3>
+          <div class="owh-inline-role">Finance and Insurance</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/06/CCC-member-photos-7.png" alt="Prof. Yogendra Shastri" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PY</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prof. Yogendra Shastri</h3>
+          <div class="owh-inline-role">Sustainability</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/06/CCC-member-photos-6.png" alt="(Dr.) Kalyani Barve" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">(K</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">(Dr.) Kalyani Barve</h3>
+          <div class="owh-inline-role">Cosmetics</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/06/CCC-member-photos-5.png" alt="Prof. Mahesh Tirumkudulu" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PM</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prof. Mahesh Tirumkudulu</h3>
+          <div class="owh-inline-role">Personal Care / FMCG / Chemistry / Efficacy</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2024/06/CCC-member-photos-9.png" alt="Ravi Raghavan" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">RR</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Ravi Raghavan</h3>
+          <div class="owh-inline-role">Chemicals</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Prof.-Jayesh-Bellare-1_11zon.jpeg.png" alt="Prof. Jayesh Bellare" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PJ</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prof. Jayesh Bellare</h3>
+          <div class="owh-inline-role">Personal Care / FMCG / Chemistry/Efficacy</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Prof.-Vivek-Agarwal.png" alt="Prof. Vivek Agarwal" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PV</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prof. Vivek Agarwal</h3>
+          <div class="owh-inline-role">Electric</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Prof.-Rangan-Banerjee.png" alt="Prof. Rangan Banerjee" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PR</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prof. Rangan Banerjee</h3>
+          <div class="owh-inline-role">Electronics / Energy</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Amartya-Banerjee.png" alt="Amartya Banerjee" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">AB</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Amartya Banerjee</h3>
+          <div class="owh-inline-role">Education</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Vishi-Bansal.png" alt="Dr. Vishi Bansal" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DV</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Vishi Bansal</h3>
+          <div class="owh-inline-role">Aryuveda &amp; Herbal</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Ramesh-Bonde.png" alt="Dr. Ramesh Bhonde" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DR</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Ramesh Bhonde</h3>
+          <div class="owh-inline-role">Stem Cell Research and Therapy</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr.-Rohinton-Bilimoria_11zon.png" alt="Dr. Rohinton Noshir Bilimoria" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DR</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Rohinton Noshir Bilimoria</h3>
+          <div class="owh-inline-role">Dentistry / Teeth</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Tathagata-Chakravarty.png" alt="Tathagata Chakravarty" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">TC</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Tathagata Chakravarty</h3>
+          <div class="owh-inline-role">Tyre Technical</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Mr.-Pramod-Deodhar.png" alt="Pramod Deodhar" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PD</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Pramod Deodhar</h3>
+          <div class="owh-inline-role">Food &amp; Beverages</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr.-Manasi-Deshpande_11zon.png" alt="Dr. Manasi Deshpande" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DM</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Manasi Deshpande</h3>
+          <div class="owh-inline-role">Aryuveda &amp; Herbal</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr.-Shovan-Ganguli.png" alt="Dr. Shovan Ganguli" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Shovan Ganguli</h3>
+          <div class="owh-inline-role">Food &amp; Beverages</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Shonali-Ghosh.png" alt="Shonali Ghosh" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SG</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Shonali Ghosh</h3>
+          <div class="owh-inline-role">Market Research</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Mr.-Jehangir-Gai.png" alt="Jehangir Gai" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">JG</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Jehangir Gai</h3>
+          <div class="owh-inline-role">Legal Matters</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr-Geeta-Jotwani_11zon.png" alt="Dr. Geeta Jotwani" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DG</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Geeta Jotwani</h3>
+          <div class="owh-inline-role">Stem Cell Research and Therapy</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Ms.-Aazmeen-Kasad.png" alt="Aazmeen Kasad" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">AK</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Aazmeen Kasad</h3>
+          <div class="owh-inline-role">Legal Matters</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Mrs.-Neeta-Khanolkar.png" alt="Neeta R. Khanolkar" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">NR</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Neeta R. Khanolkar</h3>
+          <div class="owh-inline-role">Microbiology</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr.-Abhay-Kumar.png" alt="Dr. Abhay Kumar" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DA</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Abhay Kumar</h3>
+          <div class="owh-inline-role">Microbiology</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Bipin-Kumar.png" alt="Prof. Bipin Kumar" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PB</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prof. Bipin Kumar</h3>
+          <div class="owh-inline-role">Textiles</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Devishree-Mulakala.png" alt="Devishree M." loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DM</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Devishree M.</h3>
+          <div class="owh-inline-role">Food &amp; Beverages</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Prof.-Anurag-Mehra.png" alt="Prof. Anurag Mehra" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PA</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prof. Anurag Mehra</h3>
+          <div class="owh-inline-role">Personal Care / FMCG / Chemistry / Efficacy</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr-Chitra-Nayak_11zon.png" alt="Dr. Chitra Nayak" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DC</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Chitra Nayak</h3>
+          <div class="owh-inline-role">Dermatology</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Urmi-Palan-pic.png" alt="Urmi Palan" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">UP</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Urmi Palan</h3>
+          <div class="owh-inline-role">Immunology</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr.-Sibiraj-B.-Pillai_11zon.png" alt="Dr. Sibiraj B. Pillai" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Sibiraj B. Pillai</h3>
+          <div class="owh-inline-role">Telecom</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr-Potdar_11zon.png" alt="Dr. R. D. Potdar" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DR</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. R. D. Potdar</h3>
+          <div class="owh-inline-role">Medical / Physiology</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Mr.-P.-Surya-Prakash.png" alt="P. Surya Prakash" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">P. Surya Prakash</h3>
+          <div class="owh-inline-role">Construction</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr.-Rajaretnam_11zon.png" alt="Dr. Rajaretnam (Raja)" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DR</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Rajaretnam (Raja)</h3>
+          <div class="owh-inline-role">Market Research</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr.TNVVRao.png" alt="Dr.T.N.V.V.RAO" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">D</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr.T.N.V.V.RAO</h3>
+          <div class="owh-inline-role">Mirobiology sp. Water</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr.-Archana-Sabnis_11zon.png" alt="Dr. Archana Sabnis" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DA</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Archana Sabnis</h3>
+          <div class="owh-inline-role">Homeopathy</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr.-Ms.-Sadhana-Sathye_11zon.png" alt="Dr. Sadhana Sathaye" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Sadhana Sathaye</h3>
+          <div class="owh-inline-role">Cosmetics</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Supreet-1_11zon.png" alt="Prof. Supreet Saini" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prof. Supreet Saini</h3>
+          <div class="owh-inline-role">Microbiology</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr.-Gaurav-Saksena_11zon.png" alt="Dr. Gaurav Saksena" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DG</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Gaurav Saksena</h3>
+          <div class="owh-inline-role">Organic Claim (F&amp;B)</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Muralidhara-Rao-Sakhumalla.png" alt="Dr. Muralidhara Rao Sakhumalla" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DM</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Muralidhara Rao Sakhumalla</h3>
+          <div class="owh-inline-role">Microbiology</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr.Ninad-Sathe-.png" alt="Dr. Ninad Sathe" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DN</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Ninad Sathe</h3>
+          <div class="owh-inline-role">Aryuveda &amp; Herbal</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr-B.Sesikeran-MD-.png" alt="Dr. B. Sesikeran" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DB</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. B. Sesikeran</h3>
+          <div class="owh-inline-role">Food &amp; Beverages</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Shrikant-Shenoy-1_11zon.png" alt="Shrikant Shenoy" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Shrikant Shenoy</h3>
+          <div class="owh-inline-role">IRS / Readership / Viewership Market Share</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Ashutosh-Sinha-Photo.png" alt="Prof. Ashutosh Sinha" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PA</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prof. Ashutosh Sinha</h3>
+          <div class="owh-inline-role">Market Research</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Mr.-Shashidhar-Sinha.png" alt="Shashi Sinha" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Shashi Sinha</h3>
+          <div class="owh-inline-role">IRS / Readership / Viewership Market Share</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr.-Vivek-Soni.docx_page-0001_11zon.png" alt="Dr Vivek P Soni" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DV</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr Vivek P Soni</h3>
+          <div class="owh-inline-role">Dentistry / Teeth</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/3135715.png" alt="Dr. Alok Srivastava" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DA</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Alok Srivastava</h3>
+          <div class="owh-inline-role">Stem Cell Research and Therapy</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/DR-MAHESH-T-S-1-1.png" alt="Prof. Dr. Mahesh T.S" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PD</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prof. Dr. Mahesh T.S</h3>
+          <div class="owh-inline-role">Aryuveda &amp; Herbal</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Ms.-P.N.-Vasanti.png" alt="P.N. Vasanti" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PV</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">P.N. Vasanti</h3>
+          <div class="owh-inline-role">Education</div>
+          
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <section class="owh-group-section bg-gray people-tab-section" data-group="experts">
+    <div class="container">
+      <div class="owh-group-header">
+        <h2 class="owh-group-heading section-heading">Advisory Technical Experts</h2>
+      </div>
+      <div class="owh-inline-grid">
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr.-Abhay-Chowdhary-_1_-_1__1.jpeg.png" alt="Dr. Abhay Chowdhary" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DA</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Abhay Chowdhary</h3>
+          <div class="owh-inline-role">VIROLOGY &amp;</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Shripad-Kulkarni-1_11zon.jpeg.png" alt="Shripad Kulkarni" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SK</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Shripad Kulkarni</h3>
+          <div class="owh-inline-role">TELEVISION MEASUREMENTS</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Prof.-Smita-Lele-1-1_11zon.jpeg.png" alt="Prof. Smita Lele" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prof. Smita Lele</h3>
+          <div class="owh-inline-role">Food &amp; Beverages</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Girish-Photo-Link-_1_.jpeg.png" alt="Girish Malhotra" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">GM</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Girish Malhotra</h3>
+          <div class="owh-inline-role">Banking / Retail</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr.D.B.A.Narayana-1_11zon.jpeg.png" alt="Dr.D.B.A.Narayana" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">D</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr.D.B.A.Narayana</h3>
+          <div class="owh-inline-role">Aryuveda &amp; Herbal</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Sarang-Panchal.jpeg.png" alt="Sarang Panchal" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">SP</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Sarang Panchal</h3>
+          <div class="owh-inline-role">Market Research</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr.Dinakar-Pasla-_1_-_1_.jpeg.png" alt="Prof. (Dr.) Dinakar Pasla" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">P(</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Prof. (Dr.) Dinakar Pasla</h3>
+          <div class="owh-inline-role">Construction (cement, pipes, tiles)</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Dr-Punit-Saraogi-1.jpeg.png" alt="Dr. Punit Saraogi" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DP</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Punit Saraogi</h3>
+          <div class="owh-inline-role">Hair &amp; Skin Expert</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/3135715.png" alt="Dr. Sujal Shah" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">DS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Dr. Sujal Shah</h3>
+          <div class="owh-inline-role">Eye specialist</div>
+          
+        </div>
+      </div>
+      <div class="owh-inline-card">
+        <div class="owh-inline-thumb"><img src="https://www.ascionline.in/wp-content/uploads/2022/08/Preetika-Singh.jpeg.png" alt="Preetika Singh" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="owh-inline-fallback" style="display:none;">PS</div></div>
+        <div class="owh-inline-text">
+          <h3 class="owh-inline-name">Preetika Singh</h3>
+          <div class="owh-inline-role">Legal</div>
+          
+        </div>
+      </div>
       </div>
     </div>
   </section>
 </main>
+
+<script>
+  window.switchPeopleTab = function (tab) {
+    document.querySelectorAll('#peopleTabsBar .people-tab-btn').forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-tab') === tab);
+    });
+    document.querySelectorAll('.people-tab-section').forEach(function (sec) {
+      sec.style.display = (tab === 'all' || sec.getAttribute('data-group') === tab) ? '' : 'none';
+    });
+  };
+</script>
 <section class="cta-callout-section">
     <div class="container cta-callout-container">
       <div class="cta-split-grid">

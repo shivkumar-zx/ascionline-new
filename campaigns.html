@@ -4446,7 +4446,7 @@ h3, h4, h5, h6,
     max-width: 580px !important;
   }
 </style>
-      <style id="grouped-campaigns-css">
+        <style id="grouped-campaigns-css">
   #campaignsGrid.gallery-grid {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
@@ -4487,6 +4487,53 @@ h3, h4, h5, h6,
   }
   .camp-group-card:hover .camp-group-thumb img {
     transform: scale(1.03);
+  }
+  .camp-card-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.72);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 0.18s ease, background 0.18s ease;
+  }
+  .camp-group-card:hover .camp-card-arrow {
+    opacity: 1;
+  }
+  .camp-card-arrow:hover {
+    background: #086b59;
+  }
+  .camp-card-prev { left: 10px; }
+  .camp-card-next { right: 10px; }
+  .camp-lb-series-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .camp-lb-series-btn {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.16s ease, border-color 0.16s ease;
+  }
+  .camp-lb-series-btn:hover {
+    background: #086b59;
+    border-color: #086b59;
   }
   .camp-group-badges {
     position: absolute;
@@ -5622,7 +5669,11 @@ h3, h4, h5, h6,
       <h3 class="camp-lb-series-title" id="campLbSeriesTitle"></h3>
       <span class="camp-lb-counter" id="campLbCounter"></span>
     </div>
-    <button type="button" class="camp-lb-close" onclick="closeCampaignLightbox()" aria-label="Close">&times;</button>
+    <div class="camp-lb-series-nav">
+      <button type="button" class="camp-lb-series-btn" onclick="stepCampaignSeries(-1)">&larr; Prev Campaign</button>
+      <button type="button" class="camp-lb-series-btn" onclick="stepCampaignSeries(1)">Next Campaign &rarr;</button>
+      <button type="button" class="camp-lb-close" onclick="closeCampaignLightbox()" aria-label="Close">&times;</button>
+    </div>
   </div>
   <div class="camp-lb-stage">
     <button type="button" class="camp-lb-arrow camp-lb-prev" id="campLbPrev" onclick="stepCampaignSlide(-1)" aria-label="Previous">
@@ -5648,6 +5699,8 @@ h3, h4, h5, h6,
     var searchQuery = '';
     var currentCamp = null;
     var currentIdx = 0;
+    var filteredList = [];
+    var cardSlideState = {};
 
     function esc(s) {
       return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -5664,6 +5717,7 @@ h3, h4, h5, h6,
         var hay = (c.title + ' ' + c.year + ' ' + (c.items || []).map(function (it) { return it.title; }).join(' ')).toLowerCase();
         return hay.indexOf(q) !== -1;
       });
+      filteredList = filtered;
 
       var grid = document.getElementById('campaignsGrid');
       var empty = document.getElementById('galleryEmpty');
@@ -5684,14 +5738,22 @@ h3, h4, h5, h6,
         if (c.videoCount > 0) parts.push(c.videoCount + (c.videoCount === 1 ? ' Video' : ' Videos'));
         if (c.imageCount > 0) parts.push(c.imageCount + (c.imageCount === 1 ? ' Creative' : ' Creatives'));
         var breakdown = parts.join(' · ');
+        var sIdx = cardSlideState[c.id] || 0;
+        var previewImg = (c.items[sIdx] && c.items[sIdx].image) || c.cover;
+        var badgeText = c.totalAssets > 1 ? ((sIdx + 1) + ' / ' + c.totalAssets) : '1 Item';
+        var cardArrows = c.totalAssets > 1
+          ? '<button type="button" class="camp-card-arrow camp-card-prev" onclick="event.stopPropagation(); stepCardPreview(this, -1)" aria-label="Previous preview">&#8249;</button>' +
+            '<button type="button" class="camp-card-arrow camp-card-next" onclick="event.stopPropagation(); stepCardPreview(this, 1)" aria-label="Next preview">&#8250;</button>'
+          : '';
         return (
           '<div class="camp-group-card" role="button" tabindex="0" data-camp-id="' + esc(c.id) + '" onclick="openCampaignGallery(this.dataset.campId)">' +
             '<div class="camp-group-thumb">' +
               '<div class="camp-group-badges">' +
                 '<span class="camp-year-badge">' + esc(c.year) + '</span>' +
-                '<span class="camp-count-badge">' + c.totalAssets + (c.totalAssets === 1 ? ' Item' : ' Items') + '</span>' +
+                '<span class="camp-count-badge">' + badgeText + '</span>' +
               '</div>' +
-              '<img src="' + esc(c.cover) + '" alt="' + esc(c.title) + '" loading="lazy">' +
+              cardArrows +
+              '<img src="' + esc(previewImg) + '" alt="' + esc(c.title) + '" loading="lazy">' +
             '</div>' +
             '<div class="camp-group-body">' +
               '<h3 class="camp-group-title">' + esc(c.title) + '</h3>' +
@@ -5702,6 +5764,20 @@ h3, h4, h5, h6,
         );
       }).join('');
     }
+
+    window.stepCardPreview = function (btn, delta) {
+      var card = btn.closest('.camp-group-card');
+      if (!card) return;
+      var id = card.dataset.campId;
+      var camp = (window.ASCI_CAMPAIGNS || []).find(function (c) { return c.id === id; });
+      if (!camp || camp.items.length < 2) return;
+      var next = ((cardSlideState[id] || 0) + delta + camp.items.length) % camp.items.length;
+      cardSlideState[id] = next;
+      var img = card.querySelector('.camp-group-thumb img');
+      var badge = card.querySelector('.camp-count-badge');
+      if (img && camp.items[next].image) img.src = camp.items[next].image;
+      if (badge) badge.textContent = (next + 1) + ' / ' + camp.items.length;
+    };
 
     function renderLightboxSlide() {
       if (!currentCamp || !currentCamp.items.length) return;
@@ -5734,10 +5810,21 @@ h3, h4, h5, h6,
       var list = window.ASCI_CAMPAIGNS || [];
       currentCamp = list.find(function (c) { return c.id === id; });
       if (!currentCamp) return;
-      currentIdx = 0;
+      currentIdx = cardSlideState[id] || 0;
       document.getElementById('campLbSeriesTitle').textContent = currentCamp.title + ' (' + currentCamp.year + ')';
       document.getElementById('campSeriesLightbox').classList.add('active');
       document.body.style.overflow = 'hidden';
+      renderLightboxSlide();
+    };
+
+    window.stepCampaignSeries = function (delta) {
+      var pool = filteredList.length ? filteredList : (window.ASCI_CAMPAIGNS || []);
+      if (!pool.length || !currentCamp) return;
+      var idx = pool.findIndex(function (c) { return c.id === currentCamp.id; });
+      var nextIdx = (idx + delta + pool.length) % pool.length;
+      currentCamp = pool[nextIdx];
+      currentIdx = 0;
+      document.getElementById('campLbSeriesTitle').textContent = currentCamp.title + ' (' + currentCamp.year + ')';
       renderLightboxSlide();
     };
 

@@ -4446,6 +4446,116 @@ h3, h4, h5, h6,
     max-width: 580px !important;
   }
 </style>
+  <style id="grouped-campaigns-css">
+  #campaignsGrid.gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 28px !important;
+  }
+  .camp-group-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 14px rgba(0, 33, 71, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .camp-group-card:hover {
+    transform: translateY(-4px);
+    border-color: #086b59;
+    box-shadow: 0 14px 28px rgba(8, 107, 89, 0.1);
+  }
+  .camp-group-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #f1f5f9;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .camp-group-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+  .camp-group-card:hover .camp-group-thumb img {
+    transform: scale(1.03);
+  }
+  .camp-group-badges {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+  }
+  .camp-year-badge {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-variant-numeric: tabular-nums;
+    background: #002d62;
+    color: #ffffff;
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .camp-count-badge {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-variant-numeric: tabular-nums;
+    background: rgba(255, 255, 255, 0.94);
+    color: #086b59;
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+  .camp-group-body {
+    padding: 22px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .camp-group-title {
+    font-family: var(--font-serif) !important;
+    font-weight: 500 !important;
+    color: #0f172a;
+    margin: 0 0 10px 0;
+    line-height: 1.35;
+  }
+  .camp-group-meta {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.875rem;
+    color: #475569;
+    margin: 0 0 18px 0;
+    flex: 1;
+  }
+  .camp-group-cta {
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #086b59;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  @media (max-width: 980px) {
+    #campaignsGrid.gallery-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+  @media (max-width: 640px) {
+    #campaignsGrid.gallery-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
 </head>
 
 <!-- Header -->
@@ -5324,1418 +5434,106 @@ h3, h4, h5, h6,
 </div>
 
 
+<script src="assets/campaigns-data.js"></script>
 <script>
-  const campaignItems = [
-  {
-    "id": "camp_2026_1",
-    "year": "2026",
-    "type": "image",
-    "title": "Weight Loss Ad Claims – ASCI Festive Campaign 2026",
-    "caption": "ASCI festive campaign ad questioning the claim \"Lose 10 kg before the celebrations. No gym.\" – 96% of 195 nutraceutical ads reviewed needed changes under the ASCI Code",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2026/11/asci-festive-campaign-2026-weight-loss-ad-claims-1024x1024.avif"
-  },
-  {
-    "id": "camp_2026_2",
-    "year": "2026",
-    "type": "image",
-    "title": "Instant Glow Beauty Ad Claims – ASCI Festive Campaign 2026",
-    "caption": "ASCI festive campaign ad questioning the claim \"Get your festive glow in 30 seconds\" – 576 of 639 personal care ads reviewed needed changes for unsupported claims",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2026/11/asci-festive-campaign-2026-instant-glow-beauty-ad-claims-1024x1024.avif"
-  },
-  {
-    "id": "camp_2026_3",
-    "year": "2026",
-    "type": "image",
-    "title": "Influencer Playbook 1 – Disclose Festive Brand Collabs",
-    "caption": "ASCI Influencer Playbook: festive brand collabs, hampers and paid posts – if a brand sent it, say so",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2026/11/asci-influencer-playbook-1-festive-brand-collab-disclosure-1024x1024.avif"
-  },
-  {
-    "id": "camp_2026_4",
-    "year": "2026",
-    "type": "image",
-    "title": "Influencer Playbook 2 – Penalties for Undisclosed Promotions",
-    "caption": "ASCI Influencer Playbook: penalties for not disclosing paid partnerships – up to ₹10 lakh, ₹50 lakh for repeat violations and an endorsement ban of up to 1 year",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2026/11/asci-influencer-playbook-2-undisclosed-promotion-penalties-1024x1024.avif"
-  },
-  {
-    "id": "camp_2026_5",
-    "year": "2026",
-    "type": "image",
-    "title": "Influencer Playbook 3 – Responsible Influencing Course",
-    "caption": "ASCI Academy's Responsible Influencing Playbook e-learning course for creators, marketers and agency teams",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2026/11/asci-influencer-playbook-3-responsible-influencing-course-1024x1024.avif"
-  },
-  {
-    "id": "camp_2026_6",
-    "year": "2026",
-    "type": "image",
-    "title": "Dark Patterns 1 – Good Design Helps Consumers Choose",
-    "caption": "ASCI campaign on dark patterns: good design helps consumers choose, it never chooses for them",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2026/11/asci-dark-patterns-1-good-design-consumer-choice-1024x1024.avif"
-  },
-  {
-    "id": "camp_2026_7",
-    "year": "2026",
-    "type": "image",
-    "title": "Dark Patterns 2 – Consumer Trust and Compliance Risk",
-    "caption": "ASCI campaign: dark patterns such as hidden charges, false urgency and pre-selected add-ons erode consumer trust and create compliance risks",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2026/11/asci-dark-patterns-2-consumer-trust-compliance-risk-1024x1024.avif"
-  },
-  {
-    "id": "camp_2026_8",
-    "year": "2026",
-    "type": "image",
-    "title": "Dark Patterns 3 – Common Dark Patterns at Checkout",
-    "caption": "Common dark patterns in festive online checkouts: false urgency, fake scarcity, basket sneaking, drip pricing and confirm shaming",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2026/11/asci-dark-patterns-3-common-dark-patterns-checkout-1024x1024.avif"
-  },
-  {
-    "id": "camp_2026_9",
-    "year": "2026",
-    "type": "image",
-    "title": "Dark Patterns 4 – Ethical UI/UX Design Course",
-    "caption": "ASCI Academy e-learning course Ethical UI/UX Designs: Building Consumer Trust, for brand, legal and UI/UX teams",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2026/11/asci-dark-patterns-4-ethical-ui-ux-design-course-1024x1024.avif"
-  },
-  {
-    "id": "camp_2026_10",
-    "year": "2026",
-    "type": "image",
-    "title": "Ad Advice 1 – Get Festive Ads Reviewed",
-    "caption": "Launching this festive season? Get your ads checked by ASCI's Advertising Advice experts before they go live",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2026/11/asci-advertising-advice-1-festive-season-ad-review-1024x1024.avif"
-  },
-  {
-    "id": "camp_2026_11",
-    "year": "2026",
-    "type": "image",
-    "title": "Ad Advice 2 – What Is Advertising Advice",
-    "caption": "What is ASCI Advertising Advice: confidential, expert pre-publication review of ads against the ASCI Code",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2026/11/asci-advertising-advice-2-what-is-advertising-advice-1024x1024.avif"
-  },
-  {
-    "id": "camp_2026_12",
-    "year": "2026",
-    "type": "image",
-    "title": "Ad Advice 3 – Pre-Publication Expert Advice",
-    "caption": "Give your ad the benefit of expert advice – seek ASCI's pre-publication advice at advisory@ascionline.in",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2026/11/asci-advertising-advice-3-pre-publication-expert-advice-1024x1024.avif"
-  },
-  {
-    "id": "camp_1",
-    "year": "2025",
-    "type": "video",
-    "title": "ASCI Public Vigilance & Compliance PSA",
-    "caption": "",
-    "video_url": "https://www.youtube.com/watch?v=tSJCUMaigPo",
-    "yt_id": "tSJCUMaigPo",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/1.jpg"
-  },
-  {
-    "id": "camp_2",
-    "year": "2025",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2025)",
-    "caption": "1",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/1-1-1024x1024.jpg"
-  },
-  {
-    "id": "camp_3",
-    "year": "2025",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2025)",
-    "caption": "2",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/2-1024x1024.jpg"
-  },
-  {
-    "id": "camp_4",
-    "year": "2025",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2025)",
-    "caption": "3",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/3-1024x1024.jpg"
-  },
-  {
-    "id": "camp_5",
-    "year": "2025",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2025)",
-    "caption": "4",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/4-1024x1024.jpg"
-  },
-  {
-    "id": "camp_6",
-    "year": "2025",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2025)",
-    "caption": "5",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/5-1024x1024.jpg"
-  },
-  {
-    "id": "camp_7",
-    "year": "2025",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2025)",
-    "caption": "6",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/6-1024x1024.jpg"
-  },
-  {
-    "id": "camp_8",
-    "year": "2025",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2025)",
-    "caption": "7",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/7-1024x1024.jpg"
-  },
-  {
-    "id": "camp_9",
-    "year": "2025",
-    "type": "image",
-    "title": "Influencer Guidelines Disclosure - Influencers_01",
-    "caption": "Influencers_01",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Influencers_01-1024x1024.jpg"
-  },
-  {
-    "id": "camp_10",
-    "year": "2025",
-    "type": "image",
-    "title": "Influencer Guidelines Disclosure - Influencers_02",
-    "caption": "Influencers_02",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Influencers_02-1024x1024.jpg"
-  },
-  {
-    "id": "camp_11",
-    "year": "2025",
-    "type": "image",
-    "title": "Influencer Guidelines Disclosure - Influencers_03",
-    "caption": "Influencers_03",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Influencers_03-1024x1024.jpg"
-  },
-  {
-    "id": "camp_12",
-    "year": "2025",
-    "type": "image",
-    "title": "Influencer Guidelines Disclosure - Influencers_04",
-    "caption": "Influencers_04",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Influencers_04-1024x1024.jpg"
-  },
-  {
-    "id": "camp_13",
-    "year": "2025",
-    "type": "image",
-    "title": "Influencer Guidelines Disclosure - Influencers_05",
-    "caption": "Influencers_05",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Influencers_05-1024x1024.jpg"
-  },
-  {
-    "id": "camp_14",
-    "year": "2025",
-    "type": "video",
-    "title": "ASCI Public Vigilance & Compliance PSA",
-    "caption": "",
-    "video_url": "https://www.youtube.com/watch?v=PYMxXb4GdfM",
-    "yt_id": "PYMxXb4GdfM",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/2-1.jpg"
-  },
-  {
-    "id": "camp_15",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 1",
-    "caption": "Artboard 1",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-1-1024x1024.jpg"
-  },
-  {
-    "id": "camp_16",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 2",
-    "caption": "Artboard 2",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-2-1024x1024.jpg"
-  },
-  {
-    "id": "camp_17",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 3",
-    "caption": "Artboard 3",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-3-1024x1024.jpg"
-  },
-  {
-    "id": "camp_18",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 4",
-    "caption": "Artboard 4",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-4-1024x1024.jpg"
-  },
-  {
-    "id": "camp_19",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 5",
-    "caption": "Artboard 5",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-5-1024x1024.jpg"
-  },
-  {
-    "id": "camp_20",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 1",
-    "caption": "Artboard 1",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-1-1-1024x1024.jpg"
-  },
-  {
-    "id": "camp_21",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 2",
-    "caption": "Artboard 2",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-2-1-1024x1024.jpg"
-  },
-  {
-    "id": "camp_22",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 3",
-    "caption": "Artboard 3",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-3-1-1024x1024.jpg"
-  },
-  {
-    "id": "camp_23",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 4",
-    "caption": "Artboard 4",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-4-1-1024x1024.jpg"
-  },
-  {
-    "id": "camp_24",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 5",
-    "caption": "Artboard 5",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-5-1-1024x1024.jpg"
-  },
-  {
-    "id": "camp_25",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 6",
-    "caption": "Artboard 6",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-6-1024x1024.jpg"
-  },
-  {
-    "id": "camp_26",
-    "year": "2025",
-    "type": "video",
-    "title": "ASCI Public Vigilance & Compliance PSA",
-    "caption": "",
-    "video_url": "https://www.youtube.com/watch?v=EuqHCmpxnAg",
-    "yt_id": "EuqHCmpxnAg",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/2-1-1.jpg"
-  },
-  {
-    "id": "camp_27",
-    "year": "2025",
-    "type": "image",
-    "title": "Compliance Case Study - Godrej Hair Colour Carousal 1ASCI",
-    "caption": "Godrej Hair Colour Carousal 1ASCI",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Godrej-Hair-Colour-Carousal-1ASCI-1024x1024.jpg"
-  },
-  {
-    "id": "camp_28",
-    "year": "2025",
-    "type": "image",
-    "title": "Compliance Case Study - Godrej Hair Colour Carousal 2ASCI",
-    "caption": "Godrej Hair Colour Carousal 2ASCI",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Godrej-Hair-Colour-Carousal-2ASCI-1024x1024.jpg"
-  },
-  {
-    "id": "camp_29",
-    "year": "2025",
-    "type": "image",
-    "title": "Compliance Case Study - Godrej Hair Colour Carousal 3ASCIASCI",
-    "caption": "Godrej Hair Colour Carousal 3ASCIASCI",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Godrej-Hair-Colour-Carousal-3ASCIASCI-1024x1024.jpg"
-  },
-  {
-    "id": "camp_30",
-    "year": "2025",
-    "type": "image",
-    "title": "Compliance Case Study - Godrej Hair Colour Carousal 4ASCI",
-    "caption": "Godrej Hair Colour Carousal 4ASCI",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Godrej-Hair-Colour-Carousal-4ASCI-1024x1024.jpg"
-  },
-  {
-    "id": "camp_31",
-    "year": "2025",
-    "type": "image",
-    "title": "Compliance Case Study - Godrej Hair Colour Carousal 5ASCI",
-    "caption": "Godrej Hair Colour Carousal 5ASCI",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Godrej-Hair-Colour-Carousal-5ASCI-1024x1024.jpg"
-  },
-  {
-    "id": "camp_32",
-    "year": "2025",
-    "type": "image",
-    "title": "Compliance Case Study - Godrej Hair Colour Carousal 5ASCIASCI",
-    "caption": "Godrej Hair Colour Carousal 5ASCIASCI",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Godrej-Hair-Colour-Carousal-5ASCIASCI-1024x1024.jpg"
-  },
-  {
-    "id": "camp_33",
-    "year": "2025",
-    "type": "image",
-    "title": "Compliance Case Study - Godrej Hair Colour Carousal 6ASCI",
-    "caption": "Godrej Hair Colour Carousal 6ASCI",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Godrej-Hair-Colour-Carousal-6ASCI-1024x1024.jpg"
-  },
-  {
-    "id": "camp_34",
-    "year": "2025",
-    "type": "video",
-    "title": "ASCI Public Vigilance & Compliance PSA",
-    "caption": "",
-    "video_url": "https://www.youtube.com/watch?v=AhU4ogJl64Q",
-    "yt_id": "AhU4ogJl64Q",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/1.jpg"
-  },
-  {
-    "id": "camp_35",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 1",
-    "caption": "Artboard 1",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-1-2-1024x1024.jpg"
-  },
-  {
-    "id": "camp_36",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 2",
-    "caption": "Artboard 2",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-2-2-1024x1024.jpg"
-  },
-  {
-    "id": "camp_37",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 3",
-    "caption": "Artboard 3",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-3-2-1024x1024.jpg"
-  },
-  {
-    "id": "camp_38",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 4",
-    "caption": "Artboard 4",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-4-2-1024x1024.jpg"
-  },
-  {
-    "id": "camp_39",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 6",
-    "caption": "Artboard 6",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-6-1-1024x1024.jpg"
-  },
-  {
-    "id": "camp_40",
-    "year": "2025",
-    "type": "image",
-    "title": "Carousel_01 (2)",
-    "caption": "Carousel_01 (2)",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Carousel_01-2-1024x1024.png"
-  },
-  {
-    "id": "camp_41",
-    "year": "2025",
-    "type": "image",
-    "title": "Carousel_02 (1)",
-    "caption": "Carousel_02 (1)",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Carousel_02-1-1024x1024.png"
-  },
-  {
-    "id": "camp_42",
-    "year": "2025",
-    "type": "image",
-    "title": "Carousel_03 (1)",
-    "caption": "Carousel_03 (1)",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Carousel_03-1-1024x1024.png"
-  },
-  {
-    "id": "camp_43",
-    "year": "2025",
-    "type": "image",
-    "title": "Carousel_04 (1)",
-    "caption": "Carousel_04 (1)",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Carousel_04-1-1024x1024.png"
-  },
-  {
-    "id": "camp_44",
-    "year": "2025",
-    "type": "image",
-    "title": "Carousel_05 (1)",
-    "caption": "Carousel_05 (1)",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Carousel_05-1-1024x1024.jpg"
-  },
-  {
-    "id": "camp_45",
-    "year": "2025",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2025)",
-    "caption": "1",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/1-2-1024x1024.jpg"
-  },
-  {
-    "id": "camp_46",
-    "year": "2025",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2025)",
-    "caption": "2",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/2-2-1024x1024.jpg"
-  },
-  {
-    "id": "camp_47",
-    "year": "2025",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2025)",
-    "caption": "3",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/3-1-1024x1024.jpg"
-  },
-  {
-    "id": "camp_48",
-    "year": "2025",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2025)",
-    "caption": "4",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/4-1-1024x1024.jpg"
-  },
-  {
-    "id": "camp_49",
-    "year": "2025",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2025)",
-    "caption": "5",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/5-1-1024x1024.jpg"
-  },
-  {
-    "id": "camp_50",
-    "year": "2025",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2025)",
-    "caption": "6",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/6-1-1024x1024.jpg"
-  },
-  {
-    "id": "camp_51",
-    "year": "2025",
-    "type": "video",
-    "title": "ASCI Public Vigilance & Compliance PSA",
-    "caption": "",
-    "video_url": "https://www.youtube.com/watch?v=Xl8e9JB3QNY",
-    "yt_id": "Xl8e9JB3QNY",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/2-1.jpg"
-  },
-  {
-    "id": "camp_52",
-    "year": "2025",
-    "type": "image",
-    "title": "Volini Substantiation Case Study - ASCI_VOLINI-Case-Study_01",
-    "caption": "ASCI_VOLINI-Case-Study_01",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/ASCI_VOLINI-Case-Study_01-1024x1024.png"
-  },
-  {
-    "id": "camp_53",
-    "year": "2025",
-    "type": "image",
-    "title": "Volini Substantiation Case Study - ASCI_VOLINI-Case-Study_03",
-    "caption": "ASCI_VOLINI-Case-Study_03",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/ASCI_VOLINI-Case-Study_03-1024x1024.png"
-  },
-  {
-    "id": "camp_54",
-    "year": "2025",
-    "type": "image",
-    "title": "Volini Substantiation Case Study - ASCI_VOLINI-Case-Study_04",
-    "caption": "ASCI_VOLINI-Case-Study_04",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/ASCI_VOLINI-Case-Study_04-1024x1024.png"
-  },
-  {
-    "id": "camp_55",
-    "year": "2025",
-    "type": "image",
-    "title": "Volini Substantiation Case Study - ASCI_VOLINI-Case-Study_05",
-    "caption": "ASCI_VOLINI-Case-Study_05",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/ASCI_VOLINI-Case-Study_05-1024x1024.png"
-  },
-  {
-    "id": "camp_56",
-    "year": "2025",
-    "type": "image",
-    "title": "Volini Substantiation Case Study - ASCI_VOLINI-Case-Study_06",
-    "caption": "ASCI_VOLINI-Case-Study_06",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/ASCI_VOLINI-Case-Study_06-1024x1024.png"
-  },
-  {
-    "id": "camp_57",
-    "year": "2025",
-    "type": "image",
-    "title": "Volini Substantiation Case Study - ASCI_VOLINI-Case-Study_07",
-    "caption": "ASCI_VOLINI-Case-Study_07",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/ASCI_VOLINI-Case-Study_07-1024x1024.png"
-  },
-  {
-    "id": "camp_58",
-    "year": "2025",
-    "type": "video",
-    "title": "ASCI Public Vigilance & Compliance PSA",
-    "caption": "",
-    "video_url": "https://www.youtube.com/watch?v=MiAjk1TeaIc",
-    "yt_id": "MiAjk1TeaIc",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/1.jpg"
-  },
-  {
-    "id": "camp_59",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 1",
-    "caption": "Artboard 1",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-1-3-1024x1024.jpg"
-  },
-  {
-    "id": "camp_60",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 2",
-    "caption": "Artboard 2",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-2-3-1024x1024.jpg"
-  },
-  {
-    "id": "camp_61",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 4",
-    "caption": "Artboard 4",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-4-3-1024x1024.jpg"
-  },
-  {
-    "id": "camp_62",
-    "year": "2025",
-    "type": "image",
-    "title": "Artboard 5",
-    "caption": "Artboard 5",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Artboard-5-2-1024x1024.jpg"
-  },
-  {
-    "id": "camp_63",
-    "year": "2025",
-    "type": "image",
-    "title": "Bungee Jumping",
-    "caption": "Bungee Jumping",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Bungee-Jumping-1024x1024.jpg"
-  },
-  {
-    "id": "camp_64",
-    "year": "2025",
-    "type": "image",
-    "title": "Mountain Biking",
-    "caption": "Mountain Biking",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Mountain-Biking-1024x1024.jpg"
-  },
-  {
-    "id": "camp_65",
-    "year": "2025",
-    "type": "image",
-    "title": "River Rafting",
-    "caption": "River Rafting",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/River-Rafting-1024x1024.jpg"
-  },
-  {
-    "id": "camp_66",
-    "year": "2025",
-    "type": "image",
-    "title": "Rock Climbing",
-    "caption": "Rock Climbing",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Rock-Climbing-1024x1024.jpg"
-  },
-  {
-    "id": "camp_67",
-    "year": "2025",
-    "type": "image",
-    "title": "Skiing",
-    "caption": "Skiing",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Skiing-1024x1024.jpg"
-  },
-  {
-    "id": "camp_68",
-    "year": "2025",
-    "type": "image",
-    "title": "Skydiving",
-    "caption": "Skydiving",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2025/04/Skydiving-1024x1024.jpg"
-  },
-  {
-    "id": "camp_69",
-    "year": "2022",
-    "type": "video",
-    "title": "Endorser Due Diligence Campaign",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=8epiDSIwXxw?feature=share",
-    "yt_id": "8epiDSIwXxw",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Endorser-Due-Diligence-Launch-Campaign-1.jpeg"
-  },
-  {
-    "id": "camp_70",
-    "year": "2022",
-    "type": "video",
-    "title": "Endorser Due Diligence Campaign",
-    "caption": "",
-    "video_url": "https://www.youtube.com/watch?v=r8ntYU4EGnw",
-    "yt_id": "r8ntYU4EGnw",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Endorser-Due-Diligence-Launch-Campaign-2.jpeg"
-  },
-  {
-    "id": "camp_71",
-    "year": "2022",
-    "type": "video",
-    "title": "Endorser Due Diligence Campaign",
-    "caption": "",
-    "video_url": "https://www.youtube.com/watch?v=AOuNq33DEEM",
-    "yt_id": "AOuNq33DEEM",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Endorser-Due-Diligence-Launch-Campaign-3.jpeg"
-  },
-  {
-    "id": "camp_72",
-    "year": "2021",
-    "type": "video",
-    "title": "Advertising Advice Launch Campaign",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=xCQnQyaJtC0?feature=share",
-    "yt_id": "xCQnQyaJtC0",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Advertising-Advice-Launch-Campaign-1.jpeg"
-  },
-  {
-    "id": "camp_73",
-    "year": "2021",
-    "type": "video",
-    "title": "Advertising Advice Launch Campaign",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=oNLtHpmR5mM?feature=share",
-    "yt_id": "oNLtHpmR5mM",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Advertising-Advice-Launch-Campaign-2.jpeg"
-  },
-  {
-    "id": "camp_74",
-    "year": "2021",
-    "type": "video",
-    "title": "ASCI #ChupNaBaitho Awareness Film",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=8WTwrza9Vrg?feature=share",
-    "yt_id": "8WTwrza9Vrg",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Chup-Na-Baitho-Consumer-Campaign-16.jpeg"
-  },
-  {
-    "id": "camp_75",
-    "year": "2021",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2021)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2021-Chup-Na-Baitho-Consumer-Campaign-2-1024x1024.jpeg"
-  },
-  {
-    "id": "camp_76",
-    "year": "2021",
-    "type": "video",
-    "title": "ASCI #ChupNaBaitho Awareness Film",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=Yk_X86gt6ms?feature=share",
-    "yt_id": "Yk_X86gt6ms",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Chup-Na-Baitho-Consumer-Campaign-3.jpeg"
-  },
-  {
-    "id": "camp_77",
-    "year": "2021",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2021)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2021-Chup-Na-Baitho-Consumer-Campaign-4-1024x1024.jpg"
-  },
-  {
-    "id": "camp_78",
-    "year": "2021",
-    "type": "video",
-    "title": "ASCI #ChupNaBaitho Awareness Film",
-    "caption": "",
-    "video_url": "https://www.youtube.com/watch?v=LX1R9StCUP0",
-    "yt_id": "LX1R9StCUP0",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Chup-Na-Baitho-Consumer-Campaign-5.jpeg"
-  },
-  {
-    "id": "camp_79",
-    "year": "2021",
-    "type": "video",
-    "title": "ASCI #ChupNaBaitho Awareness Film",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=MGEefrf5vi4?feature=share",
-    "yt_id": "MGEefrf5vi4",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Chup-Na-Baitho-Consumer-Campaign-6.jpeg"
-  },
-  {
-    "id": "camp_80",
-    "year": "2021",
-    "type": "video",
-    "title": "ASCI #ChupNaBaitho Awareness Film",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=2ZOmaimpuNw?feature=share",
-    "yt_id": "2ZOmaimpuNw",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Chup-Na-Baitho-Consumer-Campaign-7.jpeg"
-  },
-  {
-    "id": "camp_81",
-    "year": "2021",
-    "type": "video",
-    "title": "ASCI #ChupNaBaitho Awareness Film",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=yPHuUVtuoQU?feature=share",
-    "yt_id": "yPHuUVtuoQU",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Chup-Na-Baitho-Consumer-Campaign-8.jpeg"
-  },
-  {
-    "id": "camp_82",
-    "year": "2021",
-    "type": "video",
-    "title": "ASCI #ChupNaBaitho Awareness Film",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=qpauix7hYRE?feature=share",
-    "yt_id": "qpauix7hYRE",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Chup-Na-Baitho-Consumer-Campaign-9.jpeg"
-  },
-  {
-    "id": "camp_83",
-    "year": "2021",
-    "type": "video",
-    "title": "ASCI #ChupNaBaitho Awareness Film",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=ngzOqJRZvy4?feature=share",
-    "yt_id": "ngzOqJRZvy4",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Chup-Na-Baitho-Consumer-Campaign-10.jpeg"
-  },
-  {
-    "id": "camp_84",
-    "year": "2021",
-    "type": "video",
-    "title": "ASCI #ChupNaBaitho Awareness Film",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=wWmEVIvBfXk?feature=share",
-    "yt_id": "wWmEVIvBfXk",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Chup-Na-Baitho-Consumer-Campaign-11.jpeg"
-  },
-  {
-    "id": "camp_85",
-    "year": "2021",
-    "type": "video",
-    "title": "ASCI #ChupNaBaitho Awareness Film",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=7EYsamA5ZU0?feature=share",
-    "yt_id": "7EYsamA5ZU0",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Chup-Na-Baitho-Consumer-Campaign-12.jpeg"
-  },
-  {
-    "id": "camp_86",
-    "year": "2021",
-    "type": "video",
-    "title": "ASCI #ChupNaBaitho Awareness Film",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=y2G4rELi8vI?feature=share",
-    "yt_id": "y2G4rELi8vI",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Chup-Na-Baitho-Consumer-Campaign-13.jpeg"
-  },
-  {
-    "id": "camp_87",
-    "year": "2021",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2021)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2021-Chup-Na-Baitho-Consumer-Campaign-14-1024x1024.jpg"
-  },
-  {
-    "id": "camp_88",
-    "year": "2021",
-    "type": "video",
-    "title": "ASCI #ChupNaBaitho Awareness Film",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=kTzEOpEywcU?feature=share",
-    "yt_id": "kTzEOpEywcU",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Chup-Na-Baitho-Consumer-Campaign-15.jpeg"
-  },
-  {
-    "id": "camp_89",
-    "year": "2021",
-    "type": "video",
-    "title": "ASCI #ChupNaBaitho Awareness Film",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=zzoztAeTWPY?feature=share",
-    "yt_id": "zzoztAeTWPY",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/unnamed-2.png"
-  },
-  {
-    "id": "camp_90",
-    "year": "2021",
-    "type": "video",
-    "title": "ASCI #ChupNaBaitho Awareness Film",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=avLD1ZCvgss?feature=share",
-    "yt_id": "avLD1ZCvgss",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Chup-Na-Baitho-Consumer-Campaign-17.jpeg"
-  },
-  {
-    "id": "camp_91",
-    "year": "2021",
-    "type": "video",
-    "title": "ASCI #ChupNaBaitho Awareness Film",
-    "caption": "",
-    "video_url": "https://youtube.com/watch?v=MzQ4bpNHKuQ?feature=share",
-    "yt_id": "MzQ4bpNHKuQ",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/Chup-Na-Baitho-Consumer-Campaign-18.jpeg"
-  },
-  {
-    "id": "camp_92",
-    "year": "2020",
-    "type": "image",
-    "title": "ASCI E-Learning Campaign (2020)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2020-elearning-1024x576.png"
-  },
-  {
-    "id": "camp_93",
-    "year": "2020",
-    "type": "image",
-    "title": "ASCI Membership Campaign (2020)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2020-Membership-1024x576.png"
-  },
-  {
-    "id": "camp_94",
-    "year": "2020",
-    "type": "image",
-    "title": "ASCI Campaign Artboard (2020)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2020-membership-1-1024x576.png"
-  },
-  {
-    "id": "camp_95",
-    "year": "2019",
-    "type": "image",
-    "title": "Consumer Awareness Print Ad (2019)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2019-Consumer-Awareness.jpg"
-  },
-  {
-    "id": "camp_96",
-    "year": "2019",
-    "type": "image",
-    "title": "ASCI Membership Campaign (2019)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2019-Membership-Campaign-1.gif"
-  },
-  {
-    "id": "camp_97",
-    "year": "2019",
-    "type": "image",
-    "title": "ASCI Membership Campaign (2019)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2019-Membership-Campaign-2.gif"
-  },
-  {
-    "id": "camp_98",
-    "year": "2019",
-    "type": "image",
-    "title": "ASCI Membership Campaign (2019)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2019-Membership-Campaign-3.png"
-  },
-  {
-    "id": "camp_99",
-    "year": "2019",
-    "type": "image",
-    "title": "ASCI Membership Campaign (2019)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2019-Membership-Campaign-4-1024x1024.png"
-  },
-  {
-    "id": "camp_100",
-    "year": "2019",
-    "type": "image",
-    "title": "ASCI Membership Campaign (2019)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2019-Membership-Campaign-6.gif"
-  },
-  {
-    "id": "camp_101",
-    "year": "2019",
-    "type": "image",
-    "title": "ASCI Membership Campaign (2019)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2019-Membership-Campaign-8.jpg"
-  },
-  {
-    "id": "camp_102",
-    "year": "2019",
-    "type": "image",
-    "title": "ASCI Membership Campaign (2019)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2019-Membership-Campaign-9.jpg"
-  },
-  {
-    "id": "camp_103",
-    "year": "2016",
-    "type": "image",
-    "title": "Consumer Awareness Print Ad (2016)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2016-Consumer-Awareness-1.jpg"
-  },
-  {
-    "id": "camp_104",
-    "year": "2016",
-    "type": "image",
-    "title": "Consumer Awareness Print Ad (2016)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2016-Consumer-Awareness-2.jpg"
-  },
-  {
-    "id": "camp_105",
-    "year": "2016",
-    "type": "image",
-    "title": "Consumer Awareness Print Ad (2016)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2016-Consumer-Awareness-3.jpg"
-  },
-  {
-    "id": "camp_106",
-    "year": "2016",
-    "type": "image",
-    "title": "Consumer Awareness Print Ad (2016)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2016-Consumer-Awareness-4.jpg"
-  },
-  {
-    "id": "camp_107",
-    "year": "2016",
-    "type": "image",
-    "title": "World Consumer Rights Day Poster (2016)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2016-World-Consumer-Day-1-614x1024.jpg"
-  },
-  {
-    "id": "camp_108",
-    "year": "2016",
-    "type": "image",
-    "title": "World Consumer Rights Day Poster (2016)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2016-World-Consumer-Day-2-614x1024.jpg"
-  },
-  {
-    "id": "camp_109",
-    "year": "2016",
-    "type": "image",
-    "title": "World Consumer Rights Day Poster (2016)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2016-World-Consumer-Day-3-614x1024.jpg"
-  },
-  {
-    "id": "camp_110",
-    "year": "2016",
-    "type": "image",
-    "title": "World Consumer Rights Day Poster (2016)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2016-World-Consumer-Day-4-614x1024.jpg"
-  },
-  {
-    "id": "camp_111",
-    "year": "2016",
-    "type": "image",
-    "title": "World Consumer Rights Day Poster (2016)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2016-World-Consumer-Day-5-614x1024.jpg"
-  },
-  {
-    "id": "camp_112",
-    "year": "2016",
-    "type": "image",
-    "title": "World Consumer Rights Day Poster (2016)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2016-World-Consumer-Day-6-614x1024.jpg"
-  },
-  {
-    "id": "camp_113",
-    "year": "2016",
-    "type": "image",
-    "title": "World Consumer Rights Day Poster (2016)",
-    "caption": "",
-    "video_url": "",
-    "yt_id": "",
-    "image_src": "https://www.ascionline.in/wp-content/uploads/2022/09/2016-World-Consumer-Day-7-614x1024.jpg"
-  }
-];
+  (function () {
+    var activeYear = 'all';
+    var activeType = 'all';
+    var searchQuery = '';
 
-  let currentTypeFilter = 'all';
-  let currentYearFilter = 'all';
-  let currentSearchQuery = '';
-  let currentFilteredItems = [];
-  let currentModalIndex = 0;
+    function esc(s) {
+      return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
 
-  function renderGallery() {
-    const grid = document.getElementById('campaignsGrid');
-    const emptyState = document.getElementById('galleryEmpty');
-    const countLabel = document.getElementById('visibleCount');
-    if (!grid || !emptyState || !countLabel) return;
+    function renderGroupedCampaigns() {
+      var list = window.ASCI_CAMPAIGNS || [];
+      var q = searchQuery.trim().toLowerCase();
+      var filtered = list.filter(function (c) {
+        if (activeYear !== 'all' && c.year !== activeYear) return false;
+        if (activeType === 'video' && c.videoCount === 0) return false;
+        if (activeType === 'image' && c.imageCount === 0) return false;
+        if (!q) return true;
+        var hay = (c.title + ' ' + c.year + ' ' + (c.items || []).map(function (it) { return it.title; }).join(' ')).toLowerCase();
+        return hay.indexOf(q) !== -1;
+      });
 
-    currentFilteredItems = campaignItems.filter(item => {
-      if (currentTypeFilter !== 'all' && item.type !== currentTypeFilter) return false;
-      if (currentYearFilter !== 'all' && item.year !== currentYearFilter) return false;
-      if (currentSearchQuery.trim() !== '') {
-        const q = currentSearchQuery.toLowerCase();
-        const matchTitle = item.title.toLowerCase().includes(q);
-        const matchCap = item.caption.toLowerCase().includes(q);
-        const matchYear = item.year.includes(q);
-        if (!matchTitle && !matchCap && !matchYear) return false;
+      var grid = document.getElementById('campaignsGrid');
+      var empty = document.getElementById('galleryEmpty');
+      var countEl = document.getElementById('resultsCount');
+      if (countEl) {
+        countEl.textContent = 'Showing ' + filtered.length + (filtered.length === 1 ? ' campaign' : ' campaigns');
       }
-      return true;
-    });
+      if (!grid) return;
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        if (empty) empty.style.display = 'block';
+        return;
+      }
+      if (empty) empty.style.display = 'none';
 
-    countLabel.textContent = currentFilteredItems.length;
-
-    if (currentFilteredItems.length === 0) {
-      grid.style.display = 'none';
-      emptyState.style.display = 'block';
-      return;
+      grid.innerHTML = filtered.map(function (c) {
+        var parts = [];
+        if (c.videoCount > 0) parts.push(c.videoCount + (c.videoCount === 1 ? ' Video' : ' Videos'));
+        if (c.imageCount > 0) parts.push(c.imageCount + (c.imageCount === 1 ? ' Creative' : ' Creatives'));
+        var breakdown = parts.join(' · ');
+        return (
+          '<a href="campaign-detail.html?id=' + encodeURIComponent(c.id) + '" class="camp-group-card">' +
+            '<div class="camp-group-thumb">' +
+              '<div class="camp-group-badges">' +
+                '<span class="camp-year-badge">' + esc(c.year) + '</span>' +
+                '<span class="camp-count-badge">' + c.totalAssets + (c.totalAssets === 1 ? ' Item' : ' Items') + '</span>' +
+              '</div>' +
+              '<img src="' + esc(c.cover) + '" alt="' + esc(c.title) + '" loading="lazy">' +
+            '</div>' +
+            '<div class="camp-group-body">' +
+              '<h3 class="camp-group-title">' + esc(c.title) + '</h3>' +
+              '<p class="camp-group-meta">' + esc(breakdown) + '</p>' +
+              '<span class="camp-group-cta">View Campaign &rarr;</span>' +
+            '</div>' +
+          '</a>'
+        );
+      }).join('');
     }
 
-    grid.style.display = 'grid';
-    emptyState.style.display = 'none';
+    window.setYear = function (yr, btn) {
+      activeYear = yr;
+      document.querySelectorAll('.filter-year-btn').forEach(function (b) {
+        b.classList.toggle('active', b.getAttribute('data-year') === yr);
+      });
+      renderGroupedCampaigns();
+    };
 
-    grid.innerHTML = currentFilteredItems.map((item, idx) => {
-      const isVideo = item.type === 'video';
-      const typeBadge = isVideo ? '<span class="gallery-type-badge badge-video">Video Film</span>' : '<span class="gallery-type-badge badge-image">Print / Artboard</span>';
-      const playOverlay = isVideo ? `
-          <div class="video-play-overlay">
-            <div class="play-btn-circle">
-              <div class="play-icon-tri"></div>
-            </div>
-          </div>
-        ` : '';
+    window.setMediaType = function (tp, btn) {
+      activeType = tp;
+      document.querySelectorAll('.filter-type-btn').forEach(function (b) {
+        b.classList.toggle('active', b === btn);
+      });
+      renderGroupedCampaigns();
+    };
 
-      return `
-          <div class="gallery-card" onclick="openMediaModalByIndex(${idx})">
-            <div class="gallery-thumb-wrap">
-              ${typeBadge}
-              <span class="gallery-year-badge">${item.year}</span>
-              <img src="${item.image_src}" alt="${item.title}" class="gallery-thumb-img" loading="lazy" />
-              ${playOverlay}
-            </div>
-            <div class="gallery-card-body">
-              <h3 class="gallery-card-title">${item.title}</h3>
-              <div class="gallery-card-footer">
-                <span>${isVideo ? 'Watch Video Film' : 'View High-Res Poster'}</span>
-                <span>&rarr;</span>
-              </div>
-            </div>
-          </div>
-        `;
-    }).join('');
-  }
+    window.handleSearch = function (val) {
+      searchQuery = val || '';
+      renderGroupedCampaigns();
+    };
 
-  function setMediaType(type, btn) {
-    currentTypeFilter = type;
-    document.querySelectorAll('#mediaTypeTabs .filter-type-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    renderGallery();
-  }
+    window.resetFilters = function () {
+      activeYear = 'all';
+      activeType = 'all';
+      searchQuery = '';
+      var inp = document.getElementById('campaignSearch');
+      if (inp) inp.value = '';
+      document.querySelectorAll('.filter-year-btn').forEach(function (b) {
+        b.classList.toggle('active', b.getAttribute('data-year') === 'all');
+      });
+      renderGroupedCampaigns();
+    };
 
-  function setYear(year, btn) {
-    currentYearFilter = year;
-    document.querySelectorAll('#yearPillGroup .filter-year-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    renderGallery();
-  }
-
-  function handleSearch(val) {
-    currentSearchQuery = val;
-    renderGallery();
-  }
-
-  function openMediaModalByIndex(index) {
-    if (!currentFilteredItems || currentFilteredItems.length === 0) return;
-    if (index < 0) index = currentFilteredItems.length - 1;
-    if (index >= currentFilteredItems.length) index = 0;
-    currentModalIndex = index;
-
-    const item = currentFilteredItems[currentModalIndex];
-    if (!item) return;
-
-    const modal = document.getElementById('mediaModal');
-    const playerWrap = document.getElementById('modalPlayerContent');
-    const titleEl = document.getElementById('modalTitle');
-    const counterEl = document.getElementById('modalCounter');
-    const yearEl = document.getElementById('modalMetaYear');
-    const extLink = document.getElementById('modalExternalLink');
-
-    titleEl.textContent = item.title;
-    counterEl.textContent = `${currentModalIndex + 1} of ${currentFilteredItems.length}`;
-    yearEl.textContent = `Campaign Year: ${item.year}`;
-
-    if (item.type === 'video') {
-      playerWrap.innerHTML = `
-          <iframe class="media-modal-iframe" src="https://www.youtube.com/embed/${item.yt_id}?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        `;
-      extLink.href = item.video_url || ('https://www.youtube.com/watch?v=' + item.yt_id);
-      extLink.querySelector('span').textContent = 'Watch on YouTube';
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', renderGroupedCampaigns);
     } else {
-      playerWrap.innerHTML = `
-          <img src="${item.image_src}" alt="${item.title}" class="media-modal-img" />
-        `;
-      extLink.href = item.image_src;
-      extLink.querySelector('span').textContent = 'Open High-Res Poster';
+      renderGroupedCampaigns();
     }
-
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function navigateModal(direction) {
-    openMediaModalByIndex(currentModalIndex + direction);
-  }
-
-  function closeMediaModal() {
-    const modal = document.getElementById('mediaModal');
-    const playerWrap = document.getElementById('modalPlayerContent');
-    if (modal) modal.classList.remove('open');
-    if (playerWrap) playerWrap.innerHTML = '';
-    document.body.style.overflow = '';
-  }
-
-  function closeModalOnBackdrop(e) {
-    if (e.target.id === 'mediaModal') {
-      closeMediaModal();
-    }
-  }
-
-  document.addEventListener('keydown', (e) => {
-    const modal = document.getElementById('mediaModal');
-    if (!modal || !modal.classList.contains('open')) return;
-
-    if (e.key === 'Escape') {
-      closeMediaModal();
-    } else if (e.key === 'ArrowLeft') {
-      navigateModal(-1);
-    } else if (e.key === 'ArrowRight') {
-      navigateModal(1);
-    }
-  });
-
-  // Immediate gallery rendering on script evaluation
-  renderGallery();
-  document.addEventListener('DOMContentLoaded', renderGallery);
+  })();
 </script>
 
   <!-- Footer -->

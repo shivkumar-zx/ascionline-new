@@ -4446,7 +4446,7 @@ h3, h4, h5, h6,
     max-width: 580px !important;
   }
 </style>
-        <style id="grouped-campaigns-css">
+          <style id="grouped-campaigns-css">
   #campaignsGrid.gallery-grid {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
@@ -4472,8 +4472,8 @@ h3, h4, h5, h6,
   }
   .camp-group-thumb {
     width: 100%;
-    aspect-ratio: 16 / 10;
-    background: #f1f5f9;
+    aspect-ratio: 4 / 3;
+    background: #f8fafc;
     overflow: hidden;
     position: relative;
     border-bottom: 1px solid #e2e8f0;
@@ -4481,7 +4481,8 @@ h3, h4, h5, h6,
   .camp-group-thumb img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    background: #f8fafc;
     display: block;
     transition: transform 0.35s ease;
   }
@@ -4571,8 +4572,8 @@ h3, h4, h5, h6,
     flex: 1;
   }
   .camp-group-title {
-    font-family: var(--font-serif) !important;
-    font-weight: 500 !important;
+    font-family: var(--font-sans, 'Inter', sans-serif) !important;
+    font-weight: 700 !important;
     color: #0f172a;
     margin: 0 0 10px 0;
     line-height: 1.35;
@@ -4626,9 +4627,9 @@ h3, h4, h5, h6,
     flex-wrap: wrap;
   }
   .camp-lb-series-title {
-    font-family: var(--font-serif);
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 1.2rem;
+    font-weight: 700;
     color: #ffffff;
     margin: 0;
   }
@@ -5688,7 +5689,6 @@ h3, h4, h5, h6,
     <div class="camp-lb-slide-title" id="campLbSlideTitle"></div>
     <div class="camp-lb-slide-desc" id="campLbSlideDesc"></div>
   </div>
-  <div class="camp-lb-thumbs" id="campLbThumbs"></div>
 </div>
 <!-- END campSeriesLightbox -->
 <script src="assets/campaigns-data.js"></script>
@@ -5796,14 +5796,6 @@ h3, h4, h5, h6,
       var showNav = currentCamp.items.length > 1;
       document.getElementById('campLbPrev').style.display = showNav ? 'flex' : 'none';
       document.getElementById('campLbNext').style.display = showNav ? 'flex' : 'none';
-
-      var thumbs = document.getElementById('campLbThumbs');
-      thumbs.style.display = showNav ? 'flex' : 'none';
-      if (showNav) {
-        thumbs.innerHTML = currentCamp.items.map(function (item, i) {
-          return '<button type="button" class="camp-lb-thumb-btn' + (i === currentIdx ? ' active' : '') + '" onclick="goCampaignSlide(' + i + ')"><img src="' + esc(item.image) + '" alt=""></button>';
-        }).join('');
-      }
     }
 
     window.openCampaignGallery = function (id) {

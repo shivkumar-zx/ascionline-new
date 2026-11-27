@@ -4446,7 +4446,7 @@ h3, h4, h5, h6,
     max-width: 580px !important;
   }
 </style>
-    <style id="grouped-campaigns-css">
+      <style id="grouped-campaigns-css">
   #campaignsGrid.gallery-grid {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
@@ -5685,7 +5685,7 @@ h3, h4, h5, h6,
         if (c.imageCount > 0) parts.push(c.imageCount + (c.imageCount === 1 ? ' Creative' : ' Creatives'));
         var breakdown = parts.join(' · ');
         return (
-          '<div class="camp-group-card" role="button" tabindex="0" onclick="openCampaignGallery('' + esc(c.id) + '')">' +
+          '<div class="camp-group-card" role="button" tabindex="0" data-camp-id="' + esc(c.id) + '" onclick="openCampaignGallery(this.dataset.campId)">' +
             '<div class="camp-group-thumb">' +
               '<div class="camp-group-badges">' +
                 '<span class="camp-year-badge">' + esc(c.year) + '</span>' +
